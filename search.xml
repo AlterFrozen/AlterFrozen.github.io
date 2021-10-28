@@ -1,303 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>NexT标签页与分类页无法显示修复</title>
-    <url>/2021/10/28/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
-    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
-<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
-<li>使用hexo new page创建了对应的页面</li>
-<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
-</ul>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
-<li>需要在hexo new page之后，进入相应页面的index.md</li>
-<li>在categories的index.md添加：type: “categories”</li>
-<li>在tags的index.md添加：type: “tags”</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《Linux-Ubuntu从入门到精通》笔记</title>
-    <url>/2021/10/27/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
-<span id="more"></span>
-
-<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
-<li>用以存储数据的物理介质</li>
-</ul>
-<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
-<li>对于较大存储容量的介质，需要合理规划分区</li>
-</ul>
-<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
-<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
-</ul>
-<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
-<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
-<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
-<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
-<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
-<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
-</ul>
-<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
-<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
-</ul>
-<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
-<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
-</ul>
-<ol>
-<li>所有目录都是由根目录衍生出来的；</li>
-<li>根目录与系统的开机、修复、还原密切相关；</li>
-</ol>
-<ul>
-<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">主要一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/bin/</td>
-<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
-</tr>
-<tr>
-<td align="center">/boot/</td>
-<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
-</tr>
-<tr>
-<td align="center">/dev/</td>
-<td align="center">设备文件保存位置</td>
-</tr>
-<tr>
-<td align="center">/etc/</td>
-<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
-</tr>
-<tr>
-<td align="center">/home/</td>
-<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
-</tr>
-<tr>
-<td align="center">/lib/</td>
-<td align="center"><strong>系统调用的函数库保存位置</strong></td>
-</tr>
-<tr>
-<td align="center">/media/</td>
-<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
-</tr>
-<tr>
-<td align="center">/mnt/</td>
-<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
-</tr>
-<tr>
-<td align="center">/misc/</td>
-<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
-</tr>
-<tr>
-<td align="center">/opt/</td>
-<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
-</tr>
-<tr>
-<td align="center">/root/</td>
-<td align="center">root 的主目录</td>
-</tr>
-<tr>
-<td align="center">/sbin/</td>
-<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
-</tr>
-<tr>
-<td align="center">/srv/</td>
-<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
-</tr>
-<tr>
-<td align="center">/tmp/</td>
-<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">其他一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/lost+found/</td>
-<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
-</tr>
-<tr>
-<td align="center">/proc/</td>
-<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
-</tr>
-<tr>
-<td align="center">/sys/</td>
-<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
-</tr>
-</tbody></table>
-<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
-<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
-<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
-</ul>
-<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
-<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
-<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
-<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
-</ul>
-<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
-<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
-<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
-</ul>
-<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
-<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
-</li>
-<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
-<p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
-</li>
-</ul>
-<img src="https://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
-
-<table>
-<thead>
-<tr>
-<th align="left">Procs</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>r</strong>: The number of runnable processes (running or waiting for run time).</td>
-<td align="center">可运行的进程数（正在运行或等待CPU时间）</td>
-</tr>
-<tr>
-<td align="left"><strong>b</strong> The number of processes in uninterruptible sleep.</td>
-<td align="center">Uninterruptible Sleep进程数 <a href="https://cloud.tencent.com/developer/article/1581022">《Linux进程状态》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Memory</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>swpd</strong>: the amount of virtual memory used.</td>
-<td align="center">虚拟内存使用大小</td>
-</tr>
-<tr>
-<td align="left"><strong>free</strong>: the amount of idle memory.</td>
-<td align="center">空闲内存大小</td>
-</tr>
-<tr>
-<td align="left"><strong>buff</strong>: the amount of memory used as buffers.</td>
-<td align="center">作为缓存区的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>cache</strong>: the amount of memory used as cache.</td>
-<td align="center">作为Cache的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>inact</strong>: the amount of inactive memory.  (-a option)</td>
-<td align="center">非活动内存大小  <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-<tr>
-<td align="left"><strong>active</strong>: the amount of active memory.  (-a option)</td>
-<td align="center">活动内存大小 <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Swap</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>si</strong>: Amount of memory swapped in from disk (/s).</td>
-<td align="center">每秒 交换分区=&gt;内存 的数据量</td>
-</tr>
-<tr>
-<td align="left"><strong>so</strong>: Amount of memory swapped to disk (/s)..</td>
-<td align="center">每秒 内存=&gt;交换分区 的数据量</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">IO</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>bi</strong>: Blocks received from a block device (blocks/s).</td>
-<td align="center">每秒从块设备中读入的数据的总量，单位是块</td>
-</tr>
-<tr>
-<td align="left"><strong>bo</strong>: Blocks sent to a block device (blocks/s).</td>
-<td align="center">每秒写到块设备的数据的总量，单位是块</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">System</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>in</strong>: The number of interrupts per second, including the clock.</td>
-<td align="center">每秒中断次数，包括<a href="https://www.cnblogs.com/yungyu16/p/12992374.html">时钟中断 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>cs</strong>: The number of context switches per second.</td>
-<td align="center">每秒上下文切换的次数</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">CPU</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>us</strong>: Time spent running non-kernel code.  (user time, including nice time)</td>
-<td align="center">用户态代码运行的 CPU时间（%），包括nice time（低优先级程序时间）</br> <a href="https://blog.csdn.net/u010317005/article/details/80531985">《Linux进程优先级》 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>sy</strong>: Time spent running kernel code.  (system time)</td>
-<td align="center">内核代码运行的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>id</strong>: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.</td>
-<td align="center">空闲状态的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>wa</strong>: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.</td>
-<td align="center">等待IO的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>st</strong>: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.</td>
-<td align="center">被虚拟机所盗用的 CPU 时间（%）</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JLPT-N2-2016年12月真题笔记</title>
     <url>/2021/10/25/JLPT-N2-2016%E5%B9%B412%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
     <content><![CDATA[<ul>
@@ -1025,6 +728,303 @@
       </categories>
       <tags>
         <tag>日语笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT标签页与分类页无法显示修复</title>
+    <url>/2021/10/28/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
+    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
+<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
+<li>使用hexo new page创建了对应的页面</li>
+<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
+</ul>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li>需要在hexo new page之后，进入相应页面的index.md</li>
+<li>在categories的index.md添加：type: “categories”</li>
+<li>在tags的index.md添加：type: “tags”</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Linux-Ubuntu从入门到精通》笔记</title>
+    <url>/2021/10/27/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+<span id="more"></span>
+
+<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
+<li>用以存储数据的物理介质</li>
+</ul>
+<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
+<li>对于较大存储容量的介质，需要合理规划分区</li>
+</ul>
+<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
+<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
+</ul>
+<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
+<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
+<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
+<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
+<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
+<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
+</ul>
+<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
+<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
+</ul>
+<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
+<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
+</ul>
+<ol>
+<li>所有目录都是由根目录衍生出来的；</li>
+<li>根目录与系统的开机、修复、还原密切相关；</li>
+</ol>
+<ul>
+<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">主要一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/bin/</td>
+<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
+</tr>
+<tr>
+<td align="center">/boot/</td>
+<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
+</tr>
+<tr>
+<td align="center">/dev/</td>
+<td align="center">设备文件保存位置</td>
+</tr>
+<tr>
+<td align="center">/etc/</td>
+<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
+</tr>
+<tr>
+<td align="center">/home/</td>
+<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
+</tr>
+<tr>
+<td align="center">/lib/</td>
+<td align="center"><strong>系统调用的函数库保存位置</strong></td>
+</tr>
+<tr>
+<td align="center">/media/</td>
+<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
+</tr>
+<tr>
+<td align="center">/mnt/</td>
+<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
+</tr>
+<tr>
+<td align="center">/misc/</td>
+<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
+</tr>
+<tr>
+<td align="center">/opt/</td>
+<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
+</tr>
+<tr>
+<td align="center">/root/</td>
+<td align="center">root 的主目录</td>
+</tr>
+<tr>
+<td align="center">/sbin/</td>
+<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
+</tr>
+<tr>
+<td align="center">/srv/</td>
+<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
+</tr>
+<tr>
+<td align="center">/tmp/</td>
+<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">其他一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/lost+found/</td>
+<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
+</tr>
+<tr>
+<td align="center">/proc/</td>
+<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
+</tr>
+<tr>
+<td align="center">/sys/</td>
+<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
+</tr>
+</tbody></table>
+<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
+<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
+<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
+</ul>
+<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
+<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
+<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
+<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
+</ul>
+<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
+<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
+<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
+</ul>
+<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
+<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
+</li>
+<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
+<p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+</li>
+</ul>
+<img src="https://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
+
+<table>
+<thead>
+<tr>
+<th align="left">Procs</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>r</strong>: The number of runnable processes (running or waiting for run time).</td>
+<td align="center">可运行的进程数（正在运行或等待CPU时间）</td>
+</tr>
+<tr>
+<td align="left"><strong>b</strong> The number of processes in uninterruptible sleep.</td>
+<td align="center">Uninterruptible Sleep进程数 <a href="https://cloud.tencent.com/developer/article/1581022">《Linux进程状态》</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Memory</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>swpd</strong>: the amount of virtual memory used.</td>
+<td align="center">虚拟内存使用大小</td>
+</tr>
+<tr>
+<td align="left"><strong>free</strong>: the amount of idle memory.</td>
+<td align="center">空闲内存大小</td>
+</tr>
+<tr>
+<td align="left"><strong>buff</strong>: the amount of memory used as buffers.</td>
+<td align="center">作为缓存区的内存</td>
+</tr>
+<tr>
+<td align="left"><strong>cache</strong>: the amount of memory used as cache.</td>
+<td align="center">作为Cache的内存</td>
+</tr>
+<tr>
+<td align="left"><strong>inact</strong>: the amount of inactive memory.  (-a option)</td>
+<td align="center">非活动内存大小  <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
+</tr>
+<tr>
+<td align="left"><strong>active</strong>: the amount of active memory.  (-a option)</td>
+<td align="center">活动内存大小 <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Swap</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>si</strong>: Amount of memory swapped in from disk (/s).</td>
+<td align="center">每秒 交换分区=&gt;内存 的数据量</td>
+</tr>
+<tr>
+<td align="left"><strong>so</strong>: Amount of memory swapped to disk (/s)..</td>
+<td align="center">每秒 内存=&gt;交换分区 的数据量</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">IO</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>bi</strong>: Blocks received from a block device (blocks/s).</td>
+<td align="center">每秒从块设备中读入的数据的总量，单位是块</td>
+</tr>
+<tr>
+<td align="left"><strong>bo</strong>: Blocks sent to a block device (blocks/s).</td>
+<td align="center">每秒写到块设备的数据的总量，单位是块</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">System</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>in</strong>: The number of interrupts per second, including the clock.</td>
+<td align="center">每秒中断次数，包括<a href="https://www.cnblogs.com/yungyu16/p/12992374.html">时钟中断 </a></td>
+</tr>
+<tr>
+<td align="left"><strong>cs</strong>: The number of context switches per second.</td>
+<td align="center">每秒上下文切换的次数</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">CPU</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>us</strong>: Time spent running non-kernel code.  (user time, including nice time)</td>
+<td align="center">用户态代码运行的 CPU时间（%），包括nice time（低优先级程序时间）</br> <a href="https://blog.csdn.net/u010317005/article/details/80531985">《Linux进程优先级》 </a></td>
+</tr>
+<tr>
+<td align="left"><strong>sy</strong>: Time spent running kernel code.  (system time)</td>
+<td align="center">内核代码运行的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>id</strong>: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.</td>
+<td align="center">空闲状态的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>wa</strong>: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.</td>
+<td align="center">等待IO的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>st</strong>: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.</td>
+<td align="center">被虚拟机所盗用的 CPU 时间（%）</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
