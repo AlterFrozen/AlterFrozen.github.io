@@ -417,10 +417,10 @@
 <li>用以存储数据的物理介质</li>
 </ul>
 <h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
-<li>对于较大存储容量的介质，需要合理规划分区|</li>
+<li>对于较大存储容量的介质，需要合理规划分区</li>
 </ul>
 <h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
-<li>即初始化，需要先进行磁盘分割才能创建文件系统|</li>
+<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
 </ul>
 <h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
 <li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
@@ -530,19 +530,19 @@
 </tr>
 </tbody></table>
 <p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
-<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="交换分区的概念"><a href="#交换分区的概念" class="headerlink" title="交换分区的概念"></a>交换分区的概念</h3><ul>
+<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
 <li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
 </ul>
-<h3 id="交换分区的作用"><a href="#交换分区的作用" class="headerlink" title="交换分区的作用"></a>交换分区的作用</h3><ul>
+<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
 <li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
 <li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
 <li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
 </ul>
-<h3 id="交换分区对系统的影响因素"><a href="#交换分区对系统的影响因素" class="headerlink" title="交换分区对系统的影响因素"></a>交换分区对系统的影响因素</h3><ul>
+<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
 <li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
 <li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
 </ul>
-<h3 id="交换分区的管理"><a href="#交换分区的管理" class="headerlink" title="交换分区的管理"></a>交换分区的管理</h3><ul>
+<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
 <li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
 </li>
 <li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
@@ -896,7 +896,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter4-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">Chapter4. 文件系统管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">文件系统的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AD%98%E5%82%A8%E4%BB%8B%E8%B4%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 存储介质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A3%81%E7%9B%98%E5%88%86%E5%89%B2"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 磁盘分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 创建文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%8C%82%E8%BD%BD"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">Ubuntu文件系统的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E5%8C%96%E6%A0%87%E5%87%86FHS%EF%BC%88Filesystem-Hierarchy-Standard%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.根目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA"><span class="nav-number">1.3.</span> <span class="nav-text">交换分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.3.1.</span> <span class="nav-text">交换分区的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">交换分区的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E5%AF%B9%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0"><span class="nav-number">1.3.3.</span> <span class="nav-text">交换分区对系统的影响因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.4.</span> <span class="nav-text">交换分区的管理</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter4-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">Chapter4. 文件系统管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">文件系统的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AD%98%E5%82%A8%E4%BB%8B%E8%B4%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 存储介质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A3%81%E7%9B%98%E5%88%86%E5%89%B2"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 磁盘分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 创建文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%8C%82%E8%BD%BD"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">Ubuntu文件系统的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E5%8C%96%E6%A0%87%E5%87%86FHS%EF%BC%88Filesystem-Hierarchy-Standard%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.根目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA"><span class="nav-number">1.3.</span> <span class="nav-text">交换分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.交换分区的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.交换分区的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E5%AF%B9%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.交换分区对系统的影响因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.4.</span> <span class="nav-text">4.交换分区的管理</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
