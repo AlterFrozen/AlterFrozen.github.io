@@ -73,6 +73,9 @@ $(document).ready(function () {
   $('.post-toc a').on('click', function (e) {
     e.preventDefault();
     var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+    //Frozen2021-10-29 对获取的url重新编码解决目录跳转问题
+    targetSelector = decodeURI(this.getAttribute('href'))
+
     var offset = $(targetSelector).offset().top;
 
     hasVelocity ?
