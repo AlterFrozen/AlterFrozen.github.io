@@ -343,7 +343,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-10-29T10:15:13+08:00">2021-10-29</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-10-29T18:11:12+08:00">2021-10-29</time>
             
           </span>
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">9.9k</span>
+                <span title="字数统计">6.2k</span>
               
 
               
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">10 mins.</span>
+                <span title="阅读时长">6 mins.</span>
               
             </div>
           
@@ -582,135 +582,13 @@
 <li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
 </li>
 <li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
-<p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+</li>
+<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
 </li>
 </ul>
  <img src="http://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
-
-<table>
-<thead>
-<tr>
-<th align="left">Procs</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>r</strong>: The number of runnable processes (running or waiting for run time).</td>
-<td align="center">可运行的进程数（正在运行或等待CPU时间）</td>
-</tr>
-<tr>
-<td align="left"><strong>b</strong> The number of processes in uninterruptible sleep.</td>
-<td align="center">Uninterruptible Sleep进程数 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1581022">《Linux进程状态》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Memory</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>swpd</strong>: the amount of virtual memory used.</td>
-<td align="center">虚拟内存使用大小</td>
-</tr>
-<tr>
-<td align="left"><strong>free</strong>: the amount of idle memory.</td>
-<td align="center">空闲内存大小</td>
-</tr>
-<tr>
-<td align="left"><strong>buff</strong>: the amount of memory used as buffers.</td>
-<td align="center">作为缓存区的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>cache</strong>: the amount of memory used as cache.</td>
-<td align="center">作为Cache的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>inact</strong>: the amount of inactive memory.  (-a option)</td>
-<td align="center">非活动内存大小  <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-<tr>
-<td align="left"><strong>active</strong>: the amount of active memory.  (-a option)</td>
-<td align="center">活动内存大小 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Swap</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>si</strong>: Amount of memory swapped in from disk (/s).</td>
-<td align="center">每秒 交换分区=&gt;内存 的数据量</td>
-</tr>
-<tr>
-<td align="left"><strong>so</strong>: Amount of memory swapped to disk (/s)..</td>
-<td align="center">每秒 内存=&gt;交换分区 的数据量</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">IO</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>bi</strong>: Blocks received from a block device (blocks/s).</td>
-<td align="center">每秒从块设备中读入的数据的总量，单位是块</td>
-</tr>
-<tr>
-<td align="left"><strong>bo</strong>: Blocks sent to a block device (blocks/s).</td>
-<td align="center">每秒写到块设备的数据的总量，单位是块</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">System</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>in</strong>: The number of interrupts per second, including the clock.</td>
-<td align="center">每秒中断次数，包括<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yungyu16/p/12992374.html">时钟中断 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>cs</strong>: The number of context switches per second.</td>
-<td align="center">每秒上下文切换的次数</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">CPU</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>us</strong>: Time spent running non-kernel code.  (user time, including nice time)</td>
-<td align="center">用户态代码运行的 CPU时间（%），包括nice time（低优先级程序时间）</br> <a target="_blank" rel="noopener" href="https://blog.csdn.net/u010317005/article/details/80531985">《Linux进程优先级》 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>sy</strong>: Time spent running kernel code.  (system time)</td>
-<td align="center">内核代码运行的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>id</strong>: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.</td>
-<td align="center">空闲状态的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>wa</strong>: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.</td>
-<td align="center">等待IO的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>st</strong>: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.</td>
-<td align="center">被虚拟机所盗用的 CPU 时间（%）</td>
-</tr>
-</tbody></table>
 
       
     </div>
@@ -899,7 +777,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -910,7 +788,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
