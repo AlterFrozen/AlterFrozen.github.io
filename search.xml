@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Codebooklet 搭建记录</title>
+    <url>/2021/10/24/bloglog/</url>
+    <content><![CDATA[<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
+<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
+<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
+<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
+<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
+<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
+</li>
+<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
+</li>
+<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
+</li>
+<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
+</li>
+<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
+</li>
+<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
+</li>
+<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
+</li>
+<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
+</li>
+<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
+</li>
+<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
+</li>
+</ul>
+<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
+<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VMware虚拟机3种网络模式</title>
+    <url>/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
+<ol>
+<li>桥接模式（Bridged）</li>
+<li>网络地址转换模式（NAT）</li>
+<li>主机模式（Host-only）<span id="more"></span></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>依赖的网络服务</th>
+<th>虚拟网络组成</th>
+<th>访问外部网络的方式</th>
+<th>与宿主机互访方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>桥接模式</td>
+<td>VMnet0（虚拟网桥）</td>
+<td>相当于宿主机局域网内一台独立主机</td>
+<td>虚拟网桥联网</td>
+<td>同一局域网</td>
+</tr>
+<tr>
+<td>NAT模式</td>
+<td>VMnet8（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
+<td>虚拟NAT联网</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+<tr>
+<td>主机模式</td>
+<td>VMnet1（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机</td>
+<td>通过宿主机转发到虚拟网卡</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
+<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
+</ul>
+<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
+<li>虚拟机相当于局域网中的一台独立主机</li>
+<li>可以独立访问网络中其他主机</li>
+<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
+<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
+</ul>
+<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
+<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
+<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
+<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
+</ul>
+<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
+<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
+<li>TCP/IP配置由VMnet1提供</li>
+<li>可以与宿主机互相通信</li>
+</ul>
+]]></content>
+      <categories>
+        <category>虚拟机</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ARP欺骗实验</title>
     <url>/2021/10/30/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
     <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
@@ -37,7 +164,7 @@
 </thead>
 <tbody><tr>
 <td align="center">FCS</td>
-<td align="center">IP_A,MAC_A) , (IP_B, ? )</td>
+<td align="center">（IP_A,MAC_A) , (IP_B, ? )</td>
 <td align="center">ARP</td>
 <td align="center">MAC A</td>
 <td align="center">FF-FF-FF-FF-FF-FF</td>
@@ -100,9 +227,9 @@
       </tags>
   </entry>
   <entry>
-    <title>《C++17 Cookbook》笔记</title>
-    <url>/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
+    <title>《C++17 STL Cookbook》笔记</title>
+    <url>/2021/10/30/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 STL Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
 <span id="more"></span>
 
 <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><ul>
@@ -178,6 +305,265 @@
       </categories>
       <tags>
         <tag>C++ STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux命令笔记</title>
+    <url>/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li><strong>该笔记仅记录个人使用过的命令，以及用该命令做过什么，不是完整说明文档</strong><span id="more"></span></li>
+</ul>
+<hr>
+<h1 id="目录-INDEX"><a href="#目录-INDEX" class="headerlink" title="目录 INDEX"></a>目录 INDEX</h1><table>
+<thead>
+<tr>
+<th align="center">首字母</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">F</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">J</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">K</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Q</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">R</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">T</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">U</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">V</td>
+<td align="center"><a href="#vmstat">vmstat</a></td>
+</tr>
+<tr>
+<td align="center">W</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Z</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+ <div id="vmstat"><font size=20,font-weight:bold>vmstat</font></div>
+
+<ul>
+<li>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</li>
+<li>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</li>
+</ul>
+ <img src="http://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
+
+<table>
+<thead>
+<tr>
+<th align="left">Procs</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>r</strong>: The number of runnable processes (running or waiting for run time).</td>
+<td align="center">可运行的进程数（正在运行或等待CPU时间）</td>
+</tr>
+<tr>
+<td align="left"><strong>b</strong> The number of processes in uninterruptible sleep.</td>
+<td align="center">Uninterruptible Sleep进程数 <a href="https://cloud.tencent.com/developer/article/1581022">《Linux进程状态》</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Memory</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>swpd</strong>: the amount of virtual memory used.</td>
+<td align="center">虚拟内存使用大小</td>
+</tr>
+<tr>
+<td align="left"><strong>free</strong>: the amount of idle memory.</td>
+<td align="center">空闲内存大小</td>
+</tr>
+<tr>
+<td align="left"><strong>buff</strong>: the amount of memory used as buffers.</td>
+<td align="center">作为缓存区的内存</td>
+</tr>
+<tr>
+<td align="left"><strong>cache</strong>: the amount of memory used as cache.</td>
+<td align="center">作为Cache的内存</td>
+</tr>
+<tr>
+<td align="left"><strong>inact</strong>: the amount of inactive memory.  (-a option)</td>
+<td align="center">非活动内存大小  <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
+</tr>
+<tr>
+<td align="left"><strong>active</strong>: the amount of active memory.  (-a option)</td>
+<td align="center">活动内存大小 <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Swap</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>si</strong>: Amount of memory swapped in from disk (/s).</td>
+<td align="center">每秒 交换分区=&gt;内存 的数据量</td>
+</tr>
+<tr>
+<td align="left"><strong>so</strong>: Amount of memory swapped to disk (/s)..</td>
+<td align="center">每秒 内存=&gt;交换分区 的数据量</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">IO</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>bi</strong>: Blocks received from a block device (blocks/s).</td>
+<td align="center">每秒从块设备中读入的数据的总量，单位是块</td>
+</tr>
+<tr>
+<td align="left"><strong>bo</strong>: Blocks sent to a block device (blocks/s).</td>
+<td align="center">每秒写到块设备的数据的总量，单位是块</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">System</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>in</strong>: The number of interrupts per second, including the clock.</td>
+<td align="center">每秒中断次数，包括<a href="https://www.cnblogs.com/yungyu16/p/12992374.html">时钟中断 </a></td>
+</tr>
+<tr>
+<td align="left"><strong>cs</strong>: The number of context switches per second.</td>
+<td align="center">每秒上下文切换的次数</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">CPU</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>us</strong>: Time spent running non-kernel code.  (user time, including nice time)</td>
+<td align="center">用户态代码运行的 CPU时间（%），包括nice time（低优先级程序时间）</br> <a href="https://blog.csdn.net/u010317005/article/details/80531985">《Linux进程优先级》 </a></td>
+</tr>
+<tr>
+<td align="left"><strong>sy</strong>: Time spent running kernel code.  (system time)</td>
+<td align="center">内核代码运行的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>id</strong>: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.</td>
+<td align="center">空闲状态的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>wa</strong>: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.</td>
+<td align="center">等待IO的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>st</strong>: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.</td>
+<td align="center">被虚拟机所盗用的 CPU 时间（%）</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -257,6 +643,29 @@
       </categories>
       <tags>
         <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT标签页与分类页无法显示修复</title>
+    <url>/2021/10/28/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
+    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
+<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
+<li>使用hexo new page创建了对应的页面</li>
+<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li>需要在hexo new page之后，进入相应页面的index.md</li>
+<li>在categories的index.md添加：type: “categories”</li>
+<li>在tags的index.md添加：type: “tags”</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -1141,415 +1550,6 @@
       </categories>
       <tags>
         <tag>日语笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux命令笔记</title>
-    <url>/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<ul>
-<li><strong>该笔记仅记录个人使用过的命令，以及用该命令做过什么，不是完整说明文档</strong><span id="more"></span></li>
-</ul>
-<hr>
-<h1 id="目录-INDEX"><a href="#目录-INDEX" class="headerlink" title="目录 INDEX"></a>目录 INDEX</h1><table>
-<thead>
-<tr>
-<th align="center">首字母</th>
-<th align="center">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">A</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">B</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">C</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">D</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">E</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">F</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">G</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">H</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">I</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">J</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">K</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">L</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">M</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">N</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">O</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">P</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Q</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">R</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">S</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">T</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">U</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">V</td>
-<td align="center"><a href="#vmstat">vmstat</a></td>
-</tr>
-<tr>
-<td align="center">W</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">X</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Y</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Z</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
- <div id="vmstat"><font size=20,font-weight:bold>vmstat</font></div>
-
-<ul>
-<li>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</li>
-<li>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</li>
-</ul>
- <img src="http://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
-
-<table>
-<thead>
-<tr>
-<th align="left">Procs</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>r</strong>: The number of runnable processes (running or waiting for run time).</td>
-<td align="center">可运行的进程数（正在运行或等待CPU时间）</td>
-</tr>
-<tr>
-<td align="left"><strong>b</strong> The number of processes in uninterruptible sleep.</td>
-<td align="center">Uninterruptible Sleep进程数 <a href="https://cloud.tencent.com/developer/article/1581022">《Linux进程状态》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Memory</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>swpd</strong>: the amount of virtual memory used.</td>
-<td align="center">虚拟内存使用大小</td>
-</tr>
-<tr>
-<td align="left"><strong>free</strong>: the amount of idle memory.</td>
-<td align="center">空闲内存大小</td>
-</tr>
-<tr>
-<td align="left"><strong>buff</strong>: the amount of memory used as buffers.</td>
-<td align="center">作为缓存区的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>cache</strong>: the amount of memory used as cache.</td>
-<td align="center">作为Cache的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>inact</strong>: the amount of inactive memory.  (-a option)</td>
-<td align="center">非活动内存大小  <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-<tr>
-<td align="left"><strong>active</strong>: the amount of active memory.  (-a option)</td>
-<td align="center">活动内存大小 <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Swap</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>si</strong>: Amount of memory swapped in from disk (/s).</td>
-<td align="center">每秒 交换分区=&gt;内存 的数据量</td>
-</tr>
-<tr>
-<td align="left"><strong>so</strong>: Amount of memory swapped to disk (/s)..</td>
-<td align="center">每秒 内存=&gt;交换分区 的数据量</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">IO</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>bi</strong>: Blocks received from a block device (blocks/s).</td>
-<td align="center">每秒从块设备中读入的数据的总量，单位是块</td>
-</tr>
-<tr>
-<td align="left"><strong>bo</strong>: Blocks sent to a block device (blocks/s).</td>
-<td align="center">每秒写到块设备的数据的总量，单位是块</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">System</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>in</strong>: The number of interrupts per second, including the clock.</td>
-<td align="center">每秒中断次数，包括<a href="https://www.cnblogs.com/yungyu16/p/12992374.html">时钟中断 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>cs</strong>: The number of context switches per second.</td>
-<td align="center">每秒上下文切换的次数</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">CPU</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>us</strong>: Time spent running non-kernel code.  (user time, including nice time)</td>
-<td align="center">用户态代码运行的 CPU时间（%），包括nice time（低优先级程序时间）</br> <a href="https://blog.csdn.net/u010317005/article/details/80531985">《Linux进程优先级》 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>sy</strong>: Time spent running kernel code.  (system time)</td>
-<td align="center">内核代码运行的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>id</strong>: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.</td>
-<td align="center">空闲状态的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>wa</strong>: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.</td>
-<td align="center">等待IO的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>st</strong>: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.</td>
-<td align="center">被虚拟机所盗用的 CPU 时间（%）</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT标签页与分类页无法显示修复</title>
-    <url>/2021/10/28/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
-    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
-<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
-<li>使用hexo new page创建了对应的页面</li>
-<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
-<li>需要在hexo new page之后，进入相应页面的index.md</li>
-<li>在categories的index.md添加：type: “categories”</li>
-<li>在tags的index.md添加：type: “tags”</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VMware虚拟机3种网络模式</title>
-    <url>/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
-<ol>
-<li>桥接模式（Bridged）</li>
-<li>网络地址转换模式（NAT）</li>
-<li>主机模式（Host-only）<span id="more"></span></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>模式</th>
-<th>依赖的网络服务</th>
-<th>虚拟网络组成</th>
-<th>访问外部网络的方式</th>
-<th>与宿主机互访方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>桥接模式</td>
-<td>VMnet0（虚拟网桥）</td>
-<td>相当于宿主机局域网内一台独立主机</td>
-<td>虚拟网桥联网</td>
-<td>同一局域网</td>
-</tr>
-<tr>
-<td>NAT模式</td>
-<td>VMnet8（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
-<td>虚拟NAT联网</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
-</tr>
-<tr>
-<td>主机模式</td>
-<td>VMnet1（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机</td>
-<td>通过宿主机转发到虚拟网卡</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
-<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
-</ul>
-<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
-<li>虚拟机相当于局域网中的一台独立主机</li>
-<li>可以独立访问网络中其他主机</li>
-<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
-<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
-</ul>
-<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
-<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
-<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
-<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
-</ul>
-<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
-<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
-<li>TCP/IP配置由VMnet1提供</li>
-<li>可以与宿主机互相通信</li>
-</ul>
-]]></content>
-      <categories>
-        <category>虚拟机</category>
-      </categories>
-      <tags>
-        <tag>虚拟机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Codebooklet 搭建记录</title>
-    <url>/2021/10/24/bloglog/</url>
-    <content><![CDATA[<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
-<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
-<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
-<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
-<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
-</ul>
-<span id="more"></span>
-
-<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
-<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
-</li>
-<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
-</li>
-<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
-</li>
-<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
-</li>
-<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
-</li>
-<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
-</li>
-<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
-</li>
-<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
-</li>
-<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
-</li>
-<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
-</li>
-</ul>
-<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
-<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
