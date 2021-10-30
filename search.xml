@@ -59,6 +59,170 @@
       </tags>
   </entry>
   <entry>
+    <title>VMware虚拟机3种网络模式</title>
+    <url>/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
+<ol>
+<li>桥接模式（Bridged）</li>
+<li>网络地址转换模式（NAT）</li>
+<li>主机模式（Host-only）<span id="more"></span></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>依赖的网络服务</th>
+<th>虚拟网络组成</th>
+<th>访问外部网络的方式</th>
+<th>与宿主机互访方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>桥接模式</td>
+<td>VMnet0（虚拟网桥）</td>
+<td>相当于宿主机局域网内一台独立主机</td>
+<td>虚拟网桥联网</td>
+<td>同一局域网</td>
+</tr>
+<tr>
+<td>NAT模式</td>
+<td>VMnet8（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
+<td>虚拟NAT联网</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+<tr>
+<td>主机模式</td>
+<td>VMnet1（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机</td>
+<td>通过宿主机转发到虚拟网卡</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
+<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
+</ul>
+<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
+<li>虚拟机相当于局域网中的一台独立主机</li>
+<li>可以独立访问网络中其他主机</li>
+<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
+<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
+</ul>
+<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
+<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
+<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
+<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
+</ul>
+<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
+<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
+<li>TCP/IP配置由VMnet1提供</li>
+<li>可以与宿主机互相通信</li>
+</ul>
+]]></content>
+      <categories>
+        <category>虚拟机</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ARP欺骗实验</title>
+    <url>/2021/10/30/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+<li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
+</ul>
+<span id="more"></span>
+
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h3 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h3><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E6%8B%93%E6%89%91.png"></p>
+<h4 id="攻击目标（虚拟机）"><a href="#攻击目标（虚拟机）" class="headerlink" title="攻击目标（虚拟机）"></a>攻击目标（虚拟机）</h4><ul>
+<li>操作系统：Windows10<h4 id="通信目标（虚拟机）"><a href="#通信目标（虚拟机）" class="headerlink" title="通信目标（虚拟机）"></a>通信目标（虚拟机）</h4></li>
+<li>操作系统：CentOS<h4 id="攻击者（宿主机）"><a href="#攻击者（宿主机）" class="headerlink" title="攻击者（宿主机）"></a>攻击者（宿主机）</h4></li>
+<li>操作系统 Kali</li>
+</ul>
+<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="局域网（LAN）中的信息传输过程"><a href="#局域网（LAN）中的信息传输过程" class="headerlink" title="局域网（LAN）中的信息传输过程"></a>局域网（LAN）中的信息传输过程</h3><ul>
+<li><p>连接在以太网中的两台Terminal之间传输IP分组时，Sender必须先获取Receiver的MAC地址</p>
+</li>
+<li><p>每一个Terminal都有ARP缓冲区，用于保存（IP，MAC）的映射关系，如果Receiver在缓存区，则可以直接完成链路帧封装</p>
+</li>
+<li><p>如果Sender只有Receiver的IP地址，则需要通过“地址解析过程”获取Receiver的MAC，该过程通过ARP（Address Resolution Protocol）来实现</p>
+<h3 id="ARP地址解析过程"><a href="#ARP地址解析过程" class="headerlink" title="ARP地址解析过程"></a>ARP地址解析过程</h3></li>
+<li><p>Sender广播（broadcast）ARP请求报文，该报文格式如下</p>
+<table>
+<thead>
+<tr>
+<th align="center">帧校验序列</th>
+<th align="center">数据（请求报文）</th>
+<th align="center">类型</th>
+<th align="center">源MAC地址</th>
+<th align="center">目的MAC地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FCS</td>
+<td align="center">IP_A,MAC_A) , (IP_B, ? )</td>
+<td align="center">ARP</td>
+<td align="center">MAC A</td>
+<td align="center">FF-FF-FF-FF-FF-FF</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>在该LAN中的所有Terminals都记录下Sender的IP与MAC，但只有Receiver将自己（IP，MAC）回复给Sender</p>
+</li>
+<li><p>Sender收到回复消息，将其记录在自己的ARP缓存区</p>
+<h3 id="ARP欺骗原理"><a href="#ARP欺骗原理" class="headerlink" title="ARP欺骗原理"></a>ARP欺骗原理</h3></li>
+<li><p>利用“ARP没有真伪校验”的特点，在ARP请求过程中，Hacker将IP对应的MAC修改为自己的MAC</p>
+</li>
+</ul>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-按照实验拓扑准备好虚拟机"><a href="#Step-1-按照实验拓扑准备好虚拟机" class="headerlink" title="Step.1 按照实验拓扑准备好虚拟机"></a>Step.1 按照实验拓扑准备好虚拟机</h3><ul>
+<li>使用VMware完成虚拟机配置<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/0.%E5%87%86%E5%A4%87%E8%99%9A%E6%8B%9F%E6%9C%BA.png"></li>
+</ul>
+<h3 id="Step-2-修改虚拟机网络模式为“桥接模式”"><a href="#Step-2-修改虚拟机网络模式为“桥接模式”" class="headerlink" title="Step.2 修改虚拟机网络模式为“桥接模式”"></a>Step.2 修改虚拟机网络模式为“桥接模式”</h3><ul>
+<li><a href="http://www.codebooklet.com/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/#more/">VMware的3种网络模式</a><br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/1.%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.png"></li>
+</ul>
+<h3 id="Step-3-查看3方的网络配置"><a href="#Step-3-查看3方的网络配置" class="headerlink" title="Step.3 查看3方的网络配置"></a>Step.3 查看3方的网络配置</h3><h4 id="攻击目标"><a href="#攻击目标" class="headerlink" title="攻击目标"></a>攻击目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/2.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85.png"></p>
+<h4 id="通信目标"><a href="#通信目标" class="headerlink" title="通信目标"></a>通信目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/3.%E6%B6%88%E6%81%AF%E7%9B%AE%E6%A0%87.png"></p>
+<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/4.%E6%94%BB%E5%87%BB%E6%96%B9.png"></p>
+<h3 id="Step-4-查看当前攻击目标的ARP缓存"><a href="#Step-4-查看当前攻击目标的ARP缓存" class="headerlink" title="Step.4 查看当前攻击目标的ARP缓存"></a>Step.4 查看当前攻击目标的ARP缓存</h3><ul>
+<li>Windows下使用“arp -a”即可，找到通信目标对应的映射<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/5.%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E5%BD%93%E5%89%8DARP.png"></li>
+</ul>
+<h3 id="Step-5-发起攻击"><a href="#Step-5-发起攻击" class="headerlink" title="Step.5 发起攻击"></a>Step.5 发起攻击</h3><ul>
+<li>使用“arpspoof”命令发起攻击</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/6.%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB.png"><br/></p>
+<table>
+<thead>
+<tr>
+<th align="center">使用参数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-i eth0</td>
+<td align="center">使用 eth0 网卡发起攻击</td>
+</tr>
+<tr>
+<td align="center">-t 10.66.217.60</td>
+<td align="center">攻击目标IP为10.66.217.60</td>
+</tr>
+<tr>
+<td align="center">-r 10.66.198.146</td>
+<td align="center">伪造（IP：10.66.217.60，MAC：Hacker的MAC）的ARP请求</td>
+</tr>
+</tbody></table>
+<h3 id="Step-6-查看攻击目标被攻击后的ARP表"><a href="#Step-6-查看攻击目标被攻击后的ARP表" class="headerlink" title="Step.6 查看攻击目标被攻击后的ARP表"></a>Step.6 查看攻击目标被攻击后的ARP表</h3><ul>
+<li>可以发现IP：10.66.217.60 所对应的MAC已经变成了Hacker的MAC<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/7.%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84ARP%E8%A1%A8.png"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《C++17 Cookbook》笔记</title>
     <url>/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
