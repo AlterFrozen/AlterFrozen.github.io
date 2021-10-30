@@ -59,6 +59,87 @@
       </tags>
   </entry>
   <entry>
+    <title>《C++17 Cookbook》笔记</title>
+    <url>/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
+<span id="more"></span>
+
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><ul>
+<li><p><strong>C++的部分模板类是</strong><a href="https://baike.baidu.com/item/%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/4634934">图灵完备</a><strong>的!</strong></p>
+<blockquote>
+<blockquote>
+<p>The part of C++ for expressing template types is even Turing-complete!</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>许多程序员仅仅把C++当做一门编程语言学习，并不重视STL的使用，这让C++看起来像是具有class的C语言。这样不仅看起来不像是21世纪的现代程序，并且失去了C++一半的力量。</strong></p>
+<blockquote>
+<blockquote>
+<p>However, many C++ programmers eagerly learn C++ as a language but put its standard<br> library, the STL, in the second place. Using the C++ language without the help that the<br> standard library provides often leads to programs that look like C with classes, but not<br> what modern programs in the 21st century should look like. This is very sad because using<br> C++ like that means dropping half its strength.</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>C++之父Bjarne Stroustrup博士在他的《C++程序设计语言》(C++11版本)中写到</strong><br> “STL和语言特性都是为了支撑以软件质量为目标的编程技术，他们应该互相配合发挥作用——就如同搭建房子的砖块——而不是单独拿出来，相对孤立地解决一个具体问题。”</p>
+<blockquote>
+<blockquote>
+<p>In the C++11 edition of his book, The C++ Programming Language, Bjarne Stroustrup writes,<br> “Please remember that those libraries and language features exist to support programming<br> techniques for developing quality software. They are meant to be used in combination–as<br> bricks in a building set–rather than to be used individually in relative isolation to solve a<br> specific problem.”</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h1 id="Chapter1-C-17新特新（The-New-C-17-Features）"><a href="#Chapter1-C-17新特新（The-New-C-17-Features）" class="headerlink" title="Chapter1.C++17新特新（The New C++17 Features）"></a>Chapter1.C++17新特新（The New C++17 Features）</h1><h2 id="Abstract-摘要"><a href="#Abstract-摘要" class="headerlink" title="Abstract 摘要"></a>Abstract 摘要</h2><ol>
+<li><strong>使用 结构化绑定（structured bindings）去解包绑定的返回值</strong><blockquote>
+<blockquote>
+<p>Using structured bindings to unpack bundled return values</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>限制 变量作用域（variable scopes）在 if 和 switch 区域内</strong><blockquote>
+<blockquote>
+<p>Limiting variable scopes to if and switch statements</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>从新的 括号初始化规则（bracket initializer rules）中获益</strong><blockquote>
+<blockquote>
+<p>Profiting from the new bracket initializer rules</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>让构造函数（constructor）自动推导模板的类型</strong><blockquote>
+<blockquote>
+<p>Letting the constructor automatically deduce the resulting template class type</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>使用 constexpr-if 简化编译时决策</strong><blockquote>
+<blockquote>
+<p>Simplifying compile-time decisions with constexpr-if</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>使用内联变量（inline variables）启动只有头文件的库（header-only library）</strong><blockquote>
+<blockquote>
+<p>Enabling header-only libraries with inline variables</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>使用折叠表达式（fold expressions）方便地实现辅助函数</strong><blockquote>
+<blockquote>
+<p>Implementing handy helper functions with fold expressions</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>C++ STL</category>
+      </categories>
+      <tags>
+        <tag>C++ STL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux命令笔记</title>
     <url>/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>

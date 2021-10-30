@@ -129,7 +129,7 @@
 
 
 
-  <title>一个简单的自我介绍 | Codebooklet</title>
+  <title>《C++17 Cookbook》笔记 | Codebooklet</title>
   
 
 
@@ -288,50 +288,354 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://codebooklet.com/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar/Frozen.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebooklet">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">一个简单的自我介绍</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h2 id="关于我自己"><a href="#关于我自己" class="headerlink" title="关于我自己"></a>关于我自己</h2><ul>
-<li>计算机类在读本科菜鸡一枚，目前的兴趣方向是计算机图形学。</li>
+          <h1 class="post-title" itemprop="name headline">《C++17 Cookbook》笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-10-30T09:46:11+08:00">2021-10-30</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-10-30T10:47:59+08:00">2021-10-30</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-STL/" itemprop="url" rel="index">
+                    <span itemprop="name">C++ STL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="《C++17 Cookbook》笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">3.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 Cookbook》</strong><br><strong>译文参考：(<a target="_blank" rel="noopener" href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
+<span id="more"></span>
+
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><ul>
+<li><p><strong>C++的部分模板类是</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/4634934">图灵完备</a><strong>的!</strong></p>
+<blockquote>
+<blockquote>
+<p>The part of C++ for expressing template types is even Turing-complete!</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>许多程序员仅仅把C++当做一门编程语言学习，并不重视STL的使用，这让C++看起来像是具有class的C语言。这样不仅看起来不像是21世纪的现代程序，并且失去了C++一半的力量。</strong></p>
+<blockquote>
+<blockquote>
+<p>However, many C++ programmers eagerly learn C++ as a language but put its standard<br> library, the STL, in the second place. Using the C++ language without the help that the<br> standard library provides often leads to programs that look like C with classes, but not<br> what modern programs in the 21st century should look like. This is very sad because using<br> C++ like that means dropping half its strength.</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>C++之父Bjarne Stroustrup博士在他的《C++程序设计语言》(C++11版本)中写到</strong><br> “STL和语言特性都是为了支撑以软件质量为目标的编程技术，他们应该互相配合发挥作用——就如同搭建房子的砖块——而不是单独拿出来，相对孤立地解决一个具体问题。”</p>
+<blockquote>
+<blockquote>
+<p>In the C++11 edition of his book, The C++ Programming Language, Bjarne Stroustrup writes,<br> “Please remember that those libraries and language features exist to support programming<br> techniques for developing quality software. They are meant to be used in combination–as<br> bricks in a building set–rather than to be used individually in relative isolation to solve a<br> specific problem.”</p>
+</blockquote>
+</blockquote>
+</li>
 </ul>
-<h2 id="这个博客未来的内容"><a href="#这个博客未来的内容" class="headerlink" title="这个博客未来的内容"></a>这个博客未来的内容</h2><ul>
-<li>只要是我感兴趣的东西，如果有时间整理的话都会发出来，所以后续我也会整理好分类。</li>
-</ul>
-<ol>
-<li>计算机专业知识点</li>
-<li>编程中遇到的各种问题与解决</li>
-<li>英语学习</li>
-<li>日语学习</li>
-<li>读书笔记</li>
-<li>学校课程中做过的一些实验</li>
+<h1 id="Chapter1-C-17新特新（The-New-C-17-Features）"><a href="#Chapter1-C-17新特新（The-New-C-17-Features）" class="headerlink" title="Chapter1.C++17新特新（The New C++17 Features）"></a>Chapter1.C++17新特新（The New C++17 Features）</h1><h2 id="Abstract-摘要"><a href="#Abstract-摘要" class="headerlink" title="Abstract 摘要"></a>Abstract 摘要</h2><ol>
+<li><strong>使用 结构化绑定（structured bindings）去解包绑定的返回值</strong><blockquote>
+<blockquote>
+<p>Using structured bindings to unpack bundled return values</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>限制 变量作用域（variable scopes）在 if 和 switch 区域内</strong><blockquote>
+<blockquote>
+<p>Limiting variable scopes to if and switch statements</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>从新的 括号初始化规则（bracket initializer rules）中获益</strong><blockquote>
+<blockquote>
+<p>Profiting from the new bracket initializer rules</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>让构造函数（constructor）自动推导模板的类型</strong><blockquote>
+<blockquote>
+<p>Letting the constructor automatically deduce the resulting template class type</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>使用 constexpr-if 简化编译时决策</strong><blockquote>
+<blockquote>
+<p>Simplifying compile-time decisions with constexpr-if</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>使用内联变量（inline variables）启动只有头文件的库（header-only library）</strong><blockquote>
+<blockquote>
+<p>Enabling header-only libraries with inline variables</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>使用折叠表达式（fold expressions）方便地实现辅助函数</strong><blockquote>
+<blockquote>
+<p>Implementing handy helper functions with fold expressions</p>
+</blockquote>
+</blockquote>
+</li>
 </ol>
-<h2 id="为什么要建立这个博客"><a href="#为什么要建立这个博客" class="headerlink" title="为什么要建立这个博客"></a>为什么要建立这个博客</h2><ul>
-<li>当今世界知识的更新非常快，许多知识并不能从书本中获取，因此必须以笔记的形式记录保存，用于后续回顾，所以建立博客主要目的还是方便管理个人笔记，顺便分享出来一部分，如果有错误之处，希望各位指点。</li>
-</ul>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>投币支持~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/QRcodes/WechatPayQRcode.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/QRcodes/alipayQRcode.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Frozen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://codebooklet.com/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/" title="《C++17 Cookbook》笔记">http://codebooklet.com/2021/10/30/Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-STL/" rel="tag"><i class="fa fa-tag"></i> C++ STL</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/" rel="next" title="Linux命令笔记">
+                <i class="fa fa-chevron-left"></i> Linux命令笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -340,6 +644,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -444,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91%E8%87%AA%E5%B7%B1"><span class="nav-number">1.</span> <span class="nav-text">关于我自己</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">这个博客未来的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BB%BA%E7%AB%8B%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.</span> <span class="nav-text">为什么要建立这个博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-C-17%E6%96%B0%E7%89%B9%E6%96%B0%EF%BC%88The-New-C-17-Features%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Chapter1.C++17新特新（The New C++17 Features）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract-%E6%91%98%E8%A6%81"><span class="nav-number">2.1.</span> <span class="nav-text">Abstract 摘要</span></a></li></ol></li></ol></div>
             
 
           </div>
