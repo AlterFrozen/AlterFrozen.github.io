@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Codebooklet公告板</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
+    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
+<li>近期由于学习某没有详细文档的框架，可能博客更新要暂缓了</li>
+<li>讲道理再小的框架没有文档读起来也很头疼QAQ而且注释也不是详细</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Codebooklet 搭建记录</title>
-    <url>/2021/10/24/bloglog/</url>
-    <content><![CDATA[<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/bloglog/</url>
+    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
+<li>修复了博客翻页按钮错误 <a href="https://blog.csdn.net/weixin_45748734/article/details/106042522">参考文章</a></li>
+</ul>
+<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
 <li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
 <li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
 <li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
@@ -59,8 +77,69 @@
       </tags>
   </entry>
   <entry>
+    <title>VS2019无法打开ui文件</title>
+    <url>/2021/10/31/Qt/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ul>
+<li>使用VS2019+Qt5时，无法打开*.ui文件</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><ul>
+<li>暂时不确定，估计有以下两个因素</li>
+</ul>
+<ol>
+<li>与默认打开的Qt Designer版本选取有关，因为我电脑上有2个不同版本的Qt，用于编写项目的Qt版本与我之前用的不同</li>
+<li>与默认打开的Qt Designer的编译器有关，项目使用MSVC2017_64，而之前我一直使用MinGW_32</li>
+</ol>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
+<li>右键ui文件 —&gt; 点击“打开方式” —&gt; “添加”</li>
+<li>选择 Qt目录下MSVC2017_64 中 bin目录下 Qt Designer 添加</li>
+<li>将新添加的打开方式“设为默认值”</li>
+<li><a href="https://blog.csdn.net/qq_43145926/article/details/105004762">参考文章</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>QT</category>
+      </categories>
+      <tags>
+        <tag>QT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++DeBUG记录</title>
+    <url>/2021/10/31/C++/C++DeBUG%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><strong>记录在使用C++时与各种BUG斗智斗勇的血泪史</strong></p>
+<span id="more"></span>
+<h2 id="Error-C2872-‘byte’-ambiguous-symbol"><a href="#Error-C2872-‘byte’-ambiguous-symbol" class="headerlink" title="Error C2872: ‘byte’: ambiguous symbol"></a>Error C2872: ‘byte’: ambiguous symbol</h2><h3 id="BUG产生"><a href="#BUG产生" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
+<li>对使用旧版WindowsSKD编写的代码，使用C++17标准（使用C++14标准时正常）</li>
+</ul>
+<h3 id="BUG原因"><a href="#BUG原因" class="headerlink" title="BUG原因"></a>BUG原因</h3><ul>
+<li>旧版WindowsSKD有定义byte类型，但同时C++17也定义了std::byte类型，造成重复定义</li>
+</ul>
+<h3 id="BUG解决"><a href="#BUG解决" class="headerlink" title="BUG解决"></a>BUG解决</h3><ul>
+<li><p>[Method.1] 添加_HAS_STD_BYTE=0宏</p>
+</li>
+<li><p>[Method.2]使用较低版本的C++标准（本次由于使用别人的框架因此采用该方法）</p>
+</li>
+<li><p><a href="https://blog.csdn.net/caimouse/article/details/106047569">参考文章</a></p>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>We have determined that the feedback applies to another product: Windows &amp; Windows SDK. Thank you and we value your contribution to Developer Community.<br>We are working with the the Windows team to get this addressed in a future update of the SDK. In the meantime, the community comments &amp; workarounds describe the set of options available well. Thank you!<br>I’ll specifically highlight the following two items:<br>Use of the _HAS_STD_BYTE=0 macro by specifying /D_HAS_STD_BYTE=0 at the compiler command line. This effectively disables std::byte support in the STL and should address scenarios where ‘byte’ is not used in code. It should be noted that this macro will eventually be removed after the Windows SDK issues are fixed. That removal can be tracked via the Microsoft/STL GitHub repo at <a href="https://github.com/microsoft/STL/issues/204">https://github.com/microsoft/STL/issues/204</a>.<br>Avoid bringing std::byte into the global namespace (potential by ‘using namesapce std’) and reference the Windows SDK byte using ::byte and the C++ standard version using std::byte.<br>Regards,<br>Daniel Griffing, Visual C++ Compiler Front-End</p>
+</blockquote>
+</blockquote>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VMware虚拟机3种网络模式</title>
-    <url>/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
+    <url>/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
 <ol>
 <li>桥接模式（Bridged）</li>
@@ -129,7 +208,7 @@
   </entry>
   <entry>
     <title>ARP欺骗实验</title>
-    <url>/2021/10/30/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
+    <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
     <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
 <li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
 </ul>
@@ -228,7 +307,7 @@
   </entry>
   <entry>
     <title>《C++17 STL Cookbook》笔记</title>
-    <url>/2021/10/30/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
+    <url>/2021/10/30/C++/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 STL Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
 <span id="more"></span>
 
@@ -309,7 +388,7 @@
   </entry>
   <entry>
     <title>Linux命令笔记</title>
-    <url>/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
+    <url>/2021/10/29/Linux/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
 <li><strong>该笔记仅记录个人使用过的命令，以及用该命令做过什么，不是完整说明文档</strong><span id="more"></span></li>
 </ul>
@@ -568,7 +647,7 @@
   </entry>
   <entry>
     <title>DOS攻击实验LOIC+XAMPP</title>
-    <url>/2021/10/29/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/</url>
+    <url>/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/</url>
     <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
 <li>使用LOIC与XAMPP对虚拟机发起TCP协议拒绝服务攻击（DOS）</li>
 </ul>
@@ -647,7 +726,7 @@
   </entry>
   <entry>
     <title>NexT标签页与分类页无法显示修复</title>
-    <url>/2021/10/28/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
+    <url>/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
     <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
 <li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
 <li>使用hexo new page创建了对应的页面</li>
@@ -670,7 +749,7 @@
   </entry>
   <entry>
     <title>《Linux-Ubuntu从入门到精通》笔记</title>
-    <url>/2021/10/27/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
+    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
 <span id="more"></span>
 
@@ -824,7 +903,7 @@
   </entry>
   <entry>
     <title>JLPT-N2-2016年12月真题笔记</title>
-    <url>/2021/10/25/JLPT-N2-2016%E5%B9%B412%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
+    <url>/2021/10/25/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/JLPT-N2-2016%E5%B9%B412%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
     <content><![CDATA[<ul>
 <li><strong>日语真题笔记系列，该系列的笔记至少会包括词汇部分，笔记会不断完善</strong><span id="more"></span>
 <h2 id="１．語彙（ごい）"><a href="#１．語彙（ごい）" class="headerlink" title="１．語彙（ごい）"></a>１．語彙（ごい）</h2><table>
@@ -1554,7 +1633,7 @@
   </entry>
   <entry>
     <title>NexT打赏按钮修改</title>
-    <url>/2021/10/24/%E6%89%93%E8%B5%8F%E6%8C%89%E9%92%AE%E4%BF%AE%E6%94%B9/</url>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%89%93%E8%B5%8F%E6%8C%89%E9%92%AE%E4%BF%AE%E6%94%B9/</url>
     <content><![CDATA[<p>简介：修改“Reward”功能的默认按钮CSS样式，最终效果和本站类似。（NexT Ver-6.0.0）</p>
 <span id="more"></span>
 <h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><a href="#bottom" >点击跳转到本文末预览效果</a></p>
