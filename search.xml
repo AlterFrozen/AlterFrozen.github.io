@@ -78,7 +78,7 @@
   </entry>
   <entry>
     <title>VS2019无法打开ui文件</title>
-    <url>/2021/10/31/Qt/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
+    <url>/2021/10/31/DeBug/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ul>
 <li>使用VS2019+Qt5时，无法打开*.ui文件</li>
 </ul>
@@ -99,7 +99,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>QT</category>
+        <category>DeBug</category>
       </categories>
       <tags>
         <tag>QT</tag>
@@ -107,7 +107,7 @@
   </entry>
   <entry>
     <title>C++DeBUG记录</title>
-    <url>/2021/10/31/C++/C++DeBUG%E8%AE%B0%E5%BD%95/</url>
+    <url>/2021/10/31/DeBug/C++DeBUG%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p><strong>记录在使用C++时与各种BUG斗智斗勇的血泪史</strong></p>
 <span id="more"></span>
 <h2 id="Error-C2872-‘byte’-ambiguous-symbol"><a href="#Error-C2872-‘byte’-ambiguous-symbol" class="headerlink" title="Error C2872: ‘byte’: ambiguous symbol"></a>Error C2872: ‘byte’: ambiguous symbol</h2><h3 id="BUG产生"><a href="#BUG产生" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
@@ -131,7 +131,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>C++</category>
+        <category>DeBug</category>
       </categories>
       <tags>
         <tag>C++</tag>
