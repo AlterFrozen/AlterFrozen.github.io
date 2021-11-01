@@ -1,82 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Codebooklet公告板</title>
-    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
-    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
-<li>近期由于学习某没有详细文档的框架，可能博客更新要暂缓了</li>
-<li>讲道理再小的框架没有文档读起来也很头疼QAQ而且注释也不是详细</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Codebooklet 搭建记录</title>
-    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/bloglog/</url>
-    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
-<li>修复了博客翻页按钮错误 <a href="https://blog.csdn.net/weixin_45748734/article/details/106042522">参考文章</a></li>
-</ul>
-<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
-<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
-<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
-<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
-<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
-</ul>
-<span id="more"></span>
-
-<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
-<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
-</li>
-<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
-</li>
-<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
-</li>
-<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
-</li>
-<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
-</li>
-<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
-</li>
-<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
-</li>
-<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
-</li>
-<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
-</li>
-<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
-</li>
-</ul>
-<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
-<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VS2019无法打开ui文件</title>
     <url>/2021/10/31/DeBug/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ul>
@@ -138,171 +62,24 @@
       </tags>
   </entry>
   <entry>
-    <title>VMware虚拟机3种网络模式</title>
-    <url>/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
-<ol>
-<li>桥接模式（Bridged）</li>
-<li>网络地址转换模式（NAT）</li>
-<li>主机模式（Host-only）<span id="more"></span></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>模式</th>
-<th>依赖的网络服务</th>
-<th>虚拟网络组成</th>
-<th>访问外部网络的方式</th>
-<th>与宿主机互访方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>桥接模式</td>
-<td>VMnet0（虚拟网桥）</td>
-<td>相当于宿主机局域网内一台独立主机</td>
-<td>虚拟网桥联网</td>
-<td>同一局域网</td>
-</tr>
-<tr>
-<td>NAT模式</td>
-<td>VMnet8（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
-<td>虚拟NAT联网</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
-</tr>
-<tr>
-<td>主机模式</td>
-<td>VMnet1（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机</td>
-<td>通过宿主机转发到虚拟网卡</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
-<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
-</ul>
-<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
-<li>虚拟机相当于局域网中的一台独立主机</li>
-<li>可以独立访问网络中其他主机</li>
-<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
-<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
-</ul>
-<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
-<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
-<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
-<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
-</ul>
-<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
-<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
-<li>TCP/IP配置由VMnet1提供</li>
-<li>可以与宿主机互相通信</li>
-</ul>
-]]></content>
-      <categories>
-        <category>虚拟机</category>
-      </categories>
-      <tags>
-        <tag>虚拟机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ARP欺骗实验</title>
-    <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
-    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
-<li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
+    <title>Codebooklet公告板</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
+    <content><![CDATA[<h2 id="2021-11-1"><a href="#2021-11-1" class="headerlink" title="2021/11/1"></a>2021/11/1</h2><ul>
+<li>这周准备学习C++的Eigen库和LaTeX，周末可以抽时间整理一些笔记</li>
+<li>突然发现博客背景图片加载不了，结果居然是配置里面设置了https结果图床没有启用https</li>
 </ul>
 <span id="more"></span>
 
-<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h3 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h3><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E6%8B%93%E6%89%91.png"></p>
-<h4 id="攻击目标（虚拟机）"><a href="#攻击目标（虚拟机）" class="headerlink" title="攻击目标（虚拟机）"></a>攻击目标（虚拟机）</h4><ul>
-<li>操作系统：Windows10</li>
-</ul>
-<h4 id="通信目标（虚拟机）"><a href="#通信目标（虚拟机）" class="headerlink" title="通信目标（虚拟机）"></a>通信目标（虚拟机）</h4><ul>
-<li>操作系统：CentOS</li>
-</ul>
-<h4 id="攻击者（宿主机）"><a href="#攻击者（宿主机）" class="headerlink" title="攻击者（宿主机）"></a>攻击者（宿主机）</h4><ul>
-<li>操作系统 Kali</li>
-</ul>
-<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="局域网（LAN）中的信息传输过程"><a href="#局域网（LAN）中的信息传输过程" class="headerlink" title="局域网（LAN）中的信息传输过程"></a>局域网（LAN）中的信息传输过程</h3><ul>
-<li>连接在以太网中的两台Terminal之间传输IP分组时，Sender必须先获取Receiver的MAC地址</li>
-<li>每一个Terminal都有ARP缓冲区，用于保存（IP，MAC）的映射关系，如果Receiver在缓存区，则可以直接完成链路帧封装</li>
-<li>如果Sender只有Receiver的IP地址，则需要通过“地址解析过程”获取Receiver的MAC，该过程通过ARP（Address Resolution Protocol）来实现</li>
-</ul>
-<h3 id="ARP地址解析过程"><a href="#ARP地址解析过程" class="headerlink" title="ARP地址解析过程"></a>ARP地址解析过程</h3><ul>
-<li><p>Sender广播（broadcast）ARP请求报文，该报文格式如下</p>
-<table>
-<thead>
-<tr>
-<th align="center">帧校验序列</th>
-<th align="center">数据（请求报文）</th>
-<th align="center">类型</th>
-<th align="center">源MAC地址</th>
-<th align="center">目的MAC地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">FCS</td>
-<td align="center">（IP_A,MAC_A) , (IP_B, ? )</td>
-<td align="center">ARP</td>
-<td align="center">MAC A</td>
-<td align="center">FF-FF-FF-FF-FF-FF</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>在该LAN中的所有Terminals都记录下Sender的IP与MAC，但只有Receiver将自己（IP，MAC）回复给Sender</p>
-</li>
-<li><p>Sender收到回复消息，将其记录在自己的ARP缓存区</p>
-</li>
-</ul>
-<h3 id="ARP欺骗原理"><a href="#ARP欺骗原理" class="headerlink" title="ARP欺骗原理"></a>ARP欺骗原理</h3><ul>
-<li>利用“ARP没有真伪校验”的特点，在ARP请求过程中，Hacker将IP对应的MAC修改为自己的MAC</li>
-</ul>
-<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-按照实验拓扑准备好虚拟机"><a href="#Step-1-按照实验拓扑准备好虚拟机" class="headerlink" title="Step.1 按照实验拓扑准备好虚拟机"></a>Step.1 按照实验拓扑准备好虚拟机</h3><ul>
-<li>使用VMware完成虚拟机配置<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/0.%E5%87%86%E5%A4%87%E8%99%9A%E6%8B%9F%E6%9C%BA.png"></li>
-</ul>
-<h3 id="Step-2-修改虚拟机网络模式为“桥接模式”"><a href="#Step-2-修改虚拟机网络模式为“桥接模式”" class="headerlink" title="Step.2 修改虚拟机网络模式为“桥接模式”"></a>Step.2 修改虚拟机网络模式为“桥接模式”</h3><ul>
-<li><a href="http://www.codebooklet.com/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/#more/">VMware的3种网络模式</a><br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/1.%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.png"></li>
-</ul>
-<h3 id="Step-3-查看3方的网络配置"><a href="#Step-3-查看3方的网络配置" class="headerlink" title="Step.3 查看3方的网络配置"></a>Step.3 查看3方的网络配置</h3><h4 id="攻击目标"><a href="#攻击目标" class="headerlink" title="攻击目标"></a>攻击目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/2.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85.png"></p>
-<h4 id="通信目标"><a href="#通信目标" class="headerlink" title="通信目标"></a>通信目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/3.%E6%B6%88%E6%81%AF%E7%9B%AE%E6%A0%87.png"></p>
-<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/4.%E6%94%BB%E5%87%BB%E6%96%B9.png"></p>
-<h3 id="Step-4-查看当前攻击目标的ARP缓存"><a href="#Step-4-查看当前攻击目标的ARP缓存" class="headerlink" title="Step.4 查看当前攻击目标的ARP缓存"></a>Step.4 查看当前攻击目标的ARP缓存</h3><ul>
-<li>Windows下使用“arp -a”即可，找到通信目标对应的映射<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/5.%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E5%BD%93%E5%89%8DARP.png"></li>
-</ul>
-<h3 id="Step-5-发起攻击"><a href="#Step-5-发起攻击" class="headerlink" title="Step.5 发起攻击"></a>Step.5 发起攻击</h3><ul>
-<li>使用“arpspoof”命令发起攻击</li>
-</ul>
-<p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/6.%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB.png"><br/></p>
-<table>
-<thead>
-<tr>
-<th align="center">使用参数</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-i eth0</td>
-<td align="center">使用 eth0 网卡发起攻击</td>
-</tr>
-<tr>
-<td align="center">-t 10.66.217.60</td>
-<td align="center">攻击目标IP为10.66.217.60</td>
-</tr>
-<tr>
-<td align="center">-r 10.66.198.146</td>
-<td align="center">伪造（IP：10.66.217.60，MAC：Hacker的MAC）的ARP请求</td>
-</tr>
-</tbody></table>
-<h3 id="Step-6-查看攻击目标被攻击后的ARP表"><a href="#Step-6-查看攻击目标被攻击后的ARP表" class="headerlink" title="Step.6 查看攻击目标被攻击后的ARP表"></a>Step.6 查看攻击目标被攻击后的ARP表</h3><ul>
-<li>可以发现IP：10.66.217.60 所对应的MAC已经变成了Hacker的MAC<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/7.%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84ARP%E8%A1%A8.png"></li>
+<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
+<li>近期由于学习某没有详细文档的框架，可能博客更新要暂缓了</li>
+<li>讲道理再小的框架没有文档读起来也很头疼QAQ而且注释也不是详细</li>
 </ul>
 ]]></content>
       <categories>
-        <category>网络安全</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>网络安全</tag>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -384,6 +161,160 @@
       </categories>
       <tags>
         <tag>C++ STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Linux-Ubuntu从入门到精通》笔记</title>
+    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+<span id="more"></span>
+
+<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
+<li>用以存储数据的物理介质</li>
+</ul>
+<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
+<li>对于较大存储容量的介质，需要合理规划分区</li>
+</ul>
+<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
+<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
+</ul>
+<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
+<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
+<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
+<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
+<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
+<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
+</ul>
+<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
+<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
+</ul>
+<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
+<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
+</ul>
+<ol>
+<li>所有目录都是由根目录衍生出来的；</li>
+<li>根目录与系统的开机、修复、还原密切相关；</li>
+</ol>
+<ul>
+<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">主要一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/bin/</td>
+<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
+</tr>
+<tr>
+<td align="center">/boot/</td>
+<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
+</tr>
+<tr>
+<td align="center">/dev/</td>
+<td align="center">设备文件保存位置</td>
+</tr>
+<tr>
+<td align="center">/etc/</td>
+<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
+</tr>
+<tr>
+<td align="center">/home/</td>
+<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
+</tr>
+<tr>
+<td align="center">/lib/</td>
+<td align="center"><strong>系统调用的函数库保存位置</strong></td>
+</tr>
+<tr>
+<td align="center">/media/</td>
+<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
+</tr>
+<tr>
+<td align="center">/mnt/</td>
+<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
+</tr>
+<tr>
+<td align="center">/misc/</td>
+<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
+</tr>
+<tr>
+<td align="center">/opt/</td>
+<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
+</tr>
+<tr>
+<td align="center">/root/</td>
+<td align="center">root 的主目录</td>
+</tr>
+<tr>
+<td align="center">/sbin/</td>
+<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
+</tr>
+<tr>
+<td align="center">/srv/</td>
+<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
+</tr>
+<tr>
+<td align="center">/tmp/</td>
+<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">其他一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/lost+found/</td>
+<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
+</tr>
+<tr>
+<td align="center">/proc/</td>
+<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
+</tr>
+<tr>
+<td align="center">/sys/</td>
+<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
+</tr>
+</tbody></table>
+<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
+<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
+<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
+</ul>
+<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
+<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
+<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
+<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
+</ul>
+<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
+<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
+<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
+</ul>
+<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
+<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
+</li>
+<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
+</li>
+<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+</li>
+<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
+</li>
+</ul>
+ <img src="http://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -646,85 +577,6 @@
       </tags>
   </entry>
   <entry>
-    <title>DOS攻击实验LOIC+XAMPP</title>
-    <url>/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/</url>
-    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
-<li>使用LOIC与XAMPP对虚拟机发起TCP协议拒绝服务攻击（DOS）</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h4 id="被攻击者（虚拟机）"><a href="#被攻击者（虚拟机）" class="headerlink" title="被攻击者（虚拟机）"></a>被攻击者（虚拟机）</h4><ul>
-<li>操作系统：CentOS</li>
-<li>软件：XAMPP for Linux 7.4.25</li>
-<li>动作：使用XAMPP在80端口开启Apache服务</li>
-</ul>
-<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><ul>
-<li>操作系统：Windows10</li>
-<li>软件：LOIC-1.0.8</li>
-<li>动作：使用LOIC向虚拟机发起TCP协议DOS攻击</li>
-</ul>
-<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><ul>
-<li><p>本实验采用<strong>TCP协议DOS攻击</strong>，TCP是“面向连接”的协议，与服务器链接使会<strong>三次握手</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">三次握手</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">① <strong>Client    &gt;  (SYN)   &gt;   Server</strong></td>
-<td align="left">客户端发起请求</td>
-</tr>
-<tr>
-<td align="left">② <strong>Client    &lt;   (SYN+ACK)   &lt;    Server</strong></td>
-<td align="left">服务端创建线程处理请求并等待客户端回复</td>
-</tr>
-<tr>
-<td align="left">③ <strong>Client    &gt;   (ACK)   &gt;    Server</strong></td>
-<td align="left">客户端回复确认</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>如果Client一直没有回复，则Server会不断重新发送请求，这段时间称为”SYN Timeout”通常持续30~120秒（可以在服务器配置中修改）</p>
-</li>
-<li><p>因此如果短时间内服务器接收大量请求，将会耗尽服务器资源无法提供正常服务</p>
-</li>
-</ul>
-<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-被攻击者（虚拟机）环境配置"><a href="#Step-1-被攻击者（虚拟机）环境配置" class="headerlink" title="Step.1 被攻击者（虚拟机）环境配置"></a>Step.1 被攻击者（虚拟机）环境配置</h3><h4 id="1-下载XAMPP"><a href="#1-下载XAMPP" class="headerlink" title="1.下载XAMPP"></a>1.下载XAMPP</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/1.%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E4%B8%8B%E8%BD%BDXAMPP.png"></img></p>
-<h4 id="2-使用”chmod-x”添加可执行权限并以superuser身份启动安装"><a href="#2-使用”chmod-x”添加可执行权限并以superuser身份启动安装" class="headerlink" title="2.使用”chmod +x”添加可执行权限并以superuser身份启动安装"></a>2.使用”chmod +x”添加可执行权限并以superuser身份启动安装</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/2.%E4%BF%AE%E6%94%B9%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E6%9D%83%E9%99%90.png"></img><br><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/4.%E5%88%87%E6%8D%A2%E8%87%B3root%E5%90%AF%E5%8A%A8.png"></img></p>
-<h4 id="3-使用XAMPP在80端口开启Apache服务"><a href="#3-使用XAMPP在80端口开启Apache服务" class="headerlink" title="3.使用XAMPP在80端口开启Apache服务"></a>3.使用XAMPP在80端口开启Apache服务</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/5.%E5%BC%80%E5%90%AFApache%E6%9C%8D%E5%8A%A1%E5%9C%A880%E7%AB%AF%E5%8F%A3.png"></img></p>
-<h4 id="4-使用”systemctl-stop-firewalld-service”关闭防火墙"><a href="#4-使用”systemctl-stop-firewalld-service”关闭防火墙" class="headerlink" title="4.使用”systemctl stop firewalld.service”关闭防火墙"></a>4.使用”systemctl stop firewalld.service”关闭防火墙</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/12.%E5%85%B3%E9%97%AD%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%98%B2%E7%81%AB%E5%A2%99.png"></img></p>
-<h4 id="5-使用”ifconfig”查看虚拟机的IP并记录"><a href="#5-使用”ifconfig”查看虚拟机的IP并记录" class="headerlink" title="5.使用”ifconfig”查看虚拟机的IP并记录"></a>5.使用”ifconfig”查看虚拟机的IP并记录</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/6.%E6%9F%A5%E7%9C%8BTarget%E7%9A%84IP.png"></img></p>
-<h3 id="Step-2-攻击者环境配置"><a href="#Step-2-攻击者环境配置" class="headerlink" title="Step.2 攻击者环境配置"></a>Step.2 攻击者环境配置</h3><h4 id="1-下载LOIC"><a href="#1-下载LOIC" class="headerlink" title="1.下载LOIC"></a>1.下载LOIC</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/7.%E4%B8%8B%E8%BD%BDLOIC.png"></img></p>
-<ul>
-<li>可以在其他资源站点下载该软件，此处图片只为效果展示</li>
-</ul>
-<h4 id="2-配置攻击信息"><a href="#2-配置攻击信息" class="headerlink" title="2.配置攻击信息"></a>2.配置攻击信息</h4><ul>
-<li>IP：虚拟机的IP</li>
-<li>Port：80</li>
-<li>Method：TCP</li>
-<li>Thread和Speed可以自行调整，Thread不能过大<br><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/8.%E9%85%8D%E7%BD%AE%E6%94%BB%E5%87%BB%E4%BF%A1%E6%81%AF.png"></img></li>
-</ul>
-<h3 id="Step-3-监测虚拟机系统资源并发起攻击"><a href="#Step-3-监测虚拟机系统资源并发起攻击" class="headerlink" title="Step.3 监测虚拟机系统资源并发起攻击"></a>Step.3 监测虚拟机系统资源并发起攻击</h3><h4 id="1-虚拟机使用”vmstat”监测系统资源"><a href="#1-虚拟机使用”vmstat”监测系统资源" class="headerlink" title="1.虚拟机使用”vmstat”监测系统资源"></a>1.虚拟机使用”vmstat”监测系统资源</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/11.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E7%8A%B6%E6%80%81.png"></img></p>
-<h4 id="2-攻击方点击Lock-on并发起攻击"><a href="#2-攻击方点击Lock-on并发起攻击" class="headerlink" title="2. 攻击方点击Lock on并发起攻击"></a>2. 攻击方点击Lock on并发起攻击</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/10.%E7%82%B9%E5%87%BB%E9%94%81%E5%AE%9A%E7%9B%AE%E6%A0%87%E5%B9%B6%E5%BC%80%E5%A7%8B%E6%94%BB%E5%87%BB.png"></img></p>
-<h4 id="3-观察虚拟机系统资源状态变化情况"><a href="#3-观察虚拟机系统资源状态变化情况" class="headerlink" title="3.观察虚拟机系统资源状态变化情况"></a>3.观察虚拟机系统资源状态变化情况</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/13.%E6%AD%A4%E6%97%B6%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8A%B6%E6%80%81.png"></img></p>
-<ul>
-<li>可以发现CPU开始繁忙，且IO与swap的使用量也上涨到了一个恐怖的数级，System的中断与上下文切换也变得非常频繁，最终结果——宕机 <a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">vmstat命令介绍</a></li>
-</ul>
-<h3 id="TCP协议DOS攻击效果展示"><a href="#TCP协议DOS攻击效果展示" class="headerlink" title="TCP协议DOS攻击效果展示"></a>TCP协议DOS攻击效果展示</h3><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/DOS%E6%94%BB%E5%87%BB%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.gif"></img></p>
-<ul>
-<li>可以看出来被攻击者访问127.0.0.1的速度逐渐下降最后无法访问，甚至宕机</li>
-</ul>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-      </categories>
-      <tags>
-        <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NexT标签页与分类页无法显示修复</title>
     <url>/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
     <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
@@ -748,157 +600,107 @@
       </tags>
   </entry>
   <entry>
-    <title>《Linux-Ubuntu从入门到精通》笔记</title>
-    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+    <title>Codebooklet 搭建记录</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/bloglog/</url>
+    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
+<li>修复了博客翻页按钮错误 <a href="https://blog.csdn.net/weixin_45748734/article/details/106042522">参考文章</a></li>
+</ul>
+<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
+<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
+<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
+<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
+<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
+</ul>
 <span id="more"></span>
 
-<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
-<li>用以存储数据的物理介质</li>
-</ul>
-<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
-<li>对于较大存储容量的介质，需要合理规划分区</li>
-</ul>
-<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
-<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
-</ul>
-<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
-<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
-<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
-<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
-<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
-<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
-</ul>
-<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
-<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
-</ul>
-<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
-<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
-</ul>
-<ol>
-<li>所有目录都是由根目录衍生出来的；</li>
-<li>根目录与系统的开机、修复、还原密切相关；</li>
-</ol>
-<ul>
-<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">主要一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/bin/</td>
-<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
-</tr>
-<tr>
-<td align="center">/boot/</td>
-<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
-</tr>
-<tr>
-<td align="center">/dev/</td>
-<td align="center">设备文件保存位置</td>
-</tr>
-<tr>
-<td align="center">/etc/</td>
-<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
-</tr>
-<tr>
-<td align="center">/home/</td>
-<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
-</tr>
-<tr>
-<td align="center">/lib/</td>
-<td align="center"><strong>系统调用的函数库保存位置</strong></td>
-</tr>
-<tr>
-<td align="center">/media/</td>
-<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
-</tr>
-<tr>
-<td align="center">/mnt/</td>
-<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
-</tr>
-<tr>
-<td align="center">/misc/</td>
-<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
-</tr>
-<tr>
-<td align="center">/opt/</td>
-<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
-</tr>
-<tr>
-<td align="center">/root/</td>
-<td align="center">root 的主目录</td>
-</tr>
-<tr>
-<td align="center">/sbin/</td>
-<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
-</tr>
-<tr>
-<td align="center">/srv/</td>
-<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
-</tr>
-<tr>
-<td align="center">/tmp/</td>
-<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">其他一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/lost+found/</td>
-<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
-</tr>
-<tr>
-<td align="center">/proc/</td>
-<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
-</tr>
-<tr>
-<td align="center">/sys/</td>
-<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
-</tr>
-</tbody></table>
-<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
-<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
-<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
-</ul>
-<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
-<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
-<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
-<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
-</ul>
-<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
-<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
-<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
-</ul>
-<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
-<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
+<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
+<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
 </li>
-<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
+<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
 </li>
-<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
 </li>
-<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
+<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
+</li>
+<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
+</li>
+<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
+</li>
+<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
+</li>
+<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
+</li>
+<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
+</li>
+<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
+</li>
+<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
+</li>
+<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
 </li>
 </ul>
- <img src="http://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
+<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
+<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT打赏按钮修改</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%89%93%E8%B5%8F%E6%8C%89%E9%92%AE%E4%BF%AE%E6%94%B9/</url>
+    <content><![CDATA[<p>简介：修改“Reward”功能的默认按钮CSS样式，最终效果和本站类似。（NexT Ver-6.0.0）</p>
+<span id="more"></span>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><a href="#bottom" >点击跳转到本文末预览效果</a></p>
+<h2 id="Step-1-找到CSS文件"><a href="#Step-1-找到CSS文件" class="headerlink" title="Step.1 找到CSS文件"></a>Step.1 找到CSS文件</h2><ul>
+<li>打开本站目录</li>
+<li>文件路径 /themes/next/source/css/_common/components/post/post-reward.styl</li>
+<li>如果没有找到类似样式表文件，则本文无效</li>
+</ul>
+<h2 id="Step-2-准备新的按钮图片"><a href="#Step-2-准备新的按钮图片" class="headerlink" title="Step.2 准备新的按钮图片"></a>Step.2 准备新的按钮图片</h2><ul>
+<li>需要两张，一张用于正常显示，另一张用于Hover时的显示</li>
+<li>建议尺寸：50*50 pix （参考本站）</li>
+<li>如果图片不是透明的，建议先使用PS先处理一下，并保存为支持透明通道的格式如PNG</li>
+<li>存放图片到路径 /themes/next/source/images 中，也可以在此路径再新建文件夹归类，注意本文方法使用“本地存储图片”也就是说需要使用 相对路径 访问图片，一定要搞清楚目录层次</li>
+</ul>
+<h2 id="Step-3-修改CSS文件"><a href="#Step-3-修改CSS文件" class="headerlink" title="Step.3 修改CSS文件"></a>Step.3 修改CSS文件</h2><ul>
+<li>修改第一步找到的样式表文件中的以下几个属性<br><strong>1. #rewardButton span</strong><ul>
+<li>font-size: 0px; /* 这里是为了让“Reward”文字不显示 */</li>
+<li>width: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
+<li>height: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
+<li>background: url(../../../../images/你的按钮图片路径); </li>
+</ul>
+<strong>2. #rewardButton span:hover</strong><ul>
+<li>background:  url(../../../../images/icons/你的按钮Hover图片路径);</li>
+</ul>
+</li>
+</ul>
+<div id="bottom"></div>
+
+<h2 id="Step-4-本地运行检测"><a href="#Step-4-本地运行检测" class="headerlink" title="Step.4 本地运行检测"></a>Step.4 本地运行检测</h2><ul>
+<li>站点路径打开Terminal ：hexo s</li>
+</ul>
+<p><strong>Ps: 由于作者HTML/CSS水平仅限于了解，如果各位有更好的方法可以在评论区分享，谢谢！</strong></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -1632,46 +1434,250 @@
       </tags>
   </entry>
   <entry>
-    <title>NexT打赏按钮修改</title>
-    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%89%93%E8%B5%8F%E6%8C%89%E9%92%AE%E4%BF%AE%E6%94%B9/</url>
-    <content><![CDATA[<p>简介：修改“Reward”功能的默认按钮CSS样式，最终效果和本站类似。（NexT Ver-6.0.0）</p>
-<span id="more"></span>
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><a href="#bottom" >点击跳转到本文末预览效果</a></p>
-<h2 id="Step-1-找到CSS文件"><a href="#Step-1-找到CSS文件" class="headerlink" title="Step.1 找到CSS文件"></a>Step.1 找到CSS文件</h2><ul>
-<li>打开本站目录</li>
-<li>文件路径 /themes/next/source/css/_common/components/post/post-reward.styl</li>
-<li>如果没有找到类似样式表文件，则本文无效</li>
+    <title>VMware虚拟机3种网络模式</title>
+    <url>/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
+<ol>
+<li>桥接模式（Bridged）</li>
+<li>网络地址转换模式（NAT）</li>
+<li>主机模式（Host-only）<span id="more"></span></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>依赖的网络服务</th>
+<th>虚拟网络组成</th>
+<th>访问外部网络的方式</th>
+<th>与宿主机互访方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>桥接模式</td>
+<td>VMnet0（虚拟网桥）</td>
+<td>相当于宿主机局域网内一台独立主机</td>
+<td>虚拟网桥联网</td>
+<td>同一局域网</td>
+</tr>
+<tr>
+<td>NAT模式</td>
+<td>VMnet8（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
+<td>虚拟NAT联网</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+<tr>
+<td>主机模式</td>
+<td>VMnet1（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机</td>
+<td>通过宿主机转发到虚拟网卡</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
+<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
 </ul>
-<h2 id="Step-2-准备新的按钮图片"><a href="#Step-2-准备新的按钮图片" class="headerlink" title="Step.2 准备新的按钮图片"></a>Step.2 准备新的按钮图片</h2><ul>
-<li>需要两张，一张用于正常显示，另一张用于Hover时的显示</li>
-<li>建议尺寸：50*50 pix （参考本站）</li>
-<li>如果图片不是透明的，建议先使用PS先处理一下，并保存为支持透明通道的格式如PNG</li>
-<li>存放图片到路径 /themes/next/source/images 中，也可以在此路径再新建文件夹归类，注意本文方法使用“本地存储图片”也就是说需要使用 相对路径 访问图片，一定要搞清楚目录层次</li>
+<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
+<li>虚拟机相当于局域网中的一台独立主机</li>
+<li>可以独立访问网络中其他主机</li>
+<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
+<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
 </ul>
-<h2 id="Step-3-修改CSS文件"><a href="#Step-3-修改CSS文件" class="headerlink" title="Step.3 修改CSS文件"></a>Step.3 修改CSS文件</h2><ul>
-<li>修改第一步找到的样式表文件中的以下几个属性<br><strong>1. #rewardButton span</strong><ul>
-<li>font-size: 0px; /* 这里是为了让“Reward”文字不显示 */</li>
-<li>width: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
-<li>height: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
-<li>background: url(../../../../images/你的按钮图片路径); </li>
+<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
+<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
+<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
+<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
 </ul>
-<strong>2. #rewardButton span:hover</strong><ul>
-<li>background:  url(../../../../images/icons/你的按钮Hover图片路径);</li>
+<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
+<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
+<li>TCP/IP配置由VMnet1提供</li>
+<li>可以与宿主机互相通信</li>
 </ul>
-</li>
-</ul>
-<div id="bottom"></div>
-
-<h2 id="Step-4-本地运行检测"><a href="#Step-4-本地运行检测" class="headerlink" title="Step.4 本地运行检测"></a>Step.4 本地运行检测</h2><ul>
-<li>站点路径打开Terminal ：hexo s</li>
-</ul>
-<p><strong>Ps: 由于作者HTML/CSS水平仅限于了解，如果各位有更好的方法可以在评论区分享，谢谢！</strong></p>
 ]]></content>
       <categories>
-        <category>博客搭建</category>
+        <category>虚拟机</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ARP欺骗实验</title>
+    <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+<li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
+</ul>
+<span id="more"></span>
+
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h3 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h3><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E6%8B%93%E6%89%91.png"></p>
+<h4 id="攻击目标（虚拟机）"><a href="#攻击目标（虚拟机）" class="headerlink" title="攻击目标（虚拟机）"></a>攻击目标（虚拟机）</h4><ul>
+<li>操作系统：Windows10</li>
+</ul>
+<h4 id="通信目标（虚拟机）"><a href="#通信目标（虚拟机）" class="headerlink" title="通信目标（虚拟机）"></a>通信目标（虚拟机）</h4><ul>
+<li>操作系统：CentOS</li>
+</ul>
+<h4 id="攻击者（宿主机）"><a href="#攻击者（宿主机）" class="headerlink" title="攻击者（宿主机）"></a>攻击者（宿主机）</h4><ul>
+<li>操作系统 Kali</li>
+</ul>
+<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="局域网（LAN）中的信息传输过程"><a href="#局域网（LAN）中的信息传输过程" class="headerlink" title="局域网（LAN）中的信息传输过程"></a>局域网（LAN）中的信息传输过程</h3><ul>
+<li>连接在以太网中的两台Terminal之间传输IP分组时，Sender必须先获取Receiver的MAC地址</li>
+<li>每一个Terminal都有ARP缓冲区，用于保存（IP，MAC）的映射关系，如果Receiver在缓存区，则可以直接完成链路帧封装</li>
+<li>如果Sender只有Receiver的IP地址，则需要通过“地址解析过程”获取Receiver的MAC，该过程通过ARP（Address Resolution Protocol）来实现</li>
+</ul>
+<h3 id="ARP地址解析过程"><a href="#ARP地址解析过程" class="headerlink" title="ARP地址解析过程"></a>ARP地址解析过程</h3><ul>
+<li><p>Sender广播（broadcast）ARP请求报文，该报文格式如下</p>
+<table>
+<thead>
+<tr>
+<th align="center">帧校验序列</th>
+<th align="center">数据（请求报文）</th>
+<th align="center">类型</th>
+<th align="center">源MAC地址</th>
+<th align="center">目的MAC地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FCS</td>
+<td align="center">（IP_A,MAC_A) , (IP_B, ? )</td>
+<td align="center">ARP</td>
+<td align="center">MAC A</td>
+<td align="center">FF-FF-FF-FF-FF-FF</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>在该LAN中的所有Terminals都记录下Sender的IP与MAC，但只有Receiver将自己（IP，MAC）回复给Sender</p>
+</li>
+<li><p>Sender收到回复消息，将其记录在自己的ARP缓存区</p>
+</li>
+</ul>
+<h3 id="ARP欺骗原理"><a href="#ARP欺骗原理" class="headerlink" title="ARP欺骗原理"></a>ARP欺骗原理</h3><ul>
+<li>利用“ARP没有真伪校验”的特点，在ARP请求过程中，Hacker将IP对应的MAC修改为自己的MAC</li>
+</ul>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-按照实验拓扑准备好虚拟机"><a href="#Step-1-按照实验拓扑准备好虚拟机" class="headerlink" title="Step.1 按照实验拓扑准备好虚拟机"></a>Step.1 按照实验拓扑准备好虚拟机</h3><ul>
+<li>使用VMware完成虚拟机配置<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/0.%E5%87%86%E5%A4%87%E8%99%9A%E6%8B%9F%E6%9C%BA.png"></li>
+</ul>
+<h3 id="Step-2-修改虚拟机网络模式为“桥接模式”"><a href="#Step-2-修改虚拟机网络模式为“桥接模式”" class="headerlink" title="Step.2 修改虚拟机网络模式为“桥接模式”"></a>Step.2 修改虚拟机网络模式为“桥接模式”</h3><ul>
+<li><a href="http://www.codebooklet.com/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/#more/">VMware的3种网络模式</a><br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/1.%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.png"></li>
+</ul>
+<h3 id="Step-3-查看3方的网络配置"><a href="#Step-3-查看3方的网络配置" class="headerlink" title="Step.3 查看3方的网络配置"></a>Step.3 查看3方的网络配置</h3><h4 id="攻击目标"><a href="#攻击目标" class="headerlink" title="攻击目标"></a>攻击目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/2.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85.png"></p>
+<h4 id="通信目标"><a href="#通信目标" class="headerlink" title="通信目标"></a>通信目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/3.%E6%B6%88%E6%81%AF%E7%9B%AE%E6%A0%87.png"></p>
+<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/4.%E6%94%BB%E5%87%BB%E6%96%B9.png"></p>
+<h3 id="Step-4-查看当前攻击目标的ARP缓存"><a href="#Step-4-查看当前攻击目标的ARP缓存" class="headerlink" title="Step.4 查看当前攻击目标的ARP缓存"></a>Step.4 查看当前攻击目标的ARP缓存</h3><ul>
+<li>Windows下使用“arp -a”即可，找到通信目标对应的映射<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/5.%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E5%BD%93%E5%89%8DARP.png"></li>
+</ul>
+<h3 id="Step-5-发起攻击"><a href="#Step-5-发起攻击" class="headerlink" title="Step.5 发起攻击"></a>Step.5 发起攻击</h3><ul>
+<li>使用“arpspoof”命令发起攻击</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/6.%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB.png"><br/></p>
+<table>
+<thead>
+<tr>
+<th align="center">使用参数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-i eth0</td>
+<td align="center">使用 eth0 网卡发起攻击</td>
+</tr>
+<tr>
+<td align="center">-t 10.66.217.60</td>
+<td align="center">攻击目标IP为10.66.217.60</td>
+</tr>
+<tr>
+<td align="center">-r 10.66.198.146</td>
+<td align="center">伪造（IP：10.66.217.60，MAC：Hacker的MAC）的ARP请求</td>
+</tr>
+</tbody></table>
+<h3 id="Step-6-查看攻击目标被攻击后的ARP表"><a href="#Step-6-查看攻击目标被攻击后的ARP表" class="headerlink" title="Step.6 查看攻击目标被攻击后的ARP表"></a>Step.6 查看攻击目标被攻击后的ARP表</h3><ul>
+<li>可以发现IP：10.66.217.60 所对应的MAC已经变成了Hacker的MAC<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/7.%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84ARP%E8%A1%A8.png"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DOS攻击实验LOIC+XAMPP</title>
+    <url>/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/</url>
+    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+<li>使用LOIC与XAMPP对虚拟机发起TCP协议拒绝服务攻击（DOS）</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h4 id="被攻击者（虚拟机）"><a href="#被攻击者（虚拟机）" class="headerlink" title="被攻击者（虚拟机）"></a>被攻击者（虚拟机）</h4><ul>
+<li>操作系统：CentOS</li>
+<li>软件：XAMPP for Linux 7.4.25</li>
+<li>动作：使用XAMPP在80端口开启Apache服务</li>
+</ul>
+<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><ul>
+<li>操作系统：Windows10</li>
+<li>软件：LOIC-1.0.8</li>
+<li>动作：使用LOIC向虚拟机发起TCP协议DOS攻击</li>
+</ul>
+<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><ul>
+<li><p>本实验采用<strong>TCP协议DOS攻击</strong>，TCP是“面向连接”的协议，与服务器链接使会<strong>三次握手</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">三次握手</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">① <strong>Client    &gt;  (SYN)   &gt;   Server</strong></td>
+<td align="left">客户端发起请求</td>
+</tr>
+<tr>
+<td align="left">② <strong>Client    &lt;   (SYN+ACK)   &lt;    Server</strong></td>
+<td align="left">服务端创建线程处理请求并等待客户端回复</td>
+</tr>
+<tr>
+<td align="left">③ <strong>Client    &gt;   (ACK)   &gt;    Server</strong></td>
+<td align="left">客户端回复确认</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>如果Client一直没有回复，则Server会不断重新发送请求，这段时间称为”SYN Timeout”通常持续30~120秒（可以在服务器配置中修改）</p>
+</li>
+<li><p>因此如果短时间内服务器接收大量请求，将会耗尽服务器资源无法提供正常服务</p>
+</li>
+</ul>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-被攻击者（虚拟机）环境配置"><a href="#Step-1-被攻击者（虚拟机）环境配置" class="headerlink" title="Step.1 被攻击者（虚拟机）环境配置"></a>Step.1 被攻击者（虚拟机）环境配置</h3><h4 id="1-下载XAMPP"><a href="#1-下载XAMPP" class="headerlink" title="1.下载XAMPP"></a>1.下载XAMPP</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/1.%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E4%B8%8B%E8%BD%BDXAMPP.png"></img></p>
+<h4 id="2-使用”chmod-x”添加可执行权限并以superuser身份启动安装"><a href="#2-使用”chmod-x”添加可执行权限并以superuser身份启动安装" class="headerlink" title="2.使用”chmod +x”添加可执行权限并以superuser身份启动安装"></a>2.使用”chmod +x”添加可执行权限并以superuser身份启动安装</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/2.%E4%BF%AE%E6%94%B9%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E6%9D%83%E9%99%90.png"></img><br><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/4.%E5%88%87%E6%8D%A2%E8%87%B3root%E5%90%AF%E5%8A%A8.png"></img></p>
+<h4 id="3-使用XAMPP在80端口开启Apache服务"><a href="#3-使用XAMPP在80端口开启Apache服务" class="headerlink" title="3.使用XAMPP在80端口开启Apache服务"></a>3.使用XAMPP在80端口开启Apache服务</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/5.%E5%BC%80%E5%90%AFApache%E6%9C%8D%E5%8A%A1%E5%9C%A880%E7%AB%AF%E5%8F%A3.png"></img></p>
+<h4 id="4-使用”systemctl-stop-firewalld-service”关闭防火墙"><a href="#4-使用”systemctl-stop-firewalld-service”关闭防火墙" class="headerlink" title="4.使用”systemctl stop firewalld.service”关闭防火墙"></a>4.使用”systemctl stop firewalld.service”关闭防火墙</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/12.%E5%85%B3%E9%97%AD%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%98%B2%E7%81%AB%E5%A2%99.png"></img></p>
+<h4 id="5-使用”ifconfig”查看虚拟机的IP并记录"><a href="#5-使用”ifconfig”查看虚拟机的IP并记录" class="headerlink" title="5.使用”ifconfig”查看虚拟机的IP并记录"></a>5.使用”ifconfig”查看虚拟机的IP并记录</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/6.%E6%9F%A5%E7%9C%8BTarget%E7%9A%84IP.png"></img></p>
+<h3 id="Step-2-攻击者环境配置"><a href="#Step-2-攻击者环境配置" class="headerlink" title="Step.2 攻击者环境配置"></a>Step.2 攻击者环境配置</h3><h4 id="1-下载LOIC"><a href="#1-下载LOIC" class="headerlink" title="1.下载LOIC"></a>1.下载LOIC</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/7.%E4%B8%8B%E8%BD%BDLOIC.png"></img></p>
+<ul>
+<li>可以在其他资源站点下载该软件，此处图片只为效果展示</li>
+</ul>
+<h4 id="2-配置攻击信息"><a href="#2-配置攻击信息" class="headerlink" title="2.配置攻击信息"></a>2.配置攻击信息</h4><ul>
+<li>IP：虚拟机的IP</li>
+<li>Port：80</li>
+<li>Method：TCP</li>
+<li>Thread和Speed可以自行调整，Thread不能过大<br><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/8.%E9%85%8D%E7%BD%AE%E6%94%BB%E5%87%BB%E4%BF%A1%E6%81%AF.png"></img></li>
+</ul>
+<h3 id="Step-3-监测虚拟机系统资源并发起攻击"><a href="#Step-3-监测虚拟机系统资源并发起攻击" class="headerlink" title="Step.3 监测虚拟机系统资源并发起攻击"></a>Step.3 监测虚拟机系统资源并发起攻击</h3><h4 id="1-虚拟机使用”vmstat”监测系统资源"><a href="#1-虚拟机使用”vmstat”监测系统资源" class="headerlink" title="1.虚拟机使用”vmstat”监测系统资源"></a>1.虚拟机使用”vmstat”监测系统资源</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/11.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E7%8A%B6%E6%80%81.png"></img></p>
+<h4 id="2-攻击方点击Lock-on并发起攻击"><a href="#2-攻击方点击Lock-on并发起攻击" class="headerlink" title="2. 攻击方点击Lock on并发起攻击"></a>2. 攻击方点击Lock on并发起攻击</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/10.%E7%82%B9%E5%87%BB%E9%94%81%E5%AE%9A%E7%9B%AE%E6%A0%87%E5%B9%B6%E5%BC%80%E5%A7%8B%E6%94%BB%E5%87%BB.png"></img></p>
+<h4 id="3-观察虚拟机系统资源状态变化情况"><a href="#3-观察虚拟机系统资源状态变化情况" class="headerlink" title="3.观察虚拟机系统资源状态变化情况"></a>3.观察虚拟机系统资源状态变化情况</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/13.%E6%AD%A4%E6%97%B6%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8A%B6%E6%80%81.png"></img></p>
+<ul>
+<li>可以发现CPU开始繁忙，且IO与swap的使用量也上涨到了一个恐怖的数级，System的中断与上下文切换也变得非常频繁，最终结果——宕机 <a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">vmstat命令介绍</a></li>
+</ul>
+<h3 id="TCP协议DOS攻击效果展示"><a href="#TCP协议DOS攻击效果展示" class="headerlink" title="TCP协议DOS攻击效果展示"></a>TCP协议DOS攻击效果展示</h3><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/DOS%E6%94%BB%E5%87%BB%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.gif"></img></p>
+<ul>
+<li>可以看出来被攻击者访问127.0.0.1的速度逐渐下降最后无法访问，甚至宕机</li>
+</ul>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
       </tags>
   </entry>
 </search>
