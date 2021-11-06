@@ -84,13 +84,11 @@
 
 <meta name="description" content="我的学习笔记">
 <meta property="og:type" content="website">
-<meta property="og:title" content="有感兴趣的内容吗？">
-<meta property="og:url" content="http://codebooklet.com/categories/index.html">
+<meta property="og:title" content="Codebooklet">
+<meta property="og:url" content="http://codebooklet.com/archives/index.html">
 <meta property="og:site_name" content="Codebooklet">
 <meta property="og:description" content="我的学习笔记">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-10-24T05:33:37.000Z">
-<meta property="article:modified_time" content="2021-10-28T12:00:37.866Z">
 <meta property="article:author" content="Frozen">
 <meta property="article:tag" content="Frozen,Blog,博客">
 <meta name="twitter:card" content="summary">
@@ -125,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://codebooklet.com/categories/"/>
+  <link rel="canonical" href="http://codebooklet.com/archives/"/>
 
 
 
@@ -345,7 +343,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-10-29T18:08:13+08:00">2021-10-29</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-11-06T16:06:08+08:00">2021-11-06</time>
             
           </span>
 
@@ -414,7 +412,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">6.1k</span>
+                <span title="字数统计">10k</span>
               
 
               
@@ -428,7 +426,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 mins.</span>
+                <span title="阅读时长">10 mins.</span>
               
             </div>
           
@@ -505,7 +503,7 @@
 </tr>
 <tr>
 <td align="center">L</td>
-<td align="center"></td>
+<td align="center"><a href="#ls">ls</a></td>
 </tr>
 <tr>
 <td align="center">M</td>
@@ -533,7 +531,7 @@
 </tr>
 <tr>
 <td align="center">S</td>
-<td align="center"></td>
+<td align="center"><a href="#stat">stat</a></td>
 </tr>
 <tr>
 <td align="center">T</td>
@@ -564,13 +562,53 @@
 <td align="center"></td>
 </tr>
 </tbody></table>
+ <div id="stat"><font size=20,font-weight:bold>stat</font></div>
+
+<ul>
+<li>使用“stat”命令用于显示文件 inode 内容，格式 stat [目录]</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># stat dir</span></span><br><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+
+ <div id="ls"><font size=20,font-weight:bold>ls</font></div>
+
+<ul>
+<li>使用”ls”命令用于显示<strong>指定工作目录</strong>下的内容，格式 ls [参数] [指定目录]</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">常用参数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-a</td>
+<td align="center">显示指定目录下所有文件，包括隐藏文件</td>
+</tr>
+<tr>
+<td align="center">-i</td>
+<td align="center">显示指定目录下的</td>
+</tr>
+<tr>
+<td align="center">-l</td>
+<td align="center">显示文件类型、权限、所有者、文件大小等详细信息</td>
+</tr>
+<tr>
+<td align="center">-R</td>
+<td align="center">若指定目录下有其他子目录，则将子目录中内容也显示</td>
+</tr>
+<tr>
+<td align="center">-t</td>
+<td align="center">将指定目录下的文件以“创建时间”先后顺序显示</td>
+</tr>
+</tbody></table>
  <div id="vmstat"><font size=20,font-weight:bold>vmstat</font></div>
 
 <ul>
 <li>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</li>
 <li>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</li>
 </ul>
- <img src="http://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -884,7 +922,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -971,7 +1009,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">20k</span>
   
 
   
@@ -980,7 +1018,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读次数">15 mins.</span>
+    <span title="站点总阅读次数">20 mins.</span>
   
 </div>
 
