@@ -88,7 +88,7 @@
   </entry>
   <entry>
     <title>『Eigen』 GettingStart（入门篇）</title>
-    <url>/2021/11/07/C++/%5BEigen%5DGettingStart/</url>
+    <url>/2021/11/07/C++/Eigen-GettingStart/</url>
     <content><![CDATA[<ul>
 <li>本篇文章主要介绍了Eigen库最基本的知识和使用方法</li>
 <li>参考资料：<a href="https://eigen.tuxfamily.org/dox/GettingStarted.html">Eigen官方文档</a></li>
