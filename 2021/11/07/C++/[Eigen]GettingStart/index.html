@@ -131,7 +131,7 @@
 
 
 
-  <title>归档 | Codebooklet</title>
+  <title>『Eigen』 GettingStart（入门篇） | Codebooklet</title>
   
 
 
@@ -150,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,411 +288,350 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://codebooklet.com/2021/11/07/C++/%5BEigen%5DGettingStart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar/Frozen.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebooklet">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">『Eigen』 GettingStart（入门篇）</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-11-07T20:47:59+08:00">2021-11-07</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-11-07T22:02:27+08:00">2021-11-07</time>
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 18 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/11/07/C++/%5BEigen%5DGettingStart/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/11/07/C++/%5BEigen%5DGettingStart/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/11/07/C++/%5BEigen%5DGettingStart/" class="leancloud_visitors" data-flag-title="『Eigen』 GettingStart（入门篇）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">10k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <ul>
+<li>本篇文章主要介绍了Eigen库最基本的知识和使用方法</li>
+<li>参考资料：<a target="_blank" rel="noopener" href="https://eigen.tuxfamily.org/dox/GettingStarted.html">Eigen官方文档</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
+    1 2<br/>
+    3 1<br/>
+    class Eigen::Matrix<double,-1,-1,0,-1,-1>
+</details>
+
+<h2 id="对第一个程序的解释（Explanation-of-the-first-program）"><a href="#对第一个程序的解释（Explanation-of-the-first-program）" class="headerlink" title="对第一个程序的解释（Explanation of the first program）"></a>对第一个程序的解释（Explanation of the first program）</h2><ul>
+<li>Eigen定义了非常多的类型，但<strong>通常使用 MatrixXd 就足够了</strong>，X代表矩阵尺寸是任意的，d代表数据是double类型的</li>
+<li>Eigen/Dense在namespace Eigen中定义了MatrixXd的所有成员函数以及相关的数据类型</li>
+</ul>
+<p><strong>▽  以下为来自官方文档的相关信息</strong></p>
+<ul>
+<li> <a target="_blank" rel="noopener" href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Types">Eigen提供的数据类型</a></li>
+<li><a target="_blank" rel="noopener" href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Headers">Eigen的头文件表</a></li>
+<li><a target="_blank" rel="noopener" href="https://eigen.tuxfamily.org/dox/group__TutorialAdvancedInitialization.html">Eigen Comma Initializer</a></li>
+</ul>
+<h2 id="矩阵与向量（Matrices-and-Vectors）"><a href="#矩阵与向量（Matrices-and-Vectors）" class="headerlink" title="矩阵与向量（Matrices and Vectors）"></a>矩阵与向量（Matrices and Vectors）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at run time) 使用MatrixXd时，矩阵尺寸在运行时确定</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    MatrixXd matX = MatrixXd::<span class="built_in">Random</span>(<span class="number">3</span>, <span class="number">3</span>);<span class="comment">//默认随机范围[-1,1]</span></span><br><span class="line">    matX = (matX + MatrixXd::<span class="built_in">Constant</span>(<span class="number">3</span>, <span class="number">3</span>, <span class="number">1.2</span>)) * <span class="number">50</span>;<span class="comment">//线性映射将范围映射到[10,110]</span></span><br><span class="line">    <span class="comment">//MatrixXd::Constant(row, col, value)会创建一个所有元素是value的矩阵</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX =&quot;</span> &lt;&lt; endl &lt;&lt; matX &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at compile time) 使用固定尺寸的矩阵，会在编译时就确定大小</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    Matrix3d matFix = Matrix3d::<span class="built_in">Random</span>();</span><br><span class="line">    matFix = (matFix + Matrix3d::<span class="built_in">Constant</span>(<span class="number">1.2</span>)) * <span class="number">50</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatFix =&quot;</span> &lt;&lt; endl &lt;&lt; matFix &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Vectors 可以使用VectorXd创建一个任意维度的向量</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    VectorXd vec&#123; <span class="number">3</span> &#125;;<span class="comment">//设置维度为3</span></span><br><span class="line">    vec &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>;</span><br><span class="line">    cout &lt;&lt; vec &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX * vec = &quot;</span> &lt;&lt; endl &lt;&lt; matX * vec &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
+    10.1251 90.8741 45.0291<br/>
+    66.3585 68.5009 99.5962<br/>
+    29.3304 57.9873  92.284<br/>
+    1<br/>
+    2<br/>
+    3<br/>
+    MatX * vec =<br/>
+    326.961<br/>
+    502.149<br/>
+    422.157<br/>
+    MatFix =<br/>
+    84.6605 81.0501 11.4985<br/>
+    27.4108 61.3535 19.1403<br/>
+    95.8943 40.3995 46.4452<br/>
+</details>
+
+<h2 id="使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）"><a href="#使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）" class="headerlink" title="使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）"></a>使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）</h2><ul>
+<li><strong>编译器可以更快映射</strong>，因为已知尺寸<blockquote>
+<blockquote>
+<p> The compiler emits better (faster) code because it knows the size of the matrices and vectors. </p>
+</blockquote>
+</blockquote>
+</li>
+<li>在编译时，具体的尺寸可以<strong>更容易检测出一些小错误</strong><blockquote>
+<blockquote>
+<p> Specifying the size in the type also allows for more rigorous checking at compile-time.</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>一个好的习惯：在使用小于4*4尺寸的矩阵或向量时，使用固定大小的矩阵和向量</strong><blockquote>
+<blockquote>
+<p> A rule of thumb is to use fixed-size matrices for size 4-by-4 and smaller.</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>投币支持~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/QRcodes/WechatPayQRcode.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/QRcodes/alipayQRcode.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Frozen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://codebooklet.com/2021/11/07/C++/[Eigen]GettingStart/" title="『Eigen』 GettingStart（入门篇）">http://codebooklet.com/2021/11/07/C++/[Eigen]GettingStart/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2021">2021</h1>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/31/DeBug/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/" itemprop="url">
-              
-                <span itemprop="name">VS2019无法打开ui文件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-31T20:18:41+08:00"
-              content="2021-10-31" >
-          10-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/11/07/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6%E3%80%8B/" rel="next" title="《这才是心理学》">
+                <i class="fa fa-chevron-left"></i> 《这才是心理学》
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/31/DeBug/C++DeBUG%E8%AE%B0%E5%BD%95/" itemprop="url">
-              
-                <span itemprop="name">C++DeBUG记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-31T19:33:22+08:00"
-              content="2021-10-31" >
-          10-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/" itemprop="url">
-              
-                <span itemprop="name">VMware虚拟机3种网络模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-30T14:22:17+08:00"
-              content="2021-10-30" >
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/" itemprop="url">
-              
-                <span itemprop="name">ARP欺骗实验</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-30T14:14:58+08:00"
-              content="2021-10-30" >
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/30/C++/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/" itemprop="url">
-              
-                <span itemprop="name">《C++17 STL Cookbook》笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-30T09:46:11+08:00"
-              content="2021-10-30" >
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/29/Linux/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/" itemprop="url">
-              
-                <span itemprop="name">Linux命令笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-29T17:50:56+08:00"
-              content="2021-10-29" >
-          10-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/" itemprop="url">
-              
-                <span itemprop="name">DOS攻击实验LOIC+XAMPP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-29T11:58:39+08:00"
-              content="2021-10-29" >
-          10-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/" itemprop="url">
-              
-                <span itemprop="name">NexT标签页与分类页无法显示修复</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-28T20:02:15+08:00"
-              content="2021-10-28" >
-          10-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/" itemprop="url">
-              
-                <span itemprop="name">《Linux-Ubuntu从入门到精通》笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-27T15:08:23+08:00"
-              content="2021-10-27" >
-          10-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/10/25/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/JLPT-N2-2016%E5%B9%B412%E6%9C%88%E7%9C%9F%E9%A2%98/" itemprop="url">
-              
-                <span itemprop="name">JLPT-N2-2016年12月真题笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-10-25T22:15:15+08:00"
-              content="2021-10-25" >
-          10-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2021/10/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/10/page/2/">→</a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -700,6 +639,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -720,8 +666,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -785,6 +740,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%88-A-simple-first-program%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">一个简单的例子（ A simple first program）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A7%A3%E9%87%8A%EF%BC%88Explanation-of-the-first-program%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">对第一个程序的解释（Explanation of the first program）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%90%91%E9%87%8F%EF%BC%88Matrices-and-Vectors%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">矩阵与向量（Matrices and Vectors）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E7%9F%A9%E9%98%B5%E5%92%8C%E5%90%91%E9%87%8F%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%A5%BD%E5%A4%84%EF%BC%88Two-advantages-of-Fixed-size-matrices-and-vectors%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -930,6 +901,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
 
   
 
@@ -1458,26 +1433,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
