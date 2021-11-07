@@ -165,13 +165,6 @@
 
   
   <url>
-    <loc>http://codebooklet.com/tags/C-STL/</loc>
-    <lastmod>2021-11-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://codebooklet.com/tags/C/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
@@ -179,7 +172,7 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/Linux/</loc>
+    <loc>http://codebooklet.com/tags/C-STL/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -187,6 +180,13 @@
   
   <url>
     <loc>http://codebooklet.com/tags/QT/</loc>
+    <lastmod>2021-11-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/Linux/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -221,14 +221,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://codebooklet.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <loc>http://codebooklet.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -237,14 +237,14 @@
 
   
   <url>
-    <loc>http://codebooklet.com/categories/C-STL/</loc>
+    <loc>http://codebooklet.com/categories/C/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/C/</loc>
+    <loc>http://codebooklet.com/categories/C-STL/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -293,14 +293,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://codebooklet.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <loc>http://codebooklet.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
