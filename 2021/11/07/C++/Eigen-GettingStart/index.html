@@ -345,7 +345,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-11-07T22:02:27+08:00">2021-11-07</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-11-08T21:00:34+08:00">2021-11-08</time>
             
           </span>
 
@@ -454,7 +454,7 @@
 </ul>
 <span id="more"></span>
 
-<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
     1 2<br/>
@@ -613,6 +613,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/" rel="prev" title="Cmatrix与Shell实现随机屏保">
+                Cmatrix与Shell实现随机屏保 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -695,7 +699,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -782,7 +786,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">27k</span>
+    <span title="站点总字数">28k</span>
   
 
   
@@ -791,7 +795,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读次数">27 mins.</span>
+    <span title="站点总阅读次数">28 mins.</span>
   
 </div>
 

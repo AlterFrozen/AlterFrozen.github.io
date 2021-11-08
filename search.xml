@@ -87,6 +87,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Cmatrix与Shell实现随机屏保</title>
+    <url>/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/</url>
+    <content><![CDATA[<ul>
+<li>使用简单的ShellScript与Cmatrix在Ubuntu系统中实现“<strong>黑客帝国风屏保</strong>”</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://image.codebooklet.com/img_blog/Linux/cmatrix.gif"></p>
+<h2 id="Step1-安装cmatrix"><a href="#Step1-安装cmatrix" class="headerlink" title="Step1. 安装cmatrix"></a>Step1. 安装cmatrix</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get-install cmatrix</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后可以输入命令“cmatrix”测试是否安装成功</li>
+</ul>
+<h2 id="Step2-编写ShellScript"><a href="#Step2-编写ShellScript" class="headerlink" title="Step2. 编写ShellScript"></a>Step2. 编写ShellScript</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ScreenSaver.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">if [ $# == 1 ]</span><br><span class="line">then cmatrix -s -b -C $1 #这里设置可以手动输入颜色</span><br><span class="line">else</span><br><span class="line">        randInt=$RANDOM</span><br><span class="line">        mode=$((randInt % 8))</span><br><span class="line">        if [ $mode == 0 ]</span><br><span class="line">                then cmatrix -s -b -C green</span><br><span class="line">        elif [ $mode == 1 ]</span><br><span class="line">                then cmatrix -s -b -C red</span><br><span class="line">        elif [ $mode == 2 ]</span><br><span class="line">                then cmatrix -s -b -C blue</span><br><span class="line">        elif [ $mode == 3 ]</span><br><span class="line">                then cmatrix -s -b -C white</span><br><span class="line">        elif [ $mode == 4 ]</span><br><span class="line">                then cmatrix -s -b -C yellow</span><br><span class="line">        elif [ $mode == 5 ]</span><br><span class="line">                then cmatrix -s -b -C cyan</span><br><span class="line">        elif [ $mode == 6 ]</span><br><span class="line">                then cmatrix -s -b -C magenta</span><br><span class="line">        else cmatrix -s -b -C black</span><br><span class="line">        fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x ScreenSaver.sh <span class="comment">#设置可执行权限</span></span><br><span class="line">./ScreenSaver.sh <span class="comment">#执行ShellScript</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>可以使用“man cmatrix”查看更多参数，这里只说明使用过的参数</strong></li>
+<li>[ -s ] ：启用 屏保(ScreenSaver) 模式，可以按任意键退出</li>
+<li>[ -b ] ：启用 随机粗体 主要提升视觉效果</li>
+<li>[ -C ]：设置字幕颜色，默认为green</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>『Eigen』 GettingStart（入门篇）</title>
     <url>/2021/11/07/C++/Eigen-GettingStart/</url>
     <content><![CDATA[<ul>
@@ -95,7 +126,7 @@
 </ul>
 <span id="more"></span>
 
-<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
     1 2<br/>
@@ -644,53 +675,197 @@
 <td align="center">完済（かんさい）＜还清＞<br />完治（かんじ）＜痊愈＞</td>
 <td align="center">完全</td>
 </tr>
+<tr>
+<td align="center">豊富</td>
+<td align="center">ほうふ</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">活発</td>
+<td align="center">かっぱつ</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">円満</td>
+<td align="center">えんまん</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">鮮明</td>
+<td align="center">せんめい</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">柔らかい</td>
+<td align="center">やわらかい</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">穏やかな</td>
+<td align="center">おだやかな</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">滑らかな</td>
+<td align="center">なめらかな</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">緩やかな</td>
+<td align="center">ゆるやかな</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">制作</td>
+<td align="center">せいさく</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">保存</td>
+<td align="center">ほぞん</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">作成</td>
+<td align="center">さくせい</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">確保</td>
+<td align="center">かくほ</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">アピール</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">インストール</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">チャージ</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">セット</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">断る</td>
+<td align="center">ことわる</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">疑う</td>
+<td align="center">うたがう</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">悔やむ</td>
+<td align="center">くやむ</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">諦める</td>
+<td align="center">あきらめる</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">契機</td>
+<td align="center">けいき</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">先端</td>
+<td align="center">せんたん</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">始発</td>
+<td align="center">しはつ</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">合図</td>
+<td align="center">あいず</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ぐっすり</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">うろうろ</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ひそひそ</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ばっさり</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">汚れる</td>
+<td align="center">よごれる</td>
+<td align="center">汚れた金を受け取るな</br>汚れた一生</td>
+<td align="center">污染，失去贞操</td>
+</tr>
+<tr>
+<td align="center">汚す</td>
+<td align="center">けがす</td>
+<td align="center">幼児（ようじ）の純真な心を汚す</br>国家の体面を汚す</td>
+<td align="center">玷辱，污染，凌辱</td>
+</tr>
 </tbody></table>
-<pre><code>    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-    |            |                                                              |                                
-</code></pre>
 </li>
 </ul>
 <h2 id="２．单词的正确使用语境"><a href="#２．单词的正确使用语境" class="headerlink" title="２．单词的正确使用语境"></a>２．单词的正确使用语境</h2><ul>
-<li><strong>延長</strong>（えんちょう）:　[他サ]　延长；继续，扩展；全长</li>
+<li><strong>頂上</strong>（ちょうじょう）:　[名]　顶峰，山顶，极点</li>
 </ul>
 <ol>
-<li>悪い天候で列車が運転をやめたため、旅行の出発が三日後に<strong>延期</strong>された</li>
-<li>初めの設計では２階建てだったが、３階建ての家に<strong>増築</strong>することにした</li>
-<li>予定の時間内に結論が出ず、会議が１時間<strong>延長</strong>されることになった</li>
-<li>電車の中で居眠りをして、降りる駅を一駅<strong>乗り過ごす</strong>してしまった</li>
+<li>この星は、夏の夜１２時ごろ、空の<strong>果て</strong>のあたりに見える</li>
+<li>山に登り始めて５時間ぐらいして、ようやく<strong>頂上</strong>に着いた</li>
+<li>この家の２階の部屋は、<strong>屋上</strong>にも窓が付いているので、とても明るい</li>
+<li>本棚がいっぱいになってしまい、本棚の<strong>棚上</strong>にも本を置いている</li>
 </ol>
 <table>
 <thead>
@@ -701,29 +876,29 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">延期</td>
-<td align="center">えんき</td>
-<td align="center">延期，时间拖延</td>
+<td align="center">果て</td>
+<td align="center">はて</td>
+<td align="center">边际，尽头，止境</td>
 </tr>
 <tr>
-<td align="center">増築</td>
-<td align="center">ぞうちく</td>
-<td align="center">增建，扩建</td>
+<td align="center">屋上</td>
+<td align="center">おくじょう</td>
+<td align="center">屋顶上</td>
 </tr>
 <tr>
-<td align="center">乗り過ごす</td>
-<td align="center">のりすごす</td>
-<td align="center">坐过站</td>
+<td align="center">棚上</td>
+<td align="center">たなうえ</td>
+<td align="center">书架的顶上</td>
 </tr>
 </tbody></table>
 <ul>
-<li><strong>錆びる</strong>（さびる）:　[自二]　生锈</li>
+<li><strong>節約</strong>（せつやく）:　[名]　节约,节省</li>
 </ul>
 <ol>
-<li>暑いところに生ものをずっと置いておいたら、<strong>腐って</strong>臭くなった</li>
-<li>昨夜（ゆうべ）は雨が相当降ったらしく、普段はきれいな川の水が<strong>溢れて</strong>濁っている</li>
-<li>鉢（はち）に植えた植物に水をやるのをわすれていたら、花が<strong>萎れる</strong>しまった</li>
-<li>この鉄の棒はずっと家の外に置いてあったので、<strong>錆びて</strong>茶色くなっている</li>
+<li>駅に向かう道路の渋滞を<strong>緩和</strong>するため、道の幅を広げる工事が行われている</li>
+<li>美術館の中は、カビが発生（はっせい）して絵がい傷まないように、温度や湿度を<strong>調節</strong>しています</li>
+<li>試験が近くなってきたので、アルバイトの仕事を少し<strong>減らす</strong>することにした</li>
+<li>私の会社では、紙や郵送費を<strong>節約</strong>するため、資料はすべてメールで送っている</li>
 </ol>
 <table>
 <thead>
@@ -734,39 +909,44 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">腐る</td>
-<td align="center">くさる</td>
-<td align="center">腐败，变质</td>
+<td align="center">緩和</td>
+<td align="center">かんわ</td>
+<td align="center">缓和，缓解</td>
 </tr>
 <tr>
-<td align="center">溢れる</td>
-<td align="center">あふれる</td>
-<td align="center">溢出</td>
+<td align="center">調節</td>
+<td align="center">ちょうせつ</td>
+<td align="center">调节</td>
 </tr>
 <tr>
-<td align="center">萎れる</td>
-<td align="center">しおれる</td>
-<td align="center">枯萎</td>
+<td align="center">減らす</td>
+<td align="center">へらす</td>
+<td align="center">减少</td>
 </tr>
 <tr>
-<td align="center">濁る</td>
-<td align="center">にごる</td>
-<td align="center">浑浊</td>
+<td align="center">カビ</td>
+<td align="center">かび</td>
+<td align="center">霉</td>
 </tr>
 <tr>
-<td align="center">植物</td>
-<td align="center">しょくぶつ</td>
-<td align="center">植物</td>
+<td align="center">湿度</td>
+<td align="center">しつど</td>
+<td align="center">しつど</td>
+</tr>
+<tr>
+<td align="center">傷む</td>
+<td align="center">いたむ</td>
+<td align="center">腐败，损坏</td>
 </tr>
 </tbody></table>
 <ul>
-<li><strong>目上</strong>（めうえ）:　[名]　上司，长辈</li>
+<li><strong>分解</strong>（ぶんかい）:　[名・自他・三类]　拆开，分解<strong>（个人认为是指可以由小部件构成的物体才可用分解）</strong></li>
 </ul>
 <ol>
-<li>勉強会に参加した社員がすべて<strong>目上</strong>だったので、新人の私はとても緊張した</li>
-<li>この店で一番値段が高く<strong>高級</strong>の商品は、店の奥にある棚に並べられていた</li>
-<li>高校時代、鈴木さんはとても優秀で、成績はいつも学年で<strong>上位</strong>だつた</li>
-<li>あの若さで金賞を受賞（じゅしょう）した伊藤さんは、本当に<strong>優秀</strong>の人だと思う</li>
+<li>機械の調子が悪かったので、<strong>分解</strong>して部品の点検をした</li>
+<li>スイカを買ってきたが、大きくて冷蔵庫に入らなかったので、四つに<strong>分けた</strong></li>
+<li>細かいお金がなかったので、近くの店で千円札を<strong>両替</strong>してもらった</li>
+<li>急ぎの仕事が入ったので、三人で<strong>分担</strong>して進めることにした</li>
 </ol>
 <table>
 <thead>
@@ -777,29 +957,34 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">高級</td>
-<td align="center">こうきゅう</td>
-<td align="center">高级，质量高，程度高，水平高</td>
+<td align="center">分ける</td>
+<td align="center">わける</td>
+<td align="center">分开，分为</td>
 </tr>
 <tr>
-<td align="center">上位</td>
-<td align="center">じょうい</td>
-<td align="center">等级高、水平高</td>
+<td align="center">両替</td>
+<td align="center">りょうがえ</td>
+<td align="center">兑换</td>
 </tr>
 <tr>
-<td align="center">優秀</td>
-<td align="center">ゆうしゅう</td>
-<td align="center">优秀</td>
+<td align="center">分担</td>
+<td align="center">ぶんたん</td>
+<td align="center">分担，分开承担</td>
+</tr>
+<tr>
+<td align="center">千円札</td>
+<td align="center">せんえんさつ</td>
+<td align="center">一千元的纸币</td>
 </tr>
 </tbody></table>
 <ul>
-<li><strong>大げさ</strong>（おおげさ）:　[名|形容动词]　夸大，夸张，小题大做</li>
+<li><strong>略す</strong>（りゃくす）:　[五段活用]　省略,略去,夺取,攻略</li>
 </ul>
 <ol>
-<li>息子の誕生日に料理を作りすぎてしまい、<strong>たくさん</strong>に余ってしまった</li>
-<li>天気予報によると、明日は今日より<strong>めっきり</strong>に気温が下がるらしい</li>
-<li>努力（どりょく）した結果、試験の成績が<strong>大幅</strong>に伸びて、先生に褒められた</li>
-<li>あの人は小さいなことを<strong>大げさ</strong>に言うので、そのまま信じないほうがいい</li>
+<li>時間がないので、詳しい説明は<strong>略して</strong>、要点だけを話しします</li>
+<li>合計で一万円以上ご購入の場合、送料は<strong>省きます</strong></li>
+<li>健康（けんこう）のために、砂糖（さとう）を<strong>抜いた</strong>ジャムを使っています</li>
+<li>このオフィスは、壁を<strong>無くして</strong>、開放感（かいほうかん）のあるデザインにしました</li>
 </ol>
 <table>
 <thead>
@@ -810,19 +995,19 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">たくさん</td>
-<td align="center"></td>
-<td align="center">许多，量大</td>
+<td align="center">省く</td>
+<td align="center">はぶく</td>
+<td align="center">节省，节约</td>
 </tr>
 <tr>
-<td align="center">めっきり</td>
-<td align="center"></td>
-<td align="center">显著，明显</td>
+<td align="center">抜く</td>
+<td align="center">ぬく</td>
+<td align="center">省去，省略</td>
 </tr>
 <tr>
-<td align="center">大幅</td>
-<td align="center">おおはば</td>
-<td align="center">大幅度</td>
+<td align="center">無くす</td>
+<td align="center">なくす</td>
+<td align="center">清除，去除</td>
 </tr>
 </tbody></table>
 <ul>
