@@ -1973,7 +1973,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b14706;
+  background: #39ad24;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3301,7 +3301,7 @@ pre .javascript .function {
   }
 }
 body::before {
-  background-image: url("http://image.codebooklet.com/img_blog/background/background.jpg");
+  background-image: url("https://image.codebooklet.com/img_blog/background/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
