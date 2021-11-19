@@ -92,7 +92,10 @@
   <entry>
     <title>Python网络编程</title>
     <url>/2021/11/10/Python/Python%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="Chapter1-Client-Server网络编程简介"><a href="#Chapter1-Client-Server网络编程简介" class="headerlink" title="Chapter1. Client / Server网络编程简介"></a>Chapter1. Client / Server网络编程简介</h1><h2 id="协议栈与库"><a href="#协议栈与库" class="headerlink" title="协议栈与库"></a>协议栈与库</h2><ul>
+    <content><![CDATA[<p><strong>还在不断更新中，主要内容为使用Python基于UDP、TCP进行网络编程，本学期结束之后会将相关的课程项目通过GitHub分享</strong></p>
+<span id="more"></span>
+
+<h1 id="Chapter1-Client-Server网络编程简介"><a href="#Chapter1-Client-Server网络编程简介" class="headerlink" title="Chapter1. Client / Server网络编程简介"></a>Chapter1. Client / Server网络编程简介</h1><h2 id="协议栈与库"><a href="#协议栈与库" class="headerlink" title="协议栈与库"></a>协议栈与库</h2><ul>
 <li><strong>协议栈（Protocol Stack）</strong>：<strong>一系列基础的网络服务集合</strong>，是复杂网络服务的基石</li>
 <li><strong>库（Library）</strong>：分为<strong>标准库</strong>与<strong>第三方库</strong>，<strong>能使用库的情况绝不要造轮子</strong></li>
 </ul>
