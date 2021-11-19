@@ -131,7 +131,7 @@
 
 
 
-  <title>DOS攻击实验LOIC+XAMPP | Codebooklet</title>
+  <title>Python网络编程 | Codebooklet</title>
   
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://codebooklet.com/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/">
+    <link itemprop="mainEntityOfPage" href="http://codebooklet.com/2021/11/10/Python/Python%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DOS攻击实验LOIC+XAMPP</h1>
+          <h1 class="post-title" itemprop="name headline">Python网络编程</h1>
         
 
         <div class="post-meta">
@@ -331,7 +331,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-10-29T11:58:39+08:00">2021-10-29</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-11-10T20:22:18+08:00">2021-11-10</time>
             
 
             
@@ -345,7 +345,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-11-10T22:04:12+08:00">2021-11-10</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-11-19T22:14:45+08:00">2021-11-19</time>
             
           </span>
 
@@ -362,8 +362,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">网络安全</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/" itemprop="commentCount"></span>
+                <a href="/2021/11/10/Python/Python%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/11/10/Python/Python%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,7 +389,7 @@
 
           
           
-             <span id="/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/" class="leancloud_visitors" data-flag-title="DOS攻击实验LOIC+XAMPP">
+             <span id="/2021/11/10/Python/Python%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="leancloud_visitors" data-flag-title="Python网络编程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">6k</span>
+                <span title="字数统计">13k</span>
               
 
               
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 mins.</span>
+                <span title="阅读时长">13 mins.</span>
               
             </div>
           
@@ -448,73 +448,138 @@
       
 
       
-        <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
-<li>使用LOIC与XAMPP对虚拟机发起TCP协议拒绝服务攻击（DOS）</li>
+        <h1 id="Chapter1-Client-Server网络编程简介"><a href="#Chapter1-Client-Server网络编程简介" class="headerlink" title="Chapter1. Client / Server网络编程简介"></a>Chapter1. Client / Server网络编程简介</h1><h2 id="协议栈与库"><a href="#协议栈与库" class="headerlink" title="协议栈与库"></a>协议栈与库</h2><ul>
+<li><strong>协议栈（Protocol Stack）</strong>：<strong>一系列基础的网络服务集合</strong>，是复杂网络服务的基石</li>
+<li><strong>库（Library）</strong>：分为<strong>标准库</strong>与<strong>第三方库</strong>，<strong>能使用库的情况绝不要造轮子</strong></li>
 </ul>
-<span id="more"></span>
-
-<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h4 id="被攻击者（虚拟机）"><a href="#被攻击者（虚拟机）" class="headerlink" title="被攻击者（虚拟机）"></a>被攻击者（虚拟机）</h4><ul>
-<li>操作系统：CentOS</li>
-<li>软件：XAMPP for Linux 7.4.25</li>
-<li>动作：使用XAMPP在80端口开启Apache服务</li>
+<h2 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h2><ul>
+<li><p>Python3对<strong>字符（character）</strong>与<strong>底层字节序列（byte）</strong>做了明确区分，对使用者可见的只有字符，但实际上底层的表示方法可能是不同的，因此需要注意<strong>编码（encoding）</strong>与<strong>解码（decoding）</strong></p>
+</li>
+<li><p>传输层（Transport Layer）使用字节传输，因此<strong>socket编程需要先编码为字节（Byte）</strong></p>
+</li>
+<li><p><strong>Python3永远不会自动将字节（byte）转换为字符（character）</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#区分字节（byte）与字符（character）</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#将字节（byte）转换为字符（character）</span></span><br><span class="line">    input_bytes = <span class="string">b&#x27;\xff\xfe4\x001\x003\x00 \x00i\x00s\x00 \x00i\x00n\x00.\x00&#x27;</span> <span class="comment">#使用前缀&#x27;b&#x27;表示后续是字节（byte）表示</span></span><br><span class="line">    input_characters = input_bytes.decode(<span class="string">&quot;UTF-16&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">repr</span>(input_characters))</span><br><span class="line">    <span class="comment">#将字符（character）转换为字节（byte）</span></span><br><span class="line">    output_characters = <span class="string">&quot;We are friends&quot;</span></span><br><span class="line">    output_bytes = output_characters.encode(<span class="string">&quot;UTF-8&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">repr</span>(output_bytes))</span><br></pre></td></tr></table></figure></li>
+<li><p>使用 repr() 将返回对象规范的字符串表示（Return the canonical string representation of the object.），这里使用是为了对比</p>
+</li>
 </ul>
-<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><ul>
-<li>操作系统：Windows10</li>
-<li>软件：LOIC-1.0.8</li>
-<li>动作：使用LOIC向虚拟机发起TCP协议DOS攻击</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输出结果</span></span><br><span class="line"><span class="string">&#x27;413 is in.&#x27;</span>    </span><br><span class="line">b<span class="string">&#x27;We are friends&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>**字符（character）有前缀字母’b’**，也就是byte</li>
+<li><strong>字节（byte）有前缀字母’b’</strong></li>
 </ul>
-<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><ul>
-<li><p>本实验采用<strong>TCP协议DOS攻击</strong>，TCP是“面向连接”的协议，与服务器链接使会<strong>三次握手</strong></p>
-<table>
+<h2 id="端口号（Port）"><a href="#端口号（Port）" class="headerlink" title="端口号（Port）"></a>端口号（Port）</h2><table>
 <thead>
 <tr>
-<th align="left">三次握手</th>
-<th align="left">说明</th>
+<th>端口分类</th>
+<th>端口号范围</th>
+<th>使用场合</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">① <strong>Client    &gt;  (SYN)   &gt;   Server</strong></td>
-<td align="left">客户端发起请求</td>
+<td>知名端口（Well-known Port）</td>
+<td>0~1023</td>
+<td>分配给最重要、最常用的服务，主要用于操作系统，<strong>需要管理员权限才能执行</strong></td>
 </tr>
 <tr>
-<td align="left">② <strong>Client    &lt;   (SYN+ACK)   &lt;    Server</strong></td>
-<td align="left">服务端创建线程处理请求并等待客户端回复</td>
+<td>注册端口（Registered Ports）</td>
+<td>1024~49151</td>
+<td>任何用户都可以使用，IANA（互联网数字分配机构）建议只在使用指定服务时使用注册端口</td>
 </tr>
 <tr>
-<td align="left">③ <strong>Client    &gt;   (ACK)   &gt;    Server</strong></td>
-<td align="left">客户端回复确认</td>
+<td>动态和或私有端口（Dynamic/ Private Ports）</td>
+<td>49151~65535</td>
+<td>随意使用，<strong>Client未指定端口时，现代操作系统一般会从这些端口中随机选择端口用于服务</strong></td>
 </tr>
 </tbody></table>
-</li>
-<li><p>如果Client一直没有回复，则Server会不断重新发送请求，这段时间称为”SYN Timeout”通常持续30~120秒（可以在服务器配置中修改）</p>
-</li>
-<li><p>因此如果短时间内服务器接收大量请求，将会耗尽服务器资源无法提供正常服务</p>
-</li>
+<h2 id="套接字（Socket）"><a href="#套接字（Socket）" class="headerlink" title="套接字（Socket）"></a>套接字（Socket）</h2><ul>
+<li>Python标准库对兼容POSIX的操作系统（Linux、Mac、Windows .etc）的网络操作的底层系统调用进行了封装，<strong>封装后的Python函数与原始系统调用名称相同</strong>（因此学会Python网络编程后再使用其他语言网络编程时会减少许多学习成本）</li>
+<li>套接字（Socket）是<strong>应用层（Application Layer）与传输层（Transport Layer）之间的接口</strong>，相当于帮程序员封装了传输层以下的实现细节</li>
+<li><strong>在POSIX系统中，套接字的标识fileno本质上是一个文件描述符（file descriptor）</strong></li>
 </ul>
-<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-被攻击者（虚拟机）环境配置"><a href="#Step-1-被攻击者（虚拟机）环境配置" class="headerlink" title="Step.1 被攻击者（虚拟机）环境配置"></a>Step.1 被攻击者（虚拟机）环境配置</h3><h4 id="1-下载XAMPP"><a href="#1-下载XAMPP" class="headerlink" title="1.下载XAMPP"></a>1.下载XAMPP</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/1.%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E4%B8%8B%E8%BD%BDXAMPP.png"></img></p>
-<h4 id="2-使用”chmod-x”添加可执行权限并以superuser身份启动安装"><a href="#2-使用”chmod-x”添加可执行权限并以superuser身份启动安装" class="headerlink" title="2.使用”chmod +x”添加可执行权限并以superuser身份启动安装"></a>2.使用”chmod +x”添加可执行权限并以superuser身份启动安装</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/2.%E4%BF%AE%E6%94%B9%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E6%9D%83%E9%99%90.png"></img><br><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/4.%E5%88%87%E6%8D%A2%E8%87%B3root%E5%90%AF%E5%8A%A8.png"></img></p>
-<h4 id="3-使用XAMPP在80端口开启Apache服务"><a href="#3-使用XAMPP在80端口开启Apache服务" class="headerlink" title="3.使用XAMPP在80端口开启Apache服务"></a>3.使用XAMPP在80端口开启Apache服务</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/5.%E5%BC%80%E5%90%AFApache%E6%9C%8D%E5%8A%A1%E5%9C%A880%E7%AB%AF%E5%8F%A3.png"></img></p>
-<h4 id="4-使用”systemctl-stop-firewalld-service”关闭防火墙"><a href="#4-使用”systemctl-stop-firewalld-service”关闭防火墙" class="headerlink" title="4.使用”systemctl stop firewalld.service”关闭防火墙"></a>4.使用”systemctl stop firewalld.service”关闭防火墙</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/12.%E5%85%B3%E9%97%AD%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%98%B2%E7%81%AB%E5%A2%99.png"></img></p>
-<h4 id="5-使用”ifconfig”查看虚拟机的IP并记录"><a href="#5-使用”ifconfig”查看虚拟机的IP并记录" class="headerlink" title="5.使用”ifconfig”查看虚拟机的IP并记录"></a>5.使用”ifconfig”查看虚拟机的IP并记录</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/6.%E6%9F%A5%E7%9C%8BTarget%E7%9A%84IP.png"></img></p>
-<h3 id="Step-2-攻击者环境配置"><a href="#Step-2-攻击者环境配置" class="headerlink" title="Step.2 攻击者环境配置"></a>Step.2 攻击者环境配置</h3><h4 id="1-下载LOIC"><a href="#1-下载LOIC" class="headerlink" title="1.下载LOIC"></a>1.下载LOIC</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/7.%E4%B8%8B%E8%BD%BDLOIC.png"></img></p>
+<h2 id="我的符号系统说明"><a href="#我的符号系统说明" class="headerlink" title="我的符号系统说明"></a>我的符号系统说明</h2><ul>
+<li>使用<strong>（Client，Server）和（Sender，Receiver）</strong>来代替参考书中单一的客户端、服务端描述，便于区分一些概念（比如混杂）</li>
+</ul>
+<ol>
+<li>从性质上分类：（Client，Server），谁主动提供网络服务谁就是Server，反之则是Client</li>
+<li>从动作上分类：（Sender，Receiver），谁主动发信谁就是Sender，反之则是Receiver</li>
+</ol>
+<h1 id="Chapter2-UDP（User-Datagram-Protocol）"><a href="#Chapter2-UDP（User-Datagram-Protocol）" class="headerlink" title="Chapter2. UDP（User Datagram Protocol）"></a>Chapter2. UDP（User Datagram Protocol）</h1><ul>
+<li><strong>UDP是无连接协议（connectionless）</strong>，因此<strong>UDP使用（IP，Port）二元组标识通信方</strong></li>
+<li>一般不太可能在应用程序中使用UDP，如果认为UDP适用于某个场合，可以先去Chapter8了解一下<strong>消息队列</strong></li>
+<li><strong>数据报（Datagram） ≠ 数据包（Packet）</strong>，后者用于网络层分组传输</li>
+</ul>
+<h2 id="一个最简单的UDP-C-S程序"><a href="#一个最简单的UDP-C-S程序" class="headerlink" title="一个最简单的UDP C/S程序"></a>一个最简单的UDP C/S程序</h2><h4 id="服务端（Server）"><a href="#服务端（Server）" class="headerlink" title="服务端（Server）"></a>服务端（Server）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Server（先有Server才能有Client）</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span></span><br><span class="line"><span class="comment">#一个最简单的UDP Server</span></span><br><span class="line">    server=socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">    server.bind((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">5122</span>))<span class="comment">#绑定在(IP,Port)组成的端口</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>: <span class="comment">#UDP每一个recvfrom对应一个sendto</span></span><br><span class="line">        datagram,sender=server.recvfrom(<span class="number">65535</span>)<span class="comment">#接受65535Bytes的Datagram（这也是一个UDP数据报最大长度）</span></span><br><span class="line">        mes = datagram.decode(<span class="string">&#x27;UTF-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>可以在其他资源站点下载该软件，此处图片只为效果展示</li>
+<li>使用 socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None) 创建一个空套接字，创建失败时返回值为 -1<br>socket()参数说明|常用可选项与解释</li>
+<li>–|—</li>
 </ul>
-<h4 id="2-配置攻击信息"><a href="#2-配置攻击信息" class="headerlink" title="2.配置攻击信息"></a>2.配置攻击信息</h4><ul>
-<li>IP：虚拟机的IP</li>
-<li>Port：80</li>
-<li>Method：TCP</li>
-<li>Thread和Speed可以自行调整，Thread不能过大<br><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/8.%E9%85%8D%E7%BD%AE%E6%94%BB%E5%87%BB%E4%BF%A1%E6%81%AF.png"></img></li>
-</ul>
-<h3 id="Step-3-监测虚拟机系统资源并发起攻击"><a href="#Step-3-监测虚拟机系统资源并发起攻击" class="headerlink" title="Step.3 监测虚拟机系统资源并发起攻击"></a>Step.3 监测虚拟机系统资源并发起攻击</h3><h4 id="1-虚拟机使用”vmstat”监测系统资源"><a href="#1-虚拟机使用”vmstat”监测系统资源" class="headerlink" title="1.虚拟机使用”vmstat”监测系统资源"></a>1.虚拟机使用”vmstat”监测系统资源</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/11.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E7%8A%B6%E6%80%81.png"></img></p>
-<h4 id="2-攻击方点击Lock-on并发起攻击"><a href="#2-攻击方点击Lock-on并发起攻击" class="headerlink" title="2. 攻击方点击Lock on并发起攻击"></a>2. 攻击方点击Lock on并发起攻击</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/10.%E7%82%B9%E5%87%BB%E9%94%81%E5%AE%9A%E7%9B%AE%E6%A0%87%E5%B9%B6%E5%BC%80%E5%A7%8B%E6%94%BB%E5%87%BB.png"></img></p>
-<h4 id="3-观察虚拟机系统资源状态变化情况"><a href="#3-观察虚拟机系统资源状态变化情况" class="headerlink" title="3.观察虚拟机系统资源状态变化情况"></a>3.观察虚拟机系统资源状态变化情况</h4><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/13.%E6%AD%A4%E6%97%B6%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8A%B6%E6%80%81.png"></img></p>
+<p><strong>family</strong>：套接字要使用的协议簇|① AF_INET (default)：IPv4<br/>② AF_INET6：IPv6<br/>③ AF_UNIX：本机通信<br><strong>type</strong>：套接字类型|① SOCK_STREAM (default)：TCP，字节流方式<br/>② SOCK_DGRAM：UDP ，数据报方式<br/>③ SOCK_RAW，原始方式<br><strong>fileno</strong>：通常为0（不同于None）|当family为AF_CAN时，可能为CAN_RAW, CAN_BCM or CAN_ISOTP</p>
 <ul>
-<li>可以发现CPU开始繁忙，且IO与swap的使用量也上涨到了一个恐怖的数级，System的中断与上下文切换也变得非常频繁，最终结果——宕机 <a target="_blank" rel="noopener" href="http://www.codebooklet.com/2021/10/29/Linux/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">vmstat命令介绍</a></li>
+<li><p>使用bind()将Socket与特定address（IP，Port）绑定在一起<br>IP常用选项|说明</p>
+</li>
+<li><p>–|—<br>空字符串：（“”）|表示接受任何网络接口的数据包（packet）<br>本机：（“127.0.0.1”）或（“0.0.0.0”）[linux]|表示服务建立在本机，使用自环回路，通常可以用localhost访问<br>指定接口IP：（“比如以太网卡或无线网卡”）|表示可以只通过该公网IP访问</p>
+</li>
+<li><p><strong>服务端（Server）必须为Socket用bind()指定一个特定的接收端口</strong></p>
+</li>
+<li><p>一个<strong>UDP最大数据报长度为65535（64KB）[16bits]，而一般情况下，以太网卡或无线网卡只能处理1500B左右的数据包（packet）</strong>[UDP分组问题]</p>
+</li>
+<li><p><strong>端口号≥1024，否则需要系统管理员权限</strong></p>
+</li>
 </ul>
-<h3 id="TCP协议DOS攻击效果展示"><a href="#TCP协议DOS攻击效果展示" class="headerlink" title="TCP协议DOS攻击效果展示"></a>TCP协议DOS攻击效果展示</h3><p><img src="http://image.codebooklet.com/img_blog/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/DOS%E6%94%BB%E5%87%BB%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.gif"></img></p>
+<h4 id="客户端（Client）"><a href="#客户端（Client）" class="headerlink" title="客户端（Client）"></a>客户端（Client）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Client（由Server提供（IP,Port））</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span></span><br><span class="line">    serve=((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">5122</span>))</span><br><span class="line">    client=socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">    client.sendto(<span class="string">b&quot;Hello&quot;</span>,server)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>可以看出来被攻击者访问127.0.0.1的速度逐渐下降最后无法访问，甚至宕机</li>
+<li><strong>客户端可以不指定自己的（IP，Port），由操作系统自动分配（隐式绑定）</strong></li>
+</ul>
+<h2 id="UDP的recvfrom-与sendto"><a href="#UDP的recvfrom-与sendto" class="headerlink" title="UDP的recvfrom()与sendto()"></a>UDP的recvfrom()与sendto()</h2><ul>
+<li>因为UDP是无连接协议（connectionless），因此需要用[from, to]来指明远端，除非使用了connect()绑定了UDP Socket<h4 id="①-socket-recvfrom-bufsize-flags"><a href="#①-socket-recvfrom-bufsize-flags" class="headerlink" title="① socket.recvfrom(bufsize[, flags])"></a>① socket.recvfrom(bufsize[, flags])</h4></li>
+<li><strong>bufsize</strong>：接受bufsize大小（最大65535）的来自bind(address)所绑定的远端发来的字节数据</li>
+<li><strong>返回值</strong>：发信方（bytes，address）的二元组，用bytes.decode(“UTF-8”)即可转化为字符（character），通过address可以知道是谁发来的字符（byte）</li>
+</ul>
+<h4 id="②-socket-sendto-bytes-address"><a href="#②-socket-sendto-bytes-address" class="headerlink" title="② socket.sendto(bytes, address)"></a>② socket.sendto(bytes, address)</h4><ul>
+<li><strong>byte</strong>：要发送的“字节对象（Byte）”</li>
+<li><strong>address</strong>：接收方地址，由（IP，Port）二元组标识</li>
+<li><strong>返回值</strong>：发送的字节数（number of bytes）</li>
+</ul>
+<h2 id="混杂发信端与垃圾回复"><a href="#混杂发信端与垃圾回复" class="headerlink" title="混杂发信端与垃圾回复"></a>混杂发信端与垃圾回复</h2><ul>
+<li><strong>没有检查数据报的源地址的接受端（Receiver）程序是相当危险的，因为无法保证是可信发送端（Sender）的信息</strong>，比如小明向DNS服务器请求正向解析服务，如果没有鉴别回复消息是否来自可信DNS服务器，则很可能遭遇网络攻击。这与中间人攻击不同，中间人攻击需要获取网络控制权后从非法地址发送伪造数据报，可以使用加密来保护。而现在问题是，对于没有监测机制的接受端，所有操作都是合法的</li>
+</ul>
+<h2 id="使用connect-连接UDP-Socket"><a href="#使用connect-连接UDP-Socket" class="headerlink" title="使用connect()连接UDP Socket"></a>使用connect()连接UDP Socket</h2><ul>
+<li><strong>UDP虽然是无连接（Connectionless），但不代表不能连接</strong></li>
+<li><strong>对发信端（Sender）使用connect((IP_Receiver,Port_Receiver))显示绑定，可以解决发信端混杂性（promiscuous）</strong>，接收方（Receiver）会将来自非连接地址的数据报直接丢弃</li>
+<li><strong>connect()一般只适用于同时与一台服务器交互的情景，重复运行connect()会覆盖之前的地址</strong></li>
+<li>使用connect()连接UDP Socket并没有在网络上传输任何消息，也就是说“没有通知服务器”，只是<strong>将连接地址写入内存（memory）中</strong></li>
+<li><strong>在connect()之后，可以使用面向连接的（send，recv）来替代（sendto，recvfrom）</strong>，也就是上层表现与TCP相似</li>
+</ul>
+<h2 id="区分bind-与connect"><a href="#区分bind-与connect" class="headerlink" title="区分bind()与connect()"></a>区分bind()与connect()</h2><ul>
+<li>**bind()**：指定了要使用的特定端口</li>
+<li>**connect()**：限制了回复人，只接受连接方的信息</li>
+</ul>
+<h2 id="UDP的不可靠性与recvfrom-的阻塞性"><a href="#UDP的不可靠性与recvfrom-的阻塞性" class="headerlink" title="UDP的不可靠性与recvfrom()的阻塞性"></a>UDP的不可靠性与recvfrom()的阻塞性</h2><ul>
+<li><strong>UDP不保证传输的可靠性</strong>，这意味着如果需要确认消息是否被服务端（Server）收到，客户端（Client）必须在一个循环内发送请求，等待某个请求正确响应后，再发送其他请求，因此必须选择一个合适的等待时间</li>
+<li><strong>无法通过UDP判断出服务器具体情况</strong>，因此客户端（Client）最好设定一定机制，确保在一定次数的尝试之后放弃</li>
+<li><strong>使用 recvfrom()会阻塞网络调用</strong>，在没有收到信息之前会一直等待</li>
+</ul>
+<h2 id="什么时候使用UDP"><a href="#什么时候使用UDP" class="headerlink" title="什么时候使用UDP"></a>什么时候使用UDP</h2><ul>
+<li><p>① 只发送一条信息然后等待响应的服务（并不是小型信息UDP更高效，如果连续发送多条信息，可能需要“消息队列”，而消息队列往往是TCP，这与TCP中使用了Nagle算法有一定关系，详情见Chapter3.TCP）</p>
+</li>
+<li><p>② 实现了一个已经基于UDP的服务，比如DNS</p>
+</li>
+<li><p>③ 流媒体（Streaming Media），这类服务由于冗余性（redundancy）往往允许偶尔的丢包现象，却不能接受网络延迟</p>
+</li>
+<li><p>设计适用于LAN子网多播的应用程序</p>
+<blockquote>
+<blockquote>
+<p>“当我们发现有一种适用UDP协议的应用程序时，我们很可能已经重新实现了TCP，并且实现得很糟糕！”</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h1 id="Chapter3-TCP-Transport-Control-Protocol"><a href="#Chapter3-TCP-Transport-Control-Protocol" class="headerlink" title="Chapter3. TCP (Transport Control Protocol)"></a>Chapter3. TCP (Transport Control Protocol)</h1><h1 id="Summary-UDP-amp-TCP"><a href="#Summary-UDP-amp-TCP" class="headerlink" title="Summary. UDP&amp;TCP"></a>Summary. UDP&amp;TCP</h1><hr>
+<ul>
+<li>send其实是发送给网卡缓存，具体的发送方法由OS控制，recv相反，从网卡缓存中取数据</li>
+<li>send相当于一个在内核态空间和用户态空间之间的“本地拷贝”操作，因此非常耗时，当数据量过小时，会经过一定的优化算法后拼接成一份较大的数据流接受</li>
+<li>因此不是“一发一收（一个send对应一个receive）”而是“可以多次发送单次接受”</li>
 </ul>
 
       
@@ -565,7 +630,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://codebooklet.com/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/" title="DOS攻击实验LOIC+XAMPP">http://codebooklet.com/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/</a>
+    <a href="http://codebooklet.com/2021/11/10/Python/Python%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Python网络编程">http://codebooklet.com/2021/11/10/Python/Python%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -580,7 +645,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"><i class="fa fa-tag"></i> 网络安全</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 网络编程</a>
           
         </div>
       
@@ -608,8 +675,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/" rel="next" title="NexT标签页与分类页无法显示修复">
-                <i class="fa fa-chevron-left"></i> NexT标签页与分类页无法显示修复
+              <a href="/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/" rel="next" title="Cmatrix与Shell实现随机屏保">
+                <i class="fa fa-chevron-left"></i> Cmatrix与Shell实现随机屏保
               </a>
             
           </div>
@@ -617,10 +684,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/10/29/Linux/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/" rel="prev" title="Linux命令笔记">
-                Linux命令笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -759,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">实验环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89"><span class="nav-number">2.0.1.</span> <span class="nav-text">被攻击者（虚拟机）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E8%80%85"><span class="nav-number">2.0.2.</span> <span class="nav-text">攻击者</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">实验原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">实验过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">Step.1 被攻击者（虚拟机）环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDXAMPP"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.下载XAMPP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E2%80%9Dchmod-x%E2%80%9D%E6%B7%BB%E5%8A%A0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90%E5%B9%B6%E4%BB%A5superuser%E8%BA%AB%E4%BB%BD%E5%90%AF%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">4.1.2.</span> <span class="nav-text">2.使用”chmod +x”添加可执行权限并以superuser身份启动安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8XAMPP%E5%9C%A880%E7%AB%AF%E5%8F%A3%E5%BC%80%E5%90%AFApache%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.1.3.</span> <span class="nav-text">3.使用XAMPP在80端口开启Apache服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8%E2%80%9Dsystemctl-stop-firewalld-service%E2%80%9D%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.使用”systemctl stop firewalld.service”关闭防火墙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E4%BD%BF%E7%94%A8%E2%80%9Difconfig%E2%80%9D%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84IP%E5%B9%B6%E8%AE%B0%E5%BD%95"><span class="nav-number">4.1.5.</span> <span class="nav-text">5.使用”ifconfig”查看虚拟机的IP并记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-%E6%94%BB%E5%87%BB%E8%80%85%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">Step.2 攻击者环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDLOIC"><span class="nav-number">4.2.1.</span> <span class="nav-text">1.下载LOIC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE%E6%94%BB%E5%87%BB%E4%BF%A1%E6%81%AF"><span class="nav-number">4.2.2.</span> <span class="nav-text">2.配置攻击信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-%E7%9B%91%E6%B5%8B%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E5%B9%B6%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB"><span class="nav-number">4.3.</span> <span class="nav-text">Step.3 监测虚拟机系统资源并发起攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E2%80%9Dvmstat%E2%80%9D%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90"><span class="nav-number">4.3.1.</span> <span class="nav-text">1.虚拟机使用”vmstat”监测系统资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%94%BB%E5%87%BB%E6%96%B9%E7%82%B9%E5%87%BBLock-on%E5%B9%B6%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB"><span class="nav-number">4.3.2.</span> <span class="nav-text">2. 攻击方点击Lock on并发起攻击</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%A7%82%E5%AF%9F%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E7%8A%B6%E6%80%81%E5%8F%98%E5%8C%96%E6%83%85%E5%86%B5"><span class="nav-number">4.3.3.</span> <span class="nav-text">3.观察虚拟机系统资源状态变化情况</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E5%8D%8F%E8%AE%AEDOS%E6%94%BB%E5%87%BB%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">4.4.</span> <span class="nav-text">TCP协议DOS攻击效果展示</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-Client-Server%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">Chapter1. Client &#x2F; Server网络编程简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE%E6%A0%88%E4%B8%8E%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">协议栈与库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">编码与解码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7%EF%BC%88Port%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">端口号（Port）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%97%E6%8E%A5%E5%AD%97%EF%BC%88Socket%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">套接字（Socket）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E7%AC%A6%E5%8F%B7%E7%B3%BB%E7%BB%9F%E8%AF%B4%E6%98%8E"><span class="nav-number">1.5.</span> <span class="nav-text">我的符号系统说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter2-UDP%EF%BC%88User-Datagram-Protocol%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Chapter2. UDP（User Datagram Protocol）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84UDP-C-S%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.1.</span> <span class="nav-text">一个最简单的UDP C&#x2F;S程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%EF%BC%88Server%EF%BC%89"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">服务端（Server）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%88Client%EF%BC%89"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">客户端（Client）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP%E7%9A%84recvfrom-%E4%B8%8Esendto"><span class="nav-number">2.2.</span> <span class="nav-text">UDP的recvfrom()与sendto()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A0-socket-recvfrom-bufsize-flags"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">① socket.recvfrom(bufsize[, flags])</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1-socket-sendto-bytes-address"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">② socket.sendto(bytes, address)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E6%9D%82%E5%8F%91%E4%BF%A1%E7%AB%AF%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E5%A4%8D"><span class="nav-number">2.3.</span> <span class="nav-text">混杂发信端与垃圾回复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8connect-%E8%BF%9E%E6%8E%A5UDP-Socket"><span class="nav-number">2.4.</span> <span class="nav-text">使用connect()连接UDP Socket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%86bind-%E4%B8%8Econnect"><span class="nav-number">2.5.</span> <span class="nav-text">区分bind()与connect()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP%E7%9A%84%E4%B8%8D%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%B8%8Erecvfrom-%E7%9A%84%E9%98%BB%E5%A1%9E%E6%80%A7"><span class="nav-number">2.6.</span> <span class="nav-text">UDP的不可靠性与recvfrom()的阻塞性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8UDP"><span class="nav-number">2.7.</span> <span class="nav-text">什么时候使用UDP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter3-TCP-Transport-Control-Protocol"><span class="nav-number">3.</span> <span class="nav-text">Chapter3. TCP (Transport Control Protocol)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary-UDP-amp-TCP"><span class="nav-number">4.</span> <span class="nav-text">Summary. UDP&amp;TCP</span></a></li></ol></div>
             
 
           </div>
