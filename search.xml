@@ -357,7 +357,7 @@
 <li><strong>SampleRTT</strong>：衡量从segment发送到收到ACK的时间，<strong>是几次RTT的平均值</strong></li>
 <li><strong>EstimatedRTT</strong> = ( 1 - α ) * EstimatedRTT + α * SampleRTT，通常 α = 0.125</li>
 <li><strong>DevRTT</strong> = ( 1 - β ) * DevRTT + β *  | SampleRTT - EstimatedRTT |，通常 β = 0.25</li>
-<li><em><em>TimeoutInterval = EstimatedRTT + 4</em> DevRTT</em>*</li>
+<li><strong>TimeoutInterval = EstimatedRTT + 4 * DevRTT</strong></li>
 </ul>
 <h2 id="TCP如何提供可靠连接"><a href="#TCP如何提供可靠连接" class="headerlink" title="TCP如何提供可靠连接"></a>TCP如何提供可靠连接</h2><ul>
 <li><strong>每一个TCP数据包（packet）都有一个序列号（sequence numbers）</strong>，Client可以通过序列号对数据包正确排序，也可以从中发现丢失的数据包，从而请求重传</li>
