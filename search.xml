@@ -3,11 +3,15 @@
   <entry>
     <title>Codebooklet公告板</title>
     <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
-    <content><![CDATA[<h2 id="2021-11-16"><a href="#2021-11-16" class="headerlink" title="2021/11/16"></a>2021/11/16</h2><ul>
-<li>这周在做网络编程作业有点忙，好像有一整周没更新了，周末抽时间整理下网络编程的笔记</li>
+    <content><![CDATA[<h2 id="2021-11-21"><a href="#2021-11-21" class="headerlink" title="2021/11/21"></a>2021/11/21</h2><ul>
+<li>挤出了一点时间把网络编程笔记完善了一下，现在从基础到UDP和TCP都整理差不多了</li>
+<li>Eigen的Sparse Matrix很多细节还是不太清楚，等用熟练了再整理吧</li>
 </ul>
 <span id="more"></span>
 
+<h2 id="2021-11-16"><a href="#2021-11-16" class="headerlink" title="2021/11/16"></a>2021/11/16</h2><ul>
+<li>这周在做网络编程作业有点忙，好像有一整周没更新了，周末抽时间整理下网络编程的笔记</li>
+</ul>
 <h2 id="2021-11-7"><a href="#2021-11-7" class="headerlink" title="2021/11/7"></a>2021/11/7</h2><ul>
 <li>这学期要研究Subdivision，论文读起来有些头疼（菜鸡落泪）感觉还有很多知识需要学习</li>
 <li>由于网络编程课作业较多，C++STL的学习要暂缓了，这几周可能会发一些网络编程的内容</li>
@@ -95,7 +99,7 @@
     <content><![CDATA[<p><strong>还在不断更新中，主要内容为使用Python基于UDP、TCP进行网络编程，本学期结束之后会将相关的课程项目通过GitHub分享</strong></p>
 <span id="more"></span>
 
-<h1 id="Chapter1-Client-Server网络编程简介"><a href="#Chapter1-Client-Server网络编程简介" class="headerlink" title="Chapter1. Client / Server网络编程简介"></a>Chapter1. Client / Server网络编程简介</h1><h2 id="协议栈与库"><a href="#协议栈与库" class="headerlink" title="协议栈与库"></a>协议栈与库</h2><ul>
+<h1 id="Chapter1-Client-Server网络编程基础"><a href="#Chapter1-Client-Server网络编程基础" class="headerlink" title="Chapter1. Client / Server网络编程基础"></a>Chapter1. Client / Server网络编程基础</h1><h2 id="协议栈与库"><a href="#协议栈与库" class="headerlink" title="协议栈与库"></a>协议栈与库</h2><ul>
 <li><strong>协议栈（Protocol Stack）</strong>：<strong>一系列基础的网络服务集合</strong>，是复杂网络服务的基石</li>
 <li><strong>库（Library）</strong>：分为<strong>标准库</strong>与<strong>第三方库</strong>，<strong>能使用库的情况绝不要造轮子</strong></li>
 </ul>
@@ -155,7 +159,10 @@
 <li>一般不太可能在应用程序中使用UDP，如果认为UDP适用于某个场合，可以先去Chapter8了解一下<strong>消息队列</strong></li>
 <li><strong>数据报（Datagram） ≠ 数据包（Packet）</strong>，后者用于网络层分组传输</li>
 </ul>
-<h2 id="一个最简单的UDP-C-S程序"><a href="#一个最简单的UDP-C-S程序" class="headerlink" title="一个最简单的UDP C/S程序"></a>一个最简单的UDP C/S程序</h2><h4 id="服务端（Server）"><a href="#服务端（Server）" class="headerlink" title="服务端（Server）"></a>服务端（Server）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Server（先有Server才能有Client）</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span></span><br><span class="line"><span class="comment">#一个最简单的UDP Server</span></span><br><span class="line">    server=socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">    server.bind((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">5122</span>))<span class="comment">#绑定在(IP,Port)组成的端口</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>: <span class="comment">#UDP每一个recvfrom对应一个sendto</span></span><br><span class="line">        datagram,sender=server.recvfrom(<span class="number">65535</span>)<span class="comment">#接受65535Bytes的Datagram（这也是一个UDP数据报最大长度）</span></span><br><span class="line">        mes = datagram.decode(<span class="string">&#x27;UTF-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="一个最简单的UDP-C-S程序"><a href="#一个最简单的UDP-C-S程序" class="headerlink" title="一个最简单的UDP C/S程序"></a>一个最简单的UDP C/S程序</h2><ul>
+<li>UDP并没有像TCP一样有明确的C/S（Client/Server）模型</li>
+</ul>
+<h4 id="服务端（Server）"><a href="#服务端（Server）" class="headerlink" title="服务端（Server）"></a>服务端（Server）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Server（先有Server才能有Client）</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span></span><br><span class="line"><span class="comment">#一个最简单的UDP Server</span></span><br><span class="line">    server=socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">    server.bind((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">5122</span>))<span class="comment">#绑定在(IP,Port)组成的端口</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>: <span class="comment">#UDP每一个recvfrom对应一个sendto</span></span><br><span class="line">        datagram,sender=server.recvfrom(<span class="number">65535</span>)<span class="comment">#接受65535Bytes的Datagram（这也是一个UDP数据报最大长度）</span></span><br><span class="line">        mes = datagram.decode(<span class="string">&#x27;UTF-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>使用 socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None) 创建一个空套接字，创建失败时返回值为 -1<br>socket()参数说明|常用可选项与解释</li>
@@ -184,7 +191,7 @@
 <li><strong>返回值</strong>：发信方（bytes，address）的二元组，用bytes.decode(“UTF-8”)即可转化为字符（character），通过address可以知道是谁发来的字符（byte）</li>
 </ul>
 <h4 id="②-socket-sendto-bytes-address"><a href="#②-socket-sendto-bytes-address" class="headerlink" title="② socket.sendto(bytes, address)"></a>② socket.sendto(bytes, address)</h4><ul>
-<li><strong>byte</strong>：要发送的“字节对象（Byte）”</li>
+<li><strong>bytes</strong>：要发送的字节对象（Byte）</li>
 <li><strong>address</strong>：接收方地址，由（IP，Port）二元组标识</li>
 <li><strong>返回值</strong>：发送的字节数（number of bytes）</li>
 </ul>
@@ -205,7 +212,7 @@
 <h2 id="UDP的不可靠性与recvfrom-的阻塞性"><a href="#UDP的不可靠性与recvfrom-的阻塞性" class="headerlink" title="UDP的不可靠性与recvfrom()的阻塞性"></a>UDP的不可靠性与recvfrom()的阻塞性</h2><ul>
 <li><strong>UDP不保证传输的可靠性</strong>，这意味着如果需要确认消息是否被服务端（Server）收到，客户端（Client）必须在一个循环内发送请求，等待某个请求正确响应后，再发送其他请求，因此必须选择一个合适的等待时间</li>
 <li><strong>无法通过UDP判断出服务器具体情况</strong>，因此客户端（Client）最好设定一定机制，确保在一定次数的尝试之后放弃</li>
-<li><strong>使用 recvfrom()会阻塞网络调用</strong>，在没有收到信息之前会一直等待</li>
+<li><strong>使用 recvfrom()会阻塞网络调用</strong>，在没有收到信息之前会一直等待，<strong>可以通过 setblocking(False) 设置socket为非阻塞</strong></li>
 </ul>
 <h2 id="什么时候使用UDP"><a href="#什么时候使用UDP" class="headerlink" title="什么时候使用UDP"></a>什么时候使用UDP</h2><ul>
 <li><p>① 只发送一条信息然后等待响应的服务（并不是小型信息UDP更高效，如果连续发送多条信息，可能需要“消息队列”，而消息队列往往是TCP，这与TCP中使用了Nagle算法有一定关系，详情见Chapter3.TCP）</p>
@@ -222,13 +229,166 @@
 </blockquote>
 </li>
 </ul>
-<h1 id="Chapter3-TCP-Transport-Control-Protocol"><a href="#Chapter3-TCP-Transport-Control-Protocol" class="headerlink" title="Chapter3. TCP (Transport Control Protocol)"></a>Chapter3. TCP (Transport Control Protocol)</h1><h1 id="Summary-UDP-amp-TCP"><a href="#Summary-UDP-amp-TCP" class="headerlink" title="Summary. UDP&amp;TCP"></a>Summary. UDP&amp;TCP</h1><hr>
-<ul>
-<li>send其实是发送给网卡缓存，具体的发送方法由OS控制，recv相反，从网卡缓存中取数据</li>
-<li>send相当于一个在内核态空间和用户态空间之间的“本地拷贝”操作，因此非常耗时，当数据量过小时，会经过一定的优化算法后拼接成一份较大的数据流接受</li>
-<li>因此不是“一发一收（一个send对应一个receive）”而是“可以多次发送单次接受”</li>
+<h1 id="Chapter3-TCP-Transport-Control-Protocol"><a href="#Chapter3-TCP-Transport-Control-Protocol" class="headerlink" title="Chapter3. TCP (Transport Control Protocol)"></a>Chapter3. TCP (Transport Control Protocol)</h1><ul>
+<li><strong>TCP是面向连接协议（Connection－oriented）</strong>，因此通过套接字对象，可以直接使用（send,recv）完成通信</li>
+<li><strong>点对点</strong>（point-to-point），一个Sender对应一个Receiver</li>
+<li><strong>可靠</strong>地传输<strong>有序</strong>的字节流，并且<strong>全双工（full duplex data）</strong></li>
+<li><strong>TCP将发送和接收的数据看做流，没有开始或结束标记，可能发生数据传输不完整</strong>，而UDP只会接收到完整数据包</li>
+<li>TCP会在<strong>传输中将数据流（data stream）分为多个大小不同的数据包（packet）然后在接收时重组</strong></li>
+<li>现在除了协议设计专家，几乎没有人能够再改进线代TCP协议栈的性能</li>
 </ul>
-]]></content>
+<h2 id="一个最简单的TCP-C-S程序"><a href="#一个最简单的TCP-C-S程序" class="headerlink" title="一个最简单的TCP C/S程序"></a>一个最简单的TCP C/S程序</h2><h4 id="服务端（Server）-1"><a href="#服务端（Server）-1" class="headerlink" title="服务端（Server）"></a>服务端（Server）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Server（先有Server才能有Client）</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#一个最简单的TCP Server</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#建立TCP套接字</span></span><br><span class="line">    server = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">    server.bind((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">7788</span>))</span><br><span class="line">    <span class="comment">#开始监听端口，提供服务</span></span><br><span class="line">    server.listen(<span class="number">5</span>)<span class="comment">#最多同时挂起5个连接</span></span><br><span class="line">    </span><br><span class="line">    connector,addr = server.accept()<span class="comment">#接受并建立连接</span></span><br><span class="line">    mes = connector.recv(<span class="number">4096</span>)<span class="comment">#接受消息,最大4096Bytes</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;From Client: &quot;</span>,mes)</span><br><span class="line">    connector.send(mes.upper())<span class="comment">#处理并回信</span></span><br><span class="line"></span><br><span class="line">    connector.close()<span class="comment">#关闭连接</span></span><br><span class="line">    server.close()<span class="comment">#关闭服务器</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="客户端（Client）-1"><a href="#客户端（Client）-1" class="headerlink" title="客户端（Client）"></a>客户端（Client）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Client（由Server提供（IP,Port））</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#建立TCP套接字</span></span><br><span class="line">    client = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">    client.connect((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">7788</span>))</span><br><span class="line">    <span class="comment">#发送字节流信息</span></span><br><span class="line">    mes = <span class="built_in">input</span>(<span class="string">&quot;&gt;&gt; &quot;</span>)</span><br><span class="line">    client.send(mes.encode(<span class="string">&quot;UTF-8&quot;</span>))</span><br><span class="line">    <span class="comment">#等待Server回复</span></span><br><span class="line">    response = client.recv(<span class="number">4096</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.decode(<span class="string">&quot;UTF-8&quot;</span>))</span><br><span class="line">    <span class="comment">#关闭连接</span></span><br><span class="line">    client.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>客户端可以不指定自己的（IP，Port），由操作系统自动分配（隐式绑定）</strong></li>
+</ul>
+<h2 id="三次握手-amp-四次挥手"><a href="#三次握手-amp-四次挥手" class="headerlink" title="三次握手 &amp; 四次挥手"></a>三次握手 &amp; 四次挥手</h2><p><img src="http://image.codebooklet.com/img_blog/Python/connectAndClose.png"></p>
+<ul>
+<li><strong>connect（握手）</strong>：在Client执行 connect() 时，会开始三次握手（左图）</li>
+<li><strong>close connection（挥手）</strong>：任意一方执行 close() 时，会开始四次挥手（右图）</li>
+</ul>
+<h2 id="TIME-WAIT与SO-REUSEADDR套接字选项"><a href="#TIME-WAIT与SO-REUSEADDR套接字选项" class="headerlink" title="TIME_WAIT与SO_REUSEADDR套接字选项"></a>TIME_WAIT与SO_REUSEADDR套接字选项</h2><h4 id="TIME-WAIT"><a href="#TIME-WAIT" class="headerlink" title="TIME_WAIT"></a>TIME_WAIT</h4><ul>
+<li><strong>在四次挥手关闭连接socket的过程中</strong>，会经过 <strong>connect -&gt; TIME_WAIT -&gt;close</strong> 三个过程，而中间的<strong>TIME_WAIT过程是为了确保最后发送的ACK确认关闭消息能正确被对方收到</strong>，<strong>因此在关闭连接后，不能立即重新使用刚关闭的连接的端口</strong>，如果没有这个过程，可能导致未关闭方死等，或提前关闭方数据冲突（刚释放的端口被另一个进程使用，然后接受到了上一个进程应该接受的信息），<strong>这个过程一般持续2*MSL（Maximum Segment Life）</strong></li>
+<li><strong>PS：Server的监听套接字（listening socket）可以立即关闭，并不会进入TIME_WAIT阶段</strong></li>
+</ul>
+<h4 id="SO-REUSEADDR"><a href="#SO-REUSEADDR" class="headerlink" title="SO_REUSEADDR"></a>SO_REUSEADDR</h4><ul>
+<li><strong>使用socketopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, True)设定</strong>，设置之后<strong>使应用程序可以在连接处于TIME_WAIT状态时，使用正在关闭的端口</strong><blockquote>
+<blockquote>
+<p>Brandon Rhodes:”我在编写服务器代码时经常使用SO_REUSEADDR，从未遇到过任何问题”</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="被动套接字与主动套接字"><a href="#被动套接字与主动套接字" class="headerlink" title="被动套接字与主动套接字"></a>被动套接字与主动套接字</h2><h4 id="被动套接字（passive-socket）"><a href="#被动套接字（passive-socket）" class="headerlink" title="被动套接字（passive socket）"></a>被动套接字（passive socket）</h4><ul>
+<li>又称<strong>监听套接字（listening socket）</strong>，<strong>一般由Server承担该角色</strong></li>
+<li><strong>被动套接字由（IP，Port）标识，用于作为提供网络服务的入口，Server通过该入口来接受连接请求（connect）</strong></li>
+<li>被动套接字<strong>不能用于发送或接收任何数据，也不标识任何实际的网络会话，只是个网络服务入口，让操作系统知道用哪个特定的TCP端口接受连接</strong></li>
+</ul>
+<h4 id="主动套接字（active-socket）"><a href="#主动套接字（active-socket）" class="headerlink" title="主动套接字（active socket）"></a>主动套接字（active socket）</h4><ul>
+<li>又称<strong>连接套接字（connected socket）</strong>，<strong>一般由Client主动发起，然后同Server二者一起维护该 socket</strong></li>
+<li><strong>主动套接字由（local_ip，local_port，remote_ip，remote_port）唯一与某一Server绑定</strong></li>
+<li>主动套接字<strong>可以用于发送或接收数据</strong></li>
+<li><strong>类似Unix系统的管道或文件，可以作为文件I/O中的输入流</strong></li>
+</ul>
+<h2 id="套接字方法分类"><a href="#套接字方法分类" class="headerlink" title="套接字方法分类"></a>套接字方法分类</h2><ol>
+<li><strong>服务端套接字函数（Server Socket Methods）</strong>：只有listening Socket可以使用，比如 listen()</li>
+<li><strong>客户端套接字函数（Client Socket Methods）</strong>：只用Connected Socket可以使用，比如 connect()</li>
+<li><strong>连接套接字函数（Connected Socket Methods）</strong>：通过connect得到的socket可以使用，比如 getsockname()</li>
+</ol>
+<ul>
+<li><a href="https://www.cnblogs.com/wu-wu/p/13784179.html">Python socket 常用方法分类与说明</a></li>
+</ul>
+<h2 id="TCP的listen-与accept"><a href="#TCP的listen-与accept" class="headerlink" title="TCP的listen()与accept()"></a>TCP的listen()与accept()</h2><ul>
+<li>TCP的C/S架构可以用餐厅来类比，<strong>Server</strong>使用<strong>listen(N)<strong>开启餐厅（入口进程），N表示这家餐厅最多可以让多少客户同时排队等待用餐（不同于同时用餐，同时用餐人数取决于子进程数或线程数），因此至少为1。只要</strong>Client</strong>知道这个餐厅的地址就可以使用<strong>connect()<strong>来访问这家餐厅，在经过排队后，餐厅发起</strong>accept()<strong>，此时Client会被带到某一张餐桌（</strong>一个新建的socket</strong>）中开始用餐<strong>（send，recv）</strong></li>
+</ul>
+<h4 id="①-socket-listen-backlog"><a href="#①-socket-listen-backlog" class="headerlink" title="① socket.listen([backlog])"></a>① socket.listen([backlog])</h4><ul>
+<li><strong>backlog</strong>：在accept()之前操作系统可以挂机的最大连接数，默认值是某个合理的值（a default reasonable value is chosen.）</li>
+</ul>
+<h4 id="②-accept"><a href="#②-accept" class="headerlink" title="② accept()"></a>② accept()</h4><ul>
+<li><strong>注意</strong>：使用前必须对socket对象调用 bind() 和 listen()</li>
+<li><strong>返回值</strong>：(conn, address) 前者是一个 socket object 后者是发起端的 address</li>
+</ul>
+<h2 id="TCP的connect"><a href="#TCP的connect" class="headerlink" title="TCP的connect()"></a>TCP的connect()</h2><ul>
+<li><strong>不同于UDP，TCP的 connect() 是可能失败的（由于三次握手）</strong>，比如Server不应答或拒绝，或者收到RST（reset）数据包等情况</li>
+<li><strong>由Client发起connect()，即Client主动（active socket）Server被动（passive socket）</strong></li>
+<li><strong>操作系统通过（local_ip，local_port，remote_ip，remote_port）唯一标识Client</strong></li>
+</ul>
+<h4 id="①-socket-connect-address"><a href="#①-socket-connect-address" class="headerlink" title="① socket.connect(address)"></a>① socket.connect(address)</h4><ul>
+<li><strong>address</strong>：远端socket的地址（Address of Server），形式取决于地址簇（address family）</li>
+<li>**如果connection被中断（interrupted）可能会触发socket.timeout，对于非阻塞socket（non-blocking sockets）则会触发InterruptedError</li>
+</ul>
+<h2 id="TCP的recv-与send"><a href="#TCP的recv-与send" class="headerlink" title="TCP的recv()与send()"></a>TCP的recv()与send()</h2><ul>
+<li>因为TCP是面向连接协议（connection-oriented），因此不需要在双方建立连接后再像UDP一样每次需要显式指定接收端</li>
+</ul>
+<h4 id="socket-recv-bufsize-flags"><a href="#socket-recv-bufsize-flags" class="headerlink" title="socket.recv(bufsize[, flags])"></a>socket.recv(bufsize[, flags])</h4><ul>
+<li><strong>bufsize</strong>：一次最大可以接受的数据量，<strong>官方文档推荐使用一个相对较小的2的幂次方，比如4096</strong>，相关原因可能与缓存区&amp;MSS有关</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Note For best match with hardware and network realities, the value of bufsize should be a relatively small power of 2, for example, 4096.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><strong>flags</strong>：默认值是 0 ，一些可选参数详情见<a href="https://manpages.debian.org/recv(2)">Unix manual page</a></li>
+<li><strong>返回值</strong>：一个表示接受到的数据的字节（Byte）对象</li>
+</ul>
+<h4 id="socket-send-bytes-flags"><a href="#socket-send-bytes-flags" class="headerlink" title="socket.send(bytes[, flags])"></a>socket.send(bytes[, flags])</h4><ul>
+<li><strong>注意</strong>：使用前必须保证 socket 对象是连接（connect）过的</li>
+<li><strong>bytes</strong>：要发送的字节流数据，<strong>需要应用层来保证数据传输完整性（或者使用sendall()）</strong></li>
+<li><strong>flags</strong>：同recv()，默认值是 0 ，一些可选参数详情见<a href="https://manpages.debian.org/recv(2)">Unix manual page</a></li>
+<li><strong>返回值</strong>：发送的字节流数据的字节数（Bytes）</li>
+</ul>
+<h2 id="建议使用sendall-而不是send"><a href="#建议使用sendall-而不是send" class="headerlink" title="建议使用sendall()而不是send()"></a>建议使用sendall()而不是send()</h2><h4 id="send-存在的问题"><a href="#send-存在的问题" class="headerlink" title="send()存在的问题"></a>send()存在的问题</h4><ul>
+<li><p><strong>在调用一次send()时操作系统的网络栈可能会有以下3种情况发生</strong></p>
+<p><strong>① 正常情况</strong>：网卡正好空闲，且有足够的发送缓存空间，<strong>将要发送的数据成功缓存并等待系统调用（system call）发送</strong></p>
+<p><strong>② 失败情况</strong>：网卡忙碌，且发送缓存区满，操作系统也无法分出更多空间，<strong>此时send()默认会阻塞进程直到可以传输</strong></p>
+<p><strong>③ 中间情况</strong>：发送缓存区几乎满，但尚有空间，<strong>此时部分数据可以进入发送缓存区队列等待发送，剩余数据则需等待</strong></p>
+</li>
+<li><p><strong>由于中间情况，调用send()时必须检查返回值，并且需要配合循环来使用</strong>，这样才能保证整个数据完整发送</p>
+</li>
+</ul>
+<h4 id="sendall-的优势"><a href="#sendall-的优势" class="headerlink" title="sendall()的优势"></a>sendall()的优势</h4><ul>
+<li>sendall()<strong>保证数据发送的完整性</strong></li>
+<li>sendall()底层由C语言实现，比send()配合循环来发送数据<strong>更有效</strong></li>
+<li>sendall()<strong>内部释放了Python的全局解释器锁（GIL，Global Interpreter Lock）因此其他Python线程在所有数据发送完成前不会竞争资源</strong></li>
+</ul>
+<h2 id="为什么Python标准库没有recv-相应的recvall-方法"><a href="#为什么Python标准库没有recv-相应的recvall-方法" class="headerlink" title="为什么Python标准库没有recv()相应的recvall()方法"></a>为什么Python标准库没有recv()相应的recvall()方法</h2><ul>
+<li><strong>现在很少使用定长消息，不同协议对待部分到达的数据流的处理方法可能不同</strong></li>
+<li><strong>用于处理recv()的循环往往比用于处理send()的循环更加复杂</strong>，因为即使程序知道还没有接收完整，也需要对已经接收的数据进行处理，而处理的细节不同应用场景也是不同的（突然想到之前操作系统期末的一道进程间同步互斥的主观题）</li>
+</ul>
+<h2 id="缓存区-amp-MSS"><a href="#缓存区-amp-MSS" class="headerlink" title="缓存区 &amp; MSS"></a>缓存区 &amp; MSS</h2><ul>
+<li><strong>TCP的数据并不会直接被接受或发送，而是会暂存在网卡的缓存区（buffer）中</strong><br><img src="http://image.codebooklet.com/img_blog/Python/TCPbuffer.png"></li>
+<li><strong>MSS（maximum segment size）</strong>，决定一个TCPsegment（TCP报文）的最大传输数据量，这个值通常会根据网卡链路层最大传输单元（MTU，maximum transmission unit）来设置，由于Ethernet和PPP的MTU为1500Bytes，且TCPHeader站40Bytes，通常MSS大小为1460Bytes</li>
+<li><strong>注意MSS代表的是一个TCPsegment应用层最大数据传输量，而不是整个TCPsegment的最大大小</strong></li>
+</ul>
+<h2 id="死锁（Deadlock）"><a href="#死锁（Deadlock）" class="headerlink" title="死锁（Deadlock）"></a>死锁（Deadlock）</h2><h4 id="为什么会发生死锁"><a href="#为什么会发生死锁" class="headerlink" title="为什么会发生死锁"></a>为什么会发生死锁</h4><ul>
+<li><strong>使用TCP时候，死锁现象是很容易发生的，因为通信双方很可能共享着彼此有限的资源——缓存区</strong></li>
+<li><strong>即使接收端（Receiver）没有调用recv()，收到的数据也会暂存在缓存区，因此缓存区很容易满</strong></li>
+<li><strong>写操作需要空间，在没有任何设定的情况下，当缓存区满时使用send()，默认阻塞进程，直到可以发送</strong></li>
+<li>PS：UDP绝对不会发生上述情况，如果 datagram 超出接收端（Receiver）处理能力将会把超出部分丢弃，只能通过应用层检测丢失</li>
+</ul>
+<h4 id="如何避免死锁"><a href="#如何避免死锁" class="headerlink" title="如何避免死锁"></a>如何避免死锁</h4><ul>
+<li><strong>Server使用recv()每次只处理一个较小的数据块是一个明智的选择，大小的选择通常是4096</strong></li>
+<li><strong>使用锁（Lock）来控制读写的同步问题</strong></li>
+<li><strong>使用多线程（multithread）或多进程（multiprocess）来处理接收或发送</strong></li>
+</ul>
+<h2 id="TCP如何量化Timeout"><a href="#TCP如何量化Timeout" class="headerlink" title="TCP如何量化Timeout"></a>TCP如何量化Timeout</h2><ul>
+<li><strong>SampleRTT</strong>：衡量从segment发送到收到ACK的时间，<strong>是几次RTT的平均值</strong></li>
+<li><strong>EstimatedRTT</strong> = ( 1 - α ) * EstimatedRTT + α * SampleRTT，通常 α = 0.125</li>
+<li><strong>DevRTT</strong> = ( 1 - β ) * DevRTT + β *  | SampleRTT - EstimatedRTT |，通常 β = 0.25</li>
+<li><em><em>TimeoutInterval = EstimatedRTT + 4</em> DevRTT</em>*</li>
+</ul>
+<h2 id="TCP如何提供可靠连接"><a href="#TCP如何提供可靠连接" class="headerlink" title="TCP如何提供可靠连接"></a>TCP如何提供可靠连接</h2><ul>
+<li><strong>每一个TCP数据包（packet）都有一个序列号（sequence numbers）</strong>，Client可以通过序列号对数据包正确排序，也可以从中发现丢失的数据包，从而请求重传</li>
+<li><strong>序列号并不使用顺序的整数，序列号增长与数据包大小相关</strong>，比如某数据包packet[0]序列号为8000大小为1024Bytes，那么下一个数据包packet[1]的序列号就是9024</li>
+<li><strong>起始序列号随机</strong>，防止被黑客轻易猜测到</li>
+<li><strong>流量控制（flow control）</strong>，Client与Server会协商得到一个TCP窗口（window）大小，这个值决定了同时传输的数据量</li>
+<li><strong>拥塞控制（congestion control）</strong>，如果发生丢包之类的情况，TCP会假定网路正在变得拥挤，然后基于一定算法减少每秒发送的数据量</li>
+</ul>
+<h2 id="Nagle算法"><a href="#Nagle算法" class="headerlink" title="Nagle算法"></a>Nagle算法</h2><h3 id="算法的思想与实际意义"><a href="#算法的思想与实际意义" class="headerlink" title="算法的思想与实际意义"></a>算法的思想与实际意义</h3><ul>
+<li><strong>利用时间空间连续性，对发送间隔短或数据量极小的数据，先缓存再一起发送</strong></li>
+<li>用于<strong>减少TCP/IP网络拥塞，提升网络性能</strong>，（比如一个仅仅1byte的数据直接发送，就需要加上40bytes的TCPHeader从而导致无效信息过多），但同时也带来<strong>粘包问题</strong></li>
+</ul>
+<h3 id="Nagle算法的规则"><a href="#Nagle算法的规则" class="headerlink" title="Nagle算法的规则"></a>Nagle算法的规则</h3><ul>
+<li>① 如果包长度达到MSS，则允许发送</li>
+<li>② 如果该包含有FIN，则允许发送</li>
+<li>③ 若所有发出去的小数据包（包长度小于MSS）均被确认，则允许发送</li>
+<li>④ 设置了<strong>TCP_NODELAY</strong>选项，则允许发送</li>
+<li>⑤ 上述条件都未满足，但发生了超时（一般为200ms），则立即发送</li>
+</ul>
+<h2 id="粘包问题与解决方法"><a href="#粘包问题与解决方法" class="headerlink" title="粘包问题与解决方法"></a>粘包问题与解决方法</h2><h3 id="粘包现象"><a href="#粘包现象" class="headerlink" title="粘包现象"></a>粘包现象</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#还是上面的Server和Client代码只不过加了循环处理消息</span></span><br><span class="line"><span class="comment">#Client：</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        client.send(<span class="string">b&quot;m&quot;</span>)</span><br><span class="line">        client.send(<span class="string">b&quot;m&quot;</span>)</span><br><span class="line">        response = client.recv(MTU)</span><br><span class="line">        <span class="built_in">print</span>(response.decode(<span class="string">&quot;UTF-8&quot;</span>))</span><br><span class="line"><span class="comment">#Server</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        mes = connector.recv(MTU)<span class="comment">#接受消息</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;From Client: &quot;</span>,mes)</span><br><span class="line">        connector.send(mes.upper())<span class="comment">#处理并回信</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Terminal（Client）</span></span><br><span class="line">MMM</span><br><span class="line">MM</span><br><span class="line">M</span><br><span class="line">MMMM</span><br><span class="line"><span class="comment">#Terminal（Server）</span></span><br><span class="line">From Client:  b<span class="string">&#x27;mmm&#x27;</span></span><br><span class="line">From Client:  b<span class="string">&#x27;mm&#x27;</span></span><br><span class="line">From Client:  b<span class="string">&#x27;m&#x27;</span></span><br><span class="line">From Client:  b<span class="string">&#x27;mmmmm&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="Method-1：设置TCP-NODELAY"><a href="#Method-1：设置TCP-NODELAY" class="headerlink" title="Method 1：设置TCP_NODELAY"></a>Method 1：设置TCP_NODELAY</h4><h4 id="Method-2：向数据流加入特殊信息标识开始和结束"><a href="#Method-2：向数据流加入特殊信息标识开始和结束" class="headerlink" title="Method 2：向数据流加入特殊信息标识开始和结束"></a>Method 2：向数据流加入特殊信息标识开始和结束</h4><h2 id="什么时候使用TCP"><a href="#什么时候使用TCP" class="headerlink" title="什么时候使用TCP"></a>什么时候使用TCP</h2><ul>
+<li><strong>TCP几乎是互联网程序间进行通信的默认选择，可能在整个职业生涯中都不会有意使用UDP</strong></li>
+</ul>
+<h2 id="什么时候不使用TCP"><a href="#什么时候不使用TCP" class="headerlink" title="什么时候不使用TCP"></a>什么时候不使用TCP</h2><ul>
+<li>Client向Server发送单个较小的请求，并且请求完成后不需要继续通信，避免握手挥手带来的额外数据包交换</li>
+<li>在Client与Server不存在长时间连接需求的情况下</li>
+<li>当丢包发生时，如果应用层（Application Layer）有比重传数据更聪明的方法来弥补的话（比如流媒体传输中的丢包可以通过一些压缩算法来补偿）可以选择UDP</li>
+</ul>
+<h1 id="附录（Appendix）"><a href="#附录（Appendix）" class="headerlink" title="附录（Appendix）"></a>附录（Appendix）</h1><h2 id="Python-Socket官方文档"><a href="#Python-Socket官方文档" class="headerlink" title="Python Socket官方文档"></a><a href="https://docs.python.org/3/library/socket.html">Python Socket官方文档</a></h2><h2 id="Python-socket-常用方法"><a href="#Python-socket-常用方法" class="headerlink" title="Python socket 常用方法"></a><a href="https://www.cnblogs.com/wu-wu/p/13784179.html">Python socket 常用方法</a></h2>]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -1270,13 +1430,22 @@
     <url>/2021/10/31/DeBug/C++DeBUG%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p><strong>记录在使用C++时与各种BUG斗智斗勇的血泪史</strong></p>
 <span id="more"></span>
-<h2 id="Error-C2872-‘byte’-ambiguous-symbol"><a href="#Error-C2872-‘byte’-ambiguous-symbol" class="headerlink" title="Error C2872: ‘byte’: ambiguous symbol"></a>Error C2872: ‘byte’: ambiguous symbol</h2><h3 id="BUG产生"><a href="#BUG产生" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
-<li>对使用旧版WindowsSKD编写的代码，使用C++17标准（使用C++14标准时正常）</li>
+<h2 id="Error-C2528-’name’-pointer-to-reference-is-illegal"><a href="#Error-C2528-’name’-pointer-to-reference-is-illegal" class="headerlink" title="Error C2528:’name’ : pointer to reference is illegal"></a>Error C2528:’name’ : pointer to reference is illegal</h2><h3 id="BUG产生"><a href="#BUG产生" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
+<li>在 vector 中插入引用对象，比如 vector&lt;int&amp;&gt; nums</li>
 </ul>
 <h3 id="BUG原因"><a href="#BUG原因" class="headerlink" title="BUG原因"></a>BUG原因</h3><ul>
-<li>旧版WindowsSKD有定义byte类型，但同时C++17也定义了std::byte类型，造成重复定义</li>
+<li>不能向“容器”中加入“引用”（与底层实现相关，会导致迭代等异常，详情暂请另行搜索）</li>
 </ul>
 <h3 id="BUG解决"><a href="#BUG解决" class="headerlink" title="BUG解决"></a>BUG解决</h3><ul>
+<li>比如将vector&lt; int&amp; &gt; nums改为vector&lt; int &gt; nums</li>
+</ul>
+<h2 id="Error-C2872-‘byte’-ambiguous-symbol"><a href="#Error-C2872-‘byte’-ambiguous-symbol" class="headerlink" title="Error C2872: ‘byte’: ambiguous symbol"></a>Error C2872: ‘byte’: ambiguous symbol</h2><h3 id="BUG产生-1"><a href="#BUG产生-1" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
+<li>对使用旧版WindowsSKD编写的代码，使用C++17标准（使用C++14标准时正常）</li>
+</ul>
+<h3 id="BUG原因-1"><a href="#BUG原因-1" class="headerlink" title="BUG原因"></a>BUG原因</h3><ul>
+<li>旧版WindowsSKD有定义byte类型，但同时C++17也定义了std::byte类型，造成重复定义</li>
+</ul>
+<h3 id="BUG解决-1"><a href="#BUG解决-1" class="headerlink" title="BUG解决"></a>BUG解决</h3><ul>
 <li><p>[Method.1] 添加_HAS_STD_BYTE=0宏</p>
 </li>
 <li><p>[Method.2]使用较低版本的C++标准（本次由于使用别人的框架因此采用该方法）</p>
@@ -2092,7 +2261,7 @@
 <li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
 </li>
 </ul>
- <img src="http://image.codebooklet.com/img_blog/《Linux-Ubuntu从入门到精通》笔记/vmstat.png" width=100% height=100% />
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Linux</category>
