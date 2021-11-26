@@ -345,7 +345,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-11-06T16:06:08+08:00">2021-11-06</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-11-26T21:00:10+08:00">2021-11-26</time>
             
           </span>
 
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">10k</span>
+                <span title="字数统计">14k</span>
               
 
               
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">10 mins.</span>
+                <span title="阅读时长">14 mins.</span>
               
             </div>
           
@@ -469,7 +469,7 @@
 </tr>
 <tr>
 <td align="center">C</td>
-<td align="center"></td>
+<td align="center"><a href="#chown">chown</a>   <a href="#chgrp">chgrp</a></td>
 </tr>
 <tr>
 <td align="center">D</td>
@@ -485,7 +485,7 @@
 </tr>
 <tr>
 <td align="center">G</td>
-<td align="center"></td>
+<td align="center"><a href="#groups">groups</a></td>
 </tr>
 <tr>
 <td align="center">H</td>
@@ -493,7 +493,7 @@
 </tr>
 <tr>
 <td align="center">I</td>
-<td align="center"></td>
+<td align="center"><a href="#id">id</a></td>
 </tr>
 <tr>
 <td align="center">J</td>
@@ -513,7 +513,7 @@
 </tr>
 <tr>
 <td align="center">N</td>
-<td align="center"></td>
+<td align="center"><a href="#newgrp">newgrp</a></td>
 </tr>
 <tr>
 <td align="center">O</td>
@@ -564,6 +564,33 @@
 <td align="center"></td>
 </tr>
 </tbody></table>
+ <div id="chgrp"><font size=20,font-weight:bold>chgrp</font></div>
+- 使用“chgrp”可以**更改文件的所属用户组**
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 20:36 a</span><br><span class="line">root@Aioy:~<span class="comment"># chgrp root a</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root root 0 Nov 26 20:36 a</span><br></pre></td></tr></table></figure>
+
+ <div id="chown"><font size=20,font-weight:bold>chown</font></div>
+- 使用“chown”可以**更改文件的所属用户，或者所属用户组**
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># touch a （创建一个名为a的文件）</span></span><br><span class="line">root@Aioy:~<span class="comment"># chown root:jerry a （修改所属用户为root所属用户组为jerry）</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 20:36 a</span><br><span class="line"><span class="comment">#可以使用 :group 单独修改所属用户组，效果同 chgrp 命令</span></span><br></pre></td></tr></table></figure>
+
+ <div id="newgrp"><font size=20,font-weight:bold>newgrp</font></div>
+- 使用“newgrp”**切换用户的有效用户组（Effective Group），但前提是确保用户已经在将要切换的用户组内**
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups （该命令输出的第一个组是有效用户组）</span></span><br><span class="line">root jerry</span><br><span class="line">root@Aioy:~<span class="comment"># newgrp jerry</span></span><br><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">jerry root</span><br></pre></td></tr></table></figure>
+
+ <div id="groups"><font size=20,font-weight:bold>groups</font></div>
+- 使用“groups”查看**查看某用户当前全部所属用户组，第一个为有效用户组（Effective Group）**
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">root</span><br><span class="line">root@Aioy:~<span class="comment"># groups jerry</span></span><br><span class="line">jerry : jerry</span><br></pre></td></tr></table></figure>
+
+ <div id="id"><font size=20,font-weight:bold>id</font></div>
+
+<ul>
+<li>使用“id”命令用于<strong>显示一个真实有效的用户以及其归属用户组</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 id 指令查看某用户信息</span></span><br><span class="line">root@Aioy:~/<span class="built_in">test</span><span class="comment"># id jerry</span></span><br><span class="line">uid=1001(jerry) gid=1001(jerry) groups=1001(jerry)</span><br><span class="line"><span class="comment">#groups属性暗示了一个用户可以归属多个组</span></span><br></pre></td></tr></table></figure>
+
  <div id="stat"><font size=20,font-weight:bold>stat</font></div>
 
 <ul>
@@ -924,7 +951,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1011,7 +1038,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">41k</span>
+    <span title="站点总字数">46k</span>
   
 
   
@@ -1020,7 +1047,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读次数">41 mins.</span>
+    <span title="站点总阅读次数">46 mins.</span>
   
 </div>
 
