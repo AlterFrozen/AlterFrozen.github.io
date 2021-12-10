@@ -3,12 +3,15 @@
   <entry>
     <title>Codebooklet公告板</title>
     <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
-    <content><![CDATA[<h2 id="2021-11-26"><a href="#2021-11-26" class="headerlink" title="2021/11/26"></a>2021/11/26</h2><ul>
-<li>准备了2个多月的JLPT N2考试居然因为疫情取消了！不过这样也好让我打好基础，后续准备考一次JTest，明年7月直接去考N1了！</li>
-<li>近期各课程都开始实验课了，属实笔记整理时间有点影响，为了维持质量，下个月可能更新频率会更低一点</li>
+    <content><![CDATA[<h2 id="2021-12-10"><a href="#2021-12-10" class="headerlink" title="2021/12/10"></a>2021/12/10</h2><ul>
+<li>不得不说这学期实验是真的多，大大小小都算的话差不多30多个实验？想静下心来提炼整理的时间都没有，加上下个月准备找一份实习，现在还在忙着复习图形学基础和C++，太难了…</li>
 </ul>
 <span id="more"></span>
 
+<h2 id="2021-11-26"><a href="#2021-11-26" class="headerlink" title="2021/11/26"></a>2021/11/26</h2><ul>
+<li>准备了2个多月的JLPT N2考试居然因为疫情取消了！不过这样也好让我打好基础，后续准备考一次JTest，明年7月直接去考N1了！</li>
+<li>近期各课程都开始实验课了，属实笔记整理时间有点影响，为了维持质量，下个月可能更新频率会更低一点</li>
+</ul>
 <h2 id="2021-11-21"><a href="#2021-11-21" class="headerlink" title="2021/11/21"></a>2021/11/21</h2><ul>
 <li>挤出了一点时间把网络编程笔记完善了一下，现在从基础到UDP和TCP都整理差不多了</li>
 <li>Eigen的Sparse Matrix很多细节还是不太清楚，等用熟练了再整理吧</li>
@@ -95,6 +98,78 @@
       </categories>
       <tags>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux系统运行级别</title>
+    <url>/2021/12/01/Linux/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/</url>
+    <content><![CDATA[<ul>
+<li>Linux系统一般有7个运行级别（runlevel）从level 0 ~ 6，可能有更多等级，操作系统根据当前正在运行的功能级别，具有不同的功能</li>
+<li><a href="https://blog.csdn.net/qq_21453783/article/details/100251461">参考文章</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="Linux一般的7个运行等级"><a href="#Linux一般的7个运行等级" class="headerlink" title="Linux一般的7个运行等级"></a>Linux一般的7个运行等级</h2><table>
+<thead>
+<tr>
+<th>运行等级</th>
+<th>模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>系统关机模式</td>
+<td>系统默认运行级别不能设置为0，否则无法正常启动系统</td>
+</tr>
+<tr>
+<td>1</td>
+<td>单用户模式</td>
+<td>也称为救援模式，root权限，用于系统维护，禁止远程登陆，类似Windows下的安全模式登录</td>
+</tr>
+<tr>
+<td>2</td>
+<td>多用户模式</td>
+<td>多用户，但是没有网络文件（NFS）支持</td>
+</tr>
+<tr>
+<td>3</td>
+<td>完整的多用户文本模式</td>
+<td>多用户，有网络文件系统，用户登录后进入控制台命令行模式，在没有网络的环境下等同于运行级别2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>预留功能</td>
+<td>一般不用，在一些特殊情况下可以用来做一些事情。例如在笔记本电脑的电池用尽时，可以切换到这个模式来做一些设置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>图形化模式</td>
+<td>登陆后进入图形GUI模式或GNOME、KDE图形化界面，如X Window系统</td>
+</tr>
+<tr>
+<td>6</td>
+<td>重启模式</td>
+<td>默认运行级别不能设为6，否则无法正常启动系统</td>
+</tr>
+</tbody></table>
+<h2 id="如何查看当前运行等级"><a href="#如何查看当前运行等级" class="headerlink" title="如何查看当前运行等级"></a>如何查看当前运行等级</h2><h3 id="使用-runlevel-查看当前运行等级"><a href="#使用-runlevel-查看当前运行等级" class="headerlink" title="使用 runlevel 查看当前运行等级"></a>使用 runlevel 查看当前运行等级</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ runlevel</span><br><span class="line">N 5 <span class="comment">#图形化模式</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-systemctl-get-default-查看默认启动方式"><a href="#使用-systemctl-get-default-查看默认启动方式" class="headerlink" title="使用 systemctl get-default 查看默认启动方式"></a>使用 systemctl get-default 查看默认启动方式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ systemctl get-default </span><br><span class="line">graphical.target <span class="comment">#图形化启动</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="切换运行等级"><a href="#切换运行等级" class="headerlink" title="切换运行等级"></a>切换运行等级</h2><ul>
+<li>使用 init 3 切换到“完整的多用户文本模式”<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ init 3</span><br><span class="line"><span class="comment"># 接下来需要输入管理员密码</span></span><br></pre></td></tr></table></figure></li>
+<li>之后可以使用 init 5 再次切换回“图形化模式”，需要重新登录认证</li>
+</ul>
+<h2 id="运行级别配置文件"><a href="#运行级别配置文件" class="headerlink" title="运行级别配置文件"></a>运行级别配置文件</h2><ul>
+<li>在**/etc/rc.d/**目录下有以下文件，分别对应运行等级<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost ~]$ <span class="built_in">cd</span> /etc/rc.d</span><br><span class="line">[raven-1@localhost rc.d]$ ll</span><br><span class="line">total 4</span><br><span class="line">drwxr-xr-x. 2 root root  70 Oct 22 01:42 init.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc0.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc1.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc2.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc3.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc4.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:49 rc5.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc6.d</span><br><span class="line">-rw-r--r--. 1 root root 473 Mar 31  2020 rc.local</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -436,11 +511,12 @@
 <li>TCP会在<strong>传输中将数据流（data stream）分为多个大小不同的数据包（packet）然后在接收时重组</strong></li>
 <li>现在除了协议设计专家，几乎没有人能够再改进线代TCP协议栈的性能</li>
 </ul>
-<h2 id="一个最简单的TCP-C-S程序"><a href="#一个最简单的TCP-C-S程序" class="headerlink" title="一个最简单的TCP C/S程序"></a>一个最简单的TCP C/S程序</h2><h4 id="服务端（Server）-1"><a href="#服务端（Server）-1" class="headerlink" title="服务端（Server）"></a>服务端（Server）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Server（先有Server才能有Client）</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#一个最简单的TCP Server</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#建立TCP套接字</span></span><br><span class="line">    server = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">    server.bind((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">7788</span>))</span><br><span class="line">    <span class="comment">#开始监听端口，提供服务</span></span><br><span class="line">    server.listen(<span class="number">5</span>)<span class="comment">#最多同时挂起5个连接</span></span><br><span class="line">    </span><br><span class="line">    connector,addr = server.accept()<span class="comment">#接受并建立连接</span></span><br><span class="line">    mes = connector.recv(<span class="number">4096</span>)<span class="comment">#接受消息,最大4096Bytes</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;From Client: &quot;</span>,mes)</span><br><span class="line">    connector.send(mes.upper())<span class="comment">#处理并回信</span></span><br><span class="line"></span><br><span class="line">    connector.close()<span class="comment">#关闭连接</span></span><br><span class="line">    server.close()<span class="comment">#关闭服务器</span></span><br></pre></td></tr></table></figure>
+<h2 id="一个最简单的TCP-C-S程序"><a href="#一个最简单的TCP-C-S程序" class="headerlink" title="一个最简单的TCP C/S程序"></a>一个最简单的TCP C/S程序</h2><h4 id="服务端（Server）-1"><a href="#服务端（Server）-1" class="headerlink" title="服务端（Server）"></a>服务端（Server）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Server（先有Server才能有Client）</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#一个最简单的TCP Server</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#建立TCP套接字</span></span><br><span class="line">    server = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">    server.bind((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">7788</span>))</span><br><span class="line">    <span class="comment">#开始监听端口，提供服务</span></span><br><span class="line">    server.listen(<span class="number">5</span>)<span class="comment">#最多同时挂起5个连接</span></span><br><span class="line">    </span><br><span class="line">    connector,addr = server.accept()<span class="comment">#接受并建立连接</span></span><br><span class="line">    mes = connector.recv(<span class="number">4096</span>)<span class="comment">#接受消息,最大4096Bytes</span></span><br><span class="line">    <span class="keyword">if</span> mes:<span class="comment">#Client在关闭连接时会发送一个NULL值，而python会解释为空字符串</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;From Client: &quot;</span>,mes)</span><br><span class="line">        connector.send(mes.upper())<span class="comment">#处理并回信</span></span><br><span class="line"></span><br><span class="line">    connector.close()<span class="comment">#关闭连接</span></span><br><span class="line">    server.close()<span class="comment">#关闭服务器</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="客户端（Client）-1"><a href="#客户端（Client）-1" class="headerlink" title="客户端（Client）"></a>客户端（Client）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Client（由Server提供（IP,Port））</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#建立TCP套接字</span></span><br><span class="line">    client = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">    client.connect((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">7788</span>))</span><br><span class="line">    <span class="comment">#发送字节流信息</span></span><br><span class="line">    mes = <span class="built_in">input</span>(<span class="string">&quot;&gt;&gt; &quot;</span>)</span><br><span class="line">    client.send(mes.encode(<span class="string">&quot;UTF-8&quot;</span>))</span><br><span class="line">    <span class="comment">#等待Server回复</span></span><br><span class="line">    response = client.recv(<span class="number">4096</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.decode(<span class="string">&quot;UTF-8&quot;</span>))</span><br><span class="line">    <span class="comment">#关闭连接</span></span><br><span class="line">    client.close()</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>客户端可以不指定自己的（IP，Port），由操作系统自动分配（隐式绑定）</strong></li>
+<li><strong>在TCP四次挥手时，最后会发送一个null的值，而python中没有此类型，所有python会解释为’’字符串，需要明确知道null 不等于空字符串</strong></li>
 </ul>
 <h2 id="三次握手-amp-四次挥手"><a href="#三次握手-amp-四次挥手" class="headerlink" title="三次握手 &amp; 四次挥手"></a>三次握手 &amp; 四次挥手</h2><p><img src="http://image.codebooklet.com/img_blog/Python/connectAndClose.png"></p>
 <ul>
@@ -579,7 +655,7 @@
 <h2 id="粘包问题与解决方法"><a href="#粘包问题与解决方法" class="headerlink" title="粘包问题与解决方法"></a>粘包问题与解决方法</h2><h3 id="粘包现象"><a href="#粘包现象" class="headerlink" title="粘包现象"></a>粘包现象</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#还是上面的Server和Client代码只不过加了循环处理消息</span></span><br><span class="line"><span class="comment">#Client：</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        client.send(<span class="string">b&quot;m&quot;</span>)</span><br><span class="line">        client.send(<span class="string">b&quot;m&quot;</span>)</span><br><span class="line">        response = client.recv(MTU)</span><br><span class="line">        <span class="built_in">print</span>(response.decode(<span class="string">&quot;UTF-8&quot;</span>))</span><br><span class="line"><span class="comment">#Server</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        mes = connector.recv(MTU)<span class="comment">#接受消息</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;From Client: &quot;</span>,mes)</span><br><span class="line">        connector.send(mes.upper())<span class="comment">#处理并回信</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Terminal（Client）</span></span><br><span class="line">MMM</span><br><span class="line">MM</span><br><span class="line">M</span><br><span class="line">MMMM</span><br><span class="line"><span class="comment">#Terminal（Server）</span></span><br><span class="line">From Client:  b<span class="string">&#x27;mmm&#x27;</span></span><br><span class="line">From Client:  b<span class="string">&#x27;mm&#x27;</span></span><br><span class="line">From Client:  b<span class="string">&#x27;m&#x27;</span></span><br><span class="line">From Client:  b<span class="string">&#x27;mmmmm&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="Method-1：设置TCP-NODELAY"><a href="#Method-1：设置TCP-NODELAY" class="headerlink" title="Method 1：设置TCP_NODELAY"></a>Method 1：设置TCP_NODELAY</h4><h4 id="Method-2：向数据流加入特殊信息标识开始和结束"><a href="#Method-2：向数据流加入特殊信息标识开始和结束" class="headerlink" title="Method 2：向数据流加入特殊信息标识开始和结束"></a>Method 2：向数据流加入特殊信息标识开始和结束</h4><h2 id="什么时候使用TCP"><a href="#什么时候使用TCP" class="headerlink" title="什么时候使用TCP"></a>什么时候使用TCP</h2><ul>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="Method-1：设置TCP-NODELAY"><a href="#Method-1：设置TCP-NODELAY" class="headerlink" title="Method 1：设置TCP_NODELAY"></a>Method 1：设置TCP_NODELAY</h4><h4 id="Method-2：向数据流加入特殊标识开始和结束（一般需要结合编码方式决定特殊标识）"><a href="#Method-2：向数据流加入特殊标识开始和结束（一般需要结合编码方式决定特殊标识）" class="headerlink" title="Method 2：向数据流加入特殊标识开始和结束（一般需要结合编码方式决定特殊标识）"></a>Method 2：向数据流加入特殊标识开始和结束（一般需要结合编码方式决定特殊标识）</h4><h4 id="Method-3：设置接收固定SIZE的数据，对小于该SIZE的数据补位"><a href="#Method-3：设置接收固定SIZE的数据，对小于该SIZE的数据补位" class="headerlink" title="Method 3：设置接收固定SIZE的数据，对小于该SIZE的数据补位"></a>Method 3：设置接收固定SIZE的数据，对小于该SIZE的数据补位</h4><h2 id="什么时候使用TCP"><a href="#什么时候使用TCP" class="headerlink" title="什么时候使用TCP"></a>什么时候使用TCP</h2><ul>
 <li><strong>TCP几乎是互联网程序间进行通信的默认选择，可能在整个职业生涯中都不会有意使用UDP</strong></li>
 </ul>
 <h2 id="什么时候不使用TCP"><a href="#什么时候不使用TCP" class="headerlink" title="什么时候不使用TCP"></a>什么时候不使用TCP</h2><ul>
