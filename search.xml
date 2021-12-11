@@ -101,6 +101,195 @@
       </tags>
   </entry>
   <entry>
+    <title>《C++Primer》基础回顾 [1]</title>
+    <url>/2021/12/07/C++/C++Primer-Review%5B1%5D/</url>
+    <content><![CDATA[<ul>
+<li>本章要是C++基础部分个人认为重要的或遗忘的细节回顾，笔记涵盖”基础知识”、“变量和基本类型”、“字符串、向量和数组”、“类型转换”</li>
+<li>参考书籍《C++Primer 中文版 5th》</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="I-O缓冲区（buffer）"><a href="#I-O缓冲区（buffer）" class="headerlink" title="I/O缓冲区（buffer）"></a>I/O缓冲区（buffer）</h2><ul>
+<li>读写缓冲区的动作与程序中的动作是无关的（I/O与CPU），可以主动刷新输出缓冲，默认情况下读cin会刷新cout，程序非正常终止时也会刷新cout</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>输出情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>满缓冲</td>
+<td>I/O在缓冲区满后进行</td>
+<td>1.缓冲区满<br>2.调用fflush<br>3.文件fclose</td>
+</tr>
+<tr>
+<td>行缓冲</td>
+<td>遇到换行符时，或者缓冲区满时，候执行实际的I/O操作</td>
+<td>1.遇到换行符<br>2.缓冲区满<br>3.调用fflush<br>4.文件fclose</td>
+</tr>
+<tr>
+<td>无缓冲</td>
+<td>不缓冲，直接I/O</td>
+<td>直接输出</td>
+</tr>
+</tbody></table>
+<h2 id="stderr-amp-stdout"><a href="#stderr-amp-stdout" class="headerlink" title="stderr &amp; stdout"></a>stderr &amp; stdout</h2><h3 id="stderr（标准错误）"><a href="#stderr（标准错误）" class="headerlink" title="stderr（标准错误）"></a>stderr（标准错误）</h3><ul>
+<li><strong>无缓冲</strong>，因此信息可以直接显示</li>
+</ul>
+<h3 id="stdout（标准输出）"><a href="#stdout（标准输出）" class="headerlink" title="stdout（标准输出）"></a>stdout（标准输出）</h3><ul>
+<li><strong>行缓冲</strong>，输出字符会暂存在缓冲区，等待按下回车键才进行实际的I/O操作</li>
+</ul>
+<h2 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h2><ul>
+<li><strong>是一个复杂类型的名字变得简单明了、易于理解和使用</strong></li>
+</ul>
+<h3 id="使用关键字typedef"><a href="#使用关键字typedef" class="headerlink" title="使用关键字typedef"></a>使用关键字typedef</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> myDouble;</span><br><span class="line">std::cout &lt;&lt; std::boolalpha &lt;&lt; (<span class="built_in"><span class="keyword">typeid</span></span>(myDouble) == <span class="built_in"><span class="keyword">typeid</span></span>(<span class="keyword">double</span>));</span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用别名声明（alias-declaration）"><a href="#使用别名声明（alias-declaration）" class="headerlink" title="使用别名声明（alias declaration）"></a>使用别名声明（alias declaration）</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> myDouble = <span class="keyword">double</span>;</span><br><span class="line">std::cout &lt;&lt; std::boolalpha &lt;&lt; (<span class="built_in"><span class="keyword">typeid</span></span>(myDouble) == <span class="built_in"><span class="keyword">typeid</span></span>(<span class="keyword">double</span>));</span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量和基本类型"><a href="#变量和基本类型" class="headerlink" title="变量和基本类型"></a>变量和基本类型</h1><h2 id="auto类型说明符"><a href="#auto类型说明符" class="headerlink" title="auto类型说明符"></a>auto类型说明符</h2><ul>
+<li><p>解决用表达式给变量赋值时，变量类型难以确定的问题</p>
+</li>
+<li><p>Compiler会根据表达式结果，自动分析auto对应的类型，所以<strong>auto定义时必须有初值</strong></p>
+</li>
+<li><p>auto同时声明多个变量时，必须保证声明所有变量的是<strong>同一类型</strong>的变量</p>
+</li>
+<li><p>将auto当做一个普通的变量类型，会更好理解顶层const被忽略的问题</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> i = <span class="number">0</span>, *p = &amp;i; <span class="comment">//正确</span></span><br><span class="line"><span class="keyword">auto</span> pi = <span class="number">3.14</span>, r = <span class="number">2</span>; <span class="comment">//错误，pi与r类型不同</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>Compiler推断出的auto类型有时并不和初始值的类型一致，会适当改变结果使其更符合初始化规则</strong></p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>, &amp;r = i;</span><br><span class="line"><span class="keyword">auto</span> a = r; <span class="comment">//a是一个int类型，因为r只是i的一个别名</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>auto一般会忽略顶层const（变量的const）而保留底层const（通过指针间接指向的变量的const）</strong><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> cInt = i, &amp;cRef = cInt;</span><br><span class="line"><span class="keyword">auto</span> b = cInt; <span class="comment">//b是int类型，忽略了顶层const</span></span><br><span class="line"><span class="keyword">auto</span> c = cRef; <span class="comment">//c是int类型，cRef只是一个别名，所以与cInt情况相同</span></span><br><span class="line"><span class="keyword">auto</span> d = &amp;i; <span class="comment">//d是int*</span></span><br><span class="line"><span class="keyword">auto</span> e = &amp;cInt; <span class="comment">//e是const int*（常量指针，不同于int* const指针常量）</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>如果需要推断出auto的类型是顶层const，需要显式声明</strong><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">auto</span> f = cInt;</span><br></pre></td></tr></table></figure></li>
+<li><strong>可以将引用的类型设置为auto，原来的初始化规则任然适用</strong><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span>&amp; g = cInt; <span class="comment">//g是一个const int&amp;，与cInt绑定</span></span><br><span class="line"><span class="keyword">auto</span>&amp; h = <span class="number">99</span>; <span class="comment">//错误，不可以为非常量引用绑定字面值</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">auto</span>&amp; k = <span class="number">99</span>; <span class="comment">//正确，可以为常量引用绑定字面值</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="decltype类型指示符"><a href="#decltype类型指示符" class="headerlink" title="decltype类型指示符"></a>decltype类型指示符</h2><ul>
+<li><strong>decltype(expr)通过表达式的返回值类型推断出变量类型，并不会实际计算表达式的值</strong></li>
+<li>只希望通过表达式推断类型，而不需要用表达式赋值的情况下使用，与auto使用场景不同<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">decltype</span>(<span class="built_in">func</span>()) sum = x; <span class="comment">//sum的类型同func的返回值类型</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="keyword">int</span>&gt; <span class="title">nums</span><span class="params">(<span class="number">10</span>,<span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">decltype</span>(nums.<span class="built_in">size</span>()) i = <span class="number">0</span>;i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">    std::cout &lt;&lt; nums[i];</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="decltype和引用"><a href="#decltype和引用" class="headerlink" title="decltype和引用"></a>decltype和引用</h3><ul>
+<li>如果decltype使用的表达式返回值是一个引用，则意味着推断结果将是一个引用，需要初始化<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">40</span>, *p=&amp;i ,&amp;r = i;</span><br><span class="line"><span class="keyword">decltype</span>(r + <span class="number">0</span>) b; <span class="comment">//正确，加法结果是int</span></span><br><span class="line"><span class="keyword">decltype</span>(*p) c; <span class="comment">//错误，*p得到&amp;i，所以结果是一个引用，需要初始化</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>如果在decltype的表达式中，变量加了括号，则Compiler会认为括号内是一个表达式，而变量是一种可以作为左值的特殊表达式，因此会被解释为引用类型</strong>（注意这里说的是变量而不是表达式）<blockquote>
+<p>WARING：decltype((variable))对变量双层括号的结果永远是引用</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">decltype</span>((i)) d; <span class="comment">//错误，d是int&amp;必须初始化（error C2530: &#x27;d&#x27;: references must be initialized）</span></span><br><span class="line"><span class="keyword">decltype</span>((i+<span class="number">1</span>)) dd; <span class="comment">//正确，注意表达式和变量的区别</span></span><br><span class="line"><span class="keyword">decltype</span>(i) e; <span class="comment">//正确，e是未初始化的int</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="类内初始值"><a href="#类内初始值" class="headerlink" title="类内初始值"></a>类内初始值</h2><ul>
+<li>C++11规定可以为数据成员体同一个“类内初始值（in-class initializer）”</li>
+<li>创建对象时，类内初始值将被用于初始化数据成员，没有初始值则会被默认初始化<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    A obj&#123;&#125;;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;a:&quot;</span> &lt;&lt; obj.a &lt;&lt; <span class="string">&quot; b:&quot;</span> &lt;&lt; obj.b;</span><br><span class="line">    <span class="comment">//output:a:0 b:1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="void-amp-void"><a href="#void-amp-void" class="headerlink" title="void &amp; void*"></a>void &amp; void*</h2><h3 id="void"><a href="#void" class="headerlink" title="void"></a>void</h3><ul>
+<li>一种特殊用处的类型，既无操作也无值，<strong>不能定义void类型的变量</strong></li>
+</ul>
+<h3 id="void-1"><a href="#void-1" class="headerlink" title="void*"></a>void*</h3><ul>
+<li><strong>可以指向任意任意非常量</strong>的指针类型，<strong>不能直接执行解引用操作</strong></li>
+</ul>
+<h1 id="字符串、向量和数组"><a href="#字符串、向量和数组" class="headerlink" title="字符串、向量和数组"></a>字符串、向量和数组</h1><h2 id="字符串的读取"><a href="#字符串的读取" class="headerlink" title="字符串的读取"></a>字符串的读取</h2><h3 id="使用cin以space为划分读取单个单词"><a href="#使用cin以space为划分读取单个单词" class="headerlink" title="使用cin以space为划分读取单个单词"></a>使用cin以space为划分读取单个单词</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::string word;</span><br><span class="line"><span class="keyword">while</span> (cin &gt;&gt; word) std::cout &lt;&lt; word &lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用getline读取整行字符串"><a href="#使用getline读取整行字符串" class="headerlink" title="使用getline读取整行字符串"></a>使用getline读取整行字符串</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::string word;</span><br><span class="line"><span class="keyword">while</span> (std::<span class="built_in">getline</span>(std::cin, word)) std::cout &lt;&lt; word &lt;&lt; std::endl; <span class="comment">//注意：getline不会保留输入的\n</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="string-size-type类型"><a href="#string-size-type类型" class="headerlink" title="string::size_type类型"></a>string::size_type类型</h2><ul>
+<li>string类以及大多其他C++STL内定义的类，都为了适配各种机器而定义了多种数据类型，使用时通过作用域操作符::区别</li>
+<li>可以肯定的是<strong>STL各种size类型都应该是unsigned类型的（注意：C/C++内置的下标类型是有符号的）</strong></li>
+<li><strong>由于size返回一个unsigned类型，所以不要与signed类型在表达式中混用！否则会造成如下所示的意外情况</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::string str&#123; <span class="string">&quot;hello&quot;</span> &#125;;</span><br><span class="line">std::vector&lt;<span class="keyword">int</span>&gt; vecI&#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">-1</span>;</span><br><span class="line">std::cout &lt;&lt; std::boolalpha &lt;&lt; (str.<span class="built_in">size</span>() &lt; n) &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">std::cout &lt;&lt; std::boolalpha &lt;&lt; (vecI.<span class="built_in">size</span>() &lt; n);<span class="comment">//如果将n改为字面量，则结果正确</span></span><br><span class="line"><span class="comment">//输出结果:true true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>建议使用STL内各种类内部的size_type作为用下标访问时的变量类型，避免越界</strong></li>
+</ul>
+<h2 id="向量（vector）"><a href="#向量（vector）" class="headerlink" title="向量（vector）"></a>向量（vector）</h2><ul>
+<li><strong>vector是类模板</strong>，无论是类模板还是函数模板，使用前都需要实例化（instantiation）</li>
+<li><strong>vector是容器，容器内部必须是对象，引用不是对象，因此不能用引用类型实例化容器</strong></li>
+<li>早期C++标准中，如果用vector实例化vector需要加一个空格，就像下面的例子一样</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::vector&lt;std::vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="comment">//早期</span></span><br><span class="line">std::vector&lt;std::vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="comment">//新标准</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-和-来初始化vector的区别"><a href="#使用-和-来初始化vector的区别" class="headerlink" title="使用 {} 和 () 来初始化vector的区别"></a>使用 {} 和 () 来初始化vector的区别</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="keyword">int</span>&gt; vecA&#123; <span class="number">10</span>,<span class="number">20</span> &#125;;</span><br><span class="line"><span class="function">std::vector&lt;<span class="keyword">int</span>&gt; <span class="title">vecB</span><span class="params">(<span class="number">10</span>, <span class="number">20</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; item : vecA) std::cout &lt;&lt; item &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">std::cout &lt;&lt; std::endl;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; item : vecB) std::cout &lt;&lt; item &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="number">10</span> <span class="number">20</span></span><br><span class="line"><span class="number">20</span> <span class="number">20</span> <span class="number">20</span> <span class="number">20</span> <span class="number">20</span> <span class="number">20</span> <span class="number">20</span> <span class="number">20</span> <span class="number">20</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果用初始元素的列表来初始化vector，则只能使用 {} 列表初始化（list initialize），如果使用 {} 但内部的值不能作为列表初始化的类型，则可能会被当做普通的初始化函数调用</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::vector&lt;std::string&gt; vec&#123;<span class="number">10</span>&#125;; <span class="comment">//有10个string类默认的初始元素</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果使用 () 初始化不指定初始值，则会根据内部变量类型，默认初始化，比如int类型会初始化为0</li>
+</ul>
+<h3 id="vector对象的高效增长性"><a href="#vector对象的高效增长性" class="headerlink" title="vector对象的高效增长性"></a>vector对象的高效增长性</h3><ul>
+<li><strong>C++标准要求vector应该能在运行时高效快速地添加元素，因此defination时是否设计vector的初始大小并不重要，甚至如果设置初始大小反而还会降低性能，除非一种例外：所有元素值相同，此时可以直接用 () 初始化（个人认为高效的原因是内部调用了类似memset的底层函数）</strong></li>
+<li><strong>vector动态增加大小时，并不是在原空间之后持续新空间（因为无法保证原空间之后尚有可供配置的空间），而是以原大小的两倍另外配置一块较大的空间，然后将原内容拷贝过来，然后才开始在原内容之后构造新元素，并释放原空间，因此对vector的任何操作，一旦引起空间重新配置，指向原vector的所有迭代器就都失效了</strong></li>
+</ul>
+<h2 id="初识迭代器"><a href="#初识迭代器" class="headerlink" title="初识迭代器"></a>初识迭代器</h2><ul>
+<li><strong>所有标准库容器都可以使用迭代器（iterator），但是只有少数几种容器才同时支持下标运算符[]</strong></li>
+<li>使用类似于指针，有效迭代器：指向容器内元素 或 指向容器尾元素的下一个位置</li>
+</ul>
+<h3 id="使用迭代器"><a href="#使用迭代器" class="headerlink" title="使用迭代器"></a>使用迭代器</h3><ul>
+<li><strong>使用上却不同于指针，获取迭代器不能通过取地址符&amp;，但是在获取所指向元素时，都是使用解引用符</strong>*</li>
+<li>*<em>注意：成员访问符 . 的优先级大于 解引用 * ，例：(<em>it).empty() //正确</em></em></li>
+<li>拥有迭代器的类，同时会有返回迭代器的成员，比如至少有 指向容器第一个元素的迭代器being 和 指向容器尾元素下一个元素的end（通常也被称为 尾后迭代器[off-the-end iterator] 或 尾迭代器[end iterator]）</li>
+<li><strong>如果容器为空，则begin和end返回的是同一个迭代器：尾迭代器</strong></li>
+<li><strong>两个有效迭代器相减会返回相距位置大小，类型是 dirrerence_type 是一个有符号类型（两个指针相减会返回 ptrdiff_t 类型）</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::string s&#123;<span class="string">&quot;hello world&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = s.<span class="built_in">begin</span>(); it != s.<span class="built_in">end</span>(); it++) <span class="comment">//注意：不要使用auto&amp;</span></span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么对迭代器使用-而不是-lt-（泛型编程）"><a href="#为什么对迭代器使用-而不是-lt-（泛型编程）" class="headerlink" title="为什么对迭代器使用 != 而不是 &lt;（泛型编程）"></a>为什么对迭代器使用 != 而不是 &lt;（泛型编程）</h3><ul>
+<li><p><strong>不同于C和Java程序习惯用下标访问容器，C++程序员更倾向于用迭代器访问容器，因为STL所有容器都支持迭代器，而不一定支持下标访问</strong></p>
+</li>
+<li><p><strong>STL所有容器的迭代器都定义了 == 和 != 但是大多没有定义 &lt; 运算符</strong></p>
+</li>
+</ul>
+<h3 id="迭代器类型"><a href="#迭代器类型" class="headerlink" title="迭代器类型"></a>迭代器类型</h3><ul>
+<li><p><strong>就像不知道类的size_type成员的实际类型一样，一般也不需要知道迭代器的类型</strong></p>
+</li>
+<li><p><strong>实际上，拥有迭代器的STL类使用 iterator 和 const_iterator 来表示迭代器类型</strong></p>
+</li>
+<li><p><strong>iterator</strong>：当容器本身不是const时使用</p>
+</li>
+<li><p><strong>const_iterator</strong>：无论容器是否是const都可以使用</p>
+</li>
+<li><p><strong>当不得不需要 const_iterator 时，C++11提供了 cbein 和 cend ，无论对象是否是const二者都会返回const_iterator</strong></p>
+</li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="标准库函数std-begin-和std-end"><a href="#标准库函数std-begin-和std-end" class="headerlink" title="标准库函数std::begin()和std::end()"></a>标准库函数std::begin()和std::end()</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> nums[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>* beg = std::<span class="built_in">begin</span>(nums);</span><br><span class="line"><span class="keyword">int</span>* last = std::<span class="built_in">end</span>(nums);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>可以用数组初始化vector对象</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="keyword">int</span>&gt; vec&#123;std::<span class="built_in">begin</span>(nums),std::<span class="built_in">end</span>(nums)&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); it++)</span><br><span class="line">        std::cout &lt;&lt; (*it);</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-范围for（range-based-for）-处理多维数组"><a href="#使用-范围for（range-based-for）-处理多维数组" class="headerlink" title="使用 范围for（range-based-for） 处理多维数组"></a>使用 范围for（range-based-for） 处理多维数组</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> matrix[<span class="number">2</span>][<span class="number">2</span>] = &#123;</span><br><span class="line">        &#123; <span class="number">1</span>,<span class="number">2</span> &#125;,</span><br><span class="line">        &#123; <span class="number">3</span>,<span class="number">4</span> &#125;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; row : matrix) <span class="comment">//非最内层必须使用auto&amp;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> col : row) std::cout &lt;&lt; col &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>使用range-based-for时，非最内层的循坏外，都应该确保控制变量是 引用 类型，否则可能将数组指针解释为普通指针（数组首位置）</strong></li>
+<li><strong>多维数组是数组的数组，仔细分析上述遍历过程，本质上是外层获取数组指针，内层在数组指针指向的空间中遍历</strong></li>
+</ul>
+<h3 id="使用类型别名简化多维数组的指针"><a href="#使用类型别名简化多维数组的指针" class="headerlink" title="使用类型别名简化多维数组的指针"></a>使用类型别名简化多维数组的指针</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> intArray2 = <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> matrix[<span class="number">2</span>][<span class="number">2</span>] = &#123;</span><br><span class="line">        &#123; <span class="number">1</span>,<span class="number">2</span> &#125;,</span><br><span class="line">        &#123; <span class="number">3</span>,<span class="number">4</span> &#125;&#125;;</span><br><span class="line"><span class="keyword">for</span> (intArray2* p = matrix; p != matrix + <span class="number">2</span>; p++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>* q = *p; q != (*p) + <span class="number">2</span>; q++) std::cout &lt;&lt; *q &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="整型提升（intergral-promotion）"><a href="#整型提升（intergral-promotion）" class="headerlink" title="整型提升（intergral promotion）"></a>整型提升（intergral promotion）</h3><ul>
+<li><strong>负责将小整数类型转换为较大的整数类型</strong>（注意是整数）</li>
+<li><strong>为了效率的提升：常发生在char || unsigned char || short || unsigned short，如果int足够表达将提升为int，否则提升为unsigned int，因为int类型是现代计算机所能处理的类型中效率最高的类型（自然类型）</strong></li>
+<li><strong>为了精度的提升：在运算中，以运算中表达范围更大的对象为目标，其他对象向该目标类型提升</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux系统运行级别</title>
     <url>/2021/12/01/Linux/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/</url>
     <content><![CDATA[<ul>
@@ -1918,75 +2107,56 @@
 <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><ul>
 <li><p><strong>C++的部分模板类是</strong><a href="https://baike.baidu.com/item/%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/4634934">图灵完备</a><strong>的!</strong></p>
 <blockquote>
-<blockquote>
 <p>The part of C++ for expressing template types is even Turing-complete!</p>
-</blockquote>
 </blockquote>
 </li>
 <li><p><strong>许多程序员仅仅把C++当做一门编程语言学习，并不重视STL的使用，这让C++看起来像是具有class的C语言。这样不仅看起来不像是21世纪的现代程序，并且失去了C++一半的力量。</strong></p>
 <blockquote>
-<blockquote>
 <p>However, many C++ programmers eagerly learn C++ as a language but put its standard<br> library, the STL, in the second place. Using the C++ language without the help that the<br> standard library provides often leads to programs that look like C with classes, but not<br> what modern programs in the 21st century should look like. This is very sad because using<br> C++ like that means dropping half its strength.</p>
-</blockquote>
 </blockquote>
 </li>
 <li><p><strong>C++之父Bjarne Stroustrup博士在他的《C++程序设计语言》(C++11版本)中写到</strong><br> “STL和语言特性都是为了支撑以软件质量为目标的编程技术，他们应该互相配合发挥作用——就如同搭建房子的砖块——而不是单独拿出来，相对孤立地解决一个具体问题。”</p>
 <blockquote>
-<blockquote>
 <p>In the C++11 edition of his book, The C++ Programming Language, Bjarne Stroustrup writes,<br> “Please remember that those libraries and language features exist to support programming<br> techniques for developing quality software. They are meant to be used in combination–as<br> bricks in a building set–rather than to be used individually in relative isolation to solve a<br> specific problem.”</p>
-</blockquote>
 </blockquote>
 </li>
 </ul>
 <h1 id="Chapter1-C-17新特新（The-New-C-17-Features）"><a href="#Chapter1-C-17新特新（The-New-C-17-Features）" class="headerlink" title="Chapter1.C++17新特新（The New C++17 Features）"></a>Chapter1.C++17新特新（The New C++17 Features）</h1><h2 id="Abstract-摘要"><a href="#Abstract-摘要" class="headerlink" title="Abstract 摘要"></a>Abstract 摘要</h2><ol>
 <li><strong>使用 结构化绑定（structured bindings）去解包绑定的返回值</strong><blockquote>
-<blockquote>
 <p>Using structured bindings to unpack bundled return values</p>
-</blockquote>
 </blockquote>
 </li>
 <li><strong>限制 变量作用域（variable scopes）在 if 和 switch 区域内</strong><blockquote>
-<blockquote>
 <p>Limiting variable scopes to if and switch statements</p>
-</blockquote>
 </blockquote>
 </li>
 <li><strong>从新的 括号初始化规则（bracket initializer rules）中获益</strong><blockquote>
-<blockquote>
 <p>Profiting from the new bracket initializer rules</p>
-</blockquote>
 </blockquote>
 </li>
 <li><strong>让构造函数（constructor）自动推导模板的类型</strong><blockquote>
-<blockquote>
 <p>Letting the constructor automatically deduce the resulting template class type</p>
-</blockquote>
 </blockquote>
 </li>
 <li><strong>使用 constexpr-if 简化编译时决策</strong><blockquote>
-<blockquote>
 <p>Simplifying compile-time decisions with constexpr-if</p>
-</blockquote>
 </blockquote>
 </li>
 <li><strong>使用内联变量（inline variables）启动只有头文件的库（header-only library）</strong><blockquote>
-<blockquote>
 <p>Enabling header-only libraries with inline variables</p>
-</blockquote>
 </blockquote>
 </li>
 <li><strong>使用折叠表达式（fold expressions）方便地实现辅助函数</strong><blockquote>
-<blockquote>
 <p>Implementing handy helper functions with fold expressions</p>
-</blockquote>
 </blockquote>
 </li>
 </ol>
 ]]></content>
       <categories>
-        <category>C++ STL</category>
+        <category>C++</category>
       </categories>
       <tags>
+        <tag>C++</tag>
         <tag>C++ STL</tag>
       </tags>
   </entry>
