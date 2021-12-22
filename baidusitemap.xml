@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://codebooklet.com/2021/12/12/C++/C++Primer-Review%5B2%5D/</loc>
+    <lastmod>2021-12-19</lastmod>
+  </url>
+  <url>
+    <loc>http://codebooklet.com/2021/12/18/C++/%E8%BE%A8%E5%88%AB%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88%E4%B8%8E%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F/</loc>
+    <lastmod>2021-12-19</lastmod>
+  </url>
+  <url>
     <loc>http://codebooklet.com/2021/12/07/C++/C++Primer-Review%5B1%5D/</loc>
-    <lastmod>2021-12-11</lastmod>
+    <lastmod>2021-12-19</lastmod>
   </url>
   <url>
     <loc>http://codebooklet.com/2021/10/30/C++/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</loc>
