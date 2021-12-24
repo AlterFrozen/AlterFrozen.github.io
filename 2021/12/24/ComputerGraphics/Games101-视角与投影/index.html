@@ -82,15 +82,15 @@
 
 
 
-<meta name="description" content="我的学习笔记">
+<meta name="description" content="关于我自己 计算机类在读本科菜鸡一枚，目前的兴趣方向是计算机图形学。  这个博客未来的内容 只要是我感兴趣的东西，如果有时间整理的话都会发出来，所以后续我也会整理好分类。   计算机专业知识点 编程中遇到的各种问题与解决 英语学习 日语学习 读书笔记 学校课程中做过的一些实验  为什么要建立这个博客 当今世界知识的更新非常快，许多知识并不能从书本中获取，因此必须以笔记的形式记录保存，用于后续回顾，">
 <meta property="og:type" content="website">
-<meta property="og:title" content="有感兴趣的内容吗？">
-<meta property="og:url" content="http://codebooklet.com/categories/index.html">
+<meta property="og:title" content="一个简单的自我介绍">
+<meta property="og:url" content="http://codebooklet.com/about/index.html">
 <meta property="og:site_name" content="Codebooklet">
-<meta property="og:description" content="我的学习笔记">
+<meta property="og:description" content="关于我自己 计算机类在读本科菜鸡一枚，目前的兴趣方向是计算机图形学。  这个博客未来的内容 只要是我感兴趣的东西，如果有时间整理的话都会发出来，所以后续我也会整理好分类。   计算机专业知识点 编程中遇到的各种问题与解决 英语学习 日语学习 读书笔记 学校课程中做过的一些实验  为什么要建立这个博客 当今世界知识的更新非常快，许多知识并不能从书本中获取，因此必须以笔记的形式记录保存，用于后续回顾，">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-10-24T05:33:37.000Z">
-<meta property="article:modified_time" content="2021-10-28T12:00:37.866Z">
+<meta property="article:published_time" content="2021-10-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-28T12:01:44.208Z">
 <meta property="article:author" content="Frozen">
 <meta property="article:tag" content="Frozen,Blog,博客">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://codebooklet.com/categories/"/>
+  <link rel="canonical" href="http://codebooklet.com/about/"/>
 
 
 
@@ -345,7 +345,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-12-24T20:00:49+08:00">2021-12-24</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-12-24T20:04:26+08:00">2021-12-24</time>
             
           </span>
 
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">6.1k</span>
+                <span title="字数统计">5.4k</span>
               
 
               
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 mins.</span>
+                <span title="阅读时长">5 mins.</span>
               
             </div>
           
@@ -528,24 +528,9 @@
 <li><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224192316121.png" alt="image-20211224192316121"></li>
 </ul>
 <h3 id="补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？"><a href="#补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？" class="headerlink" title="补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？"></a>补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？</h3><ul>
-<li>设中间点Vertex的Z值为（f-n）/ k ，其中 k&gt;1 并带入求得的M(persp-&gt;ortho)中</li>
+<li>由于Hexo没有成功解析数学公式，所以采用图片方式展示推导过程</li>
 </ul>
-<p>$$<br>\left{<br>\begin{matrix}<br>n &amp; 0 &amp; 0 &amp; 0\<br>0 &amp; n &amp; 0 &amp; 0\<br>0 &amp; 0 &amp; n+f &amp; -nf\<br>0 &amp; 0 &amp; 1 &amp; 0<br>\end{matrix}<br>\right}<br>\left{<br>\begin{matrix}<br>x\<br>y\<br>(f-n)/k\<br>1<br>\end{matrix}<br>\right} \tag{ M-persp-&gt;ortho * Vertex}<br>$$</p>
-<ul>
-<li>求得结果：</li>
-</ul>
-<p>$$<br>\left{<br>\begin{matrix}<br>nx\<br>ny\<br>(n+f)(f-n)/k-nf\<br>f-n<br>\end{matrix}<br>\right} \tag{ Anwser}<br>$$</p>
-<ul>
-<li><strong>根据齐次坐标系定义，最终Z值为：</strong></li>
-</ul>
-<p>$$<br>（n+f) / k - nf / (f-n)<br>$$</p>
-<ul>
-<li><strong>用初始Z左边 与 变换后Z坐标 相减比较，结果为</strong></li>
-</ul>
-<p>$$<br>-2n(f-n)+nkf/k(f-n)<br>$$</p>
-<ul>
-<li><strong>由于 f,n&lt;=0 且 f&lt;n，k&gt;1 ，最后结果为正值，说明变换后Z坐标向后（-Z方向）移动了</strong></li>
-</ul>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224200338792.png" alt="image-20211224200338792"></p>
 <blockquote>
 <p>在推导之后，我苦苦思考怎么找一个现实中的例子来证明这个结果，想了半天没有想出来，最后在知乎上找到某大佬的铁道举例，感觉非常直观</p>
 <p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224195728911.png" alt="image-20211224195728911"></p>
