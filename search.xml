@@ -1,213 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++DeBUG记录</title>
-    <url>/2021/10/31/DeBug/C++DeBUG%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><strong>记录在使用C++时与各种BUG斗智斗勇的血泪史</strong></p>
-<span id="more"></span>
-<h2 id="Error-C2528-’name’-pointer-to-reference-is-illegal"><a href="#Error-C2528-’name’-pointer-to-reference-is-illegal" class="headerlink" title="Error C2528:’name’ : pointer to reference is illegal"></a>Error C2528:’name’ : pointer to reference is illegal</h2><h3 id="BUG产生"><a href="#BUG产生" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
-<li>在 vector 中插入引用对象，比如 vector&lt;int&amp;&gt; nums</li>
-</ul>
-<h3 id="BUG原因"><a href="#BUG原因" class="headerlink" title="BUG原因"></a>BUG原因</h3><ul>
-<li>不能向“容器”中加入“引用”（与底层实现相关，会导致迭代等异常，详情暂请另行搜索）</li>
-</ul>
-<h3 id="BUG解决"><a href="#BUG解决" class="headerlink" title="BUG解决"></a>BUG解决</h3><ul>
-<li>比如将vector&lt; int&amp; &gt; nums改为vector&lt; int &gt; nums</li>
-</ul>
-<h2 id="Error-C2872-‘byte’-ambiguous-symbol"><a href="#Error-C2872-‘byte’-ambiguous-symbol" class="headerlink" title="Error C2872: ‘byte’: ambiguous symbol"></a>Error C2872: ‘byte’: ambiguous symbol</h2><h3 id="BUG产生-1"><a href="#BUG产生-1" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
-<li>对使用旧版WindowsSKD编写的代码，使用C++17标准（使用C++14标准时正常）</li>
-</ul>
-<h3 id="BUG原因-1"><a href="#BUG原因-1" class="headerlink" title="BUG原因"></a>BUG原因</h3><ul>
-<li>旧版WindowsSKD有定义byte类型，但同时C++17也定义了std::byte类型，造成重复定义</li>
-</ul>
-<h3 id="BUG解决-1"><a href="#BUG解决-1" class="headerlink" title="BUG解决"></a>BUG解决</h3><ul>
-<li><p>[Method.1] 添加_HAS_STD_BYTE=0宏</p>
-</li>
-<li><p>[Method.2]使用较低版本的C++标准（本次由于使用别人的框架因此采用该方法）</p>
-</li>
-<li><p><a href="https://blog.csdn.net/caimouse/article/details/106047569">参考文章</a></p>
-</li>
-</ul>
-<blockquote>
-<blockquote>
-<p>We have determined that the feedback applies to another product: Windows &amp; Windows SDK. Thank you and we value your contribution to Developer Community.<br>We are working with the the Windows team to get this addressed in a future update of the SDK. In the meantime, the community comments &amp; workarounds describe the set of options available well. Thank you!<br>I’ll specifically highlight the following two items:<br>Use of the _HAS_STD_BYTE=0 macro by specifying /D_HAS_STD_BYTE=0 at the compiler command line. This effectively disables std::byte support in the STL and should address scenarios where ‘byte’ is not used in code. It should be noted that this macro will eventually be removed after the Windows SDK issues are fixed. That removal can be tracked via the Microsoft/STL GitHub repo at <a href="https://github.com/microsoft/STL/issues/204">https://github.com/microsoft/STL/issues/204</a>.<br>Avoid bringing std::byte into the global namespace (potential by ‘using namesapce std’) and reference the Windows SDK byte using ::byte and the C++ standard version using std::byte.<br>Regards,<br>Daniel Griffing, Visual C++ Compiler Front-End</p>
-</blockquote>
-</blockquote>
-]]></content>
-      <categories>
-        <category>DeBug</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS2019无法打开ui文件</title>
-    <url>/2021/10/31/DeBug/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ul>
-<li>使用VS2019+Qt5时，无法打开*.ui文件</li>
+    <title>Codebooklet公告板</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
+    <content><![CDATA[<h2 id="2021-12-10"><a href="#2021-12-10" class="headerlink" title="2021/12/10"></a>2021/12/10</h2><ul>
+<li>不得不说这学期实验是真的多，大大小小都算的话差不多30多个实验？想静下心来提炼整理的时间都没有，加上下个月准备找一份实习，现在还在忙着复习图形学基础和C++，太难了…</li>
 </ul>
 <span id="more"></span>
 
-<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><ul>
-<li>暂时不确定，估计有以下两个因素</li>
+<h2 id="2021-11-26"><a href="#2021-11-26" class="headerlink" title="2021/11/26"></a>2021/11/26</h2><ul>
+<li>准备了2个多月的JLPT N2考试居然因为疫情取消了！不过这样也好让我打好基础，后续准备考一次JTest，明年7月直接去考N1了！</li>
+<li>近期各课程都开始实验课了，属实笔记整理时间有点影响，为了维持质量，下个月可能更新频率会更低一点</li>
 </ul>
-<ol>
-<li>与默认打开的Qt Designer版本选取有关，因为我电脑上有2个不同版本的Qt，用于编写项目的Qt版本与我之前用的不同</li>
-<li>与默认打开的Qt Designer的编译器有关，项目使用MSVC2017_64，而之前我一直使用MinGW_32</li>
-</ol>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
-<li>右键ui文件 —&gt; 点击“打开方式” —&gt; “添加”</li>
-<li>选择 Qt目录下MSVC2017_64 中 bin目录下 Qt Designer 添加</li>
-<li>将新添加的打开方式“设为默认值”</li>
-<li><a href="https://blog.csdn.net/qq_43145926/article/details/105004762">参考文章</a></li>
+<h2 id="2021-11-21"><a href="#2021-11-21" class="headerlink" title="2021/11/21"></a>2021/11/21</h2><ul>
+<li>挤出了一点时间把网络编程笔记完善了一下，现在从基础到UDP和TCP都整理差不多了</li>
+<li>Eigen的Sparse Matrix很多细节还是不太清楚，等用熟练了再整理吧</li>
+</ul>
+<h2 id="2021-11-16"><a href="#2021-11-16" class="headerlink" title="2021/11/16"></a>2021/11/16</h2><ul>
+<li>这周在做网络编程作业有点忙，好像有一整周没更新了，周末抽时间整理下网络编程的笔记</li>
+</ul>
+<h2 id="2021-11-7"><a href="#2021-11-7" class="headerlink" title="2021/11/7"></a>2021/11/7</h2><ul>
+<li>这学期要研究Subdivision，论文读起来有些头疼（菜鸡落泪）感觉还有很多知识需要学习</li>
+<li>由于网络编程课作业较多，C++STL的学习要暂缓了，这几周可能会发一些网络编程的内容</li>
+</ul>
+<h2 id="2021-11-1"><a href="#2021-11-1" class="headerlink" title="2021/11/1"></a>2021/11/1</h2><ul>
+<li>这周准备学习C++的Eigen库和LaTeX，周末可以抽时间整理一些笔记</li>
+<li>突然发现博客背景图片加载不了，结果居然是配置里面设置了https结果图床没有启用https</li>
+</ul>
+<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
+<li>近期由于学习某没有详细文档的框架，可能博客更新要暂缓了</li>
+<li>讲道理再小的框架没有文档读起来也很头疼QAQ而且注释也不是详细</li>
 </ul>
 ]]></content>
       <categories>
-        <category>DeBug</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>QT</tag>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
-    <title>『Eigen』 GettingStart（入门篇）</title>
-    <url>/2021/11/07/C++/Eigen-GettingStart/</url>
-    <content><![CDATA[<ul>
-<li>本篇文章主要介绍了Eigen库最基本的知识和使用方法</li>
-<li>参考资料：<a href="https://eigen.tuxfamily.org/dox/GettingStarted.html">Eigen官方文档</a></li>
+    <title>Codebooklet 搭建记录</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/bloglog/</url>
+    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
+<li>修复了博客翻页按钮错误 <a href="https://blog.csdn.net/weixin_45748734/article/details/106042522">参考文章</a></li>
+</ul>
+<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
+<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
+<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
+<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
+<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
 </ul>
 <span id="more"></span>
 
-<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;<span class="comment">//设置尺寸2X2，注意Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
-    1 2<br/>
-    3 1<br/>
-    class Eigen::Matrix<double,-1,-1,0,-1,-1>
-</details>
-
-<h2 id="对第一个程序的解释（Explanation-of-the-first-program）"><a href="#对第一个程序的解释（Explanation-of-the-first-program）" class="headerlink" title="对第一个程序的解释（Explanation of the first program）"></a>对第一个程序的解释（Explanation of the first program）</h2><ul>
-<li>Eigen定义了非常多的类型，但<strong>通常使用 MatrixXd 就足够了</strong>，X代表矩阵尺寸是任意的，d代表数据是double类型的</li>
-<li>Eigen/Dense在namespace Eigen中定义了MatrixXd的所有成员函数以及相关的数据类型</li>
-<li><strong>Eigen不会对Matrix或Vector初始化，如果需要零矩阵或零向量需要使用 setZero</strong></li>
+<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
+<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
+</li>
+<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
+</li>
+<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
+</li>
+<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
+</li>
+<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
+</li>
+<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
+</li>
+<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
+</li>
+<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
+</li>
+<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
+</li>
+<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
+</li>
 </ul>
-<p><strong>▽  以下为来自官方文档的相关信息</strong></p>
+<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
+<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Games101笔记——视角与投影</title>
+    <url>/2021/12/24/ComputerGraphics/Games101-%E8%A7%86%E8%A7%92%E4%B8%8E%E6%8A%95%E5%BD%B1/</url>
+    <content><![CDATA[<h1 id="View-Camera-Transformation"><a href="#View-Camera-Transformation" class="headerlink" title="View / Camera Transformation"></a>View / Camera Transformation</h1><ul>
+<li>三维空间的物体到二维平面的过程中，究竟发生了什么？</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="什么是观测变换？（What-is-view-transformation）"><a href="#什么是观测变换？（What-is-view-transformation）" class="headerlink" title="什么是观测变换？（What is view transformation）"></a>什么是观测变换？（What is view transformation）</h2><h3 id="试想如何拍一张照片："><a href="#试想如何拍一张照片：" class="headerlink" title="试想如何拍一张照片："></a>试想如何拍一张照片：</h3><ul>
+<li>找到合适的<strong>拍摄点</strong>，将拍摄对象安排在合适的位置<strong>（M:模型变化）</strong></li>
+</ul>
+<blockquote>
+<p>Find a good <strong>place</strong> and arrange people (model transformation)</p>
+</blockquote>
 <ul>
-<li> <a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Types">Eigen提供的数据类型</a></li>
-<li><a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Headers">Eigen的头文件表</a></li>
-<li><a href="https://eigen.tuxfamily.org/dox/group__TutorialAdvancedInitialization.html">Eigen Comma Initializer</a></li>
+<li>找到合适的<strong>拍摄角度</strong>，将相机拿好<strong>（V:观测变换）</strong></li>
 </ul>
-<h2 id="矩阵与向量（Matrices-and-Vectors）"><a href="#矩阵与向量（Matrices-and-Vectors）" class="headerlink" title="矩阵与向量（Matrices and Vectors）"></a>矩阵与向量（Matrices and Vectors）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at run time) 使用MatrixXd时，矩阵尺寸在运行时确定</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    MatrixXd matX = MatrixXd::<span class="built_in">Random</span>(<span class="number">3</span>, <span class="number">3</span>);<span class="comment">//默认随机范围[-1,1]</span></span><br><span class="line">    matX = (matX + MatrixXd::<span class="built_in">Constant</span>(<span class="number">3</span>, <span class="number">3</span>, <span class="number">1.2</span>)) * <span class="number">50</span>;<span class="comment">//线性映射将范围映射到[10,110]</span></span><br><span class="line">    <span class="comment">//MatrixXd::Constant(row, col, value)会创建一个所有元素是value的矩阵</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX =&quot;</span> &lt;&lt; endl &lt;&lt; matX &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at compile time) 使用固定尺寸的矩阵，会在编译时就确定大小</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    Matrix3d matFix = Matrix3d::<span class="built_in">Random</span>();</span><br><span class="line">    matFix = (matFix + Matrix3d::<span class="built_in">Constant</span>(<span class="number">1.2</span>)) * <span class="number">50</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatFix =&quot;</span> &lt;&lt; endl &lt;&lt; matFix &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Vectors 可以使用VectorXd创建一个任意维度的向量</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    VectorXd vec&#123; <span class="number">3</span> &#125;;<span class="comment">//设置维度为3，再次提醒Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    vec &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>;</span><br><span class="line">    cout &lt;&lt; vec &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX * vec = &quot;</span> &lt;&lt; endl &lt;&lt; matX * vec &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>Find a good <strong>angle</strong> to put the camera (view transformation)</p>
+</blockquote>
 <ul>
-<li><strong>Eigen的Matrix默认使用列主序，Vector默认使用右手系</strong></li>
+<li>茄子！<strong>（P:投影变化）</strong></li>
 </ul>
-<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
-    10.1251 90.8741 45.0291<br/>
-    66.3585 68.5009 99.5962<br/>
-    29.3304 57.9873  92.284<br/>
-    1<br/>
-    2<br/>
-    3<br/>
-    MatX * vec =<br/>
-    326.961<br/>
-    502.149<br/>
-    422.157<br/>
-    MatFix =<br/>
-    84.6605 81.0501 11.4985<br/>
-    27.4108 61.3535 19.1403<br/>
-    95.8943 40.3995 46.4452<br/>
-</details>
-
-<h2 id="使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）"><a href="#使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）" class="headerlink" title="使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）"></a>使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）</h2><ul>
-<li><strong>编译器可以更快映射</strong>，因为已知尺寸<blockquote>
 <blockquote>
-<p> The compiler emits better (faster) code because it knows the size of the matrices and vectors. </p>
+<p>Cheese! (projection transformation)</p>
 </blockquote>
-</blockquote>
-</li>
-<li>在编译时，具体的尺寸可以<strong>更容易检测出一些小错误</strong><blockquote>
-<blockquote>
-<p> Specifying the size in the type also allows for more rigorous checking at compile-time.</p>
-</blockquote>
-</blockquote>
-</li>
-<li><strong>一个好的习惯：在使用小于4*4尺寸的矩阵或向量时，使用固定大小的矩阵和向量</strong><blockquote>
-<blockquote>
-<p> A rule of thumb is to use fixed-size matrices for size 4-by-4 and smaller.</p>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《C++17 STL Cookbook》笔记</title>
-    <url>/2021/10/30/C++/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 STL Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
-<span id="more"></span>
-
-<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><ul>
-<li><p><strong>C++的部分模板类是</strong><a href="https://baike.baidu.com/item/%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/4634934">图灵完备</a><strong>的!</strong></p>
-<blockquote>
-<p>The part of C++ for expressing template types is even Turing-complete!</p>
-</blockquote>
-</li>
-<li><p><strong>许多程序员仅仅把C++当做一门编程语言学习，并不重视STL的使用，这让C++看起来像是具有class的C语言。这样不仅看起来不像是21世纪的现代程序，并且失去了C++一半的力量。</strong></p>
-<blockquote>
-<p>However, many C++ programmers eagerly learn C++ as a language but put its standard<br> library, the STL, in the second place. Using the C++ language without the help that the<br> standard library provides often leads to programs that look like C with classes, but not<br> what modern programs in the 21st century should look like. This is very sad because using<br> C++ like that means dropping half its strength.</p>
-</blockquote>
-</li>
-<li><p><strong>C++之父Bjarne Stroustrup博士在他的《C++程序设计语言》(C++11版本)中写到</strong><br> “STL和语言特性都是为了支撑以软件质量为目标的编程技术，他们应该互相配合发挥作用——就如同搭建房子的砖块——而不是单独拿出来，相对孤立地解决一个具体问题。”</p>
-<blockquote>
-<p>In the C++11 edition of his book, The C++ Programming Language, Bjarne Stroustrup writes,<br> “Please remember that those libraries and language features exist to support programming<br> techniques for developing quality software. They are meant to be used in combination–as<br> bricks in a building set–rather than to be used individually in relative isolation to solve a<br> specific problem.”</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="Chapter1-C-17新特新（The-New-C-17-Features）"><a href="#Chapter1-C-17新特新（The-New-C-17-Features）" class="headerlink" title="Chapter1.C++17新特新（The New C++17 Features）"></a>Chapter1.C++17新特新（The New C++17 Features）</h1><h2 id="Abstract-摘要"><a href="#Abstract-摘要" class="headerlink" title="Abstract 摘要"></a>Abstract 摘要</h2><ol>
-<li><strong>使用 结构化绑定（structured bindings）去解包绑定的返回值</strong><blockquote>
-<p>Using structured bindings to unpack bundled return values</p>
-</blockquote>
-</li>
-<li><strong>限制 变量作用域（variable scopes）在 if 和 switch 区域内</strong><blockquote>
-<p>Limiting variable scopes to if and switch statements</p>
-</blockquote>
-</li>
-<li><strong>从新的 括号初始化规则（bracket initializer rules）中获益</strong><blockquote>
-<p>Profiting from the new bracket initializer rules</p>
-</blockquote>
-</li>
-<li><strong>让构造函数（constructor）自动推导模板的类型</strong><blockquote>
-<p>Letting the constructor automatically deduce the resulting template class type</p>
-</blockquote>
-</li>
-<li><strong>使用 constexpr-if 简化编译时决策</strong><blockquote>
-<p>Simplifying compile-time decisions with constexpr-if</p>
-</blockquote>
-</li>
-<li><strong>使用内联变量（inline variables）启动只有头文件的库（header-only library）</strong><blockquote>
-<p>Enabling header-only libraries with inline variables</p>
-</blockquote>
-</li>
-<li><strong>使用折叠表达式（fold expressions）方便地实现辅助函数</strong><blockquote>
-<p>Implementing handy helper functions with fold expressions</p>
-</blockquote>
-</li>
+<h3 id="怎样描述观测变换："><a href="#怎样描述观测变换：" class="headerlink" title="怎样描述观测变换："></a>怎样描述观测变换：</h3><ol>
+<li>首先需要定义一个具有以下属性的相机（Camera）</li>
 </ol>
+<ul>
+<li>相机位置（Position）：e</li>
+<li>镜头方向（Look at / Gaze direction）：g</li>
+<li>正上方向（Up direction）：t</li>
+</ul>
+<ol start="2">
+<li>定义主观测点（Key observation）</li>
+</ol>
+<ul>
+<li>拿着相机找位置拍摄  和  让物体移动到相机前，最终效果是一样的</li>
+<li>为了便于计算，通常相机是定点的，而让物体移动</li>
+<li><strong>Camera标准位置：①Camera在原点位置 ②Camera看向 -Z 方向 ③ +Y方向为Camera正上方向</strong></li>
+</ul>
+<h3 id="如何实现观测变换"><a href="#如何实现观测变换" class="headerlink" title="如何实现观测变换"></a>如何实现观测变换</h3><p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224183520562.png" alt="image-20211224183520562"></p>
+<ul>
+<li>首先对所有物体做平移变换移动到原点位置</li>
+<li>然后将朝向（g x t,  t, g）转到Camera标准朝向（x,y,z）（由于将某个特定向量旋转到x,y,z比较难计算，而将x,y,z转到特定向量却很好表示，因此利用旋转矩阵特性，这里使用逆变换表示）</li>
+</ul>
+<h2 id="投影变换（Projection-Transformation）"><a href="#投影变换（Projection-Transformation）" class="headerlink" title="投影变换（Projection Transformation）"></a>投影变换（Projection Transformation）</h2><p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224190113109.png" alt="image-20211224190113109"></p>
+<h3 id="正交投影（Orthographic-Projection）"><a href="#正交投影（Orthographic-Projection）" class="headerlink" title="正交投影（Orthographic Projection）"></a>正交投影（Orthographic Projection）</h3><p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224190210429.png" alt="image-20211224190210429"></p>
+<h3 id="如何实现正交投影"><a href="#如何实现正交投影" class="headerlink" title="如何实现正交投影"></a>如何实现正交投影</h3><p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224190236747.png" alt="image-20211224190236747"></p>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224190746448.png" alt="image-20211224190746448"></p>
+<ul>
+<li>首先需要定义一个立方体（图左一类似）</li>
+<li>然后将定义的正方体通过一系列变换，转变为<strong>标准立方体（canonical cube）</strong></li>
+<li><strong>标准立方体</strong>：X [-1,1] Y [-1,1] Z [-1,1]</li>
+<li>这个过程中物体会形变，不过在显示到屏幕前还需要<strong>视口变换</strong></li>
+</ul>
+<h3 id="透视投影（Perspective-Projection）"><a href="#透视投影（Perspective-Projection）" class="headerlink" title="透视投影（Perspective Projection）"></a>透视投影（Perspective Projection）</h3><p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224190805009.png" alt="image-20211224190805009"></p>
+<h3 id="如何实现透视投影"><a href="#如何实现透视投影" class="headerlink" title="如何实现透视投影"></a>如何实现透视投影</h3><p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224191002963.png" alt="image-20211224191002963"></p>
+<ul>
+<li><strong>回想一下在齐次坐标中：（x,y,z,1）与 (wx,wy,wz,w) 表示同一个点</strong></li>
+<li><strong>实现透视投影，可以分解为两步：①挤压Frustum使其变为Cuboid ②正交投影</strong></li>
+<li><strong>在①中，我们规定的Frustum的近平面（n）和远平面（f）的 z 坐标不变，这对我们最后求解透视矩阵非常关键</strong></li>
+</ul>
+<h3 id="透视矩阵的推导"><a href="#透视矩阵的推导" class="headerlink" title="透视矩阵的推导"></a>透视矩阵的推导</h3><ul>
+<li>①寻找压缩过程中的几何关系</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224191751154.png" alt="image-20211224191751154"></p>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224191807478.png" alt="image-20211224191807478"></p>
+<ul>
+<li>②根据几何关系推断矩阵的部分未知量</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224191820101.png" alt="image-20211224191820101"></p>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224192117956.png" alt="image-20211224192117956"></p>
+<ul>
+<li>③现在还有两个未知量，我们需要利用前面远平面和近平面的特性来求解</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224192155082.png" alt="image-20211224192155082"></p>
+<ul>
+<li>④得到从投影矩阵到正交矩阵的变换矩阵M(persp-&gt;ortho)</li>
+<li><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224192316121.png" alt="image-20211224192316121"></li>
+</ul>
+<h3 id="补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？"><a href="#补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？" class="headerlink" title="补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？"></a>补充问题的求解：对于Frustum中间的点在挤压过程中Z值应该如何变化？</h3><ul>
+<li>设中间点Vertex的Z值为（f-n）/ k ，其中 k&gt;1 并带入求得的M(persp-&gt;ortho)中</li>
+</ul>
+<p>$$<br>\left{<br>\begin{matrix}<br>n &amp; 0 &amp; 0 &amp; 0\<br>0 &amp; n &amp; 0 &amp; 0\<br>0 &amp; 0 &amp; n+f &amp; -nf\<br>0 &amp; 0 &amp; 1 &amp; 0<br>\end{matrix}<br>\right}<br>\left{<br>\begin{matrix}<br>x\<br>y\<br>(f-n)/k\<br>1<br>\end{matrix}<br>\right} \tag{ M-persp-&gt;ortho * Vertex}<br>$$</p>
+<ul>
+<li>求得结果：</li>
+</ul>
+<p>$$<br>\left{<br>\begin{matrix}<br>nx\<br>ny\<br>(n+f)(f-n)/k-nf\<br>f-n<br>\end{matrix}<br>\right} \tag{ Anwser}<br>$$</p>
+<ul>
+<li><strong>根据齐次坐标系定义，最终Z值为：</strong></li>
+</ul>
+<p>$$<br>（n+f) / k - nf / (f-n)<br>$$</p>
+<ul>
+<li><strong>用初始Z左边 与 变换后Z坐标 相减比较，结果为</strong></li>
+</ul>
+<p>$$<br>-2n(f-n)+nkf/k(f-n)<br>$$</p>
+<ul>
+<li><strong>由于 f,n&lt;=0 且 f&lt;n，k&gt;1 ，最后结果为正值，说明变换后Z坐标向后（-Z方向）移动了</strong></li>
+</ul>
+<blockquote>
+<p>在推导之后，我苦苦思考怎么找一个现实中的例子来证明这个结果，想了半天没有想出来，最后在知乎上找到某大佬的铁道举例，感觉非常直观</p>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20211224195728911.png" alt="image-20211224195728911"></p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>C++</category>
+        <category>CG</category>
       </categories>
       <tags>
-        <tag>C++</tag>
-        <tag>C++ STL</tag>
+        <tag>CG</tag>
       </tags>
   </entry>
   <entry>
@@ -230,6 +233,44 @@
 <li>对于第三个例子const int*，与第二个例子类似，只要知道const只修饰最近的类型</li>
 <li>按照第三个例子的解释，第四个例子const* int为什么无效也很容易解释：一个没有明确指出类型的指针被const修饰怎么可能有意义？</li>
 </ul>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《C++Primer》函数 [2]</title>
+    <url>/2021/12/12/C++/C++Primer-Review%5B2%5D/</url>
+    <content><![CDATA[<ul>
+<li>参考书籍《C++Primer 中文版 5th》</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="传引用参数"><a href="#传引用参数" class="headerlink" title="传引用参数"></a>传引用参数</h2><ul>
+<li>对引用的操作实际上是操作“被引用的对象”，因此<strong>使用引用避免拷贝</strong></li>
+<li><strong>拷贝大的class对象或者容器对象非常低效，有些类（比如IO类）根本就不支持拷贝操作</strong></li>
+<li>当不支持拷贝操作时，函数只能通过引用形参访问该类型对象</li>
+<li><strong>如果函数无需改变引用的值，最好声明为const &amp;</strong><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isShorter</span><span class="params">(<span class="keyword">const</span> std::string &amp;str1 , <span class="keyword">const</span> std::string &amp;str2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str1.<span class="built_in">size</span>() &lt; str2.<span class="built_in">size</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Const形参和实参"><a href="#Const形参和实参" class="headerlink" title="Const形参和实参"></a>Const形参和实参</h2><ul>
+<li><strong>实参初始化形参过程中，会忽略实参的顶层const，举个例子可以用const int给int类型赋值或初始化</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> num)</span></span>&#123;<span class="comment">/*函数内部可以读取num但是不能写*/</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;&#125; <span class="comment">//Error：重复定义了func(int)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>注意：在重载函数时，由于顶层const会被忽略，所以上面两个函数实际上是完全一样的参数列表，根据上下文情况应该保留第一个</strong></li>
+</ul>
+<h2 id="main处理命令行选项"><a href="#main处理命令行选项" class="headerlink" title="main处理命令行选项"></a>main处理命令行选项</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第一个形参argc表示了第二个形参argv中字符串的数量</li>
+<li>第二个形参argv是指针数组，当实参传递给main()后，argv的第一个元素argv[0]将指向程序名或一个空字符串，其他传入的用户参数依次填入[1,2,3…]</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">program -d -o ofile data0</span><br><span class="line">argv[<span class="number">0</span>] = <span class="string">&quot;program&quot;</span></span><br><span class="line">argv[<span class="number">1</span>] = <span class="string">&quot;-d&quot;</span></span><br><span class="line">argv[<span class="number">2</span>] = <span class="string">&quot;-o&quot;</span></span><br><span class="line">argv[<span class="number">3</span>] = <span class="string">&quot;ofile&quot;</span></span><br><span class="line">argv[<span class="number">4</span>] = <span class="string">&quot;data0&quot;</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>C++</category>
@@ -428,41 +469,270 @@
       </tags>
   </entry>
   <entry>
-    <title>《C++Primer》函数 [2]</title>
-    <url>/2021/12/12/C++/C++Primer-Review%5B2%5D/</url>
+    <title>Linux系统运行级别</title>
+    <url>/2021/12/01/Linux/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/</url>
     <content><![CDATA[<ul>
-<li>参考书籍《C++Primer 中文版 5th》</li>
+<li>Linux系统一般有7个运行级别（runlevel）从level 0 ~ 6，可能有更多等级，操作系统根据当前正在运行的功能级别，具有不同的功能</li>
+<li><a href="https://blog.csdn.net/qq_21453783/article/details/100251461">参考文章</a></li>
 </ul>
 <span id="more"></span>
 
-<h2 id="传引用参数"><a href="#传引用参数" class="headerlink" title="传引用参数"></a>传引用参数</h2><ul>
-<li>对引用的操作实际上是操作“被引用的对象”，因此<strong>使用引用避免拷贝</strong></li>
-<li><strong>拷贝大的class对象或者容器对象非常低效，有些类（比如IO类）根本就不支持拷贝操作</strong></li>
-<li>当不支持拷贝操作时，函数只能通过引用形参访问该类型对象</li>
-<li><strong>如果函数无需改变引用的值，最好声明为const &amp;</strong><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isShorter</span><span class="params">(<span class="keyword">const</span> std::string &amp;str1 , <span class="keyword">const</span> std::string &amp;str2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str1.<span class="built_in">size</span>() &lt; str2.<span class="built_in">size</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="Const形参和实参"><a href="#Const形参和实参" class="headerlink" title="Const形参和实参"></a>Const形参和实参</h2><ul>
-<li><strong>实参初始化形参过程中，会忽略实参的顶层const，举个例子可以用const int给int类型赋值或初始化</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> num)</span></span>&#123;<span class="comment">/*函数内部可以读取num但是不能写*/</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;&#125; <span class="comment">//Error：重复定义了func(int)</span></span><br></pre></td></tr></table></figure>
+<h2 id="Linux一般的7个运行等级"><a href="#Linux一般的7个运行等级" class="headerlink" title="Linux一般的7个运行等级"></a>Linux一般的7个运行等级</h2><table>
+<thead>
+<tr>
+<th>运行等级</th>
+<th>模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>系统关机模式</td>
+<td>系统默认运行级别不能设置为0，否则无法正常启动系统</td>
+</tr>
+<tr>
+<td>1</td>
+<td>单用户模式</td>
+<td>也称为救援模式，root权限，用于系统维护，禁止远程登陆，类似Windows下的安全模式登录</td>
+</tr>
+<tr>
+<td>2</td>
+<td>多用户模式</td>
+<td>多用户，但是没有网络文件（NFS）支持</td>
+</tr>
+<tr>
+<td>3</td>
+<td>完整的多用户文本模式</td>
+<td>多用户，有网络文件系统，用户登录后进入控制台命令行模式，在没有网络的环境下等同于运行级别2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>预留功能</td>
+<td>一般不用，在一些特殊情况下可以用来做一些事情。例如在笔记本电脑的电池用尽时，可以切换到这个模式来做一些设置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>图形化模式</td>
+<td>登陆后进入图形GUI模式或GNOME、KDE图形化界面，如X Window系统</td>
+</tr>
+<tr>
+<td>6</td>
+<td>重启模式</td>
+<td>默认运行级别不能设为6，否则无法正常启动系统</td>
+</tr>
+</tbody></table>
+<h2 id="如何查看当前运行等级"><a href="#如何查看当前运行等级" class="headerlink" title="如何查看当前运行等级"></a>如何查看当前运行等级</h2><h3 id="使用-runlevel-查看当前运行等级"><a href="#使用-runlevel-查看当前运行等级" class="headerlink" title="使用 runlevel 查看当前运行等级"></a>使用 runlevel 查看当前运行等级</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ runlevel</span><br><span class="line">N 5 <span class="comment">#图形化模式</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><strong>注意：在重载函数时，由于顶层const会被忽略，所以上面两个函数实际上是完全一样的参数列表，根据上下文情况应该保留第一个</strong></li>
-</ul>
-<h2 id="main处理命令行选项"><a href="#main处理命令行选项" class="headerlink" title="main处理命令行选项"></a>main处理命令行选项</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-systemctl-get-default-查看默认启动方式"><a href="#使用-systemctl-get-default-查看默认启动方式" class="headerlink" title="使用 systemctl get-default 查看默认启动方式"></a>使用 systemctl get-default 查看默认启动方式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ systemctl get-default </span><br><span class="line">graphical.target <span class="comment">#图形化启动</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>第一个形参argc表示了第二个形参argv中字符串的数量</li>
-<li>第二个形参argv是指针数组，当实参传递给main()后，argv的第一个元素argv[0]将指向程序名或一个空字符串，其他传入的用户参数依次填入[1,2,3…]</li>
+<h2 id="切换运行等级"><a href="#切换运行等级" class="headerlink" title="切换运行等级"></a>切换运行等级</h2><ul>
+<li>使用 init 3 切换到“完整的多用户文本模式”<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ init 3</span><br><span class="line"><span class="comment"># 接下来需要输入管理员密码</span></span><br></pre></td></tr></table></figure></li>
+<li>之后可以使用 init 5 再次切换回“图形化模式”，需要重新登录认证</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">program -d -o ofile data0</span><br><span class="line">argv[<span class="number">0</span>] = <span class="string">&quot;program&quot;</span></span><br><span class="line">argv[<span class="number">1</span>] = <span class="string">&quot;-d&quot;</span></span><br><span class="line">argv[<span class="number">2</span>] = <span class="string">&quot;-o&quot;</span></span><br><span class="line">argv[<span class="number">3</span>] = <span class="string">&quot;ofile&quot;</span></span><br><span class="line">argv[<span class="number">4</span>] = <span class="string">&quot;data0&quot;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="运行级别配置文件"><a href="#运行级别配置文件" class="headerlink" title="运行级别配置文件"></a>运行级别配置文件</h2><ul>
+<li>在**/etc/rc.d/**目录下有以下文件，分别对应运行等级<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost ~]$ <span class="built_in">cd</span> /etc/rc.d</span><br><span class="line">[raven-1@localhost rc.d]$ ll</span><br><span class="line">total 4</span><br><span class="line">drwxr-xr-x. 2 root root  70 Oct 22 01:42 init.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc0.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc1.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc2.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc3.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc4.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:49 rc5.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc6.d</span><br><span class="line">-rw-r--r--. 1 root root 473 Mar 31  2020 rc.local</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
       <categories>
-        <category>C++</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>C++</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux用户身份切换</title>
+    <url>/2021/11/23/Linux/Linux%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E5%88%87%E6%8D%A2/</url>
+    <content><![CDATA[<ul>
+<li>《鸟哥的Linux私房菜》第13章有关用户身份切换的相关知识的学习</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="用户身份切换"><a href="#用户身份切换" class="headerlink" title="用户身份切换"></a>用户身份切换</h1><h2 id="为什么需要身份切换"><a href="#为什么需要身份切换" class="headerlink" title="为什么需要身份切换"></a>为什么需要身份切换</h2><ul>
+<li><strong>安全</strong>：日常操作使用普通账号避免不必要的误操，启动系统服务时希望用较低的权限，比如使用apache这样一个用户来启动Apache服务，这样即使服务被攻击也不会造成系统损坏</li>
+<li><strong>软件限制</strong>：远古时代，一些telnel程序默认不允许使用root身份登录<blockquote>
+<blockquote>
+<p>一般情况下使用普通账户登录系统，等有需要进行系统维护或者软件更新时才转变为root身份</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="如何切换至root身份"><a href="#如何切换至root身份" class="headerlink" title="如何切换至root身份"></a>如何切换至root身份</h2><h3 id="①-su"><a href="#①-su" class="headerlink" title="① su"></a>① su</h3><ul>
+<li>是<strong>最简单的身份切换命令，可以进行任何身份的切换</strong></li>
+<li><strong>使用方法：su [-lm] [-c command] [username]  （如果没有指定username则默认root）</strong><br>可选参数|说明</li>
+<li>–|—</li>
+<li>|单纯使用 “su -” 代表使用 login shell 的变量文件读取方式来登录（即环境变量是切换后的用户的，与 -m 区分）</li>
+<li>l|与 - 类似，但是后面必须显式写明username，也是 login-shell 的方式</li>
+<li>m|与 -p 一样，表示使用目前的环境，不读取切换后使用者的配置文件（会导致切换后身份所特有的命令需要使用绝对路径执行）</li>
+<li>c|仅进行一次命令，执行命令写在后面即可</li>
+</ul>
+<p>-<strong>有没有减号 - 直接决定了是使用 login shell 还是 non-login shell 的变量读取方法</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一个简单的&quot;su&quot;和&quot;su -&quot;对比演示</span></span><br><span class="line">git@Aioy:~$ su</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">PWD=/home/git</span><br><span class="line">LOGNAME=git</span><br><span class="line">USER=git</span><br><span class="line">-----------------------------------------</span><br><span class="line">git@Aioy:~$ su -</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">（没有任何输出）</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>使用non-login shell方式（即不加减号参数）可能会导致身份切换后依旧接收到旧身份的信息，或者需要使用绝对路径来使用切换后用户的特殊命令等情况，总之就是可能造成很多麻烦</strong></li>
+</ul>
+<h3 id="②-sudo"><a href="#②-sudo" class="headerlink" title="② sudo"></a>② sudo</h3><ul>
+<li><strong>系统初始默认只有root可以执行sudo</strong></li>
+<li><strong>sudo可以让你以其他用户的身份执行命令，通常是root身份</strong></li>
+<li><strong>一般用户如果想要拥有使用sudo的权限，需要和管理员事先联系审核，成为信任用户</strong></li>
+<li><strong>与su不同的是，使用sudo不需要切换对象的密码，而是自己的密码，甚至不需要密码</strong></li>
+</ul>
+<h3 id="sudo的执行流程"><a href="#sudo的执行流程" class="headerlink" title="sudo的执行流程"></a>sudo的执行流程</h3><ol>
+<li>当用户执行sudo时，操作系统在 /etc/sudoers 文件中查找用户是否具有执行sudo的权限</li>
+<li>如果可以执行sudo，则需要用户输入自己的密码（root执行sudo不需要密码）</li>
+<li>密码正确则开始执行sudo后的command</li>
+</ol>
+<ul>
+<li><strong>执行sudo的重点：/etc/sudoers 文件中是否有权限，如果没有则需要root使用visudo修改该文件，或者直接修改该文件（修改方法可以在其他文章中学习）</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux账号管理</title>
+    <url>/2021/11/19/Linux/Linux%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<ul>
+<li>《鸟哥的Linux私房菜》第13章有关用户管理的相关知识的学习</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="Linux的账号"><a href="#Linux的账号" class="headerlink" title="Linux的账号"></a>Linux的账号</h1><h2 id="用户标识符：UID-amp-GID"><a href="#用户标识符：UID-amp-GID" class="headerlink" title="用户标识符：UID &amp; GID"></a>用户标识符：UID &amp; GID</h2><ul>
+<li>每一个登录系统的用户都会至少获得2个ID，即UID（User ID）与GID（Group ID）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#使用 id 指令查看某用户信息</span></span><br><span class="line">root@Aioy:~/<span class="built_in">test</span><span class="comment"># id jerry</span></span><br><span class="line">uid=1001(jerry) gid=1001(jerry) groups=1001(jerry)</span><br><span class="line"><span class="comment">#groups属性暗示了一个用户可以归属多个组</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="UID的范围和用户特性"><a href="#UID的范围和用户特性" class="headerlink" title="UID的范围和用户特性"></a>UID的范围和用户特性</h2><table>
+<thead>
+<tr>
+<th>ID范围</th>
+<th>用户特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>系统管理员：0</td>
+<td>一般只有root一个用户，也可以通过修改其他用户权限为0增加系统管理员，不过可能会造成混淆</td>
+</tr>
+<tr>
+<td>系统账号：1~999（通常不可登录）</td>
+<td><strong>保留给操作系统使用的ID，1<del>200由Linux发行版自行建立的系统账号，201</del>999若用户有系统账号需求时可以使用，比如启动网络服务时候如果不希望用root权限，则可以使用系统账号</strong></td>
+</tr>
+<tr>
+<td>普通账号：1000~2^32-1（&gt;= Kernel3.10.X）</td>
+<td>给一般用户使用，实际范围上限可能更小也可能更大</td>
+</tr>
+</tbody></table>
+<h2 id="passwd文件-amp-shadow文件"><a href="#passwd文件-amp-shadow文件" class="headerlink" title="passwd文件 &amp; shadow文件"></a>passwd文件 &amp; shadow文件</h2><h3 id="passwd文件"><a href="#passwd文件" class="headerlink" title="passwd文件"></a>passwd文件</h3><ul>
+<li>在Linux Ubuntu下用户账号信息存放在**/etc/password**</li>
+<li>每一行都代表一个账号，<strong>系统账号是操作系统正常运行所必须的，比如daemon、bin等</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#passwd文件的部分展示，其中 : 作为分隔符，一共有7个</span></span><br><span class="line"><span class="comment">#用户名:密码:UID:GID:用户信息说明栏:家目录:默认shell</span></span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="为什么-密码-字段为-x"><a href="#为什么-密码-字段为-x" class="headerlink" title="为什么 密码 字段为 x"></a>为什么 密码 字段为 x</h4><ul>
+<li> <strong>早期linux将密码也放在 /etc/passwd 中，不过由于所有程序都能读取该文件所以容易造成密码泄露问题，因此密码字段被移动到 /etc/shadow 中</strong></li>
+</ul>
+<h3 id="shadow文件"><a href="#shadow文件" class="headerlink" title="shadow文件"></a>shadow文件</h3><ul>
+<li>在Linux Ubuntu下用户账号的密码存放在**/etc/shadow**</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#shadow文件的部分展示，其中 : 作为分隔符，一共有9个</span></span><br><span class="line">man:*:18375:0:99999:7:::</span><br><span class="line">lp:*:18375:0:99999:7:::</span><br><span class="line">mail:*:18375:0:99999:7:::</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.用户名</td>
+<td>用户名，需要与/etc/passwd对应</td>
+</tr>
+<tr>
+<td>2.密码</td>
+<td>经过摘要运算（比如MD5，SHA）后的密码，很难（单向性）但可能被破译，<strong>系统账号密码为星号</strong>*</td>
+</tr>
+<tr>
+<td>3.最近修改密码的日期</td>
+<td>自Linux日期（1970年1月1日）开始后的天数</td>
+</tr>
+<tr>
+<td>4.密码不可被修改的天数</td>
+<td>自[最近修改密码的日期]开始，需要过几天才可以修改密码，如果是0则可以立即修改</td>
+</tr>
+<tr>
+<td>5.密码需要重新修改的天数</td>
+<td>自[最近修改密码的日期]开始，强制用户在此字段规定天数内修改密码，否则该账号密码过期（失效前可用）</td>
+</tr>
+<tr>
+<td>6.密码需要修改期限前的警告天数</td>
+<td>相对[密码需要重新修改的天数]还剩此字段规定天数时，系统会提醒该用户重新设置密码</td>
+</tr>
+<tr>
+<td>7.密码失效日（不同于密码过期日）</td>
+<td>在[密码需要重新修改的天数]过后，如果用户还是没有修改密码，则该账号无法使用此密码登录</td>
+</tr>
+<tr>
+<td>8.账号失效日</td>
+<td>账号自Linux日期（1970年1月1日）开始后的天数内有效，超过则失效，常用于付费服务</td>
+</tr>
+<tr>
+<td>9.保留字段</td>
+<td>为之后的新功能预留</td>
+</tr>
+</tbody></table>
+<h3 id="权限比较"><a href="#权限比较" class="headerlink" title="权限比较"></a>权限比较</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/passwd</span></span><br><span class="line">-rw-r--r-- 1 root root 1737 Oct 23 10:29 /etc/passwd</span><br><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/shadow</span></span><br><span class="line">-rw-r----- 1 root shadow 1235 Oct 23 10:34 /etc/shadow</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以看出来passwd文件由于对其他用户开放了 r 读权限，因此早期存放密码的设计确实不安全</li>
+</ul>
+<h2 id="用户登陆过程"><a href="#用户登陆过程" class="headerlink" title="用户登陆过程"></a>用户登陆过程</h2><ol>
+<li>用户本地终端或使用ssh远程发起登陆请求，输入账号和密码</li>
+<li>账号核对：在 /etc/passwd 中查找是否有用户输入的账号</li>
+<li>密码核对：在 /etc/shadow 找出对应的账号与UID然后核对密码</li>
+<li>登陆成功，进入Shell管理阶段</li>
+</ol>
+<h1 id="Linux的用户组"><a href="#Linux的用户组" class="headerlink" title="Linux的用户组"></a>Linux的用户组</h1><h2 id="group文件-amp-gshadow文件"><a href="#group文件-amp-gshadow文件" class="headerlink" title="group文件 &amp; gshadow文件"></a>group文件 &amp; gshadow文件</h2><h3 id="group文件"><a href="#group文件" class="headerlink" title="group文件"></a>group文件</h3><ul>
+<li>在Linux Ubuntu下用户账号信息存放在**/etc/group**</li>
+<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#group文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:GID:此用户组支持的账号名称</span></span><br><span class="line">root:x:0:</span><br><span class="line">daemon:x:1:</span><br><span class="line">bin:x:2:</span><br><span class="line">sys:x:3:</span><br><span class="line">adm:x:4:syslog</span><br><span class="line">tty:x:5:syslog</span><br></pre></td></tr></table></figure></li>
+<li><strong>注意</strong>：新版Linux中，<strong>初始用户组的用户群</strong>已经不会加入第四个字段，比如root的主要用户组为root，那么不会在group文件第四个字段看到root出现（相当于隐式声明）</li>
+</ul>
+<h3 id="gshadow文件"><a href="#gshadow文件" class="headerlink" title="gshadow文件"></a>gshadow文件</h3><ul>
+<li>在Linux Ubuntu下用户账号信息存放在**/etc/gshadow**</li>
+<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#gshadow文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:组管理员（在etc/gpasswd中）:此用户组支持的账号名称（多个用户间用逗号,分隔）</span></span><br><span class="line">root:*::</span><br><span class="line">daemon:*::</span><br><span class="line">bin:*::</span><br><span class="line">sys:*::</span><br><span class="line">adm:*::syslog</span><br><span class="line">tty:*::syslog</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="有效用户组-amp-初始用户组"><a href="#有效用户组-amp-初始用户组" class="headerlink" title="有效用户组 &amp; 初始用户组"></a>有效用户组 &amp; 初始用户组</h2><blockquote>
+<blockquote>
+<blockquote>
+<p>假如一个用户同时加入多个用户组，那么在执行任务过程中，究极以哪个用户组为准呢？——有效用户组（Effective Group）</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="有效用户组（Effective-Group）"><a href="#有效用户组（Effective-Group）" class="headerlink" title="有效用户组（Effective Group）"></a>有效用户组（Effective Group）</h3><ul>
+<li><p>在 /etc/passwd 中的第四字段 GID 即所谓的有效用户组，<strong>用户登录后会立即拥有初始用户组的相关权限</strong></p>
+</li>
+<li><p><strong>groups 命令</strong>：查看某用户当前全部所属用户组，<strong>第一个为有效用户组</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">root</span><br><span class="line">root@Aioy:~<span class="comment"># groups jerry</span></span><br><span class="line">jerry : jerry</span><br><span class="line"><span class="comment">#注意只有第一个输出是有效用户组</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>newgrp 命令</strong>：切换有效用户组</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># newgrp jerry</span></span><br><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">jerry root</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="有效用户组的作用"><a href="#有效用户组的作用" class="headerlink" title="有效用户组的作用"></a>有效用户组的作用</h3><ul>
+<li><strong>通常，有效用户组的作用是新建文件</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#由于root当前有效用户组是root，因此文件所属用户组就是root</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch hello</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l hello</span></span><br><span class="line">-rw-r--r-- 1 root root    0 Nov 26 18:17 hello</span><br><span class="line">root@Aioy:~<span class="comment"># newgrp jerry （切换有效用户组至jerry）</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch world</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l world</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 18:20 world</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始用户组（Initial-Group）"><a href="#初始用户组（Initial-Group）" class="headerlink" title="初始用户组（Initial Group）"></a>初始用户组（Initial Group）</h3><ul>
+<li><strong>在 /etc/passwd 文件中，每行用户的GID就是初始用户组（Initial Group）</strong>，用户登录后就会获取</li>
+<li>**对于非初始用户组，则需要在 /etc/group 中找到需要加入的组名，将用户名写入第四栏中</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#示例：将jerry加入root用户组</span></span><br><span class="line">root@Aioy:~<span class="comment"># vim /etc/group</span></span><br><span class="line">root:x:0:jerry</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -771,220 +1041,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何阅读论文了解新领域</title>
-    <url>/2021/11/06/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E8%AE%BA%E6%96%87%E4%BA%86%E8%A7%A3%E6%96%B0%E9%A2%86%E5%9F%9F/</url>
-    <content><![CDATA[<p><strong><a href="https://www.bilibili.com/video/BV1A64y1v77W">斯坦福授课 | “如何有效阅读论文？并了解一个新的领域？——吴恩达</a></strong></p>
-<span id="more"></span>
-
-<hr>
-<h2 id="论文阅读量与对该领域研究深度关系的一个参考指标"><a href="#论文阅读量与对该领域研究深度关系的一个参考指标" class="headerlink" title="论文阅读量与对该领域研究深度关系的一个参考指标"></a>论文阅读量与对该领域研究深度关系的一个参考指标</h2><h3 id="①-阅读5-20篇论文-Read-5-20-papers"><a href="#①-阅读5-20篇论文-Read-5-20-papers" class="headerlink" title="① 阅读5~20篇论文 (Read 5~20 papers)"></a>① 阅读5~20篇论文 (Read 5~20 papers)</h3><ul>
-<li>对该领域有基本的了解，也许足够做一些工作并实现一些算法</li>
-<li>A basic understanding of an area, maybe good enough to do some work, apply some algorithms</li>
-</ul>
-<h3 id="②-阅读50-100篇论文并有一定理解-Read-50-100-papers-and-a-kind-of-understand-a-lot-of-it"><a href="#②-阅读50-100篇论文并有一定理解-Read-50-100-papers-and-a-kind-of-understand-a-lot-of-it" class="headerlink" title="② 阅读50~100篇论文并有一定理解 (Read 50~100 papers and a kind of understand a lot of it)"></a>② 阅读50~100篇论文并有一定理解 (Read 50~100 papers and a kind of understand a lot of it)</h3><ul>
-<li>可以说你已经足够了解这个领域</li>
-<li>That’s probably enough to give you a very good understanding of an area</li>
-</ul>
-<hr>
-<h2 id="如何开始新领域的研究？"><a href="#如何开始新领域的研究？" class="headerlink" title="如何开始新领域的研究？"></a>如何开始新领域的研究？</h2><h3 id="Step1-收集并整合相关资源"><a href="#Step1-收集并整合相关资源" class="headerlink" title="Step1. 收集并整合相关资源"></a>Step1. 收集并整合相关资源</h3><ul>
-<li>先<strong>收集几篇该领域具有典型性的论文</strong>粗略地阅读，<strong>放弃一些有错误或者对你没有意义的论文</strong>并且<strong>找到你认为最具有开创性的论文深入阅读</strong></li>
-</ul>
-<h3 id="Step2-深入研究你认为与主题相关的任何资源"><a href="#Step2-深入研究你认为与主题相关的任何资源" class="headerlink" title="Step2. 深入研究你认为与主题相关的任何资源"></a>Step2. 深入研究你认为与主题相关的任何资源</h3><ul>
-<li>通过这篇论文你可以<strong>在引用(citations)中找到其他相关的论文</strong>，阅读并回顾，充实对前面读过的文章的理解</li>
-</ul>
-<h3 id="Step3-做笔记提升对该领域的理解"><a href="#Step3-做笔记提升对该领域的理解" class="headerlink" title="Step3. 做笔记提升对该领域的理解"></a>Step3. 做笔记提升对该领域的理解</h3><hr>
-<h2 id="如何阅读一篇论文？"><a href="#如何阅读一篇论文？" class="headerlink" title="如何阅读一篇论文？"></a>如何阅读一篇论文？</h2><blockquote>
-<blockquote>
-<p>When reading one paper the bad way to read it is to go from the first word until the last word.</p>
-</blockquote>
-</blockquote>
-<h3 id="多次阅读论文-Multiple-passes-through-the-paper"><a href="#多次阅读论文-Multiple-passes-through-the-paper" class="headerlink" title="多次阅读论文 (Multiple passes through the paper)"></a>多次阅读论文 (Multiple passes through the paper)</h3><ul>
-<li><strong>Step1.</strong> 阅读标题(Title)、摘要(Abstract)、图表(Figures)</li>
-<li><strong>Step2.</strong> 阅读引言(Intro)、结论(Conclusions)掌握关键信息，并再次细致地看图表(Figures)，快速浏览论文中剩余的内容</li>
-<li><strong>Step3.</strong> 对论文整体阅读，可以跳过不熟悉的数学公式、专业术语</li>
-</ul>
-<h3 id="通过回答一些问题检测自己对论文的理解程度"><a href="#通过回答一些问题检测自己对论文的理解程度" class="headerlink" title="通过回答一些问题检测自己对论文的理解程度"></a>通过回答一些问题检测自己对论文的理解程度</h3><ul>
-<li><strong>Question1.</strong> 论文的作者们想要完成什么？已经完成了什么？(What did authors try to accomplish)</li>
-<li><strong>Question2.</strong> 论文介绍的方法的关键要素是什么？(What were the key elements of the approach)</li>
-<li><strong>Question3.</strong> 论文中哪些内容对你有用？(What can you use yourself)</li>
-<li><strong>Question4.</strong> 你还想关注哪些参考文献？(What other references do you want to follow)</li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>学习方法</category>
-      </categories>
-      <tags>
-        <tag>学习方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Codebooklet公告板</title>
-    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
-    <content><![CDATA[<h2 id="2021-12-10"><a href="#2021-12-10" class="headerlink" title="2021/12/10"></a>2021/12/10</h2><ul>
-<li>不得不说这学期实验是真的多，大大小小都算的话差不多30多个实验？想静下心来提炼整理的时间都没有，加上下个月准备找一份实习，现在还在忙着复习图形学基础和C++，太难了…</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="2021-11-26"><a href="#2021-11-26" class="headerlink" title="2021/11/26"></a>2021/11/26</h2><ul>
-<li>准备了2个多月的JLPT N2考试居然因为疫情取消了！不过这样也好让我打好基础，后续准备考一次JTest，明年7月直接去考N1了！</li>
-<li>近期各课程都开始实验课了，属实笔记整理时间有点影响，为了维持质量，下个月可能更新频率会更低一点</li>
-</ul>
-<h2 id="2021-11-21"><a href="#2021-11-21" class="headerlink" title="2021/11/21"></a>2021/11/21</h2><ul>
-<li>挤出了一点时间把网络编程笔记完善了一下，现在从基础到UDP和TCP都整理差不多了</li>
-<li>Eigen的Sparse Matrix很多细节还是不太清楚，等用熟练了再整理吧</li>
-</ul>
-<h2 id="2021-11-16"><a href="#2021-11-16" class="headerlink" title="2021/11/16"></a>2021/11/16</h2><ul>
-<li>这周在做网络编程作业有点忙，好像有一整周没更新了，周末抽时间整理下网络编程的笔记</li>
-</ul>
-<h2 id="2021-11-7"><a href="#2021-11-7" class="headerlink" title="2021/11/7"></a>2021/11/7</h2><ul>
-<li>这学期要研究Subdivision，论文读起来有些头疼（菜鸡落泪）感觉还有很多知识需要学习</li>
-<li>由于网络编程课作业较多，C++STL的学习要暂缓了，这几周可能会发一些网络编程的内容</li>
-</ul>
-<h2 id="2021-11-1"><a href="#2021-11-1" class="headerlink" title="2021/11/1"></a>2021/11/1</h2><ul>
-<li>这周准备学习C++的Eigen库和LaTeX，周末可以抽时间整理一些笔记</li>
-<li>突然发现博客背景图片加载不了，结果居然是配置里面设置了https结果图床没有启用https</li>
-</ul>
-<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
-<li>近期由于学习某没有详细文档的框架，可能博客更新要暂缓了</li>
-<li>讲道理再小的框架没有文档读起来也很头疼QAQ而且注释也不是详细</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT标签页与分类页无法显示修复</title>
-    <url>/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
-    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
-<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
-<li>使用hexo new page创建了对应的页面</li>
-<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
-<li>需要在hexo new page之后，进入相应页面的index.md</li>
-<li>在categories的index.md添加：type: “categories”</li>
-<li>在tags的index.md添加：type: “tags”</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT打赏按钮修改</title>
-    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%89%93%E8%B5%8F%E6%8C%89%E9%92%AE%E4%BF%AE%E6%94%B9/</url>
-    <content><![CDATA[<p>简介：修改“Reward”功能的默认按钮CSS样式，最终效果和本站类似。（NexT Ver-6.0.0）</p>
-<span id="more"></span>
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><a href="#bottom" >点击跳转到本文末预览效果</a></p>
-<h2 id="Step-1-找到CSS文件"><a href="#Step-1-找到CSS文件" class="headerlink" title="Step.1 找到CSS文件"></a>Step.1 找到CSS文件</h2><ul>
-<li>打开本站目录</li>
-<li>文件路径 /themes/next/source/css/_common/components/post/post-reward.styl</li>
-<li>如果没有找到类似样式表文件，则本文无效</li>
-</ul>
-<h2 id="Step-2-准备新的按钮图片"><a href="#Step-2-准备新的按钮图片" class="headerlink" title="Step.2 准备新的按钮图片"></a>Step.2 准备新的按钮图片</h2><ul>
-<li>需要两张，一张用于正常显示，另一张用于Hover时的显示</li>
-<li>建议尺寸：50*50 pix （参考本站）</li>
-<li>如果图片不是透明的，建议先使用PS先处理一下，并保存为支持透明通道的格式如PNG</li>
-<li>存放图片到路径 /themes/next/source/images 中，也可以在此路径再新建文件夹归类，注意本文方法使用“本地存储图片”也就是说需要使用 相对路径 访问图片，一定要搞清楚目录层次</li>
-</ul>
-<h2 id="Step-3-修改CSS文件"><a href="#Step-3-修改CSS文件" class="headerlink" title="Step.3 修改CSS文件"></a>Step.3 修改CSS文件</h2><ul>
-<li>修改第一步找到的样式表文件中的以下几个属性<br><strong>1. #rewardButton span</strong><ul>
-<li>font-size: 0px; /* 这里是为了让“Reward”文字不显示 */</li>
-<li>width: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
-<li>height: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
-<li>background: url(../../../../images/你的按钮图片路径); </li>
-</ul>
-<strong>2. #rewardButton span:hover</strong><ul>
-<li>background:  url(../../../../images/icons/你的按钮Hover图片路径);</li>
-</ul>
-</li>
-</ul>
-<div id="bottom"></div>
-
-<h2 id="Step-4-本地运行检测"><a href="#Step-4-本地运行检测" class="headerlink" title="Step.4 本地运行检测"></a>Step.4 本地运行检测</h2><ul>
-<li>站点路径打开Terminal ：hexo s</li>
-</ul>
-<p><strong>Ps: 由于作者HTML/CSS水平仅限于了解，如果各位有更好的方法可以在评论区分享，谢谢！</strong></p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Codebooklet 搭建记录</title>
-    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/bloglog/</url>
-    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
-<li>修复了博客翻页按钮错误 <a href="https://blog.csdn.net/weixin_45748734/article/details/106042522">参考文章</a></li>
-</ul>
-<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
-<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
-<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
-<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
-<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
-</ul>
-<span id="more"></span>
-
-<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
-<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
-</li>
-<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
-</li>
-<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
-</li>
-<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
-</li>
-<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
-</li>
-<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
-</li>
-<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
-</li>
-<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
-</li>
-<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
-</li>
-<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
-</li>
-</ul>
-<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
-<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Cmatrix与Shell实现随机屏保</title>
     <url>/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/</url>
     <content><![CDATA[<ul>
@@ -1013,6 +1069,84 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>『Eigen』 GettingStart（入门篇）</title>
+    <url>/2021/11/07/C++/Eigen-GettingStart/</url>
+    <content><![CDATA[<ul>
+<li>本篇文章主要介绍了Eigen库最基本的知识和使用方法</li>
+<li>参考资料：<a href="https://eigen.tuxfamily.org/dox/GettingStarted.html">Eigen官方文档</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;<span class="comment">//设置尺寸2X2，注意Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
+    1 2<br/>
+    3 1<br/>
+    class Eigen::Matrix<double,-1,-1,0,-1,-1>
+</details>
+
+<h2 id="对第一个程序的解释（Explanation-of-the-first-program）"><a href="#对第一个程序的解释（Explanation-of-the-first-program）" class="headerlink" title="对第一个程序的解释（Explanation of the first program）"></a>对第一个程序的解释（Explanation of the first program）</h2><ul>
+<li>Eigen定义了非常多的类型，但<strong>通常使用 MatrixXd 就足够了</strong>，X代表矩阵尺寸是任意的，d代表数据是double类型的</li>
+<li>Eigen/Dense在namespace Eigen中定义了MatrixXd的所有成员函数以及相关的数据类型</li>
+<li><strong>Eigen不会对Matrix或Vector初始化，如果需要零矩阵或零向量需要使用 setZero</strong></li>
+</ul>
+<p><strong>▽  以下为来自官方文档的相关信息</strong></p>
+<ul>
+<li> <a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Types">Eigen提供的数据类型</a></li>
+<li><a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Headers">Eigen的头文件表</a></li>
+<li><a href="https://eigen.tuxfamily.org/dox/group__TutorialAdvancedInitialization.html">Eigen Comma Initializer</a></li>
+</ul>
+<h2 id="矩阵与向量（Matrices-and-Vectors）"><a href="#矩阵与向量（Matrices-and-Vectors）" class="headerlink" title="矩阵与向量（Matrices and Vectors）"></a>矩阵与向量（Matrices and Vectors）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at run time) 使用MatrixXd时，矩阵尺寸在运行时确定</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    MatrixXd matX = MatrixXd::<span class="built_in">Random</span>(<span class="number">3</span>, <span class="number">3</span>);<span class="comment">//默认随机范围[-1,1]</span></span><br><span class="line">    matX = (matX + MatrixXd::<span class="built_in">Constant</span>(<span class="number">3</span>, <span class="number">3</span>, <span class="number">1.2</span>)) * <span class="number">50</span>;<span class="comment">//线性映射将范围映射到[10,110]</span></span><br><span class="line">    <span class="comment">//MatrixXd::Constant(row, col, value)会创建一个所有元素是value的矩阵</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX =&quot;</span> &lt;&lt; endl &lt;&lt; matX &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at compile time) 使用固定尺寸的矩阵，会在编译时就确定大小</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    Matrix3d matFix = Matrix3d::<span class="built_in">Random</span>();</span><br><span class="line">    matFix = (matFix + Matrix3d::<span class="built_in">Constant</span>(<span class="number">1.2</span>)) * <span class="number">50</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatFix =&quot;</span> &lt;&lt; endl &lt;&lt; matFix &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Vectors 可以使用VectorXd创建一个任意维度的向量</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    VectorXd vec&#123; <span class="number">3</span> &#125;;<span class="comment">//设置维度为3，再次提醒Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    vec &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>;</span><br><span class="line">    cout &lt;&lt; vec &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX * vec = &quot;</span> &lt;&lt; endl &lt;&lt; matX * vec &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Eigen的Matrix默认使用列主序，Vector默认使用右手系</strong></li>
+</ul>
+<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
+    10.1251 90.8741 45.0291<br/>
+    66.3585 68.5009 99.5962<br/>
+    29.3304 57.9873  92.284<br/>
+    1<br/>
+    2<br/>
+    3<br/>
+    MatX * vec =<br/>
+    326.961<br/>
+    502.149<br/>
+    422.157<br/>
+    MatFix =<br/>
+    84.6605 81.0501 11.4985<br/>
+    27.4108 61.3535 19.1403<br/>
+    95.8943 40.3995 46.4452<br/>
+</details>
+
+<h2 id="使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）"><a href="#使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）" class="headerlink" title="使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）"></a>使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）</h2><ul>
+<li><strong>编译器可以更快映射</strong>，因为已知尺寸<blockquote>
+<blockquote>
+<p> The compiler emits better (faster) code because it knows the size of the matrices and vectors. </p>
+</blockquote>
+</blockquote>
+</li>
+<li>在编译时，具体的尺寸可以<strong>更容易检测出一些小错误</strong><blockquote>
+<blockquote>
+<p> Specifying the size in the type also allows for more rigorous checking at compile-time.</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>一个好的习惯：在使用小于4*4尺寸的矩阵或向量时，使用固定大小的矩阵和向量</strong><blockquote>
+<blockquote>
+<p> A rule of thumb is to use fixed-size matrices for size 4-by-4 and smaller.</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -1075,157 +1209,1134 @@
       </tags>
   </entry>
   <entry>
-    <title>《Linux-Ubuntu从入门到精通》笔记</title>
-    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+    <title>Linux硬链接软连接和复制的区别</title>
+    <url>/2021/11/06/Linux/Linux%E7%A1%AC%E9%93%BE%E6%8E%A5%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%A4%8D%E5%88%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p><strong>通过Ubuntu Linux实机演示 硬链接Hard Link, 软连接Symbolic Link, 复制Copy之间的区别</strong></p>
 <span id="more"></span>
 
-<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
-<li>用以存储数据的物理介质</li>
+<hr>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="①-硬连接-Hard-Link"><a href="#①-硬连接-Hard-Link" class="headerlink" title="① 硬连接 Hard Link"></a>① 硬连接 Hard Link</h2><h3 id="如何建立硬连接？"><a href="#如何建立硬连接？" class="headerlink" title="如何建立硬连接？"></a>如何建立硬连接？</h3><ul>
+<li>使用“ln file file_link”即可为file创建一个名为file_link的硬连接</li>
 </ul>
-<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
-<li>对于较大存储容量的介质，需要合理规划分区</li>
+<h3 id="硬连接的特点"><a href="#硬连接的特点" class="headerlink" title="硬连接的特点"></a>硬连接的特点</h3><ul>
+<li>硬连接通过<strong>索引节点（inode）</strong>进行连接，链接同一文件的硬连接有相同的inode</li>
+<li>通过硬连接，可以有多个不同连接访问到同一个文件</li>
+<li><strong>硬连接本身也是普通文件（regular file）</strong>，因此<strong>目录文件无法创建硬连接</strong></li>
+<li>只删除部分硬连接不影响文件本身，只有当<strong>所有硬连接都删除后，文件才会真正被释放</strong></li>
+<li>每个硬连接<strong>会让文件的Links数增加（+1）</strong>（使用stat查看）</li>
 </ul>
-<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
-<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
+<h2 id="②-软连接-Symbolic-Link"><a href="#②-软连接-Symbolic-Link" class="headerlink" title="② 软连接 Symbolic Link"></a>② 软连接 Symbolic Link</h2><h3 id="如何创建软连接？"><a href="#如何创建软连接？" class="headerlink" title="如何创建软连接？"></a>如何创建软连接？</h3><ul>
+<li>使用“ln -s”建立软连接，也叫符号链接（Symbolic Link）</li>
 </ul>
-<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
-<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
-<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
-<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
-<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
-<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
+<h3 id="软连接的特点"><a href="#软连接的特点" class="headerlink" title="软连接的特点"></a>软连接的特点</h3><ul>
+<li>类似于Windows的快捷方式，<strong>软连接与被链接文件有不同inode</strong>，因此删除软连接不会影响文件</li>
+<li>实际上，<strong>符号链接的文件是一个特殊的文本文件</strong>，包含着链接另一端的位置信息</li>
+<li>软连接<strong>不会增加文件的Links</strong>（使用stat查看）</li>
 </ul>
-<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
-<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
+<h2 id="③-复制-Copy"><a href="#③-复制-Copy" class="headerlink" title="③ 复制 Copy"></a>③ 复制 Copy</h2><h3 id="如何复制文件？"><a href="#如何复制文件？" class="headerlink" title="如何复制文件？"></a>如何复制文件？</h3><ul>
+<li>使用“cp file file_copy”即可复制file文件为file_copy</li>
 </ul>
-<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
-<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
+<h3 id="复制的特点"><a href="#复制的特点" class="headerlink" title="复制的特点"></a>复制的特点</h3><ul>
+<li>复制文件，操作系统会为复制品创建新的inode，也就是相当于一个新的文件</li>
 </ul>
-<ol>
-<li>所有目录都是由根目录衍生出来的；</li>
-<li>根目录与系统的开机、修复、还原密切相关；</li>
-</ol>
+<hr>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="①-创建一个net文件为其添加硬连接并复制"><a href="#①-创建一个net文件为其添加硬连接并复制" class="headerlink" title="① 创建一个net文件为其添加硬连接并复制"></a>① 创建一个net文件为其添加硬连接并复制</h2><h3 id="使用stat-net查看net文件"><a href="#使用stat-net查看net文件" class="headerlink" title="使用stat net查看net文件"></a>使用stat net查看net文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-link-net查看net的硬连接"><a href="#使用stat-link-net查看net的硬连接" class="headerlink" title="使用stat link_net查看net的硬连接"></a>使用stat link_net查看net的硬连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-copy-net查看net的复制"><a href="#使用stat-copy-net查看net的复制" class="headerlink" title="使用stat copy_net查看net的复制"></a>使用stat copy_net查看net的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058123     Links: 1</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Change: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+
+<h2 id="②-创建一个dir文件为其添加软连接并复制"><a href="#②-创建一个dir文件为其添加软连接并复制" class="headerlink" title="② 创建一个dir文件为其添加软连接并复制"></a>② 创建一个dir文件为其添加软连接并复制</h2><h3 id="使用stat-dir查看dir文件"><a href="#使用stat-dir查看dir文件" class="headerlink" title="使用stat dir查看dir文件"></a>使用stat dir查看dir文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-link-dir查看dir的软连接"><a href="#使用stat-link-dir查看dir的软连接" class="headerlink" title="使用stat link_dir查看dir的软连接"></a>使用stat link_dir查看dir的软连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_dir -&gt; dir</span><br><span class="line">  Size: 3               Blocks: 0          IO Block: 4096   symbolic link</span><br><span class="line">Device: fc01h/64513d    Inode: 1058121     Links: 1</span><br><span class="line">Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:29:26.737743781 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line">Change: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-copy-dir查看dir的复制"><a href="#使用stat-copy-dir查看dir的复制" class="headerlink" title="使用stat copy_dir查看dir的复制"></a>使用stat copy_dir查看dir的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058122     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:04.068572412 +0800</span><br><span class="line">Modify: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line">Change: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h2 id="③-分别对连接文件和复制文件进行权限操作观察原文件变化"><a href="#③-分别对连接文件和复制文件进行权限操作观察原文件变化" class="headerlink" title="③ 分别对连接文件和复制文件进行权限操作观察原文件变化"></a>③ 分别对连接文件和复制文件进行权限操作观察原文件变化</h2><h3 id="赋予执行权限前（使用“ls-li”命令查看）"><a href="#赋予执行权限前（使用“ls-li”命令查看）" class="headerlink" title="赋予执行权限前（使用“ls -li”命令查看）"></a>赋予执行权限前（使用“ls -li”命令查看）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 net</span><br></pre></td></tr></table></figure>
+<h3 id="对硬连接文件link-net-使用“chmod-x-link-net”"><a href="#对硬连接文件link-net-使用“chmod-x-link-net”" class="headerlink" title="对硬连接文件link_net 使用“chmod +x link_net”"></a>对硬连接文件link_net 使用“chmod +x link_net”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 net</span><br><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br></pre></td></tr></table></figure>
 <ul>
-<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
+<li>发现硬连接文件和文件本身权限都发生了变化</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="center">主要一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/bin/</td>
-<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
-</tr>
-<tr>
-<td align="center">/boot/</td>
-<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
-</tr>
-<tr>
-<td align="center">/dev/</td>
-<td align="center">设备文件保存位置</td>
-</tr>
-<tr>
-<td align="center">/etc/</td>
-<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
-</tr>
-<tr>
-<td align="center">/home/</td>
-<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
-</tr>
-<tr>
-<td align="center">/lib/</td>
-<td align="center"><strong>系统调用的函数库保存位置</strong></td>
-</tr>
-<tr>
-<td align="center">/media/</td>
-<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
-</tr>
-<tr>
-<td align="center">/mnt/</td>
-<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
-</tr>
-<tr>
-<td align="center">/misc/</td>
-<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
-</tr>
-<tr>
-<td align="center">/opt/</td>
-<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
-</tr>
-<tr>
-<td align="center">/root/</td>
-<td align="center">root 的主目录</td>
-</tr>
-<tr>
-<td align="center">/sbin/</td>
-<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
-</tr>
-<tr>
-<td align="center">/srv/</td>
-<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
-</tr>
-<tr>
-<td align="center">/tmp/</td>
-<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
-</tr>
-</tbody></table>
+<h3 id="对软连接文件link-dir-使用“chmod-x-link-dir”"><a href="#对软连接文件link-dir-使用“chmod-x-link-dir”" class="headerlink" title="对软连接文件link_dir 使用“chmod +x link_dir”"></a>对软连接文件link_dir 使用“chmod +x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rwxr-xr-x 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
+<h3 id="进一步对软连接测试-使用“chmod-x-link-dir”"><a href="#进一步对软连接测试-使用“chmod-x-link-dir”" class="headerlink" title="进一步对软连接测试 使用“chmod -x link_dir”"></a>进一步对软连接测试 使用“chmod -x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
+<li>发现link_dir没变，说明通过修改软连接文件，不会对软连接产生影响，而是间接修改原文件</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="center">其他一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/lost+found/</td>
-<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
-</tr>
-<tr>
-<td align="center">/proc/</td>
-<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
-</tr>
-<tr>
-<td align="center">/sys/</td>
-<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
-</tr>
-</tbody></table>
-<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
-<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
-<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
+<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ul>
+<li>除了软连接的文件类型是Symbolic file，其他无论文件本身、硬链接还是复制都是regular file</li>
+<li>硬链接与文件本身 inode 完全相同，软连接和复制会赋予新的 inode</li>
+<li>对链接操作会影响原文件，对复制文件的操作不会影响原文件</li>
+<li>对软连接操作不会影响软链接，而是间接作用于原文件</li>
 </ul>
-<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
-<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
-<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
-<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
-</ul>
-<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
-<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
-<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
-</ul>
-<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
-<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
-</li>
-<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
-</li>
-<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
-</li>
-<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Linux</category>
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何阅读论文了解新领域</title>
+    <url>/2021/11/06/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E8%AE%BA%E6%96%87%E4%BA%86%E8%A7%A3%E6%96%B0%E9%A2%86%E5%9F%9F/</url>
+    <content><![CDATA[<p><strong><a href="https://www.bilibili.com/video/BV1A64y1v77W">斯坦福授课 | “如何有效阅读论文？并了解一个新的领域？——吴恩达</a></strong></p>
+<span id="more"></span>
+
+<hr>
+<h2 id="论文阅读量与对该领域研究深度关系的一个参考指标"><a href="#论文阅读量与对该领域研究深度关系的一个参考指标" class="headerlink" title="论文阅读量与对该领域研究深度关系的一个参考指标"></a>论文阅读量与对该领域研究深度关系的一个参考指标</h2><h3 id="①-阅读5-20篇论文-Read-5-20-papers"><a href="#①-阅读5-20篇论文-Read-5-20-papers" class="headerlink" title="① 阅读5~20篇论文 (Read 5~20 papers)"></a>① 阅读5~20篇论文 (Read 5~20 papers)</h3><ul>
+<li>对该领域有基本的了解，也许足够做一些工作并实现一些算法</li>
+<li>A basic understanding of an area, maybe good enough to do some work, apply some algorithms</li>
+</ul>
+<h3 id="②-阅读50-100篇论文并有一定理解-Read-50-100-papers-and-a-kind-of-understand-a-lot-of-it"><a href="#②-阅读50-100篇论文并有一定理解-Read-50-100-papers-and-a-kind-of-understand-a-lot-of-it" class="headerlink" title="② 阅读50~100篇论文并有一定理解 (Read 50~100 papers and a kind of understand a lot of it)"></a>② 阅读50~100篇论文并有一定理解 (Read 50~100 papers and a kind of understand a lot of it)</h3><ul>
+<li>可以说你已经足够了解这个领域</li>
+<li>That’s probably enough to give you a very good understanding of an area</li>
+</ul>
+<hr>
+<h2 id="如何开始新领域的研究？"><a href="#如何开始新领域的研究？" class="headerlink" title="如何开始新领域的研究？"></a>如何开始新领域的研究？</h2><h3 id="Step1-收集并整合相关资源"><a href="#Step1-收集并整合相关资源" class="headerlink" title="Step1. 收集并整合相关资源"></a>Step1. 收集并整合相关资源</h3><ul>
+<li>先<strong>收集几篇该领域具有典型性的论文</strong>粗略地阅读，<strong>放弃一些有错误或者对你没有意义的论文</strong>并且<strong>找到你认为最具有开创性的论文深入阅读</strong></li>
+</ul>
+<h3 id="Step2-深入研究你认为与主题相关的任何资源"><a href="#Step2-深入研究你认为与主题相关的任何资源" class="headerlink" title="Step2. 深入研究你认为与主题相关的任何资源"></a>Step2. 深入研究你认为与主题相关的任何资源</h3><ul>
+<li>通过这篇论文你可以<strong>在引用(citations)中找到其他相关的论文</strong>，阅读并回顾，充实对前面读过的文章的理解</li>
+</ul>
+<h3 id="Step3-做笔记提升对该领域的理解"><a href="#Step3-做笔记提升对该领域的理解" class="headerlink" title="Step3. 做笔记提升对该领域的理解"></a>Step3. 做笔记提升对该领域的理解</h3><hr>
+<h2 id="如何阅读一篇论文？"><a href="#如何阅读一篇论文？" class="headerlink" title="如何阅读一篇论文？"></a>如何阅读一篇论文？</h2><blockquote>
+<blockquote>
+<p>When reading one paper the bad way to read it is to go from the first word until the last word.</p>
+</blockquote>
+</blockquote>
+<h3 id="多次阅读论文-Multiple-passes-through-the-paper"><a href="#多次阅读论文-Multiple-passes-through-the-paper" class="headerlink" title="多次阅读论文 (Multiple passes through the paper)"></a>多次阅读论文 (Multiple passes through the paper)</h3><ul>
+<li><strong>Step1.</strong> 阅读标题(Title)、摘要(Abstract)、图表(Figures)</li>
+<li><strong>Step2.</strong> 阅读引言(Intro)、结论(Conclusions)掌握关键信息，并再次细致地看图表(Figures)，快速浏览论文中剩余的内容</li>
+<li><strong>Step3.</strong> 对论文整体阅读，可以跳过不熟悉的数学公式、专业术语</li>
+</ul>
+<h3 id="通过回答一些问题检测自己对论文的理解程度"><a href="#通过回答一些问题检测自己对论文的理解程度" class="headerlink" title="通过回答一些问题检测自己对论文的理解程度"></a>通过回答一些问题检测自己对论文的理解程度</h3><ul>
+<li><strong>Question1.</strong> 论文的作者们想要完成什么？已经完成了什么？(What did authors try to accomplish)</li>
+<li><strong>Question2.</strong> 论文介绍的方法的关键要素是什么？(What were the key elements of the approach)</li>
+<li><strong>Question3.</strong> 论文中哪些内容对你有用？(What can you use yourself)</li>
+<li><strong>Question4.</strong> 你还想关注哪些参考文献？(What other references do you want to follow)</li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>学习方法</category>
+      </categories>
+      <tags>
+        <tag>学习方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JLPT-N2-2017年7月真题笔记</title>
+    <url>/2021/11/06/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/JLPT-N2-2017%E5%B9%B47%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
+    <content><![CDATA[<ul>
+<li><strong>日语真题笔记系列，该系列的笔记至少会包括词汇部分，笔记会不断完善</strong><span id="more"></span>
+<h2 id="１．語彙（ごい）"><a href="#１．語彙（ごい）" class="headerlink" title="１．語彙（ごい）"></a>１．語彙（ごい）</h2><table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center"></th>
+<th align="center">例句</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">諄い</td>
+<td align="center">くどい</td>
+<td align="center">くどい話　諄い味</td>
+<td align="center">冗长乏味，啰嗦，油腻</td>
+</tr>
+<tr>
+<td align="center">狡い</td>
+<td align="center">ずるい</td>
+<td align="center">そんなことするなんて狡い</td>
+<td align="center">不讲理，狡猾，奸诈</td>
+</tr>
+<tr>
+<td align="center">幼い</td>
+<td align="center">おさない</td>
+<td align="center">彼はいい年をしている割には言うことが幼い</td>
+<td align="center">幼小，幼年，幼稚</td>
+</tr>
+<tr>
+<td align="center">しつこい</td>
+<td align="center"></td>
+<td align="center">しつこく付きまとわれる＜被死死纠缠＞</td>
+<td align="center">执拗，纠缠不休，浓艳，浓重</td>
+</tr>
+<tr>
+<td align="center">振る</td>
+<td align="center">ふる</td>
+<td align="center">さいころを振る＜掷骰子＞</td>
+<td align="center">挥，摇，摆</td>
+</tr>
+<tr>
+<td align="center">握る</td>
+<td align="center">にぎる</td>
+<td align="center">相手の弱みを握る</td>
+<td align="center">掌握，握，攥</td>
+</tr>
+<tr>
+<td align="center">擦る</td>
+<td align="center">こする</td>
+<td align="center">この染みはいくら擦っても取れない</td>
+<td align="center">摩擦，擦，揉搓，蹭</td>
+</tr>
+<tr>
+<td align="center">掘る</td>
+<td align="center">ほる</td>
+<td align="center">井戸（いど）を掘る</td>
+<td align="center">挖掘</td>
+</tr>
+<tr>
+<td align="center">密閉</td>
+<td align="center">みっぺい</td>
+<td align="center">この箱は密閉してある</td>
+<td align="center">密闭，严密关闭，密封</td>
+</tr>
+<tr>
+<td align="center">絞る</td>
+<td align="center">しぼる</td>
+<td align="center">頭を絞る＜绞尽脑汁＞</td>
+<td align="center">榨，拧，挤，绞</td>
+</tr>
+<tr>
+<td align="center">削る</td>
+<td align="center">けずる</td>
+<td align="center">薄く削る・厚く削る・予算を削る</td>
+<td align="center">削，削减，删减</td>
+</tr>
+<tr>
+<td align="center">探る</td>
+<td align="center">さぐる</td>
+<td align="center">懐（ふところ）を探る<br/>相手の腹（はら）を探る<br/>香山の紅葉を探る<br/>河を遡って水源を探る</td>
+<td align="center">刺探，试探，观赏，调查</td>
+</tr>
+<tr>
+<td align="center">伺う</td>
+<td align="center">うかがう</td>
+<td align="center">いつお伺いしましょうか</td>
+<td align="center">请教，打听</td>
+</tr>
+<tr>
+<td align="center">窺う</td>
+<td align="center">うかがう</td>
+<td align="center">顔色を窺う・好機を窺う・内情の一端を窺う</td>
+<td align="center">暗中观察，窥视，略知</td>
+</tr>
+<tr>
+<td align="center">垂直</td>
+<td align="center">すいちょく</td>
+<td align="center">2線が垂直に交わる（まじわる）</td>
+<td align="center">垂直</td>
+</tr>
+<tr>
+<td align="center">凍る</td>
+<td align="center">こおる</td>
+<td align="center">道路はかちかちに凍っている</td>
+<td align="center">结冰</td>
+</tr>
+<tr>
+<td align="center">結ぶ</td>
+<td align="center">むすぶ</td>
+<td align="center">固く結ぶ・縁を結ぶ・自分の好きな言葉で文章を結んだ</td>
+<td align="center">系，缔结，结尾</td>
+</tr>
+<tr>
+<td align="center">固まる</td>
+<td align="center">かたまる</td>
+<td align="center">コンクリートが固まる<br/>寒いので，みんなストーブのまわりにかたまっている</td>
+<td align="center">变硬，凝结，稳固，成群，固执于</td>
+</tr>
+<tr>
+<td align="center">冷える</td>
+<td align="center">ひえる</td>
+<td align="center">ご飯が冷える・二人の仲が冷える</td>
+<td align="center">变冷，变凉，变冷淡</td>
+</tr>
+<tr>
+<td align="center">党論</td>
+<td align="center">とうろん</td>
+<td align="center"></td>
+<td align="center">党论</td>
+</tr>
+<tr>
+<td align="center">討論</td>
+<td align="center">とうろん</td>
+<td align="center">討論に付する・討論に入る・討論に加わる</td>
+<td align="center">讨论</td>
+</tr>
+<tr>
+<td align="center">討議</td>
+<td align="center">とうぎ</td>
+<td align="center">徹底的（てっていてき）に討議する</td>
+<td align="center">讨论</td>
+</tr>
+<tr>
+<td align="center">党議</td>
+<td align="center">とうぎ</td>
+<td align="center"></td>
+<td align="center">党内的论议党的决定</td>
+</tr>
+<tr>
+<td align="center">治る</td>
+<td align="center">なおる</td>
+<td align="center">治りかけの病人＜快要好的病人＞</td>
+<td align="center">病医好，痊愈</td>
+</tr>
+<tr>
+<td align="center">助ける</td>
+<td align="center">たすける</td>
+<td align="center">貧しい（まずしい）人を助ける</td>
+<td align="center">助，援助，辅佐</td>
+</tr>
+<tr>
+<td align="center">救う</td>
+<td align="center">すくう</td>
+<td align="center">貧民（ひんみん）を救う</td>
+<td align="center">救，拯救，搭救，救援</td>
+</tr>
+<tr>
+<td align="center">好調</td>
+<td align="center">こうちょう</td>
+<td align="center">好調なときに油断するな＜顺利时不可疏忽大意＞</td>
+<td align="center">顺利，情况良好</td>
+</tr>
+<tr>
+<td align="center">快調</td>
+<td align="center">かいちょう</td>
+<td align="center">きょうは快調だ＜今天精神很好＞</td>
+<td align="center">情况良好，精神好</td>
+</tr>
+<tr>
+<td align="center">延久</td>
+<td align="center">えんきゅう</td>
+<td align="center">延久時代（1069年5月6日~1074年9月16日）</td>
+<td align="center">延久（年号）</td>
+</tr>
+<tr>
+<td align="center">永遠</td>
+<td align="center">えいえん</td>
+<td align="center">永遠の真理（しんり）</td>
+<td align="center">永远，永久，永恒</td>
+</tr>
+<tr>
+<td align="center">永久</td>
+<td align="center">えいきゅう</td>
+<td align="center">永久に続く＜万古长青＞</td>
+<td align="center">永久，永远，恒久</td>
+</tr>
+<tr>
+<td align="center">発</td>
+<td align="center">はつ</td>
+<td align="center">東京発</td>
+<td align="center">始发地，出发点</td>
+</tr>
+<tr>
+<td align="center">開</td>
+<td align="center">かい</td>
+<td align="center">開店（閉店へいてん）</td>
+<td align="center">开始</td>
+</tr>
+<tr>
+<td align="center">頭</td>
+<td align="center">とう</td>
+<td align="center">頭取（とうどり）＜行长，董事长，总经理＞</td>
+<td align="center">脑袋，头领</td>
+</tr>
+<tr>
+<td align="center">初</td>
+<td align="center">しょ</td>
+<td align="center">初対面（しょたいめん）</td>
+<td align="center">初始，起始</td>
+</tr>
+<tr>
+<td align="center">先</td>
+<td align="center">せん</td>
+<td align="center">先君子（せんくんし）＜先帝＞</td>
+<td align="center">已故的</td>
+</tr>
+<tr>
+<td align="center">前</td>
+<td align="center">ぜん</td>
+<td align="center">前首相（ぜんしゅしょう）</td>
+<td align="center">上一次的</td>
+</tr>
+<tr>
+<td align="center">昨</td>
+<td align="center">さく</td>
+<td align="center">昨日・昨年・昨１５日</td>
+<td align="center">接在时间前表上一个</td>
+</tr>
+<tr>
+<td align="center">去</td>
+<td align="center">きょ</td>
+<td align="center">去年</td>
+<td align="center">时间上已经过去的</td>
+</tr>
+<tr>
+<td align="center">令</td>
+<td align="center">れい</td>
+<td align="center">令息（れいそく）・令嬢（れいじょう）</td>
+<td align="center">尊称的前缀</td>
+</tr>
+<tr>
+<td align="center">制</td>
+<td align="center">せい</td>
+<td align="center">律令制（りつりょうせい）＜奈良、平安时代的法令＞</td>
+<td align="center">制度</td>
+</tr>
+<tr>
+<td align="center">則</td>
+<td align="center">そく</td>
+<td align="center">経験（けいけん）則</td>
+<td align="center">规则</td>
+</tr>
+<tr>
+<td align="center">形</td>
+<td align="center">けい</td>
+<td align="center">正方形（せいほうけい）</td>
+<td align="center">形状</td>
+</tr>
+<tr>
+<td align="center">込み</td>
+<td align="center">こみ</td>
+<td align="center">税込み</td>
+<td align="center">〇包括在内，总共</td>
+</tr>
+<tr>
+<td align="center">付き</td>
+<td align="center">つき</td>
+<td align="center">条件付き</td>
+<td align="center">附带</td>
+</tr>
+<tr>
+<td align="center">連れ</td>
+<td align="center">づれ</td>
+<td align="center">子供連れ</td>
+<td align="center">带着</td>
+</tr>
+<tr>
+<td align="center">本</td>
+<td align="center">ほん</td>
+<td align="center">本年度</td>
+<td align="center">当前</td>
+</tr>
+<tr>
+<td align="center">正</td>
+<td align="center">せい</td>
+<td align="center">正社員</td>
+<td align="center">正式的</td>
+</tr>
+<tr>
+<td align="center">真</td>
+<td align="center">ま</td>
+<td align="center">真冬・真横</td>
+<td align="center">正好，没有倾斜</td>
+</tr>
+<tr>
+<td align="center">完</td>
+<td align="center">かん</td>
+<td align="center">完済（かんさい）＜还清＞<br />完治（かんじ）＜痊愈＞</td>
+<td align="center">完全</td>
+</tr>
+<tr>
+<td align="center">豊富</td>
+<td align="center">ほうふ</td>
+<td align="center">内容が極めて（きわめて）豊富だ()</td>
+<td align="center">丰富，富有</td>
+</tr>
+<tr>
+<td align="center">活発</td>
+<td align="center">かっぱつ</td>
+<td align="center">議論が活発に行われている</td>
+<td align="center">活泼，活跃</td>
+</tr>
+<tr>
+<td align="center">円満</td>
+<td align="center">えんまん</td>
+<td align="center">円満具足（ぐそく）＜万事俱备＞</td>
+<td align="center">圆满，美满</td>
+</tr>
+<tr>
+<td align="center">鮮明</td>
+<td align="center">せんめい</td>
+<td align="center">鮮明なコントラスト（contrast）を形成</td>
+<td align="center">鲜明，清晰，清楚</td>
+</tr>
+<tr>
+<td align="center">柔らかい</td>
+<td align="center">やわらかい</td>
+<td align="center">柔らかい日差し（ひざし）<br/>頭が柔らかい</td>
+<td align="center">柔软，柔和，温柔，灵活</td>
+</tr>
+<tr>
+<td align="center">穏やかな</td>
+<td align="center">おだやかな</td>
+<td align="center">穏やかな海<br/>穏やかに暮らす<br/>そんな措置（そち）を採る（とる）のは穏やかでない</td>
+<td align="center">平稳，稳静，温和，妥当</td>
+</tr>
+<tr>
+<td align="center">滑らかな</td>
+<td align="center">なめらかな</td>
+<td align="center">滑らかな肌（はだ）<br/>滑らかな話しぶり＜口齿伶俐＞<br/>事が滑らかに運ぶ</td>
+<td align="center">光滑，说话流利，文章通顺，事情顺利</td>
+</tr>
+<tr>
+<td align="center">緩やかな</td>
+<td align="center">ゆるやかな</td>
+<td align="center">緩やかな流れ＜缓慢的河流＞<br/>審査基準（しんさきじゅん）を緩やかにする<br/>緩やかな気分</td>
+<td align="center">缓慢，缓和，宽松，舒畅</td>
+</tr>
+<tr>
+<td align="center">制作</td>
+<td align="center">せいさく</td>
+<td align="center">芸術作品（げいじゅつさくひん）を制作する</td>
+<td align="center">创作（多用于动画、美术等）</td>
+</tr>
+<tr>
+<td align="center">保存</td>
+<td align="center">ほぞん</td>
+<td align="center">領収書を保存する＜保存发票＞</td>
+<td align="center">保存</td>
+</tr>
+<tr>
+<td align="center">作成</td>
+<td align="center">さくせい</td>
+<td align="center">書類の作成を依頼する＜拜托拟定文件＞</td>
+<td align="center">制作，制定（多用于文件、计划等）</td>
+</tr>
+<tr>
+<td align="center">確保</td>
+<td align="center">かくほ</td>
+<td align="center">食糧の確保に努める</td>
+<td align="center">确保</td>
+</tr>
+<tr>
+<td align="center">アピール</td>
+<td align="center">appeal</td>
+<td align="center">原水爆（げんすいばく）禁止のアピール<br/>広く世間にアピールする<br/>セックスのアピール</td>
+<td align="center">呼吁，控诉，魅力</td>
+</tr>
+<tr>
+<td align="center">インストール</td>
+<td align="center">install</td>
+<td align="center">ソフトウェアをインストールする</td>
+<td align="center">装置，安装</td>
+</tr>
+<tr>
+<td align="center">チャージ</td>
+<td align="center">charge</td>
+<td align="center">ルームチャージ＜房租＞<br/>テーブルチャージ＜桌位费＞</td>
+<td align="center">冲撞，上油，加油，装子弹，收费，索价</td>
+</tr>
+<tr>
+<td align="center">セット</td>
+<td align="center">set</td>
+<td align="center">コーヒー・セット＜一套咖啡器皿＞<br/>セットしてください＜请给我做头发＞<br/>会見をセットする</td>
+<td align="center">一套，一局，梳整发形，布置，安排</td>
+</tr>
+<tr>
+<td align="center">断る</td>
+<td align="center">ことわる</td>
+<td align="center">前もって断っておく＜预先通知一下＞<br/>誰にも断らずに入ってくる<br/>一応事前に断ってください＜请事先说一声＞<br/>きっぱり断る＜断然拒绝＞</td>
+<td align="center">预先通知，事前请示，拒绝，推辞</td>
+</tr>
+<tr>
+<td align="center">疑う</td>
+<td align="center">うたがう</td>
+<td align="center">これは些か（いささか）も疑う余（よ）地がない<br/>彼はスパイ（spy）ではないかと疑われている</td>
+<td align="center">怀疑，疑惑，猜测</td>
+</tr>
+<tr>
+<td align="center">悔やむ</td>
+<td align="center">くやむ</td>
+<td align="center">すんだことを悔やんでも取り返し＜挽回＞はつかない<br/>彼の早死（はやじ）にを悔やむ＜哀悼他英年早逝＞</td>
+<td align="center">懊悔，后悔，吊唁，哀悼</td>
+</tr>
+<tr>
+<td align="center">諦める</td>
+<td align="center">あきらめる</td>
+<td align="center">こればかりはあきらめない＜唯有这一点还不能死心＞<br/>彼をあきらめきれない＜舍不得他＞</td>
+<td align="center">断念，死心，罢手，看开</td>
+</tr>
+<tr>
+<td align="center">契機</td>
+<td align="center">けいき</td>
+<td align="center">病気を契機に酒をやめる</td>
+<td align="center">契机，转机，动机，起因</td>
+</tr>
+<tr>
+<td align="center">先端</td>
+<td align="center">せんたん</td>
+<td align="center">防波堤（ぼうはてい）の先端<br/>三日月（みかづき）の先端＜月牙尖儿＞</td>
+<td align="center">顶端，（时代的）尖端，先锋</td>
+</tr>
+<tr>
+<td align="center">始発</td>
+<td align="center">しはつ</td>
+<td align="center">大阪始発の急行・始発駅＜起点站＞</td>
+<td align="center">乗り物の運転区間の最初場所</td>
+</tr>
+<tr>
+<td align="center">合図</td>
+<td align="center">あいず</td>
+<td align="center">目で合図する＜使眼色＞</td>
+<td align="center">信号，暗号</td>
+</tr>
+<tr>
+<td align="center">ぐっすり</td>
+<td align="center"></td>
+<td align="center">ぐっすり寝入る<br/>泥濘（でいねい）へぐっすり片足を踏み込み</td>
+<td align="center">睡眠香甜，实实在在地</td>
+</tr>
+<tr>
+<td align="center">うろうろ</td>
+<td align="center"></td>
+<td align="center">うろうろと歩き回る</td>
+<td align="center">彷徨，徘徊，转来转去，心神不安</td>
+</tr>
+<tr>
+<td align="center">ひそひそ</td>
+<td align="center"></td>
+<td align="center">小声でひそひそと話す<br/>わたしに隠れてひそひそと相談するな</td>
+<td align="center">偸偸，悄悄，暗中</td>
+</tr>
+<tr>
+<td align="center">ばっさり</td>
+<td align="center"></td>
+<td align="center">長い髪をばっさり（と）切ってしまう</td>
+<td align="center">痛快地，决断地斩断</td>
+</tr>
+<tr>
+<td align="center">汚れる</td>
+<td align="center">よごれる</td>
+<td align="center">汚れた金を受け取るな</br>汚れた一生</td>
+<td align="center">污染，失去贞操</td>
+</tr>
+<tr>
+<td align="center">汚す</td>
+<td align="center">けがす</td>
+<td align="center">幼児（ようじ）の純真な心を汚す</br>国家の体面を汚す</td>
+<td align="center">玷辱，污染，凌辱</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="２．单词的正确使用语境"><a href="#２．单词的正确使用语境" class="headerlink" title="２．单词的正确使用语境"></a>２．单词的正确使用语境</h2><ul>
+<li><strong>頂上</strong>（ちょうじょう）:　[名]　顶峰，山顶，极点</li>
+</ul>
+<ol>
+<li>この星は、夏の夜１２時ごろ、空の<strong>果て</strong>のあたりに見える</li>
+<li>山に登り始めて５時間ぐらいして、ようやく<strong>頂上</strong>に着いた</li>
+<li>この家の２階の部屋は、<strong>屋上</strong>にも窓が付いているので、とても明るい</li>
+<li>本棚がいっぱいになってしまい、本棚の<strong>棚上</strong>にも本を置いている</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center"></th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">果て</td>
+<td align="center">はて</td>
+<td align="center">边际，尽头，止境</td>
+</tr>
+<tr>
+<td align="center">屋上</td>
+<td align="center">おくじょう</td>
+<td align="center">屋顶上</td>
+</tr>
+<tr>
+<td align="center">棚上</td>
+<td align="center">たなうえ</td>
+<td align="center">书架的顶上</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>節約</strong>（せつやく）:　[名]　节约,节省</li>
+</ul>
+<ol>
+<li>駅に向かう道路の渋滞を<strong>緩和</strong>するため、道の幅を広げる工事が行われている</li>
+<li>美術館の中は、カビが発生（はっせい）して絵がい傷まないように、温度や湿度を<strong>調節</strong>しています</li>
+<li>試験が近くなってきたので、アルバイトの仕事を少し<strong>減らす</strong>することにした</li>
+<li>私の会社では、紙や郵送費を<strong>節約</strong>するため、資料はすべてメールで送っている</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center"></th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">緩和</td>
+<td align="center">かんわ</td>
+<td align="center">缓和，缓解</td>
+</tr>
+<tr>
+<td align="center">調節</td>
+<td align="center">ちょうせつ</td>
+<td align="center">调节</td>
+</tr>
+<tr>
+<td align="center">減らす</td>
+<td align="center">へらす</td>
+<td align="center">减少</td>
+</tr>
+<tr>
+<td align="center">カビ</td>
+<td align="center">かび</td>
+<td align="center">霉</td>
+</tr>
+<tr>
+<td align="center">湿度</td>
+<td align="center">しつど</td>
+<td align="center">しつど</td>
+</tr>
+<tr>
+<td align="center">傷む</td>
+<td align="center">いたむ</td>
+<td align="center">腐败，损坏</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>分解</strong>（ぶんかい）:　[名・自他・三类]　拆开，分解<strong>（个人认为是指可以由小部件构成的物体才可用分解）</strong></li>
+</ul>
+<ol>
+<li>機械の調子が悪かったので、<strong>分解</strong>して部品の点検をした</li>
+<li>スイカを買ってきたが、大きくて冷蔵庫に入らなかったので、四つに<strong>分けた</strong></li>
+<li>細かいお金がなかったので、近くの店で千円札を<strong>両替</strong>してもらった</li>
+<li>急ぎの仕事が入ったので、三人で<strong>分担</strong>して進めることにした</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center"></th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">分ける</td>
+<td align="center">わける</td>
+<td align="center">分开，分为</td>
+</tr>
+<tr>
+<td align="center">両替</td>
+<td align="center">りょうがえ</td>
+<td align="center">兑换</td>
+</tr>
+<tr>
+<td align="center">分担</td>
+<td align="center">ぶんたん</td>
+<td align="center">分担，分开承担</td>
+</tr>
+<tr>
+<td align="center">千円札</td>
+<td align="center">せんえんさつ</td>
+<td align="center">一千元的纸币</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>略す</strong>（りゃくす）:　[五段活用]　省略,略去,夺取,攻略</li>
+</ul>
+<ol>
+<li>時間がないので、詳しい説明は<strong>略して</strong>、要点だけを話しします</li>
+<li>合計で一万円以上ご購入の場合、送料は<strong>省きます</strong></li>
+<li>健康（けんこう）のために、砂糖（さとう）を<strong>抜いた</strong>ジャムを使っています</li>
+<li>このオフィスは、壁を<strong>無くして</strong>、開放感（かいほうかん）のあるデザインにしました</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center"></th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">省く</td>
+<td align="center">はぶく</td>
+<td align="center">节省，节约</td>
+</tr>
+<tr>
+<td align="center">抜く</td>
+<td align="center">ぬく</td>
+<td align="center">省去，省略</td>
+</tr>
+<tr>
+<td align="center">無くす</td>
+<td align="center">なくす</td>
+<td align="center">清除，去除</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>覆う</strong>（おおう）:　[他]　蒙上，包括，概括，覆盖，充满，笼罩</li>
+</ul>
+<ol>
+<li>私のうちは、周りを高層（こうそう）マンシュンに<strong>囲まれて</strong>、日当たりが悪い</li>
+<li>優勝した森選手は大勢の記者に<strong>囲まれて</strong>インタビューを受けいていた</li>
+<li>公園に続く並木道はすっかり落ち葉で<strong>覆われていた</strong></li>
+<li>部屋が暑いのか、中島さんの顔は汗で<strong>濡れて</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center"></th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">囲む</td>
+<td align="center">かこむ</td>
+<td align="center">包围，围绕</td>
+</tr>
+<tr>
+<td align="center">濡れる</td>
+<td align="center">ぬれる</td>
+<td align="center">淋湿，掺入水分</td>
+</tr>
+<tr>
+<td align="center">選手</td>
+<td align="center">せんしゅ</td>
+<td align="center">选手</td>
+</tr>
+<tr>
+<td align="center">続く</td>
+<td align="center">つづく</td>
+<td align="center">继续，跟上，通向</td>
+</tr>
+<tr>
+<td align="center">大勢</td>
+<td align="center">おおぜい</td>
+<td align="center">很多的（指人）</td>
+</tr>
+<tr>
+<td align="center">優勝</td>
+<td align="center">ゆうしょう</td>
+<td align="center">第一名，优胜</td>
+</tr>
+<tr>
+<td align="center">日当たり</td>
+<td align="center">ひあたり</td>
+<td align="center">光照，向阳处</td>
+</tr>
+<tr>
+<td align="center">並木道</td>
+<td align="center">なみきみち</td>
+<td align="center">林荫道</td>
+</tr>
+<tr>
+<td align="center">すっかり</td>
+<td align="center"></td>
+<td align="center">全都是，完全是</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS2019无法打开ui文件</title>
+    <url>/2021/10/31/DeBug/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ul>
+<li>使用VS2019+Qt5时，无法打开*.ui文件</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><ul>
+<li>暂时不确定，估计有以下两个因素</li>
+</ul>
+<ol>
+<li>与默认打开的Qt Designer版本选取有关，因为我电脑上有2个不同版本的Qt，用于编写项目的Qt版本与我之前用的不同</li>
+<li>与默认打开的Qt Designer的编译器有关，项目使用MSVC2017_64，而之前我一直使用MinGW_32</li>
+</ol>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
+<li>右键ui文件 —&gt; 点击“打开方式” —&gt; “添加”</li>
+<li>选择 Qt目录下MSVC2017_64 中 bin目录下 Qt Designer 添加</li>
+<li>将新添加的打开方式“设为默认值”</li>
+<li><a href="https://blog.csdn.net/qq_43145926/article/details/105004762">参考文章</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>DeBug</category>
+      </categories>
+      <tags>
+        <tag>QT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++DeBUG记录</title>
+    <url>/2021/10/31/DeBug/C++DeBUG%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><strong>记录在使用C++时与各种BUG斗智斗勇的血泪史</strong></p>
+<span id="more"></span>
+<h2 id="Error-C2528-’name’-pointer-to-reference-is-illegal"><a href="#Error-C2528-’name’-pointer-to-reference-is-illegal" class="headerlink" title="Error C2528:’name’ : pointer to reference is illegal"></a>Error C2528:’name’ : pointer to reference is illegal</h2><h3 id="BUG产生"><a href="#BUG产生" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
+<li>在 vector 中插入引用对象，比如 vector&lt;int&amp;&gt; nums</li>
+</ul>
+<h3 id="BUG原因"><a href="#BUG原因" class="headerlink" title="BUG原因"></a>BUG原因</h3><ul>
+<li>不能向“容器”中加入“引用”（与底层实现相关，会导致迭代等异常，详情暂请另行搜索）</li>
+</ul>
+<h3 id="BUG解决"><a href="#BUG解决" class="headerlink" title="BUG解决"></a>BUG解决</h3><ul>
+<li>比如将vector&lt; int&amp; &gt; nums改为vector&lt; int &gt; nums</li>
+</ul>
+<h2 id="Error-C2872-‘byte’-ambiguous-symbol"><a href="#Error-C2872-‘byte’-ambiguous-symbol" class="headerlink" title="Error C2872: ‘byte’: ambiguous symbol"></a>Error C2872: ‘byte’: ambiguous symbol</h2><h3 id="BUG产生-1"><a href="#BUG产生-1" class="headerlink" title="BUG产生"></a>BUG产生</h3><ul>
+<li>对使用旧版WindowsSKD编写的代码，使用C++17标准（使用C++14标准时正常）</li>
+</ul>
+<h3 id="BUG原因-1"><a href="#BUG原因-1" class="headerlink" title="BUG原因"></a>BUG原因</h3><ul>
+<li>旧版WindowsSKD有定义byte类型，但同时C++17也定义了std::byte类型，造成重复定义</li>
+</ul>
+<h3 id="BUG解决-1"><a href="#BUG解决-1" class="headerlink" title="BUG解决"></a>BUG解决</h3><ul>
+<li><p>[Method.1] 添加_HAS_STD_BYTE=0宏</p>
+</li>
+<li><p>[Method.2]使用较低版本的C++标准（本次由于使用别人的框架因此采用该方法）</p>
+</li>
+<li><p><a href="https://blog.csdn.net/caimouse/article/details/106047569">参考文章</a></p>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>We have determined that the feedback applies to another product: Windows &amp; Windows SDK. Thank you and we value your contribution to Developer Community.<br>We are working with the the Windows team to get this addressed in a future update of the SDK. In the meantime, the community comments &amp; workarounds describe the set of options available well. Thank you!<br>I’ll specifically highlight the following two items:<br>Use of the _HAS_STD_BYTE=0 macro by specifying /D_HAS_STD_BYTE=0 at the compiler command line. This effectively disables std::byte support in the STL and should address scenarios where ‘byte’ is not used in code. It should be noted that this macro will eventually be removed after the Windows SDK issues are fixed. That removal can be tracked via the Microsoft/STL GitHub repo at <a href="https://github.com/microsoft/STL/issues/204">https://github.com/microsoft/STL/issues/204</a>.<br>Avoid bringing std::byte into the global namespace (potential by ‘using namesapce std’) and reference the Windows SDK byte using ::byte and the C++ standard version using std::byte.<br>Regards,<br>Daniel Griffing, Visual C++ Compiler Front-End</p>
+</blockquote>
+</blockquote>
+]]></content>
+      <categories>
+        <category>DeBug</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VMware虚拟机3种网络模式</title>
+    <url>/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
+<ol>
+<li>桥接模式（Bridged）</li>
+<li>网络地址转换模式（NAT）</li>
+<li>主机模式（Host-only）<span id="more"></span></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>依赖的网络服务</th>
+<th>虚拟网络组成</th>
+<th>访问外部网络的方式</th>
+<th>与宿主机互访方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>桥接模式</td>
+<td>VMnet0（虚拟网桥）</td>
+<td>相当于宿主机局域网内一台独立主机</td>
+<td>虚拟网桥联网</td>
+<td>同一局域网</td>
+</tr>
+<tr>
+<td>NAT模式</td>
+<td>VMnet8（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
+<td>虚拟NAT联网</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+<tr>
+<td>主机模式</td>
+<td>VMnet1（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机</td>
+<td>通过宿主机转发到虚拟网卡</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
+<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
+</ul>
+<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
+<li>虚拟机相当于局域网中的一台独立主机</li>
+<li>可以独立访问网络中其他主机</li>
+<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
+<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
+</ul>
+<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
+<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
+<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
+<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
+</ul>
+<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
+<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
+<li>TCP/IP配置由VMnet1提供</li>
+<li>可以与宿主机互相通信</li>
+</ul>
+]]></content>
+      <categories>
+        <category>虚拟机</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ARP欺骗实验</title>
+    <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+<li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
+</ul>
+<span id="more"></span>
+
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h3 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h3><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E6%8B%93%E6%89%91.png" alt="p1"></p>
+<h4 id="攻击目标（虚拟机）"><a href="#攻击目标（虚拟机）" class="headerlink" title="攻击目标（虚拟机）"></a>攻击目标（虚拟机）</h4><ul>
+<li>操作系统：Windows10</li>
+</ul>
+<h4 id="通信目标（虚拟机）"><a href="#通信目标（虚拟机）" class="headerlink" title="通信目标（虚拟机）"></a>通信目标（虚拟机）</h4><ul>
+<li>操作系统：CentOS</li>
+</ul>
+<h4 id="攻击者（宿主机）"><a href="#攻击者（宿主机）" class="headerlink" title="攻击者（宿主机）"></a>攻击者（宿主机）</h4><ul>
+<li>操作系统 Kali</li>
+</ul>
+<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="局域网（LAN）中的信息传输过程"><a href="#局域网（LAN）中的信息传输过程" class="headerlink" title="局域网（LAN）中的信息传输过程"></a>局域网（LAN）中的信息传输过程</h3><ul>
+<li>连接在以太网中的两台Terminal之间传输IP分组时，Sender必须先获取Receiver的MAC地址</li>
+<li>每一个Terminal都有ARP缓冲区，用于保存（IP，MAC）的映射关系，如果Receiver在缓存区，则可以直接完成链路帧封装</li>
+<li>如果Sender只有Receiver的IP地址，则需要通过“地址解析过程”获取Receiver的MAC，该过程通过ARP（Address Resolution Protocol）来实现</li>
+</ul>
+<h3 id="ARP地址解析过程"><a href="#ARP地址解析过程" class="headerlink" title="ARP地址解析过程"></a>ARP地址解析过程</h3><ul>
+<li><p>Sender广播（broadcast）ARP请求报文，该报文格式如下</p>
+<table>
+<thead>
+<tr>
+<th align="center">帧校验序列</th>
+<th align="center">数据（请求报文）</th>
+<th align="center">类型</th>
+<th align="center">源MAC地址</th>
+<th align="center">目的MAC地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FCS</td>
+<td align="center">（IP_A,MAC_A) , (IP_B, ? )</td>
+<td align="center">ARP</td>
+<td align="center">MAC A</td>
+<td align="center">FF-FF-FF-FF-FF-FF</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>在该LAN中的所有Terminals都记录下Sender的IP与MAC，但只有Receiver将自己（IP，MAC）回复给Sender</p>
+</li>
+<li><p>Sender收到回复消息，将其记录在自己的ARP缓存区</p>
+</li>
+</ul>
+<h3 id="ARP欺骗原理"><a href="#ARP欺骗原理" class="headerlink" title="ARP欺骗原理"></a>ARP欺骗原理</h3><ul>
+<li>利用“ARP没有真伪校验”的特点，在ARP请求过程中，Hacker将IP对应的MAC修改为自己的MAC</li>
+</ul>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-按照实验拓扑准备好虚拟机"><a href="#Step-1-按照实验拓扑准备好虚拟机" class="headerlink" title="Step.1 按照实验拓扑准备好虚拟机"></a>Step.1 按照实验拓扑准备好虚拟机</h3><ul>
+<li>使用VMware完成虚拟机配置<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/0.%E5%87%86%E5%A4%87%E8%99%9A%E6%8B%9F%E6%9C%BA.png" alt="p2"></li>
+</ul>
+<h3 id="Step-2-修改虚拟机网络模式为“桥接模式”"><a href="#Step-2-修改虚拟机网络模式为“桥接模式”" class="headerlink" title="Step.2 修改虚拟机网络模式为“桥接模式”"></a>Step.2 修改虚拟机网络模式为“桥接模式”</h3><ul>
+<li><a href="http://www.codebooklet.com/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/#more/">VMware的3种网络模式</a><br>![p3(<a href="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/1.%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.png">http://image.codebooklet.com/img_blog/ARP欺骗实验/1.修改虚拟机为桥接模式.png</a>)</li>
+</ul>
+<h3 id="Step-3-查看3方的网络配置"><a href="#Step-3-查看3方的网络配置" class="headerlink" title="Step.3 查看3方的网络配置"></a>Step.3 查看3方的网络配置</h3><h4 id="攻击目标"><a href="#攻击目标" class="headerlink" title="攻击目标"></a>攻击目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/2.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85.png" alt="p4"></p>
+<h4 id="通信目标"><a href="#通信目标" class="headerlink" title="通信目标"></a>通信目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/3.%E6%B6%88%E6%81%AF%E7%9B%AE%E6%A0%87.png" alt="p5"></p>
+<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/4.%E6%94%BB%E5%87%BB%E6%96%B9.png" alt="p6"></p>
+<h3 id="Step-4-查看当前攻击目标的ARP缓存"><a href="#Step-4-查看当前攻击目标的ARP缓存" class="headerlink" title="Step.4 查看当前攻击目标的ARP缓存"></a>Step.4 查看当前攻击目标的ARP缓存</h3><ul>
+<li>Windows下使用“arp -a”即可，找到通信目标对应的映射<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/5.%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E5%BD%93%E5%89%8DARP.png" alt="p7"></li>
+</ul>
+<h3 id="Step-5-发起攻击"><a href="#Step-5-发起攻击" class="headerlink" title="Step.5 发起攻击"></a>Step.5 发起攻击</h3><ul>
+<li>使用“arpspoof”命令发起攻击</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/6.%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB.png" alt="p8"><br/></p>
+<table>
+<thead>
+<tr>
+<th align="center">使用参数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-i eth0</td>
+<td align="center">使用 eth0 网卡发起攻击</td>
+</tr>
+<tr>
+<td align="center">-t 10.66.217.60</td>
+<td align="center">攻击目标IP为10.66.217.60</td>
+</tr>
+<tr>
+<td align="center">-r 10.66.198.146</td>
+<td align="center">伪造（IP：10.66.217.60，MAC：Hacker的MAC）的ARP请求</td>
+</tr>
+</tbody></table>
+<h3 id="Step-6-查看攻击目标被攻击后的ARP表"><a href="#Step-6-查看攻击目标被攻击后的ARP表" class="headerlink" title="Step.6 查看攻击目标被攻击后的ARP表"></a>Step.6 查看攻击目标被攻击后的ARP表</h3><ul>
+<li>可以发现IP：10.66.217.60 所对应的MAC已经变成了Hacker的MAC<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/7.%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84ARP%E8%A1%A8.png" alt="p9"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《C++17 STL Cookbook》笔记</title>
+    <url>/2021/10/30/C++/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 STL Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
+<span id="more"></span>
+
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><ul>
+<li><p><strong>C++的部分模板类是</strong><a href="https://baike.baidu.com/item/%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/4634934">图灵完备</a><strong>的!</strong></p>
+<blockquote>
+<p>The part of C++ for expressing template types is even Turing-complete!</p>
+</blockquote>
+</li>
+<li><p><strong>许多程序员仅仅把C++当做一门编程语言学习，并不重视STL的使用，这让C++看起来像是具有class的C语言。这样不仅看起来不像是21世纪的现代程序，并且失去了C++一半的力量。</strong></p>
+<blockquote>
+<p>However, many C++ programmers eagerly learn C++ as a language but put its standard<br> library, the STL, in the second place. Using the C++ language without the help that the<br> standard library provides often leads to programs that look like C with classes, but not<br> what modern programs in the 21st century should look like. This is very sad because using<br> C++ like that means dropping half its strength.</p>
+</blockquote>
+</li>
+<li><p><strong>C++之父Bjarne Stroustrup博士在他的《C++程序设计语言》(C++11版本)中写到</strong><br> “STL和语言特性都是为了支撑以软件质量为目标的编程技术，他们应该互相配合发挥作用——就如同搭建房子的砖块——而不是单独拿出来，相对孤立地解决一个具体问题。”</p>
+<blockquote>
+<p>In the C++11 edition of his book, The C++ Programming Language, Bjarne Stroustrup writes,<br> “Please remember that those libraries and language features exist to support programming<br> techniques for developing quality software. They are meant to be used in combination–as<br> bricks in a building set–rather than to be used individually in relative isolation to solve a<br> specific problem.”</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Chapter1-C-17新特新（The-New-C-17-Features）"><a href="#Chapter1-C-17新特新（The-New-C-17-Features）" class="headerlink" title="Chapter1.C++17新特新（The New C++17 Features）"></a>Chapter1.C++17新特新（The New C++17 Features）</h1><h2 id="Abstract-摘要"><a href="#Abstract-摘要" class="headerlink" title="Abstract 摘要"></a>Abstract 摘要</h2><ol>
+<li><strong>使用 结构化绑定（structured bindings）去解包绑定的返回值</strong><blockquote>
+<p>Using structured bindings to unpack bundled return values</p>
+</blockquote>
+</li>
+<li><strong>限制 变量作用域（variable scopes）在 if 和 switch 区域内</strong><blockquote>
+<p>Limiting variable scopes to if and switch statements</p>
+</blockquote>
+</li>
+<li><strong>从新的 括号初始化规则（bracket initializer rules）中获益</strong><blockquote>
+<p>Profiting from the new bracket initializer rules</p>
+</blockquote>
+</li>
+<li><strong>让构造函数（constructor）自动推导模板的类型</strong><blockquote>
+<p>Letting the constructor automatically deduce the resulting template class type</p>
+</blockquote>
+</li>
+<li><strong>使用 constexpr-if 简化编译时决策</strong><blockquote>
+<p>Simplifying compile-time decisions with constexpr-if</p>
+</blockquote>
+</li>
+<li><strong>使用内联变量（inline variables）启动只有头文件的库（header-only library）</strong><blockquote>
+<p>Enabling header-only libraries with inline variables</p>
+</blockquote>
+</li>
+<li><strong>使用折叠表达式（fold expressions）方便地实现辅助函数</strong><blockquote>
+<p>Implementing handy helper functions with fold expressions</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>C++ STL</tag>
       </tags>
   </entry>
   <entry>
@@ -1555,504 +2666,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux用户身份切换</title>
-    <url>/2021/11/23/Linux/Linux%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E5%88%87%E6%8D%A2/</url>
-    <content><![CDATA[<ul>
-<li>《鸟哥的Linux私房菜》第13章有关用户身份切换的相关知识的学习</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="用户身份切换"><a href="#用户身份切换" class="headerlink" title="用户身份切换"></a>用户身份切换</h1><h2 id="为什么需要身份切换"><a href="#为什么需要身份切换" class="headerlink" title="为什么需要身份切换"></a>为什么需要身份切换</h2><ul>
-<li><strong>安全</strong>：日常操作使用普通账号避免不必要的误操，启动系统服务时希望用较低的权限，比如使用apache这样一个用户来启动Apache服务，这样即使服务被攻击也不会造成系统损坏</li>
-<li><strong>软件限制</strong>：远古时代，一些telnel程序默认不允许使用root身份登录<blockquote>
-<blockquote>
-<p>一般情况下使用普通账户登录系统，等有需要进行系统维护或者软件更新时才转变为root身份</p>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<h2 id="如何切换至root身份"><a href="#如何切换至root身份" class="headerlink" title="如何切换至root身份"></a>如何切换至root身份</h2><h3 id="①-su"><a href="#①-su" class="headerlink" title="① su"></a>① su</h3><ul>
-<li>是<strong>最简单的身份切换命令，可以进行任何身份的切换</strong></li>
-<li><strong>使用方法：su [-lm] [-c command] [username]  （如果没有指定username则默认root）</strong><br>可选参数|说明</li>
-<li>–|—</li>
-<li>|单纯使用 “su -” 代表使用 login shell 的变量文件读取方式来登录（即环境变量是切换后的用户的，与 -m 区分）</li>
-<li>l|与 - 类似，但是后面必须显式写明username，也是 login-shell 的方式</li>
-<li>m|与 -p 一样，表示使用目前的环境，不读取切换后使用者的配置文件（会导致切换后身份所特有的命令需要使用绝对路径执行）</li>
-<li>c|仅进行一次命令，执行命令写在后面即可</li>
-</ul>
-<p>-<strong>有没有减号 - 直接决定了是使用 login shell 还是 non-login shell 的变量读取方法</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一个简单的&quot;su&quot;和&quot;su -&quot;对比演示</span></span><br><span class="line">git@Aioy:~$ su</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">PWD=/home/git</span><br><span class="line">LOGNAME=git</span><br><span class="line">USER=git</span><br><span class="line">-----------------------------------------</span><br><span class="line">git@Aioy:~$ su -</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">（没有任何输出）</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>使用non-login shell方式（即不加减号参数）可能会导致身份切换后依旧接收到旧身份的信息，或者需要使用绝对路径来使用切换后用户的特殊命令等情况，总之就是可能造成很多麻烦</strong></li>
-</ul>
-<h3 id="②-sudo"><a href="#②-sudo" class="headerlink" title="② sudo"></a>② sudo</h3><ul>
-<li><strong>系统初始默认只有root可以执行sudo</strong></li>
-<li><strong>sudo可以让你以其他用户的身份执行命令，通常是root身份</strong></li>
-<li><strong>一般用户如果想要拥有使用sudo的权限，需要和管理员事先联系审核，成为信任用户</strong></li>
-<li><strong>与su不同的是，使用sudo不需要切换对象的密码，而是自己的密码，甚至不需要密码</strong></li>
-</ul>
-<h3 id="sudo的执行流程"><a href="#sudo的执行流程" class="headerlink" title="sudo的执行流程"></a>sudo的执行流程</h3><ol>
-<li>当用户执行sudo时，操作系统在 /etc/sudoers 文件中查找用户是否具有执行sudo的权限</li>
-<li>如果可以执行sudo，则需要用户输入自己的密码（root执行sudo不需要密码）</li>
-<li>密码正确则开始执行sudo后的command</li>
-</ol>
-<ul>
-<li><strong>执行sudo的重点：/etc/sudoers 文件中是否有权限，如果没有则需要root使用visudo修改该文件，或者直接修改该文件（修改方法可以在其他文章中学习）</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux账号管理</title>
-    <url>/2021/11/19/Linux/Linux%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<ul>
-<li>《鸟哥的Linux私房菜》第13章有关用户管理的相关知识的学习</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="Linux的账号"><a href="#Linux的账号" class="headerlink" title="Linux的账号"></a>Linux的账号</h1><h2 id="用户标识符：UID-amp-GID"><a href="#用户标识符：UID-amp-GID" class="headerlink" title="用户标识符：UID &amp; GID"></a>用户标识符：UID &amp; GID</h2><ul>
-<li>每一个登录系统的用户都会至少获得2个ID，即UID（User ID）与GID（Group ID）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#使用 id 指令查看某用户信息</span></span><br><span class="line">root@Aioy:~/<span class="built_in">test</span><span class="comment"># id jerry</span></span><br><span class="line">uid=1001(jerry) gid=1001(jerry) groups=1001(jerry)</span><br><span class="line"><span class="comment">#groups属性暗示了一个用户可以归属多个组</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="UID的范围和用户特性"><a href="#UID的范围和用户特性" class="headerlink" title="UID的范围和用户特性"></a>UID的范围和用户特性</h2><table>
-<thead>
-<tr>
-<th>ID范围</th>
-<th>用户特性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>系统管理员：0</td>
-<td>一般只有root一个用户，也可以通过修改其他用户权限为0增加系统管理员，不过可能会造成混淆</td>
-</tr>
-<tr>
-<td>系统账号：1~999（通常不可登录）</td>
-<td><strong>保留给操作系统使用的ID，1<del>200由Linux发行版自行建立的系统账号，201</del>999若用户有系统账号需求时可以使用，比如启动网络服务时候如果不希望用root权限，则可以使用系统账号</strong></td>
-</tr>
-<tr>
-<td>普通账号：1000~2^32-1（&gt;= Kernel3.10.X）</td>
-<td>给一般用户使用，实际范围上限可能更小也可能更大</td>
-</tr>
-</tbody></table>
-<h2 id="passwd文件-amp-shadow文件"><a href="#passwd文件-amp-shadow文件" class="headerlink" title="passwd文件 &amp; shadow文件"></a>passwd文件 &amp; shadow文件</h2><h3 id="passwd文件"><a href="#passwd文件" class="headerlink" title="passwd文件"></a>passwd文件</h3><ul>
-<li>在Linux Ubuntu下用户账号信息存放在**/etc/password**</li>
-<li>每一行都代表一个账号，<strong>系统账号是操作系统正常运行所必须的，比如daemon、bin等</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#passwd文件的部分展示，其中 : 作为分隔符，一共有7个</span></span><br><span class="line"><span class="comment">#用户名:密码:UID:GID:用户信息说明栏:家目录:默认shell</span></span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="为什么-密码-字段为-x"><a href="#为什么-密码-字段为-x" class="headerlink" title="为什么 密码 字段为 x"></a>为什么 密码 字段为 x</h4><ul>
-<li> <strong>早期linux将密码也放在 /etc/passwd 中，不过由于所有程序都能读取该文件所以容易造成密码泄露问题，因此密码字段被移动到 /etc/shadow 中</strong></li>
-</ul>
-<h3 id="shadow文件"><a href="#shadow文件" class="headerlink" title="shadow文件"></a>shadow文件</h3><ul>
-<li>在Linux Ubuntu下用户账号的密码存放在**/etc/shadow**</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#shadow文件的部分展示，其中 : 作为分隔符，一共有9个</span></span><br><span class="line">man:*:18375:0:99999:7:::</span><br><span class="line">lp:*:18375:0:99999:7:::</span><br><span class="line">mail:*:18375:0:99999:7:::</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1.用户名</td>
-<td>用户名，需要与/etc/passwd对应</td>
-</tr>
-<tr>
-<td>2.密码</td>
-<td>经过摘要运算（比如MD5，SHA）后的密码，很难（单向性）但可能被破译，<strong>系统账号密码为星号</strong>*</td>
-</tr>
-<tr>
-<td>3.最近修改密码的日期</td>
-<td>自Linux日期（1970年1月1日）开始后的天数</td>
-</tr>
-<tr>
-<td>4.密码不可被修改的天数</td>
-<td>自[最近修改密码的日期]开始，需要过几天才可以修改密码，如果是0则可以立即修改</td>
-</tr>
-<tr>
-<td>5.密码需要重新修改的天数</td>
-<td>自[最近修改密码的日期]开始，强制用户在此字段规定天数内修改密码，否则该账号密码过期（失效前可用）</td>
-</tr>
-<tr>
-<td>6.密码需要修改期限前的警告天数</td>
-<td>相对[密码需要重新修改的天数]还剩此字段规定天数时，系统会提醒该用户重新设置密码</td>
-</tr>
-<tr>
-<td>7.密码失效日（不同于密码过期日）</td>
-<td>在[密码需要重新修改的天数]过后，如果用户还是没有修改密码，则该账号无法使用此密码登录</td>
-</tr>
-<tr>
-<td>8.账号失效日</td>
-<td>账号自Linux日期（1970年1月1日）开始后的天数内有效，超过则失效，常用于付费服务</td>
-</tr>
-<tr>
-<td>9.保留字段</td>
-<td>为之后的新功能预留</td>
-</tr>
-</tbody></table>
-<h3 id="权限比较"><a href="#权限比较" class="headerlink" title="权限比较"></a>权限比较</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/passwd</span></span><br><span class="line">-rw-r--r-- 1 root root 1737 Oct 23 10:29 /etc/passwd</span><br><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/shadow</span></span><br><span class="line">-rw-r----- 1 root shadow 1235 Oct 23 10:34 /etc/shadow</span><br></pre></td></tr></table></figure>
-<ul>
-<li>可以看出来passwd文件由于对其他用户开放了 r 读权限，因此早期存放密码的设计确实不安全</li>
-</ul>
-<h2 id="用户登陆过程"><a href="#用户登陆过程" class="headerlink" title="用户登陆过程"></a>用户登陆过程</h2><ol>
-<li>用户本地终端或使用ssh远程发起登陆请求，输入账号和密码</li>
-<li>账号核对：在 /etc/passwd 中查找是否有用户输入的账号</li>
-<li>密码核对：在 /etc/shadow 找出对应的账号与UID然后核对密码</li>
-<li>登陆成功，进入Shell管理阶段</li>
-</ol>
-<h1 id="Linux的用户组"><a href="#Linux的用户组" class="headerlink" title="Linux的用户组"></a>Linux的用户组</h1><h2 id="group文件-amp-gshadow文件"><a href="#group文件-amp-gshadow文件" class="headerlink" title="group文件 &amp; gshadow文件"></a>group文件 &amp; gshadow文件</h2><h3 id="group文件"><a href="#group文件" class="headerlink" title="group文件"></a>group文件</h3><ul>
-<li>在Linux Ubuntu下用户账号信息存放在**/etc/group**</li>
-<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#group文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:GID:此用户组支持的账号名称</span></span><br><span class="line">root:x:0:</span><br><span class="line">daemon:x:1:</span><br><span class="line">bin:x:2:</span><br><span class="line">sys:x:3:</span><br><span class="line">adm:x:4:syslog</span><br><span class="line">tty:x:5:syslog</span><br></pre></td></tr></table></figure></li>
-<li><strong>注意</strong>：新版Linux中，<strong>初始用户组的用户群</strong>已经不会加入第四个字段，比如root的主要用户组为root，那么不会在group文件第四个字段看到root出现（相当于隐式声明）</li>
-</ul>
-<h3 id="gshadow文件"><a href="#gshadow文件" class="headerlink" title="gshadow文件"></a>gshadow文件</h3><ul>
-<li>在Linux Ubuntu下用户账号信息存放在**/etc/gshadow**</li>
-<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#gshadow文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:组管理员（在etc/gpasswd中）:此用户组支持的账号名称（多个用户间用逗号,分隔）</span></span><br><span class="line">root:*::</span><br><span class="line">daemon:*::</span><br><span class="line">bin:*::</span><br><span class="line">sys:*::</span><br><span class="line">adm:*::syslog</span><br><span class="line">tty:*::syslog</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="有效用户组-amp-初始用户组"><a href="#有效用户组-amp-初始用户组" class="headerlink" title="有效用户组 &amp; 初始用户组"></a>有效用户组 &amp; 初始用户组</h2><blockquote>
-<blockquote>
-<blockquote>
-<p>假如一个用户同时加入多个用户组，那么在执行任务过程中，究极以哪个用户组为准呢？——有效用户组（Effective Group）</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="有效用户组（Effective-Group）"><a href="#有效用户组（Effective-Group）" class="headerlink" title="有效用户组（Effective Group）"></a>有效用户组（Effective Group）</h3><ul>
-<li><p>在 /etc/passwd 中的第四字段 GID 即所谓的有效用户组，<strong>用户登录后会立即拥有初始用户组的相关权限</strong></p>
-</li>
-<li><p><strong>groups 命令</strong>：查看某用户当前全部所属用户组，<strong>第一个为有效用户组</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">root</span><br><span class="line">root@Aioy:~<span class="comment"># groups jerry</span></span><br><span class="line">jerry : jerry</span><br><span class="line"><span class="comment">#注意只有第一个输出是有效用户组</span></span><br></pre></td></tr></table></figure></li>
-<li><p><strong>newgrp 命令</strong>：切换有效用户组</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># newgrp jerry</span></span><br><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">jerry root</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="有效用户组的作用"><a href="#有效用户组的作用" class="headerlink" title="有效用户组的作用"></a>有效用户组的作用</h3><ul>
-<li><strong>通常，有效用户组的作用是新建文件</strong></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#由于root当前有效用户组是root，因此文件所属用户组就是root</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch hello</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l hello</span></span><br><span class="line">-rw-r--r-- 1 root root    0 Nov 26 18:17 hello</span><br><span class="line">root@Aioy:~<span class="comment"># newgrp jerry （切换有效用户组至jerry）</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch world</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l world</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 18:20 world</span><br></pre></td></tr></table></figure>
-
-<h3 id="初始用户组（Initial-Group）"><a href="#初始用户组（Initial-Group）" class="headerlink" title="初始用户组（Initial Group）"></a>初始用户组（Initial Group）</h3><ul>
-<li><strong>在 /etc/passwd 文件中，每行用户的GID就是初始用户组（Initial Group）</strong>，用户登录后就会获取</li>
-<li>**对于非初始用户组，则需要在 /etc/group 中找到需要加入的组名，将用户名写入第四栏中</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#示例：将jerry加入root用户组</span></span><br><span class="line">root@Aioy:~<span class="comment"># vim /etc/group</span></span><br><span class="line">root:x:0:jerry</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux硬链接软连接和复制的区别</title>
-    <url>/2021/11/06/Linux/Linux%E7%A1%AC%E9%93%BE%E6%8E%A5%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%A4%8D%E5%88%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<p><strong>通过Ubuntu Linux实机演示 硬链接Hard Link, 软连接Symbolic Link, 复制Copy之间的区别</strong></p>
-<span id="more"></span>
-
-<hr>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="①-硬连接-Hard-Link"><a href="#①-硬连接-Hard-Link" class="headerlink" title="① 硬连接 Hard Link"></a>① 硬连接 Hard Link</h2><h3 id="如何建立硬连接？"><a href="#如何建立硬连接？" class="headerlink" title="如何建立硬连接？"></a>如何建立硬连接？</h3><ul>
-<li>使用“ln file file_link”即可为file创建一个名为file_link的硬连接</li>
-</ul>
-<h3 id="硬连接的特点"><a href="#硬连接的特点" class="headerlink" title="硬连接的特点"></a>硬连接的特点</h3><ul>
-<li>硬连接通过<strong>索引节点（inode）</strong>进行连接，链接同一文件的硬连接有相同的inode</li>
-<li>通过硬连接，可以有多个不同连接访问到同一个文件</li>
-<li><strong>硬连接本身也是普通文件（regular file）</strong>，因此<strong>目录文件无法创建硬连接</strong></li>
-<li>只删除部分硬连接不影响文件本身，只有当<strong>所有硬连接都删除后，文件才会真正被释放</strong></li>
-<li>每个硬连接<strong>会让文件的Links数增加（+1）</strong>（使用stat查看）</li>
-</ul>
-<h2 id="②-软连接-Symbolic-Link"><a href="#②-软连接-Symbolic-Link" class="headerlink" title="② 软连接 Symbolic Link"></a>② 软连接 Symbolic Link</h2><h3 id="如何创建软连接？"><a href="#如何创建软连接？" class="headerlink" title="如何创建软连接？"></a>如何创建软连接？</h3><ul>
-<li>使用“ln -s”建立软连接，也叫符号链接（Symbolic Link）</li>
-</ul>
-<h3 id="软连接的特点"><a href="#软连接的特点" class="headerlink" title="软连接的特点"></a>软连接的特点</h3><ul>
-<li>类似于Windows的快捷方式，<strong>软连接与被链接文件有不同inode</strong>，因此删除软连接不会影响文件</li>
-<li>实际上，<strong>符号链接的文件是一个特殊的文本文件</strong>，包含着链接另一端的位置信息</li>
-<li>软连接<strong>不会增加文件的Links</strong>（使用stat查看）</li>
-</ul>
-<h2 id="③-复制-Copy"><a href="#③-复制-Copy" class="headerlink" title="③ 复制 Copy"></a>③ 复制 Copy</h2><h3 id="如何复制文件？"><a href="#如何复制文件？" class="headerlink" title="如何复制文件？"></a>如何复制文件？</h3><ul>
-<li>使用“cp file file_copy”即可复制file文件为file_copy</li>
-</ul>
-<h3 id="复制的特点"><a href="#复制的特点" class="headerlink" title="复制的特点"></a>复制的特点</h3><ul>
-<li>复制文件，操作系统会为复制品创建新的inode，也就是相当于一个新的文件</li>
-</ul>
-<hr>
-<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="①-创建一个net文件为其添加硬连接并复制"><a href="#①-创建一个net文件为其添加硬连接并复制" class="headerlink" title="① 创建一个net文件为其添加硬连接并复制"></a>① 创建一个net文件为其添加硬连接并复制</h2><h3 id="使用stat-net查看net文件"><a href="#使用stat-net查看net文件" class="headerlink" title="使用stat net查看net文件"></a>使用stat net查看net文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-link-net查看net的硬连接"><a href="#使用stat-link-net查看net的硬连接" class="headerlink" title="使用stat link_net查看net的硬连接"></a>使用stat link_net查看net的硬连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-copy-net查看net的复制"><a href="#使用stat-copy-net查看net的复制" class="headerlink" title="使用stat copy_net查看net的复制"></a>使用stat copy_net查看net的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058123     Links: 1</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Change: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-
-<h2 id="②-创建一个dir文件为其添加软连接并复制"><a href="#②-创建一个dir文件为其添加软连接并复制" class="headerlink" title="② 创建一个dir文件为其添加软连接并复制"></a>② 创建一个dir文件为其添加软连接并复制</h2><h3 id="使用stat-dir查看dir文件"><a href="#使用stat-dir查看dir文件" class="headerlink" title="使用stat dir查看dir文件"></a>使用stat dir查看dir文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-link-dir查看dir的软连接"><a href="#使用stat-link-dir查看dir的软连接" class="headerlink" title="使用stat link_dir查看dir的软连接"></a>使用stat link_dir查看dir的软连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_dir -&gt; dir</span><br><span class="line">  Size: 3               Blocks: 0          IO Block: 4096   symbolic link</span><br><span class="line">Device: fc01h/64513d    Inode: 1058121     Links: 1</span><br><span class="line">Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:29:26.737743781 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line">Change: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-copy-dir查看dir的复制"><a href="#使用stat-copy-dir查看dir的复制" class="headerlink" title="使用stat copy_dir查看dir的复制"></a>使用stat copy_dir查看dir的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058122     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:04.068572412 +0800</span><br><span class="line">Modify: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line">Change: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h2 id="③-分别对连接文件和复制文件进行权限操作观察原文件变化"><a href="#③-分别对连接文件和复制文件进行权限操作观察原文件变化" class="headerlink" title="③ 分别对连接文件和复制文件进行权限操作观察原文件变化"></a>③ 分别对连接文件和复制文件进行权限操作观察原文件变化</h2><h3 id="赋予执行权限前（使用“ls-li”命令查看）"><a href="#赋予执行权限前（使用“ls-li”命令查看）" class="headerlink" title="赋予执行权限前（使用“ls -li”命令查看）"></a>赋予执行权限前（使用“ls -li”命令查看）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 net</span><br></pre></td></tr></table></figure>
-<h3 id="对硬连接文件link-net-使用“chmod-x-link-net”"><a href="#对硬连接文件link-net-使用“chmod-x-link-net”" class="headerlink" title="对硬连接文件link_net 使用“chmod +x link_net”"></a>对硬连接文件link_net 使用“chmod +x link_net”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 net</span><br><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发现硬连接文件和文件本身权限都发生了变化</li>
-</ul>
-<h3 id="对软连接文件link-dir-使用“chmod-x-link-dir”"><a href="#对软连接文件link-dir-使用“chmod-x-link-dir”" class="headerlink" title="对软连接文件link_dir 使用“chmod +x link_dir”"></a>对软连接文件link_dir 使用“chmod +x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rwxr-xr-x 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
-<h3 id="进一步对软连接测试-使用“chmod-x-link-dir”"><a href="#进一步对软连接测试-使用“chmod-x-link-dir”" class="headerlink" title="进一步对软连接测试 使用“chmod -x link_dir”"></a>进一步对软连接测试 使用“chmod -x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发现link_dir没变，说明通过修改软连接文件，不会对软连接产生影响，而是间接修改原文件</li>
-</ul>
-<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ul>
-<li>除了软连接的文件类型是Symbolic file，其他无论文件本身、硬链接还是复制都是regular file</li>
-<li>硬链接与文件本身 inode 完全相同，软连接和复制会赋予新的 inode</li>
-<li>对链接操作会影响原文件，对复制文件的操作不会影响原文件</li>
-<li>对软连接操作不会影响软链接，而是间接作用于原文件</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ARP欺骗实验</title>
-    <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
-    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
-<li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
-</ul>
-<span id="more"></span>
-
-<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h3 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h3><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E6%8B%93%E6%89%91.png" alt="p1"></p>
-<h4 id="攻击目标（虚拟机）"><a href="#攻击目标（虚拟机）" class="headerlink" title="攻击目标（虚拟机）"></a>攻击目标（虚拟机）</h4><ul>
-<li>操作系统：Windows10</li>
-</ul>
-<h4 id="通信目标（虚拟机）"><a href="#通信目标（虚拟机）" class="headerlink" title="通信目标（虚拟机）"></a>通信目标（虚拟机）</h4><ul>
-<li>操作系统：CentOS</li>
-</ul>
-<h4 id="攻击者（宿主机）"><a href="#攻击者（宿主机）" class="headerlink" title="攻击者（宿主机）"></a>攻击者（宿主机）</h4><ul>
-<li>操作系统 Kali</li>
-</ul>
-<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="局域网（LAN）中的信息传输过程"><a href="#局域网（LAN）中的信息传输过程" class="headerlink" title="局域网（LAN）中的信息传输过程"></a>局域网（LAN）中的信息传输过程</h3><ul>
-<li>连接在以太网中的两台Terminal之间传输IP分组时，Sender必须先获取Receiver的MAC地址</li>
-<li>每一个Terminal都有ARP缓冲区，用于保存（IP，MAC）的映射关系，如果Receiver在缓存区，则可以直接完成链路帧封装</li>
-<li>如果Sender只有Receiver的IP地址，则需要通过“地址解析过程”获取Receiver的MAC，该过程通过ARP（Address Resolution Protocol）来实现</li>
-</ul>
-<h3 id="ARP地址解析过程"><a href="#ARP地址解析过程" class="headerlink" title="ARP地址解析过程"></a>ARP地址解析过程</h3><ul>
-<li><p>Sender广播（broadcast）ARP请求报文，该报文格式如下</p>
-<table>
-<thead>
-<tr>
-<th align="center">帧校验序列</th>
-<th align="center">数据（请求报文）</th>
-<th align="center">类型</th>
-<th align="center">源MAC地址</th>
-<th align="center">目的MAC地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">FCS</td>
-<td align="center">（IP_A,MAC_A) , (IP_B, ? )</td>
-<td align="center">ARP</td>
-<td align="center">MAC A</td>
-<td align="center">FF-FF-FF-FF-FF-FF</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>在该LAN中的所有Terminals都记录下Sender的IP与MAC，但只有Receiver将自己（IP，MAC）回复给Sender</p>
-</li>
-<li><p>Sender收到回复消息，将其记录在自己的ARP缓存区</p>
-</li>
-</ul>
-<h3 id="ARP欺骗原理"><a href="#ARP欺骗原理" class="headerlink" title="ARP欺骗原理"></a>ARP欺骗原理</h3><ul>
-<li>利用“ARP没有真伪校验”的特点，在ARP请求过程中，Hacker将IP对应的MAC修改为自己的MAC</li>
-</ul>
-<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-按照实验拓扑准备好虚拟机"><a href="#Step-1-按照实验拓扑准备好虚拟机" class="headerlink" title="Step.1 按照实验拓扑准备好虚拟机"></a>Step.1 按照实验拓扑准备好虚拟机</h3><ul>
-<li>使用VMware完成虚拟机配置<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/0.%E5%87%86%E5%A4%87%E8%99%9A%E6%8B%9F%E6%9C%BA.png" alt="p2"></li>
-</ul>
-<h3 id="Step-2-修改虚拟机网络模式为“桥接模式”"><a href="#Step-2-修改虚拟机网络模式为“桥接模式”" class="headerlink" title="Step.2 修改虚拟机网络模式为“桥接模式”"></a>Step.2 修改虚拟机网络模式为“桥接模式”</h3><ul>
-<li><a href="http://www.codebooklet.com/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/#more/">VMware的3种网络模式</a><br>![p3(<a href="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/1.%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.png">http://image.codebooklet.com/img_blog/ARP欺骗实验/1.修改虚拟机为桥接模式.png</a>)</li>
-</ul>
-<h3 id="Step-3-查看3方的网络配置"><a href="#Step-3-查看3方的网络配置" class="headerlink" title="Step.3 查看3方的网络配置"></a>Step.3 查看3方的网络配置</h3><h4 id="攻击目标"><a href="#攻击目标" class="headerlink" title="攻击目标"></a>攻击目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/2.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85.png" alt="p4"></p>
-<h4 id="通信目标"><a href="#通信目标" class="headerlink" title="通信目标"></a>通信目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/3.%E6%B6%88%E6%81%AF%E7%9B%AE%E6%A0%87.png" alt="p5"></p>
-<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/4.%E6%94%BB%E5%87%BB%E6%96%B9.png" alt="p6"></p>
-<h3 id="Step-4-查看当前攻击目标的ARP缓存"><a href="#Step-4-查看当前攻击目标的ARP缓存" class="headerlink" title="Step.4 查看当前攻击目标的ARP缓存"></a>Step.4 查看当前攻击目标的ARP缓存</h3><ul>
-<li>Windows下使用“arp -a”即可，找到通信目标对应的映射<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/5.%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E5%BD%93%E5%89%8DARP.png" alt="p7"></li>
-</ul>
-<h3 id="Step-5-发起攻击"><a href="#Step-5-发起攻击" class="headerlink" title="Step.5 发起攻击"></a>Step.5 发起攻击</h3><ul>
-<li>使用“arpspoof”命令发起攻击</li>
-</ul>
-<p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/6.%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB.png" alt="p8"><br/></p>
-<table>
-<thead>
-<tr>
-<th align="center">使用参数</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-i eth0</td>
-<td align="center">使用 eth0 网卡发起攻击</td>
-</tr>
-<tr>
-<td align="center">-t 10.66.217.60</td>
-<td align="center">攻击目标IP为10.66.217.60</td>
-</tr>
-<tr>
-<td align="center">-r 10.66.198.146</td>
-<td align="center">伪造（IP：10.66.217.60，MAC：Hacker的MAC）的ARP请求</td>
-</tr>
-</tbody></table>
-<h3 id="Step-6-查看攻击目标被攻击后的ARP表"><a href="#Step-6-查看攻击目标被攻击后的ARP表" class="headerlink" title="Step.6 查看攻击目标被攻击后的ARP表"></a>Step.6 查看攻击目标被攻击后的ARP表</h3><ul>
-<li>可以发现IP：10.66.217.60 所对应的MAC已经变成了Hacker的MAC<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/7.%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84ARP%E8%A1%A8.png" alt="p9"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-      </categories>
-      <tags>
-        <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux系统运行级别</title>
-    <url>/2021/12/01/Linux/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/</url>
-    <content><![CDATA[<ul>
-<li>Linux系统一般有7个运行级别（runlevel）从level 0 ~ 6，可能有更多等级，操作系统根据当前正在运行的功能级别，具有不同的功能</li>
-<li><a href="https://blog.csdn.net/qq_21453783/article/details/100251461">参考文章</a></li>
-</ul>
-<span id="more"></span>
-
-<h2 id="Linux一般的7个运行等级"><a href="#Linux一般的7个运行等级" class="headerlink" title="Linux一般的7个运行等级"></a>Linux一般的7个运行等级</h2><table>
-<thead>
-<tr>
-<th>运行等级</th>
-<th>模式</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>系统关机模式</td>
-<td>系统默认运行级别不能设置为0，否则无法正常启动系统</td>
-</tr>
-<tr>
-<td>1</td>
-<td>单用户模式</td>
-<td>也称为救援模式，root权限，用于系统维护，禁止远程登陆，类似Windows下的安全模式登录</td>
-</tr>
-<tr>
-<td>2</td>
-<td>多用户模式</td>
-<td>多用户，但是没有网络文件（NFS）支持</td>
-</tr>
-<tr>
-<td>3</td>
-<td>完整的多用户文本模式</td>
-<td>多用户，有网络文件系统，用户登录后进入控制台命令行模式，在没有网络的环境下等同于运行级别2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>预留功能</td>
-<td>一般不用，在一些特殊情况下可以用来做一些事情。例如在笔记本电脑的电池用尽时，可以切换到这个模式来做一些设置</td>
-</tr>
-<tr>
-<td>5</td>
-<td>图形化模式</td>
-<td>登陆后进入图形GUI模式或GNOME、KDE图形化界面，如X Window系统</td>
-</tr>
-<tr>
-<td>6</td>
-<td>重启模式</td>
-<td>默认运行级别不能设为6，否则无法正常启动系统</td>
-</tr>
-</tbody></table>
-<h2 id="如何查看当前运行等级"><a href="#如何查看当前运行等级" class="headerlink" title="如何查看当前运行等级"></a>如何查看当前运行等级</h2><h3 id="使用-runlevel-查看当前运行等级"><a href="#使用-runlevel-查看当前运行等级" class="headerlink" title="使用 runlevel 查看当前运行等级"></a>使用 runlevel 查看当前运行等级</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ runlevel</span><br><span class="line">N 5 <span class="comment">#图形化模式</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-systemctl-get-default-查看默认启动方式"><a href="#使用-systemctl-get-default-查看默认启动方式" class="headerlink" title="使用 systemctl get-default 查看默认启动方式"></a>使用 systemctl get-default 查看默认启动方式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ systemctl get-default </span><br><span class="line">graphical.target <span class="comment">#图形化启动</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="切换运行等级"><a href="#切换运行等级" class="headerlink" title="切换运行等级"></a>切换运行等级</h2><ul>
-<li>使用 init 3 切换到“完整的多用户文本模式”<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ init 3</span><br><span class="line"><span class="comment"># 接下来需要输入管理员密码</span></span><br></pre></td></tr></table></figure></li>
-<li>之后可以使用 init 5 再次切换回“图形化模式”，需要重新登录认证</li>
-</ul>
-<h2 id="运行级别配置文件"><a href="#运行级别配置文件" class="headerlink" title="运行级别配置文件"></a>运行级别配置文件</h2><ul>
-<li>在**/etc/rc.d/**目录下有以下文件，分别对应运行等级<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost ~]$ <span class="built_in">cd</span> /etc/rc.d</span><br><span class="line">[raven-1@localhost rc.d]$ ll</span><br><span class="line">total 4</span><br><span class="line">drwxr-xr-x. 2 root root  70 Oct 22 01:42 init.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc0.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc1.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc2.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc3.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc4.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:49 rc5.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc6.d</span><br><span class="line">-rw-r--r--. 1 root root 473 Mar 31  2020 rc.local</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VMware虚拟机3种网络模式</title>
-    <url>/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
-<ol>
-<li>桥接模式（Bridged）</li>
-<li>网络地址转换模式（NAT）</li>
-<li>主机模式（Host-only）<span id="more"></span></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>模式</th>
-<th>依赖的网络服务</th>
-<th>虚拟网络组成</th>
-<th>访问外部网络的方式</th>
-<th>与宿主机互访方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>桥接模式</td>
-<td>VMnet0（虚拟网桥）</td>
-<td>相当于宿主机局域网内一台独立主机</td>
-<td>虚拟网桥联网</td>
-<td>同一局域网</td>
-</tr>
-<tr>
-<td>NAT模式</td>
-<td>VMnet8（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
-<td>虚拟NAT联网</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
-</tr>
-<tr>
-<td>主机模式</td>
-<td>VMnet1（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机</td>
-<td>通过宿主机转发到虚拟网卡</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
-<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
-</ul>
-<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
-<li>虚拟机相当于局域网中的一台独立主机</li>
-<li>可以独立访问网络中其他主机</li>
-<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
-<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
-</ul>
-<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
-<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
-<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
-<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
-</ul>
-<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
-<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
-<li>TCP/IP配置由VMnet1提供</li>
-<li>可以与宿主机互相通信</li>
-</ul>
-]]></content>
-      <categories>
-        <category>虚拟机</category>
-      </categories>
-      <tags>
-        <tag>虚拟机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DOS攻击实验LOIC+XAMPP</title>
     <url>/2021/10/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/DOS%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8CLOIC-XAMPP/</url>
     <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
@@ -2129,6 +2742,183 @@
       </categories>
       <tags>
         <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT标签页与分类页无法显示修复</title>
+    <url>/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
+    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
+<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
+<li>使用hexo new page创建了对应的页面</li>
+<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li>需要在hexo new page之后，进入相应页面的index.md</li>
+<li>在categories的index.md添加：type: “categories”</li>
+<li>在tags的index.md添加：type: “tags”</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Linux-Ubuntu从入门到精通》笔记</title>
+    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+<span id="more"></span>
+
+<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
+<li>用以存储数据的物理介质</li>
+</ul>
+<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
+<li>对于较大存储容量的介质，需要合理规划分区</li>
+</ul>
+<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
+<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
+</ul>
+<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
+<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
+<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
+<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
+<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
+<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
+</ul>
+<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
+<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
+</ul>
+<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
+<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
+</ul>
+<ol>
+<li>所有目录都是由根目录衍生出来的；</li>
+<li>根目录与系统的开机、修复、还原密切相关；</li>
+</ol>
+<ul>
+<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">主要一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/bin/</td>
+<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
+</tr>
+<tr>
+<td align="center">/boot/</td>
+<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
+</tr>
+<tr>
+<td align="center">/dev/</td>
+<td align="center">设备文件保存位置</td>
+</tr>
+<tr>
+<td align="center">/etc/</td>
+<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
+</tr>
+<tr>
+<td align="center">/home/</td>
+<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
+</tr>
+<tr>
+<td align="center">/lib/</td>
+<td align="center"><strong>系统调用的函数库保存位置</strong></td>
+</tr>
+<tr>
+<td align="center">/media/</td>
+<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
+</tr>
+<tr>
+<td align="center">/mnt/</td>
+<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
+</tr>
+<tr>
+<td align="center">/misc/</td>
+<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
+</tr>
+<tr>
+<td align="center">/opt/</td>
+<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
+</tr>
+<tr>
+<td align="center">/root/</td>
+<td align="center">root 的主目录</td>
+</tr>
+<tr>
+<td align="center">/sbin/</td>
+<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
+</tr>
+<tr>
+<td align="center">/srv/</td>
+<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
+</tr>
+<tr>
+<td align="center">/tmp/</td>
+<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">其他一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/lost+found/</td>
+<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
+</tr>
+<tr>
+<td align="center">/proc/</td>
+<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
+</tr>
+<tr>
+<td align="center">/sys/</td>
+<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
+</tr>
+</tbody></table>
+<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
+<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
+<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
+</ul>
+<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
+<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
+<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
+<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
+</ul>
+<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
+<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
+<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
+</ul>
+<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
+<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
+</li>
+<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
+</li>
+<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+</li>
+<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2862,723 +3652,46 @@
       </tags>
   </entry>
   <entry>
-    <title>JLPT-N2-2017年7月真题笔记</title>
-    <url>/2021/11/06/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/JLPT-N2-2017%E5%B9%B47%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
-    <content><![CDATA[<ul>
-<li><strong>日语真题笔记系列，该系列的笔记至少会包括词汇部分，笔记会不断完善</strong><span id="more"></span>
-<h2 id="１．語彙（ごい）"><a href="#１．語彙（ごい）" class="headerlink" title="１．語彙（ごい）"></a>１．語彙（ごい）</h2><table>
-<thead>
-<tr>
-<th align="center">单词</th>
-<th align="center"></th>
-<th align="center">例句</th>
-<th align="center">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">諄い</td>
-<td align="center">くどい</td>
-<td align="center">くどい話　諄い味</td>
-<td align="center">冗长乏味，啰嗦，油腻</td>
-</tr>
-<tr>
-<td align="center">狡い</td>
-<td align="center">ずるい</td>
-<td align="center">そんなことするなんて狡い</td>
-<td align="center">不讲理，狡猾，奸诈</td>
-</tr>
-<tr>
-<td align="center">幼い</td>
-<td align="center">おさない</td>
-<td align="center">彼はいい年をしている割には言うことが幼い</td>
-<td align="center">幼小，幼年，幼稚</td>
-</tr>
-<tr>
-<td align="center">しつこい</td>
-<td align="center"></td>
-<td align="center">しつこく付きまとわれる＜被死死纠缠＞</td>
-<td align="center">执拗，纠缠不休，浓艳，浓重</td>
-</tr>
-<tr>
-<td align="center">振る</td>
-<td align="center">ふる</td>
-<td align="center">さいころを振る＜掷骰子＞</td>
-<td align="center">挥，摇，摆</td>
-</tr>
-<tr>
-<td align="center">握る</td>
-<td align="center">にぎる</td>
-<td align="center">相手の弱みを握る</td>
-<td align="center">掌握，握，攥</td>
-</tr>
-<tr>
-<td align="center">擦る</td>
-<td align="center">こする</td>
-<td align="center">この染みはいくら擦っても取れない</td>
-<td align="center">摩擦，擦，揉搓，蹭</td>
-</tr>
-<tr>
-<td align="center">掘る</td>
-<td align="center">ほる</td>
-<td align="center">井戸（いど）を掘る</td>
-<td align="center">挖掘</td>
-</tr>
-<tr>
-<td align="center">密閉</td>
-<td align="center">みっぺい</td>
-<td align="center">この箱は密閉してある</td>
-<td align="center">密闭，严密关闭，密封</td>
-</tr>
-<tr>
-<td align="center">絞る</td>
-<td align="center">しぼる</td>
-<td align="center">頭を絞る＜绞尽脑汁＞</td>
-<td align="center">榨，拧，挤，绞</td>
-</tr>
-<tr>
-<td align="center">削る</td>
-<td align="center">けずる</td>
-<td align="center">薄く削る・厚く削る・予算を削る</td>
-<td align="center">削，削减，删减</td>
-</tr>
-<tr>
-<td align="center">探る</td>
-<td align="center">さぐる</td>
-<td align="center">懐（ふところ）を探る<br/>相手の腹（はら）を探る<br/>香山の紅葉を探る<br/>河を遡って水源を探る</td>
-<td align="center">刺探，试探，观赏，调查</td>
-</tr>
-<tr>
-<td align="center">伺う</td>
-<td align="center">うかがう</td>
-<td align="center">いつお伺いしましょうか</td>
-<td align="center">请教，打听</td>
-</tr>
-<tr>
-<td align="center">窺う</td>
-<td align="center">うかがう</td>
-<td align="center">顔色を窺う・好機を窺う・内情の一端を窺う</td>
-<td align="center">暗中观察，窥视，略知</td>
-</tr>
-<tr>
-<td align="center">垂直</td>
-<td align="center">すいちょく</td>
-<td align="center">2線が垂直に交わる（まじわる）</td>
-<td align="center">垂直</td>
-</tr>
-<tr>
-<td align="center">凍る</td>
-<td align="center">こおる</td>
-<td align="center">道路はかちかちに凍っている</td>
-<td align="center">结冰</td>
-</tr>
-<tr>
-<td align="center">結ぶ</td>
-<td align="center">むすぶ</td>
-<td align="center">固く結ぶ・縁を結ぶ・自分の好きな言葉で文章を結んだ</td>
-<td align="center">系，缔结，结尾</td>
-</tr>
-<tr>
-<td align="center">固まる</td>
-<td align="center">かたまる</td>
-<td align="center">コンクリートが固まる<br/>寒いので，みんなストーブのまわりにかたまっている</td>
-<td align="center">变硬，凝结，稳固，成群，固执于</td>
-</tr>
-<tr>
-<td align="center">冷える</td>
-<td align="center">ひえる</td>
-<td align="center">ご飯が冷える・二人の仲が冷える</td>
-<td align="center">变冷，变凉，变冷淡</td>
-</tr>
-<tr>
-<td align="center">党論</td>
-<td align="center">とうろん</td>
-<td align="center"></td>
-<td align="center">党论</td>
-</tr>
-<tr>
-<td align="center">討論</td>
-<td align="center">とうろん</td>
-<td align="center">討論に付する・討論に入る・討論に加わる</td>
-<td align="center">讨论</td>
-</tr>
-<tr>
-<td align="center">討議</td>
-<td align="center">とうぎ</td>
-<td align="center">徹底的（てっていてき）に討議する</td>
-<td align="center">讨论</td>
-</tr>
-<tr>
-<td align="center">党議</td>
-<td align="center">とうぎ</td>
-<td align="center"></td>
-<td align="center">党内的论议党的决定</td>
-</tr>
-<tr>
-<td align="center">治る</td>
-<td align="center">なおる</td>
-<td align="center">治りかけの病人＜快要好的病人＞</td>
-<td align="center">病医好，痊愈</td>
-</tr>
-<tr>
-<td align="center">助ける</td>
-<td align="center">たすける</td>
-<td align="center">貧しい（まずしい）人を助ける</td>
-<td align="center">助，援助，辅佐</td>
-</tr>
-<tr>
-<td align="center">救う</td>
-<td align="center">すくう</td>
-<td align="center">貧民（ひんみん）を救う</td>
-<td align="center">救，拯救，搭救，救援</td>
-</tr>
-<tr>
-<td align="center">好調</td>
-<td align="center">こうちょう</td>
-<td align="center">好調なときに油断するな＜顺利时不可疏忽大意＞</td>
-<td align="center">顺利，情况良好</td>
-</tr>
-<tr>
-<td align="center">快調</td>
-<td align="center">かいちょう</td>
-<td align="center">きょうは快調だ＜今天精神很好＞</td>
-<td align="center">情况良好，精神好</td>
-</tr>
-<tr>
-<td align="center">延久</td>
-<td align="center">えんきゅう</td>
-<td align="center">延久時代（1069年5月6日~1074年9月16日）</td>
-<td align="center">延久（年号）</td>
-</tr>
-<tr>
-<td align="center">永遠</td>
-<td align="center">えいえん</td>
-<td align="center">永遠の真理（しんり）</td>
-<td align="center">永远，永久，永恒</td>
-</tr>
-<tr>
-<td align="center">永久</td>
-<td align="center">えいきゅう</td>
-<td align="center">永久に続く＜万古长青＞</td>
-<td align="center">永久，永远，恒久</td>
-</tr>
-<tr>
-<td align="center">発</td>
-<td align="center">はつ</td>
-<td align="center">東京発</td>
-<td align="center">始发地，出发点</td>
-</tr>
-<tr>
-<td align="center">開</td>
-<td align="center">かい</td>
-<td align="center">開店（閉店へいてん）</td>
-<td align="center">开始</td>
-</tr>
-<tr>
-<td align="center">頭</td>
-<td align="center">とう</td>
-<td align="center">頭取（とうどり）＜行长，董事长，总经理＞</td>
-<td align="center">脑袋，头领</td>
-</tr>
-<tr>
-<td align="center">初</td>
-<td align="center">しょ</td>
-<td align="center">初対面（しょたいめん）</td>
-<td align="center">初始，起始</td>
-</tr>
-<tr>
-<td align="center">先</td>
-<td align="center">せん</td>
-<td align="center">先君子（せんくんし）＜先帝＞</td>
-<td align="center">已故的</td>
-</tr>
-<tr>
-<td align="center">前</td>
-<td align="center">ぜん</td>
-<td align="center">前首相（ぜんしゅしょう）</td>
-<td align="center">上一次的</td>
-</tr>
-<tr>
-<td align="center">昨</td>
-<td align="center">さく</td>
-<td align="center">昨日・昨年・昨１５日</td>
-<td align="center">接在时间前表上一个</td>
-</tr>
-<tr>
-<td align="center">去</td>
-<td align="center">きょ</td>
-<td align="center">去年</td>
-<td align="center">时间上已经过去的</td>
-</tr>
-<tr>
-<td align="center">令</td>
-<td align="center">れい</td>
-<td align="center">令息（れいそく）・令嬢（れいじょう）</td>
-<td align="center">尊称的前缀</td>
-</tr>
-<tr>
-<td align="center">制</td>
-<td align="center">せい</td>
-<td align="center">律令制（りつりょうせい）＜奈良、平安时代的法令＞</td>
-<td align="center">制度</td>
-</tr>
-<tr>
-<td align="center">則</td>
-<td align="center">そく</td>
-<td align="center">経験（けいけん）則</td>
-<td align="center">规则</td>
-</tr>
-<tr>
-<td align="center">形</td>
-<td align="center">けい</td>
-<td align="center">正方形（せいほうけい）</td>
-<td align="center">形状</td>
-</tr>
-<tr>
-<td align="center">込み</td>
-<td align="center">こみ</td>
-<td align="center">税込み</td>
-<td align="center">〇包括在内，总共</td>
-</tr>
-<tr>
-<td align="center">付き</td>
-<td align="center">つき</td>
-<td align="center">条件付き</td>
-<td align="center">附带</td>
-</tr>
-<tr>
-<td align="center">連れ</td>
-<td align="center">づれ</td>
-<td align="center">子供連れ</td>
-<td align="center">带着</td>
-</tr>
-<tr>
-<td align="center">本</td>
-<td align="center">ほん</td>
-<td align="center">本年度</td>
-<td align="center">当前</td>
-</tr>
-<tr>
-<td align="center">正</td>
-<td align="center">せい</td>
-<td align="center">正社員</td>
-<td align="center">正式的</td>
-</tr>
-<tr>
-<td align="center">真</td>
-<td align="center">ま</td>
-<td align="center">真冬・真横</td>
-<td align="center">正好，没有倾斜</td>
-</tr>
-<tr>
-<td align="center">完</td>
-<td align="center">かん</td>
-<td align="center">完済（かんさい）＜还清＞<br />完治（かんじ）＜痊愈＞</td>
-<td align="center">完全</td>
-</tr>
-<tr>
-<td align="center">豊富</td>
-<td align="center">ほうふ</td>
-<td align="center">内容が極めて（きわめて）豊富だ()</td>
-<td align="center">丰富，富有</td>
-</tr>
-<tr>
-<td align="center">活発</td>
-<td align="center">かっぱつ</td>
-<td align="center">議論が活発に行われている</td>
-<td align="center">活泼，活跃</td>
-</tr>
-<tr>
-<td align="center">円満</td>
-<td align="center">えんまん</td>
-<td align="center">円満具足（ぐそく）＜万事俱备＞</td>
-<td align="center">圆满，美满</td>
-</tr>
-<tr>
-<td align="center">鮮明</td>
-<td align="center">せんめい</td>
-<td align="center">鮮明なコントラスト（contrast）を形成</td>
-<td align="center">鲜明，清晰，清楚</td>
-</tr>
-<tr>
-<td align="center">柔らかい</td>
-<td align="center">やわらかい</td>
-<td align="center">柔らかい日差し（ひざし）<br/>頭が柔らかい</td>
-<td align="center">柔软，柔和，温柔，灵活</td>
-</tr>
-<tr>
-<td align="center">穏やかな</td>
-<td align="center">おだやかな</td>
-<td align="center">穏やかな海<br/>穏やかに暮らす<br/>そんな措置（そち）を採る（とる）のは穏やかでない</td>
-<td align="center">平稳，稳静，温和，妥当</td>
-</tr>
-<tr>
-<td align="center">滑らかな</td>
-<td align="center">なめらかな</td>
-<td align="center">滑らかな肌（はだ）<br/>滑らかな話しぶり＜口齿伶俐＞<br/>事が滑らかに運ぶ</td>
-<td align="center">光滑，说话流利，文章通顺，事情顺利</td>
-</tr>
-<tr>
-<td align="center">緩やかな</td>
-<td align="center">ゆるやかな</td>
-<td align="center">緩やかな流れ＜缓慢的河流＞<br/>審査基準（しんさきじゅん）を緩やかにする<br/>緩やかな気分</td>
-<td align="center">缓慢，缓和，宽松，舒畅</td>
-</tr>
-<tr>
-<td align="center">制作</td>
-<td align="center">せいさく</td>
-<td align="center">芸術作品（げいじゅつさくひん）を制作する</td>
-<td align="center">创作（多用于动画、美术等）</td>
-</tr>
-<tr>
-<td align="center">保存</td>
-<td align="center">ほぞん</td>
-<td align="center">領収書を保存する＜保存发票＞</td>
-<td align="center">保存</td>
-</tr>
-<tr>
-<td align="center">作成</td>
-<td align="center">さくせい</td>
-<td align="center">書類の作成を依頼する＜拜托拟定文件＞</td>
-<td align="center">制作，制定（多用于文件、计划等）</td>
-</tr>
-<tr>
-<td align="center">確保</td>
-<td align="center">かくほ</td>
-<td align="center">食糧の確保に努める</td>
-<td align="center">确保</td>
-</tr>
-<tr>
-<td align="center">アピール</td>
-<td align="center">appeal</td>
-<td align="center">原水爆（げんすいばく）禁止のアピール<br/>広く世間にアピールする<br/>セックスのアピール</td>
-<td align="center">呼吁，控诉，魅力</td>
-</tr>
-<tr>
-<td align="center">インストール</td>
-<td align="center">install</td>
-<td align="center">ソフトウェアをインストールする</td>
-<td align="center">装置，安装</td>
-</tr>
-<tr>
-<td align="center">チャージ</td>
-<td align="center">charge</td>
-<td align="center">ルームチャージ＜房租＞<br/>テーブルチャージ＜桌位费＞</td>
-<td align="center">冲撞，上油，加油，装子弹，收费，索价</td>
-</tr>
-<tr>
-<td align="center">セット</td>
-<td align="center">set</td>
-<td align="center">コーヒー・セット＜一套咖啡器皿＞<br/>セットしてください＜请给我做头发＞<br/>会見をセットする</td>
-<td align="center">一套，一局，梳整发形，布置，安排</td>
-</tr>
-<tr>
-<td align="center">断る</td>
-<td align="center">ことわる</td>
-<td align="center">前もって断っておく＜预先通知一下＞<br/>誰にも断らずに入ってくる<br/>一応事前に断ってください＜请事先说一声＞<br/>きっぱり断る＜断然拒绝＞</td>
-<td align="center">预先通知，事前请示，拒绝，推辞</td>
-</tr>
-<tr>
-<td align="center">疑う</td>
-<td align="center">うたがう</td>
-<td align="center">これは些か（いささか）も疑う余（よ）地がない<br/>彼はスパイ（spy）ではないかと疑われている</td>
-<td align="center">怀疑，疑惑，猜测</td>
-</tr>
-<tr>
-<td align="center">悔やむ</td>
-<td align="center">くやむ</td>
-<td align="center">すんだことを悔やんでも取り返し＜挽回＞はつかない<br/>彼の早死（はやじ）にを悔やむ＜哀悼他英年早逝＞</td>
-<td align="center">懊悔，后悔，吊唁，哀悼</td>
-</tr>
-<tr>
-<td align="center">諦める</td>
-<td align="center">あきらめる</td>
-<td align="center">こればかりはあきらめない＜唯有这一点还不能死心＞<br/>彼をあきらめきれない＜舍不得他＞</td>
-<td align="center">断念，死心，罢手，看开</td>
-</tr>
-<tr>
-<td align="center">契機</td>
-<td align="center">けいき</td>
-<td align="center">病気を契機に酒をやめる</td>
-<td align="center">契机，转机，动机，起因</td>
-</tr>
-<tr>
-<td align="center">先端</td>
-<td align="center">せんたん</td>
-<td align="center">防波堤（ぼうはてい）の先端<br/>三日月（みかづき）の先端＜月牙尖儿＞</td>
-<td align="center">顶端，（时代的）尖端，先锋</td>
-</tr>
-<tr>
-<td align="center">始発</td>
-<td align="center">しはつ</td>
-<td align="center">大阪始発の急行・始発駅＜起点站＞</td>
-<td align="center">乗り物の運転区間の最初場所</td>
-</tr>
-<tr>
-<td align="center">合図</td>
-<td align="center">あいず</td>
-<td align="center">目で合図する＜使眼色＞</td>
-<td align="center">信号，暗号</td>
-</tr>
-<tr>
-<td align="center">ぐっすり</td>
-<td align="center"></td>
-<td align="center">ぐっすり寝入る<br/>泥濘（でいねい）へぐっすり片足を踏み込み</td>
-<td align="center">睡眠香甜，实实在在地</td>
-</tr>
-<tr>
-<td align="center">うろうろ</td>
-<td align="center"></td>
-<td align="center">うろうろと歩き回る</td>
-<td align="center">彷徨，徘徊，转来转去，心神不安</td>
-</tr>
-<tr>
-<td align="center">ひそひそ</td>
-<td align="center"></td>
-<td align="center">小声でひそひそと話す<br/>わたしに隠れてひそひそと相談するな</td>
-<td align="center">偸偸，悄悄，暗中</td>
-</tr>
-<tr>
-<td align="center">ばっさり</td>
-<td align="center"></td>
-<td align="center">長い髪をばっさり（と）切ってしまう</td>
-<td align="center">痛快地，决断地斩断</td>
-</tr>
-<tr>
-<td align="center">汚れる</td>
-<td align="center">よごれる</td>
-<td align="center">汚れた金を受け取るな</br>汚れた一生</td>
-<td align="center">污染，失去贞操</td>
-</tr>
-<tr>
-<td align="center">汚す</td>
-<td align="center">けがす</td>
-<td align="center">幼児（ようじ）の純真な心を汚す</br>国家の体面を汚す</td>
-<td align="center">玷辱，污染，凌辱</td>
-</tr>
-</tbody></table>
+    <title>NexT打赏按钮修改</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%89%93%E8%B5%8F%E6%8C%89%E9%92%AE%E4%BF%AE%E6%94%B9/</url>
+    <content><![CDATA[<p>简介：修改“Reward”功能的默认按钮CSS样式，最终效果和本站类似。（NexT Ver-6.0.0）</p>
+<span id="more"></span>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><a href="#bottom" >点击跳转到本文末预览效果</a></p>
+<h2 id="Step-1-找到CSS文件"><a href="#Step-1-找到CSS文件" class="headerlink" title="Step.1 找到CSS文件"></a>Step.1 找到CSS文件</h2><ul>
+<li>打开本站目录</li>
+<li>文件路径 /themes/next/source/css/_common/components/post/post-reward.styl</li>
+<li>如果没有找到类似样式表文件，则本文无效</li>
+</ul>
+<h2 id="Step-2-准备新的按钮图片"><a href="#Step-2-准备新的按钮图片" class="headerlink" title="Step.2 准备新的按钮图片"></a>Step.2 准备新的按钮图片</h2><ul>
+<li>需要两张，一张用于正常显示，另一张用于Hover时的显示</li>
+<li>建议尺寸：50*50 pix （参考本站）</li>
+<li>如果图片不是透明的，建议先使用PS先处理一下，并保存为支持透明通道的格式如PNG</li>
+<li>存放图片到路径 /themes/next/source/images 中，也可以在此路径再新建文件夹归类，注意本文方法使用“本地存储图片”也就是说需要使用 相对路径 访问图片，一定要搞清楚目录层次</li>
+</ul>
+<h2 id="Step-3-修改CSS文件"><a href="#Step-3-修改CSS文件" class="headerlink" title="Step.3 修改CSS文件"></a>Step.3 修改CSS文件</h2><ul>
+<li>修改第一步找到的样式表文件中的以下几个属性<br><strong>1. #rewardButton span</strong><ul>
+<li>font-size: 0px; /* 这里是为了让“Reward”文字不显示 */</li>
+<li>width: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
+<li>height: 50px; /* 请与自己处理好的按钮图片大小匹配  */</li>
+<li>background: url(../../../../images/你的按钮图片路径); </li>
+</ul>
+<strong>2. #rewardButton span:hover</strong><ul>
+<li>background:  url(../../../../images/icons/你的按钮Hover图片路径);</li>
+</ul>
 </li>
 </ul>
-<h2 id="２．单词的正确使用语境"><a href="#２．单词的正确使用语境" class="headerlink" title="２．单词的正确使用语境"></a>２．单词的正确使用语境</h2><ul>
-<li><strong>頂上</strong>（ちょうじょう）:　[名]　顶峰，山顶，极点</li>
+<div id="bottom"></div>
+
+<h2 id="Step-4-本地运行检测"><a href="#Step-4-本地运行检测" class="headerlink" title="Step.4 本地运行检测"></a>Step.4 本地运行检测</h2><ul>
+<li>站点路径打开Terminal ：hexo s</li>
 </ul>
-<ol>
-<li>この星は、夏の夜１２時ごろ、空の<strong>果て</strong>のあたりに見える</li>
-<li>山に登り始めて５時間ぐらいして、ようやく<strong>頂上</strong>に着いた</li>
-<li>この家の２階の部屋は、<strong>屋上</strong>にも窓が付いているので、とても明るい</li>
-<li>本棚がいっぱいになってしまい、本棚の<strong>棚上</strong>にも本を置いている</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="center">单词</th>
-<th align="center"></th>
-<th align="center">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">果て</td>
-<td align="center">はて</td>
-<td align="center">边际，尽头，止境</td>
-</tr>
-<tr>
-<td align="center">屋上</td>
-<td align="center">おくじょう</td>
-<td align="center">屋顶上</td>
-</tr>
-<tr>
-<td align="center">棚上</td>
-<td align="center">たなうえ</td>
-<td align="center">书架的顶上</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>節約</strong>（せつやく）:　[名]　节约,节省</li>
-</ul>
-<ol>
-<li>駅に向かう道路の渋滞を<strong>緩和</strong>するため、道の幅を広げる工事が行われている</li>
-<li>美術館の中は、カビが発生（はっせい）して絵がい傷まないように、温度や湿度を<strong>調節</strong>しています</li>
-<li>試験が近くなってきたので、アルバイトの仕事を少し<strong>減らす</strong>することにした</li>
-<li>私の会社では、紙や郵送費を<strong>節約</strong>するため、資料はすべてメールで送っている</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="center">单词</th>
-<th align="center"></th>
-<th align="center">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">緩和</td>
-<td align="center">かんわ</td>
-<td align="center">缓和，缓解</td>
-</tr>
-<tr>
-<td align="center">調節</td>
-<td align="center">ちょうせつ</td>
-<td align="center">调节</td>
-</tr>
-<tr>
-<td align="center">減らす</td>
-<td align="center">へらす</td>
-<td align="center">减少</td>
-</tr>
-<tr>
-<td align="center">カビ</td>
-<td align="center">かび</td>
-<td align="center">霉</td>
-</tr>
-<tr>
-<td align="center">湿度</td>
-<td align="center">しつど</td>
-<td align="center">しつど</td>
-</tr>
-<tr>
-<td align="center">傷む</td>
-<td align="center">いたむ</td>
-<td align="center">腐败，损坏</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>分解</strong>（ぶんかい）:　[名・自他・三类]　拆开，分解<strong>（个人认为是指可以由小部件构成的物体才可用分解）</strong></li>
-</ul>
-<ol>
-<li>機械の調子が悪かったので、<strong>分解</strong>して部品の点検をした</li>
-<li>スイカを買ってきたが、大きくて冷蔵庫に入らなかったので、四つに<strong>分けた</strong></li>
-<li>細かいお金がなかったので、近くの店で千円札を<strong>両替</strong>してもらった</li>
-<li>急ぎの仕事が入ったので、三人で<strong>分担</strong>して進めることにした</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="center">单词</th>
-<th align="center"></th>
-<th align="center">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">分ける</td>
-<td align="center">わける</td>
-<td align="center">分开，分为</td>
-</tr>
-<tr>
-<td align="center">両替</td>
-<td align="center">りょうがえ</td>
-<td align="center">兑换</td>
-</tr>
-<tr>
-<td align="center">分担</td>
-<td align="center">ぶんたん</td>
-<td align="center">分担，分开承担</td>
-</tr>
-<tr>
-<td align="center">千円札</td>
-<td align="center">せんえんさつ</td>
-<td align="center">一千元的纸币</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>略す</strong>（りゃくす）:　[五段活用]　省略,略去,夺取,攻略</li>
-</ul>
-<ol>
-<li>時間がないので、詳しい説明は<strong>略して</strong>、要点だけを話しします</li>
-<li>合計で一万円以上ご購入の場合、送料は<strong>省きます</strong></li>
-<li>健康（けんこう）のために、砂糖（さとう）を<strong>抜いた</strong>ジャムを使っています</li>
-<li>このオフィスは、壁を<strong>無くして</strong>、開放感（かいほうかん）のあるデザインにしました</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="center">单词</th>
-<th align="center"></th>
-<th align="center">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">省く</td>
-<td align="center">はぶく</td>
-<td align="center">节省，节约</td>
-</tr>
-<tr>
-<td align="center">抜く</td>
-<td align="center">ぬく</td>
-<td align="center">省去，省略</td>
-</tr>
-<tr>
-<td align="center">無くす</td>
-<td align="center">なくす</td>
-<td align="center">清除，去除</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>覆う</strong>（おおう）:　[他]　蒙上，包括，概括，覆盖，充满，笼罩</li>
-</ul>
-<ol>
-<li>私のうちは、周りを高層（こうそう）マンシュンに<strong>囲まれて</strong>、日当たりが悪い</li>
-<li>優勝した森選手は大勢の記者に<strong>囲まれて</strong>インタビューを受けいていた</li>
-<li>公園に続く並木道はすっかり落ち葉で<strong>覆われていた</strong></li>
-<li>部屋が暑いのか、中島さんの顔は汗で<strong>濡れて</strong></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="center">单词</th>
-<th align="center"></th>
-<th align="center">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">囲む</td>
-<td align="center">かこむ</td>
-<td align="center">包围，围绕</td>
-</tr>
-<tr>
-<td align="center">濡れる</td>
-<td align="center">ぬれる</td>
-<td align="center">淋湿，掺入水分</td>
-</tr>
-<tr>
-<td align="center">選手</td>
-<td align="center">せんしゅ</td>
-<td align="center">选手</td>
-</tr>
-<tr>
-<td align="center">続く</td>
-<td align="center">つづく</td>
-<td align="center">继续，跟上，通向</td>
-</tr>
-<tr>
-<td align="center">大勢</td>
-<td align="center">おおぜい</td>
-<td align="center">很多的（指人）</td>
-</tr>
-<tr>
-<td align="center">優勝</td>
-<td align="center">ゆうしょう</td>
-<td align="center">第一名，优胜</td>
-</tr>
-<tr>
-<td align="center">日当たり</td>
-<td align="center">ひあたり</td>
-<td align="center">光照，向阳处</td>
-</tr>
-<tr>
-<td align="center">並木道</td>
-<td align="center">なみきみち</td>
-<td align="center">林荫道</td>
-</tr>
-<tr>
-<td align="center">すっかり</td>
-<td align="center"></td>
-<td align="center">全都是，完全是</td>
-</tr>
-</tbody></table>
+<p><strong>Ps: 由于作者HTML/CSS水平仅限于了解，如果各位有更好的方法可以在评论区分享，谢谢！</strong></p>
 ]]></content>
       <categories>
-        <category>日语学习</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>日语学习</tag>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
 </search>
