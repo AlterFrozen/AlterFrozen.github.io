@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://codebooklet.com/2021/12/24/ComputerGraphics/Games101-%E8%A7%86%E8%A7%92%E4%B8%8E%E6%8A%95%E5%BD%B1/</loc>
+    
+    <lastmod>2021-12-27</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://codebooklet.com/2021/12/26/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/%E6%96%AF%E9%87%91%E7%BA%B3%E7%AE%B1/</loc>
     
     <lastmod>2021-12-26</lastmod>
@@ -17,13 +24,6 @@
   
   <url>
     <loc>http://codebooklet.com/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</loc>
-    
-    <lastmod>2021-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/2021/12/24/ComputerGraphics/Games101-%E8%A7%86%E8%A7%92%E4%B8%8E%E6%8A%95%E5%BD%B1/</loc>
     
     <lastmod>2021-12-24</lastmod>
     
@@ -228,99 +228,99 @@
 
   <url>
     <loc>http://codebooklet.com/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://codebooklet.com/tags/C/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/C-STL/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <loc>http://codebooklet.com/tags/CG/</loc>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/tags/Linux/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/QT/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/CG/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/tags/Python/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/C/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/C-STL/</loc>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/tags/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/QT/</loc>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -328,78 +328,78 @@
 
   
   <url>
-    <loc>http://codebooklet.com/categories/C/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <loc>http://codebooklet.com/categories/CG/</loc>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/categories/Linux/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/categories/DeBug/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/categories/CG/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/categories/Python/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/categories/C/</loc>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/categories/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/categories/DeBug/</loc>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://codebooklet.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
