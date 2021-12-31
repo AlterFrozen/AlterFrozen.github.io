@@ -84,11 +84,13 @@
 
 <meta name="description" content="我的学习笔记">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Codebooklet">
-<meta property="og:url" content="http://codebooklet.com/archives/index.html">
+<meta property="og:title" content="有感兴趣的内容吗？">
+<meta property="og:url" content="http://codebooklet.com/categories/index.html">
 <meta property="og:site_name" content="Codebooklet">
 <meta property="og:description" content="我的学习笔记">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-10-24T05:33:37.000Z">
+<meta property="article:modified_time" content="2021-10-28T12:00:37.866Z">
 <meta property="article:author" content="Frozen">
 <meta property="article:tag" content="Frozen,Blog,博客">
 <meta name="twitter:card" content="summary">
@@ -123,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://codebooklet.com/archives/"/>
+  <link rel="canonical" href="http://codebooklet.com/categories/"/>
 
 
 
@@ -343,7 +345,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-12-09T10:11:33+08:00">2021-12-09</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-12-31T16:41:59+08:00">2021-12-31</time>
             
           </span>
 
@@ -515,21 +517,55 @@
 <h4 id="服务端（Server）"><a href="#服务端（Server）" class="headerlink" title="服务端（Server）"></a>服务端（Server）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Server（先有Server才能有Client）</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span></span><br><span class="line"><span class="comment">#一个最简单的UDP Server</span></span><br><span class="line">    server=socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">    server.bind((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">5122</span>))<span class="comment">#绑定在(IP,Port)组成的端口</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>: <span class="comment">#UDP每一个recvfrom对应一个sendto</span></span><br><span class="line">        datagram,sender=server.recvfrom(<span class="number">65535</span>)<span class="comment">#接受65535Bytes的Datagram（这也是一个UDP数据报最大长度）</span></span><br><span class="line">        mes = datagram.decode(<span class="string">&#x27;UTF-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>使用 socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None) 创建一个空套接字，创建失败时返回值为 -1<br>socket()参数说明|常用可选项与解释</li>
-<li>–|—</li>
+<li>使用 socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None) 创建一个空套接字，创建失败时返回值为 -1</li>
 </ul>
-<p><strong>family</strong>：套接字要使用的协议簇|① AF_INET (default)：IPv4<br/>② AF_INET6：IPv6<br/>③ AF_UNIX：本机通信<br><strong>type</strong>：套接字类型|① SOCK_STREAM (default)：TCP，字节流方式<br/>② SOCK_DGRAM：UDP ，数据报方式<br/>③ SOCK_RAW，原始方式<br><strong>fileno</strong>：通常为0（不同于None）|当family为AF_CAN时，可能为CAN_RAW, CAN_BCM or CAN_ISOTP</p>
+<table>
+<thead>
+<tr>
+<th>socket()参数说明</th>
+<th>常用可选项与解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>family</strong>：套接字要使用的协议簇</td>
+<td>① AF_INET (default)：IPv4<br/>② AF_INET6：IPv6<br/>③ AF_UNIX：本机通信</td>
+</tr>
+<tr>
+<td><strong>type</strong>：套接字类型</td>
+<td>① SOCK_STREAM (default)：TCP，字节流方式<br/>② SOCK_DGRAM：UDP ，数据报方式<br/>③ SOCK_RAW，原始方式</td>
+</tr>
+<tr>
+<td><strong>fileno</strong>：通常为0（不同于None）</td>
+<td>当family为AF_CAN时，可能为CAN_RAW, CAN_BCM or CAN_ISOTP</td>
+</tr>
+</tbody></table>
 <ul>
-<li><p>使用bind()将Socket与特定address（IP，Port）绑定在一起<br>IP常用选项|说明</p>
-</li>
-<li><p>–|—<br>空字符串：（“”）|表示接受任何网络接口的数据包（packet）<br>本机：（“127.0.0.1”）或（“0.0.0.0”）[linux]|表示服务建立在本机，使用自环回路，通常可以用localhost访问<br>指定接口IP：（“比如以太网卡或无线网卡”）|表示可以只通过该公网IP访问</p>
-</li>
-<li><p><strong>服务端（Server）必须为Socket用bind()指定一个特定的接收端口</strong></p>
-</li>
-<li><p>一个<strong>UDP最大数据报长度为65535（64KB）[16bits]，而一般情况下，以太网卡或无线网卡只能处理1500B左右的数据包（packet）</strong>[UDP分组问题]</p>
-</li>
-<li><p><strong>端口号≥1024，否则需要系统管理员权限</strong></p>
-</li>
+<li>使用bind()将Socket与特定address（IP，Port）绑定在一起</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IP常用选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空字符串：（“”）</td>
+<td>表示接受任何网络接口的数据包（packet）</td>
+</tr>
+<tr>
+<td>本机：（“127.0.0.1”）或（“0.0.0.0”）[linux]</td>
+<td>表示服务建立在本机，使用自环回路，通常可以用localhost访问</td>
+</tr>
+<tr>
+<td>指定接口IP：（“比如以太网卡或无线网卡”）</td>
+<td>表示可以只通过该公网IP访问</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>服务端（Server）必须为Socket用bind()指定一个特定的接收端口</strong></li>
+<li>一个<strong>UDP最大数据报长度为65535（64KB）[16bits]，而一般情况下，以太网卡或无线网卡只能处理1500B左右的数据包（packet）</strong>[UDP分组问题]</li>
+<li><strong>端口号≥1024，否则需要系统管理员权限</strong></li>
 </ul>
 <h4 id="客户端（Client）"><a href="#客户端（Client）" class="headerlink" title="客户端（Client）"></a>客户端（Client）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Client（由Server提供（IP,Port））</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span></span><br><span class="line">    serve=((<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">5122</span>))</span><br><span class="line">    client=socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">    client.sendto(<span class="string">b&quot;Hello&quot;</span>,server)</span><br></pre></td></tr></table></figure>
 <ul>
