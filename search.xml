@@ -3,15 +3,16 @@
   <entry>
     <title>Codebooklet公告板</title>
     <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
-    <content><![CDATA[<h2 id="2021-12-28"><a href="#2021-12-28" class="headerlink" title="2021/12/28"></a>2021/12/28</h2><ul>
-<li>“What our human emotions seem to require is the sight of struggle going on. The moment the fruits are being merely eaten things become ignoble. Sweat and effort, human nature strained to the utmost and on the rack yet getting through it alive, and then turning back to its success to pursue another more rare and arduous journey. This is the sort of thing that inspires us”<pre><code>                                                                                                                                                                                                                    -William James 
-</code></pre>
-</li>
+    <content><![CDATA[<h2 id="2022-1-19"><a href="#2022-1-19" class="headerlink" title="2022/1/19"></a>2022/1/19</h2><ul>
+<li>期末考试+休息已经过去20天了，从今天起开始每日学习打卡</li>
 </ul>
 <span id="more"></span>
 
-
-
+<h2 id="2021-12-28"><a href="#2021-12-28" class="headerlink" title="2021/12/28"></a>2021/12/28</h2><ul>
+<li><p>“What our human emotions seem to require is the sight of struggle going on. The moment the fruits are being merely eaten things become ignoble. Sweat and effort, human nature strained to the utmost and on the rack yet getting through it alive, and then turning back to its success to pursue another more rare and arduous journey. This is the sort of thing that inspires us”</p>
+<p>   -William James </p>
+</li>
+</ul>
 <h2 id="2021-12-24"><a href="#2021-12-24" class="headerlink" title="2021/12/24"></a>2021/12/24</h2><ul>
 <li>这学期修完数字图像处理、练习了几个网格处理算法后再看Games101，感觉又有新的收获！</li>
 </ul>
@@ -111,6 +112,311 @@
       </categories>
       <tags>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每日学习打卡</title>
+    <url>/2022/01/19/Daily/DailyAttendance/</url>
+    <content><![CDATA[<ul>
+<li><strong>坚持每日学习打卡，内容主要以外语学习为主</strong></li>
+</ul>
+<span id="more"></span>
+
+<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="January"><a href="#January" class="headerlink" title="January"></a>January</h2><h3 id="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"><a href="#19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调" class="headerlink" title="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"></a>19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-19.png" alt="1-19"></p>
+]]></content>
+      <categories>
+        <category>Daily</category>
+      </categories>
+      <tags>
+        <tag>Daily</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Vulkan学习指南》笔记</title>
+    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li>笔记内容来自《Vulkan学习之南》——Parminder Singh</li>
+<li>只摘录了个人认为比较基础且核心的知识点，是原书的简化版</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="序章（Preface）"><a href="#序章（Preface）" class="headerlink" title="序章（Preface）"></a>序章（Preface）</h1><h2 id="内容摘要"><a href="#内容摘要" class="headerlink" title="内容摘要"></a>内容摘要</h2><ul>
+<li>**Chapter1.**：Vulkan的基础概念以及编程模型</li>
+<li>**Chapter2.**：Vulkan所必要的基础软件以及SDK</li>
+<li>**Chapter3.**：设置开发环境，构建第一个Vulkan案例，详细讲解队列与队列族的概念，及其与逻辑设备的关系</li>
+<li>**Chapter4.**：Vulkan的调试方法，使用验证层编写一个简单的例子，并且使用一些非标准的拓展属性</li>
+<li>**Chapter5.**：深入Vulkan的指令缓存，了解指令池的作用，学习如何使用指令缓存进行录制，后半部分会讲内存管理，学习GPU内存的分配与销毁操作，理解CPU与GPU内存之间的映射关系</li>
+<li>**Chapter6.**：图像资源与相关内存管理，包括图像创建、分配、绑定、映射，并使用这种方法创建一个深度图像进行深度测试。介绍WSI交换链，使用其实现渲染可绘制对象并展示到屏幕的功能，并尝试获取WSI交换链的颜色图像，并创建颜色视图以便绘制图元</li>
+<li>**Chapter7.**：讨论缓存资源以及相关用途（即可绘制对象的几何体顶点缓存的构建），详细介绍使用渲染通道定义绘制操作的相关工作的方法，使用多个附件和子通道。使用渲染通道在Vulkan中实现帧缓存，用一个简单的示例演示如何清除背景颜色。在最后，将使用SPIR-V实现第一个Vulkan Shader Program并学习一些SDK工具的使用，将GLSL代码转换为SPIR-V的中间语言格式</li>
+<li>**Chapter8.**：介绍Vulkan中的计算流水线和图形流水线，实现一个完整的图形流水线</li>
+<li>**Chatpter9.**：全面介绍Vulkan中对象的绘制过程，讨论Vulkan中的同步机制，理解有关栅栏、信号量以及内存屏障的知识，此外将介绍如何绘制相关的API并通过一些简单的案例演示其用法</li>
+<li>**Chapter10.**：介绍Vulkan对Shader资源的更新过程，用到了描述符和推送常数的概念，讨论描述符池和描述符集布局的创建过程。将学到有关流水线布局的用法，并使用描述符来更新设备内存端的缓存资源，将更新后的几何体渲染到屏幕上。与描述符不同的是，推送常数并不会使用指令缓存，而是使用一种更加优化的方式来更新资源，可以尝试实现一个简单的程序来深入理解推送常数的相关知识</li>
+<li>**Chapter11.**：使用更加真实的方法（即贴纹理来渲染3D可绘制对象），将学习如何创建图像资源并为其设置采样器对象，还将学习使用线性和优化平铺的方式来更新纹理，在优化平铺模式下，用户还需要考虑使用传输缓存和图像内存的指令方法</li>
+</ul>
+<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><blockquote>
+<p>Vulkan是一款革命性的高性能3D图形和计算API，可用于现代GPU管线架构，能满足社区的最新需求。该API提供了一套全新的方法来克服传统API的复杂性和缺陷。<strong>Vulkan是一个显式API，保证用户在渲染时保持稳定平滑的帧速率，不会造成延迟或者故障</strong>。我们将简单了解Vulkan的生态系统，以及它的图形体系</p>
+</blockquote>
+<ul>
+<li>（我将与OpenGL对比的部分内容略去，主要区别在于OpenGL通过状态机隐式管理资源，而Vulkan显式管理）</li>
+</ul>
+<h2 id="Vulkan及其演化史"><a href="#Vulkan及其演化史" class="headerlink" title="Vulkan及其演化史"></a>Vulkan及其演化史</h2><ul>
+<li><a href="https://www.khronos.org/">Khronos</a>于2016发布了革命性的新架构Vulkan API，它充分利用了现代图形处理器单元的优势，来实现高性能图形和计算应用程序的开发</li>
+<li>Vulkan的原始概念是由AMD基于它们的私有Mantle API设计和实现.AMD开源了自己的Mantle API并且贡献给Khronos组织。在多家硬件和软件供应商的协同帮助下，Khronos发布了Vulkan标准</li>
+<li>Vulkan并不是目前唯一的新一代3D图形API，它还有多家不同的竞争者，例如Microsoft的Direct-X 12和Apple的Metal。不过，DirectX只能用于不同的Windows系统，而Metal只能用在Mac系统（OS X和iOS）。因此，Vulkan得以脱颖而出。它的跨平台特性可以支持所有现存的OS平台，其中已经包括了Windows（XP、Vista、7、8、10）、Linux、Tizen、SteamOS和Android、macOS 、iOS（最后两个是个人补充，2020年开始支持，可以说Vulkan基本上被所有主流PC系统支持）</li>
+</ul>
+<h2 id="重要术语"><a href="#重要术语" class="headerlink" title="重要术语"></a>重要术语</h2><table>
+<thead>
+<tr>
+<th>Terms</th>
+<th>中文</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.Physical Device</td>
+<td>物理设备</td>
+<td>一台计算机系统包含多个支持Vulkan的物理硬件设备</td>
+</tr>
+<tr>
+<td>2.Device</td>
+<td>设备</td>
+<td>设备是物理设备在应用程序中的逻辑表示</td>
+</tr>
+<tr>
+<td>3.Queue</td>
+<td>队列</td>
+<td>队列表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行</td>
+</tr>
+<tr>
+<td>4.Memory Type</td>
+<td>内存类型</td>
+<td>Vulkan暴露了多种内存类型，广义上可以分为两类：宿主内存（Host Memory）和设备内存（Device Memory）</td>
+</tr>
+<tr>
+<td>5.Command</td>
+<td>指令</td>
+<td>每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步</td>
+</tr>
+<tr>
+<td>6.Action Command</td>
+<td>动作指令</td>
+<td>包括绘制图元、清除表面、复制缓存、查询/时间戳操作，以及子通道的开始/结束操作，这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像），以及写入查询池</td>
+</tr>
+<tr>
+<td>7.Set State Command</td>
+<td>状态设置指令</td>
+<td>可以用来绑定流水线、描述字集合以及缓存，或者设置一个动作状态，以及渲染通道/子通道的状态</td>
+</tr>
+<tr>
+<td>8.Synchronization Command</td>
+<td>同步指令</td>
+<td>用于处理多个动作指令（AC）同时发生的情况，用来设置同步或等待事件、插入流水线屏障对象，以及渲染通道/子通道的依赖</td>
+</tr>
+<tr>
+<td>9.Command Buffer</td>
+<td>指令缓存</td>
+<td>一组指令的集合，可以记录多个指令并统一发送到队列中</td>
+</tr>
+</tbody></table>
+<h2 id="Vulkan的原理"><a href="#Vulkan的原理" class="headerlink" title="Vulkan的原理"></a>Vulkan的原理</h2><h3 id="Vulkan的执行模型"><a href="#Vulkan的执行模型" class="headerlink" title="Vulkan的执行模型"></a>Vulkan的执行模型</h3><ul>
+<li>支持Vulkan的系统都可以查询系统信息，返回可用的物理设备数量</li>
+<li>每个物理设备支持一个或多个队列（Queue），队列被划分到不同的族群中</li>
+<li>每个族群有特定功能（图形、计算、数据传输、内存管理等）</li>
+<li>队列族群中的每个成员可以包含多个相似队列，互相兼容（可能在同一队列同时支持数据传输与图形操作）</li>
+<li>Vulkan允许用户显式在应用程序中管理和控制内存，暴露设备支持的所有不同类型的内存堆（heap）</li>
+<li>每个堆（heap）属于不同的内存区域</li>
+<li>Vulkan应用程序需要负责控制一组Vulkan设备，将一系列指令记录到指令缓存（Command Buffer），并发送到队列（Queue），设备驱动会读取Queue并“in-order execute”</li>
+<li>构建指令队列（结合后文个人认为这里指的是录制指令过程）代价较大，但是一旦完成就可以缓存和发送到队列中，根据需要多次执行</li>
+<li>有些指令缓存（有限制）可以在应用程序中以多线程的方式并行构建</li>
+</ul>
+<p>[Vulkan执行模型（简化版）]</p>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20220119193307600.png" alt="image-20220119193307600"></p>
+<blockquote>
+<p>应用程序记录指令缓存，指令缓存包含多个指令，且按照作业性质不同，被传递给一个或多个队列，这些队列将缓存作业提交给设备加以执行。最后，设备处理得到结果，将结果显示到输出设备或者返回用户程序做进一步处理</p>
+</blockquote>
+<h3 id="Vulkan用户应用程序主要职责"><a href="#Vulkan用户应用程序主要职责" class="headerlink" title="Vulkan用户应用程序主要职责"></a>Vulkan用户应用程序主要职责</h3><ol>
+<li>生产指令执行所必需的所有先决内容（资源准备、着色器编译、资源关联到着色器、设置着色器状态、构建流水线、绘制调用）</li>
+<li>内存管理</li>
+<li>同步（宿主和设备，设备上不同队列之间）</li>
+<li>风险管理</li>
+</ol>
+<h3 id="Vulkan的Queue"><a href="#Vulkan的Queue" class="headerlink" title="Vulkan的Queue"></a>Vulkan的Queue</h3><ul>
+<li>Queue是Vulkan的一种中间层机制，负责接收指令缓存并传递给设备，指令缓存记录N条指令并发送到相关的队列。设备提供了多个可选队列，应用程序负责将Command Buffer传递给正确的Queue</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Vulkan</category>
+      </categories>
+      <tags>
+        <tag>CG</tag>
+        <tag>Vulkan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Vulkan学习指南》练习题</title>
+    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<ul>
+<li>题目内容来自《Vulkan学习之南》——Parminder Singh</li>
+<li>每章节的练习题纯个人设计，仅供参考，原书并没有课后练习题</li>
+</ul>
+<span id="more"></span>
+
+
+
+<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><h2 id="1-Vulkan-API的制定团队"><a href="#1-Vulkan-API的制定团队" class="headerlink" title="1.Vulkan API的制定团队"></a>1.Vulkan API的制定团队</h2><details><summary><b>▷ 参考答案</b></summary>
+    Khronos
+</details>
+
+<h2 id="2-Physical-Device和Device的关系"><a href="#2-Physical-Device和Device的关系" class="headerlink" title="2.Physical Device和Device的关系"></a>2.Physical Device和Device的关系</h2><details><summary><b>▷ 参考答案</b></summary>
+    一台计算机系统包含多个支持Vulkan的物理硬件设备，设备是物理设备在应用程序中的逻辑表示
+</details>
+
+<h2 id="3-Queue的定义和职责"><a href="#3-Queue的定义和职责" class="headerlink" title="3.Queue的定义和职责"></a>3.Queue的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    队列（Queue）表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行
+</details>
+
+<h2 id="4-Vulkan广义上有哪几类内存类型（Memory-Type）"><a href="#4-Vulkan广义上有哪几类内存类型（Memory-Type）" class="headerlink" title="4.Vulkan广义上有哪几类内存类型（Memory Type）"></a>4.Vulkan广义上有哪几类内存类型（Memory Type）</h2><details><summary><b>▷ 参考答案</b></summary>
+    Vulkan暴露了多种内存类型，广义上可以分为两类：<br/>
+    1.宿主内存（Host Memory）<br/>
+    2.设备内存（Device Memory）
+</details>
+
+<h2 id="5-Command广义上可以划分为哪几类，简述各类指令的作用"><a href="#5-Command广义上可以划分为哪几类，简述各类指令的作用" class="headerlink" title="5.Command广义上可以划分为哪几类，简述各类指令的作用"></a>5.Command广义上可以划分为哪几类，简述各类指令的作用</h2><details><summary><b>▷ 参考答案</b></summary>
+    每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步<br/>
+    1.Action Command：绘制图元、清除表面、复制缓存、查询/时间戳、子通道开始/结束操作（这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像）、写入查询池）<br/>
+    2.Set State Command：绑定流水线、描述字集合、缓存，或设置一个动作状态、渲染通道/子通道的状态<br/>
+    3.Syschronization Command：处理多个Action Command同时发生的情况，用于设置同步或等待事件、插入流水线屏障对象、渲染通道/子通道的依赖
+</details>
+
+<h2 id="6-Command-Buffer的定义和职责"><a href="#6-Command-Buffer的定义和职责" class="headerlink" title="6.Command Buffer的定义和职责"></a>6.Command Buffer的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    一组指令的集合，可以记录多个指令并统一发送到队列中（第3题）
+</details>
+]]></content>
+      <categories>
+        <category>Vulkan</category>
+      </categories>
+      <tags>
+        <tag>CG</tag>
+        <tag>Vulkan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL听力常见内容研究（Updating）</title>
+    <url>/2022/01/18/LearnEnglish/TOEFL%E5%90%AC%E5%8A%9B%E5%B8%B8%E8%A7%81%E5%86%85%E5%AE%B9%E7%A0%94%E7%A9%B6/</url>
+    <content><![CDATA[<ul>
+<li>根据常出现的听力内容，整理分析笔记记法</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="基于场景的分类分析"><a href="#基于场景的分类分析" class="headerlink" title="基于场景的分类分析"></a>基于场景的分类分析</h1><h2 id="1-校园生活"><a href="#1-校园生活" class="headerlink" title="1.校园生活"></a>1.校园生活</h2><h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><h4 id="身份"><a href="#身份" class="headerlink" title="身份"></a>身份</h4><ul>
+<li>student</li>
+<li>professor</li>
+</ul>
+<h4 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h4><ul>
+<li>university</li>
+<li>campus</li>
+</ul>
+<h4 id="学科"><a href="#学科" class="headerlink" title="学科"></a>学科</h4><ul>
+<li>education</li>
+<li>literature</li>
+<li>chemistry</li>
+<li>mathematics</li>
+<li>agriculture</li>
+<li>biology</li>
+<li>psychology</li>
+<li>geology / geography</li>
+<li>ecology / economics</li>
+<li>politics / political</li>
+</ul>
+<h3 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h3><h3 id="形容词-副词"><a href="#形容词-副词" class="headerlink" title="形容词 / 副词"></a>形容词 / 副词</h3><h3 id="专有名词"><a href="#专有名词" class="headerlink" title="专有名词"></a>专有名词</h3>]]></content>
+      <categories>
+        <category>英语学习</category>
+      </categories>
+      <tags>
+        <tag>英语学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>短语类记</title>
+    <url>/2022/01/18/LearnEnglish/%E7%9F%AD%E8%AF%AD%E7%B1%BB%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li>按照《日语语法新思维》的分类记忆模式，迁移到英语学习中看看效果，内容主要来自背单词过程</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="被……替代"><a href="#被……替代" class="headerlink" title="被……替代"></a>被……替代</h2><table>
+<thead>
+<tr>
+<th>短语</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>give way to</td>
+<td>To him , <strong>the bitterness of life has given way to sweetness</strong></td>
+</tr>
+<tr>
+<td>a substitute for</td>
+<td>You are a fine substitute for Watson</td>
+</tr>
+</tbody></table>
+<h2 id="倾向"><a href="#倾向" class="headerlink" title="倾向"></a>倾向</h2><table>
+<thead>
+<tr>
+<th>短语</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tend to do</td>
+<td>I tend to smell when I’m nervous</td>
+</tr>
+<tr>
+<td>a trend towards</td>
+<td>A trend towards intimacy in social networking</td>
+</tr>
+<tr>
+<td>be prone to</td>
+<td>He is prone to depression</td>
+</tr>
+<tr>
+<td>incline to</td>
+<td>I incline to the view that he is right</td>
+</tr>
+</tbody></table>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><table>
+<thead>
+<tr>
+<th>短语</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>from the outset</td>
+<td>from the outset , Louis was thinking big</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Ex"><a href="#Ex" class="headerlink" title="Ex"></a>Ex</h2><ul>
+<li>clam up : 闭口不言</li>
+</ul>
+]]></content>
+      <categories>
+        <category>英语学习</category>
+      </categories>
+      <tags>
+        <tag>英语学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1494,7 +1800,7 @@
   </entry>
   <entry>
     <title>JLPT-N2-2017年7月真题笔记</title>
-    <url>/2021/11/06/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/JLPT-N2-2017%E5%B9%B47%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
+    <url>/2021/11/06/LearnJapanese/JLPT-N2-2017%E5%B9%B47%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
     <content><![CDATA[<ul>
 <li><strong>日语真题笔记系列，该系列的笔记至少会包括词汇部分，笔记会不断完善</strong><span id="more"></span>
 <h2 id="１．語彙（ごい）"><a href="#１．語彙（ごい）" class="headerlink" title="１．語彙（ごい）"></a>１．語彙（ごい）</h2><table>
@@ -3096,7 +3402,7 @@
   </entry>
   <entry>
     <title>JLPT-N2-2016年12月真题笔记</title>
-    <url>/2021/10/25/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/JLPT-N2-2016%E5%B9%B412%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
+    <url>/2021/10/25/LearnJapanese/JLPT-N2-2016%E5%B9%B412%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
     <content><![CDATA[<ul>
 <li><strong>日语真题笔记系列，该系列的笔记至少会包括词汇部分，笔记会不断完善</strong><span id="more"></span>
 <h2 id="１．語彙（ごい）"><a href="#１．語彙（ごい）" class="headerlink" title="１．語彙（ごい）"></a>１．語彙（ごい）</h2><table>
