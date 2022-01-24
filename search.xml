@@ -125,7 +125,8 @@
 </ul>
 <span id="more"></span>
 
-<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="January"><a href="#January" class="headerlink" title="January"></a>January</h2><h3 id="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"><a href="#23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少" class="headerlink" title="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"></a>23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-23.png" alt="1-23"></p>
+<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="January"><a href="#January" class="headerlink" title="January"></a>January</h2><h3 id="24-感觉要给Vulkan多留点时间了"><a href="#24-感觉要给Vulkan多留点时间了" class="headerlink" title="24:感觉要给Vulkan多留点时间了"></a>24:感觉要给Vulkan多留点时间了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-24.png" alt="1-24"></p>
+<h3 id="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"><a href="#23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少" class="headerlink" title="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"></a>23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-23.png" alt="1-23"></p>
 <h3 id="22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"><a href="#22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间" class="headerlink" title="22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"></a>22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-22.png" alt="1-22"></p>
 <h3 id="21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"><a href="#21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了" class="headerlink" title="21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"></a>21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-21.png" alt="1-21"></p>
 <h3 id="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app"><a href="#20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app" class="headerlink" title="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app"></a>20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-20.png" alt="1-20"></p>
@@ -148,17 +149,17 @@
 <span id="more"></span>
 
 <h1 id="序章（Preface）"><a href="#序章（Preface）" class="headerlink" title="序章（Preface）"></a>序章（Preface）</h1><h2 id="内容摘要"><a href="#内容摘要" class="headerlink" title="内容摘要"></a>内容摘要</h2><ul>
-<li>**Chapter1.**：Vulkan的基础概念以及编程模型</li>
-<li>**Chapter2.**：Vulkan所必要的基础软件以及SDK</li>
-<li>**Chapter3.**：设置开发环境，构建第一个Vulkan案例，详细讲解队列与队列族的概念，及其与逻辑设备的关系</li>
-<li>**Chapter4.**：Vulkan的调试方法，使用验证层编写一个简单的例子，并且使用一些非标准的拓展属性</li>
-<li>**Chapter5.**：深入Vulkan的指令缓存，了解指令池的作用，学习如何使用指令缓存进行录制，后半部分会讲内存管理，学习GPU内存的分配与销毁操作，理解CPU与GPU内存之间的映射关系</li>
-<li>**Chapter6.**：图像资源与相关内存管理，包括图像创建、分配、绑定、映射，并使用这种方法创建一个深度图像进行深度测试。介绍WSI交换链，使用其实现渲染可绘制对象并展示到屏幕的功能，并尝试获取WSI交换链的颜色图像，并创建颜色视图以便绘制图元</li>
-<li>**Chapter7.**：讨论缓存资源以及相关用途（即可绘制对象的几何体顶点缓存的构建），详细介绍使用渲染通道定义绘制操作的相关工作的方法，使用多个附件和子通道。使用渲染通道在Vulkan中实现帧缓存，用一个简单的示例演示如何清除背景颜色。在最后，将使用SPIR-V实现第一个Vulkan Shader Program并学习一些SDK工具的使用，将GLSL代码转换为SPIR-V的中间语言格式</li>
-<li>**Chapter8.**：介绍Vulkan中的计算流水线和图形流水线，实现一个完整的图形流水线</li>
-<li>**Chatpter9.**：全面介绍Vulkan中对象的绘制过程，讨论Vulkan中的同步机制，理解有关栅栏、信号量以及内存屏障的知识，此外将介绍如何绘制相关的API并通过一些简单的案例演示其用法</li>
-<li>**Chapter10.**：介绍Vulkan对Shader资源的更新过程，用到了描述符和推送常数的概念，讨论描述符池和描述符集布局的创建过程。将学到有关流水线布局的用法，并使用描述符来更新设备内存端的缓存资源，将更新后的几何体渲染到屏幕上。与描述符不同的是，推送常数并不会使用指令缓存，而是使用一种更加优化的方式来更新资源，可以尝试实现一个简单的程序来深入理解推送常数的相关知识</li>
-<li>**Chapter11.**：使用更加真实的方法（即贴纹理来渲染3D可绘制对象），将学习如何创建图像资源并为其设置采样器对象，还将学习使用线性和优化平铺的方式来更新纹理，在优化平铺模式下，用户还需要考虑使用传输缓存和图像内存的指令方法</li>
+<li><strong>Chapter1.</strong> ：Vulkan的基础概念以及编程模型</li>
+<li><strong>Chapter2.</strong> ：Vulkan所必要的基础软件以及SDK</li>
+<li><strong>Chapter3.</strong> ：设置开发环境，构建第一个Vulkan案例，详细讲解队列与队列族的概念，及其与逻辑设备的关系</li>
+<li><strong>Chapter4.</strong> ：Vulkan的调试方法，使用验证层编写一个简单的例子，并且使用一些非标准的拓展属性</li>
+<li><strong>Chapter5.</strong> ：深入Vulkan的指令缓存，了解指令池的作用，学习如何使用指令缓存进行录制，后半部分会讲内存管理，学习GPU内存的分配与销毁操作，理解CPU与GPU内存之间的映射关系</li>
+<li><strong>Chapter6.</strong> ：图像资源与相关内存管理，包括图像创建、分配、绑定、映射，并使用这种方法创建一个深度图像进行深度测试。介绍WSI交换链，使用其实现渲染可绘制对象并展示到屏幕的功能，并尝试获取WSI交换链的颜色图像，并创建颜色视图以便绘制图元</li>
+<li><strong>Chapter7.</strong> ：讨论缓存资源以及相关用途（即可绘制对象的几何体顶点缓存的构建），详细介绍使用渲染通道定义绘制操作的相关工作的方法，使用多个附件和子通道。使用渲染通道在Vulkan中实现帧缓存，用一个简单的示例演示如何清除背景颜色。在最后，将使用SPIR-V实现第一个Vulkan Shader Program并学习一些SDK工具的使用，将GLSL代码转换为SPIR-V的中间语言格式</li>
+<li><strong>Chapter8.</strong> ：介绍Vulkan中的计算流水线和图形流水线，实现一个完整的图形流水线</li>
+<li><strong>Chatpter9.</strong> ：全面介绍Vulkan中对象的绘制过程，讨论Vulkan中的同步机制，理解有关栅栏、信号量以及内存屏障的知识，此外将介绍如何绘制相关的API并通过一些简单的案例演示其用法</li>
+<li><strong>Chapter10.</strong> ：介绍Vulkan对Shader资源的更新过程，用到了描述符和推送常数的概念，讨论描述符池和描述符集布局的创建过程。将学到有关流水线布局的用法，并使用描述符来更新设备内存端的缓存资源，将更新后的几何体渲染到屏幕上。与描述符不同的是，推送常数并不会使用指令缓存，而是使用一种更加优化的方式来更新资源，可以尝试实现一个简单的程序来深入理解推送常数的相关知识</li>
+<li><strong>Chapter11.</strong> ：使用更加真实的方法（即贴纹理来渲染3D可绘制对象），将学习如何创建图像资源并为其设置采样器对象，还将学习使用线性和优化平铺的方式来更新纹理，在优化平铺模式下，用户还需要考虑使用传输缓存和图像内存的指令方法</li>
 </ul>
 <h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><blockquote>
 <p>Vulkan是一款革命性的高性能3D图形和计算API，可用于现代GPU管线架构，能满足社区的最新需求。该API提供了一套全新的方法来克服传统API的复杂性和缺陷。<strong>Vulkan是一个显式API，保证用户在渲染时保持稳定平滑的帧速率，不会造成延迟或者故障</strong>。我们将简单了解Vulkan的生态系统，以及它的图形体系</p>
@@ -225,7 +226,7 @@
 <td>一组指令的集合，可以记录多个指令并统一发送到队列中</td>
 </tr>
 </tbody></table>
-<h2 id="Vulkan的原理"><a href="#Vulkan的原理" class="headerlink" title="Vulkan的原理"></a>Vulkan的原理</h2><h3 id="Vulkan的执行模型"><a href="#Vulkan的执行模型" class="headerlink" title="Vulkan的执行模型"></a>Vulkan的执行模型</h3><ul>
+<h2 id="Vulkan的原理"><a href="#Vulkan的原理" class="headerlink" title="Vulkan的原理"></a>Vulkan的原理</h2><h3 id="执行模型"><a href="#执行模型" class="headerlink" title="执行模型"></a>执行模型</h3><ul>
 <li>支持Vulkan的系统都可以查询系统信息，返回可用的物理设备数量</li>
 <li>每个物理设备支持一个或多个队列（Queue），队列被划分到不同的族群中</li>
 <li>每个族群有特定功能（图形、计算、数据传输、内存管理等）</li>
@@ -241,15 +242,65 @@
 <blockquote>
 <p>应用程序记录指令缓存，指令缓存包含多个指令，且按照作业性质不同，被传递给一个或多个队列，这些队列将缓存作业提交给设备加以执行。最后，设备处理得到结果，将结果显示到输出设备或者返回用户程序做进一步处理</p>
 </blockquote>
-<h3 id="Vulkan用户应用程序主要职责"><a href="#Vulkan用户应用程序主要职责" class="headerlink" title="Vulkan用户应用程序主要职责"></a>Vulkan用户应用程序主要职责</h3><ol>
+<h3 id="用户应用程序主要职责"><a href="#用户应用程序主要职责" class="headerlink" title="用户应用程序主要职责"></a>用户应用程序主要职责</h3><ol>
 <li>生产指令执行所必需的所有先决内容（资源准备、着色器编译、资源关联到着色器、设置着色器状态、构建流水线、绘制调用）</li>
 <li>内存管理</li>
 <li>同步（宿主和设备，设备上不同队列之间）</li>
 <li>风险管理</li>
 </ol>
-<h3 id="Vulkan的Queue"><a href="#Vulkan的Queue" class="headerlink" title="Vulkan的Queue"></a>Vulkan的Queue</h3><ul>
-<li>Queue是Vulkan的一种中间层机制，负责接收指令缓存并传递给设备，指令缓存记录N条指令并发送到相关的队列。设备提供了多个可选队列，应用程序负责将Command Buffer传递给正确的Queue</li>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><ul>
+<li><p>Queue是Vulkan的一种中间层机制，负责接收指令缓存并传递给设备，指令缓存记录N条指令并发送到相关的队列。设备提供了多个可选队列，应用程序负责将Command Buffer传递给正确的Queue</p>
+</li>
+<li><p><strong>[ 单一队列 ]</strong> ：串行执行，按照指令缓存发送的顺序维护、执行、回放</p>
+</li>
+<li><p><strong>[ 多重队列 ]</strong> ：允许指令缓存并行地在多个队列中执行，如果不进行同步设置则无法保证实际执行顺序与发送指令顺序相同</p>
+</li>
 </ul>
+<h3 id="同步机制"><a href="#同步机制" class="headerlink" title="同步机制"></a>同步机制</h3><ul>
+<li><strong>Semaphore（信号量）</strong> ： 粗粒度，可以在单一队列，也可以跨队列</li>
+<li><strong>Event（事件）</strong> ： 细粒度，应用于单一队列，宿主系统可以参与到事件触发的同步机制</li>
+<li><strong>Fence（栅栏）</strong> ： 允许在宿主和设备之间完成同步</li>
+<li><strong>Pipeline Barrier（流水线屏障）</strong> ： 是一种插入到指令缓存中的指令，可以确保在他之前的指令始终优先执行，其余指令随后执行（分割先后，多个同时存在情况暂不确定）</li>
+</ul>
+<h3 id="对象模型"><a href="#对象模型" class="headerlink" title="对象模型"></a>对象模型</h3><ul>
+<li>在应用端程序，设备、队列、指令缓存、帧缓存、流水线等内在的所有对象，统称为Vulkan对象</li>
+<li>在内部API层面，Vulkan对象会被识别为不同的Handle（句柄）</li>
+</ul>
+<h4 id="1-可分发的句柄（Delegation）"><a href="#1-可分发的句柄（Delegation）" class="headerlink" title="1.可分发的句柄（Delegation）"></a>1.可分发的句柄（Delegation）</h4><ul>
+<li>这类指针<strong>指向一个不透明的内部图形实体</strong>，不透明意味着不能直接访问内部结构体成员，只能通过API间接访问（PS：我感觉应该属于Delegation模式）</li>
+<li>所有可分发句柄都会关联一个可分发类型，这样就可以将它本身作为参数传递给其他API指令</li>
+<li><strong>典型示例：Vkinstance, VkCommandBuffer, VkPhtsicalDevice, VkDevice, VkQueue</strong></li>
+</ul>
+<h4 id="2-不可分发的句柄"><a href="#2-不可分发的句柄" class="headerlink" title="2.不可分发的句柄"></a>2.不可分发的句柄</h4><ul>
+<li>这些64bits整型Handle<strong>不会指向结构体，而是直接包含对象本身信息</strong></li>
+<li><strong>典型示例：VkSemaphore，VkFence，VkQueryPool，VkBufferView，VkDeviceMemory，VkBuffer，Vkimage，VkPipeline，VkShaderModule，VkSampler，VkRenderPass，VkDescriptorPool，VkDescriptorSetLayout，VkFramebuffer，VkPipelineCache，VkCommandPool，VkDescriptorSet，VkEvent，VkPipelineLayout，VkimageView</strong></li>
+</ul>
+<h3 id="对象生命周期与指令语法"><a href="#对象生命周期与指令语法" class="headerlink" title="对象生命周期与指令语法"></a>对象生命周期与指令语法</h3><ul>
+<li><strong>Vulkan的对象是根据应用程序逻辑需求，显式地创建和销毁，应用程序需要自己管理这些对象</strong></li>
+<li><strong>所有实现方法都可以通过vkGet*指令轻松获取</strong></li>
+<li><strong>使用vkCmd*形式的API接口主要用于把指令记录到指令缓存中</strong></li>
+</ul>
+<h4 id="Create（vkCreate）"><a href="#Create（vkCreate）" class="headerlink" title="Create（vkCreate）"></a>Create（vkCreate）</h4><ul>
+<li>需要一个Vk*Createinfo结构体作为参数</li>
+</ul>
+<h4 id="Destroy（vkDestroy）"><a href="#Destroy（vkDestroy）" class="headerlink" title="Destroy（vkDestroy）"></a>Destroy（vkDestroy）</h4><ul>
+<li>每一个vkCreate都要对应一个Destroy</li>
+</ul>
+<p>如果对象是作为已有的对象池（Pool）或堆（Heap）的一部分创建的，那么需要使用Allocate指令创建，并使用Free指令从Pool或Heap中删除</p>
+<h4 id="Allocate（vkAllocate-）"><a href="#Allocate（vkAllocate-）" class="headerlink" title="Allocate（vkAllocate*）"></a>Allocate（vkAllocate*）</h4><ul>
+<li>一个对象如果是作为对象池的一部分创建，需要一Vk*AllocateInfo作为输入参数</li>
+</ul>
+<h4 id="Free（vkFree-）"><a href="#Free（vkFree-）" class="headerlink" title="Free（vkFree*）"></a>Free（vkFree*）</h4><ul>
+<li>从对象池或者内存中释放</li>
+</ul>
+<h3 id="错误检查与验证"><a href="#错误检查与验证" class="headerlink" title="错误检查与验证"></a>错误检查与验证</h3><ul>
+<li>Vulkan设计在性能最大化的前提下，提供了<strong>可选的错误检查和验证功能</strong></li>
+<li>检错与验证可以在Vulkan的层次化结构中使用，在运行系统中实现多层间动态调试验证</li>
+</ul>
+<h2 id="理解Vulkan应用程序"><a href="#理解Vulkan应用程序" class="headerlink" title="理解Vulkan应用程序"></a>理解Vulkan应用程序</h2><ul>
+<li>Vulkan的各种功能组件与彼此关系，以及如何用来构建一个Vulkan应用程序</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220125012254521.png" alt="image-20220125012254521"></p>
 ]]></content>
       <categories>
         <category>Vulkan</category>
@@ -305,6 +356,42 @@
       <tags>
         <tag>CG</tag>
         <tag>Vulkan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL听力常见内容研究（Updating）</title>
+    <url>/2022/01/18/LearnEnglish/TOEFL%E5%90%AC%E5%8A%9B%E5%B8%B8%E8%A7%81%E5%86%85%E5%AE%B9%E7%A0%94%E7%A9%B6/</url>
+    <content><![CDATA[<ul>
+<li>根据常出现的听力内容，整理分析笔记记法</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="基于场景的分类分析"><a href="#基于场景的分类分析" class="headerlink" title="基于场景的分类分析"></a>基于场景的分类分析</h1><h2 id="1-校园生活"><a href="#1-校园生活" class="headerlink" title="1.校园生活"></a>1.校园生活</h2><h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><h4 id="身份"><a href="#身份" class="headerlink" title="身份"></a>身份</h4><ul>
+<li>student</li>
+<li>professor</li>
+</ul>
+<h4 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h4><ul>
+<li>university</li>
+<li>campus</li>
+</ul>
+<h4 id="学科"><a href="#学科" class="headerlink" title="学科"></a>学科</h4><ul>
+<li>education</li>
+<li>literature</li>
+<li>chemistry</li>
+<li>mathematics</li>
+<li>agriculture</li>
+<li>biology</li>
+<li>psychology</li>
+<li>geology / geography</li>
+<li>ecology / economics</li>
+<li>politics / political</li>
+</ul>
+<h3 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h3><h3 id="形容词-副词"><a href="#形容词-副词" class="headerlink" title="形容词 / 副词"></a>形容词 / 副词</h3><h3 id="专有名词"><a href="#专有名词" class="headerlink" title="专有名词"></a>专有名词</h3>]]></content>
+      <categories>
+        <category>英语学习</category>
+      </categories>
+      <tags>
+        <tag>英语学习</tag>
       </tags>
   </entry>
   <entry>
@@ -443,42 +530,6 @@
 <li>clam up : 闭口不言</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>英语学习</category>
-      </categories>
-      <tags>
-        <tag>英语学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TOEFL听力常见内容研究（Updating）</title>
-    <url>/2022/01/18/LearnEnglish/TOEFL%E5%90%AC%E5%8A%9B%E5%B8%B8%E8%A7%81%E5%86%85%E5%AE%B9%E7%A0%94%E7%A9%B6/</url>
-    <content><![CDATA[<ul>
-<li>根据常出现的听力内容，整理分析笔记记法</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="基于场景的分类分析"><a href="#基于场景的分类分析" class="headerlink" title="基于场景的分类分析"></a>基于场景的分类分析</h1><h2 id="1-校园生活"><a href="#1-校园生活" class="headerlink" title="1.校园生活"></a>1.校园生活</h2><h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><h4 id="身份"><a href="#身份" class="headerlink" title="身份"></a>身份</h4><ul>
-<li>student</li>
-<li>professor</li>
-</ul>
-<h4 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h4><ul>
-<li>university</li>
-<li>campus</li>
-</ul>
-<h4 id="学科"><a href="#学科" class="headerlink" title="学科"></a>学科</h4><ul>
-<li>education</li>
-<li>literature</li>
-<li>chemistry</li>
-<li>mathematics</li>
-<li>agriculture</li>
-<li>biology</li>
-<li>psychology</li>
-<li>geology / geography</li>
-<li>ecology / economics</li>
-<li>politics / political</li>
-</ul>
-<h3 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h3><h3 id="形容词-副词"><a href="#形容词-副词" class="headerlink" title="形容词 / 副词"></a>形容词 / 副词</h3><h3 id="专有名词"><a href="#专有名词" class="headerlink" title="专有名词"></a>专有名词</h3>]]></content>
       <categories>
         <category>英语学习</category>
       </categories>
