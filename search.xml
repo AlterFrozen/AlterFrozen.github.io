@@ -563,6 +563,35 @@
       </tags>
   </entry>
   <entry>
+    <title>VS2019无法打开ui文件</title>
+    <url>/2021/10/31/DeBug/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ul>
+<li>使用VS2019+Qt5时，无法打开*.ui文件</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><ul>
+<li>暂时不确定，估计有以下两个因素</li>
+</ul>
+<ol>
+<li>与默认打开的Qt Designer版本选取有关，因为我电脑上有2个不同版本的Qt，用于编写项目的Qt版本与我之前用的不同</li>
+<li>与默认打开的Qt Designer的编译器有关，项目使用MSVC2017_64，而之前我一直使用MinGW_32</li>
+</ol>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
+<li>右键ui文件 —&gt; 点击“打开方式” —&gt; “添加”</li>
+<li>选择 Qt目录下MSVC2017_64 中 bin目录下 Qt Designer 添加</li>
+<li>将新添加的打开方式“设为默认值”</li>
+<li><a href="https://blog.csdn.net/qq_43145926/article/details/105004762">参考文章</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>DeBug</category>
+      </categories>
+      <tags>
+        <tag>QT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++DeBUG记录</title>
     <url>/2021/10/31/DeBug/C++DeBUG%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p><strong>记录在使用C++时与各种BUG斗智斗勇的血泪史</strong></p>
@@ -604,57 +633,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VS2019无法打开ui文件</title>
-    <url>/2021/10/31/DeBug/VS2019%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80ui%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ul>
-<li>使用VS2019+Qt5时，无法打开*.ui文件</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><ul>
-<li>暂时不确定，估计有以下两个因素</li>
-</ul>
-<ol>
-<li>与默认打开的Qt Designer版本选取有关，因为我电脑上有2个不同版本的Qt，用于编写项目的Qt版本与我之前用的不同</li>
-<li>与默认打开的Qt Designer的编译器有关，项目使用MSVC2017_64，而之前我一直使用MinGW_32</li>
-</ol>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
-<li>右键ui文件 —&gt; 点击“打开方式” —&gt; “添加”</li>
-<li>选择 Qt目录下MSVC2017_64 中 bin目录下 Qt Designer 添加</li>
-<li>将新添加的打开方式“设为默认值”</li>
-<li><a href="https://blog.csdn.net/qq_43145926/article/details/105004762">参考文章</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>DeBug</category>
-      </categories>
-      <tags>
-        <tag>QT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>每日学习打卡</title>
-    <url>/2022/01/19/Daily/DailyAttendance/</url>
-    <content><![CDATA[<ul>
-<li><strong>坚持每日学习打卡，内容主要以外语学习为主</strong></li>
-</ul>
-<span id="more"></span>
-
-<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="January"><a href="#January" class="headerlink" title="January"></a>January</h2><h3 id="24-感觉要给Vulkan多留点时间了"><a href="#24-感觉要给Vulkan多留点时间了" class="headerlink" title="24:感觉要给Vulkan多留点时间了"></a>24:感觉要给Vulkan多留点时间了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-24.png" alt="1-24"></p>
-<h3 id="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"><a href="#23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少" class="headerlink" title="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"></a>23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-23.png" alt="1-23"></p>
-<h3 id="22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"><a href="#22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间" class="headerlink" title="22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"></a>22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-22.png" alt="1-22"></p>
-<h3 id="21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"><a href="#21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了" class="headerlink" title="21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"></a>21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-21.png" alt="1-21"></p>
-<h3 id="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app"><a href="#20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app" class="headerlink" title="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app"></a>20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-20.png" alt="1-20"></p>
-<h3 id="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"><a href="#19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调" class="headerlink" title="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"></a>19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-19.png" alt="1-19"></p>
-]]></content>
-      <categories>
-        <category>Daily</category>
-      </categories>
-      <tags>
-        <tag>Daily</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TOEFL听力常见内容研究（Updating）</title>
     <url>/2022/01/18/LearnEnglish/TOEFL%E5%90%AC%E5%8A%9B%E5%B8%B8%E8%A7%81%E5%86%85%E5%AE%B9%E7%A0%94%E7%A9%B6/</url>
     <content><![CDATA[<ul>
@@ -688,6 +666,28 @@
       </categories>
       <tags>
         <tag>英语学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每日学习打卡</title>
+    <url>/2022/01/19/Daily/DailyAttendance/</url>
+    <content><![CDATA[<ul>
+<li><strong>坚持每日学习打卡，内容主要以外语学习为主</strong></li>
+</ul>
+<span id="more"></span>
+
+<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="January"><a href="#January" class="headerlink" title="January"></a>January</h2><h3 id="24-感觉要给Vulkan多留点时间了"><a href="#24-感觉要给Vulkan多留点时间了" class="headerlink" title="24:感觉要给Vulkan多留点时间了"></a>24:感觉要给Vulkan多留点时间了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-24.png" alt="1-24"></p>
+<h3 id="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"><a href="#23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少" class="headerlink" title="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"></a>23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-23.png" alt="1-23"></p>
+<h3 id="22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"><a href="#22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间" class="headerlink" title="22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"></a>22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-22.png" alt="1-22"></p>
+<h3 id="21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"><a href="#21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了" class="headerlink" title="21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"></a>21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-21.png" alt="1-21"></p>
+<h3 id="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app"><a href="#20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app" class="headerlink" title="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app"></a>20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-20.png" alt="1-20"></p>
+<h3 id="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"><a href="#19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调" class="headerlink" title="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"></a>19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-19.png" alt="1-19"></p>
+]]></content>
+      <categories>
+        <category>Daily</category>
+      </categories>
+      <tags>
+        <tag>Daily</tag>
       </tags>
   </entry>
   <entry>
@@ -831,6 +831,847 @@
       </categories>
       <tags>
         <tag>英语学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cmatrix与Shell实现随机屏保</title>
+    <url>/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/</url>
+    <content><![CDATA[<ul>
+<li>使用简单的ShellScript与Cmatrix在Ubuntu系统中实现“<strong>黑客帝国风屏保</strong>”</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://image.codebooklet.com/img_blog/Linux/cmatrix.gif"></p>
+<h2 id="Step1-安装cmatrix"><a href="#Step1-安装cmatrix" class="headerlink" title="Step1. 安装cmatrix"></a>Step1. 安装cmatrix</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get-install cmatrix</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后可以输入命令“cmatrix”测试是否安装成功</li>
+</ul>
+<h2 id="Step2-编写ShellScript"><a href="#Step2-编写ShellScript" class="headerlink" title="Step2. 编写ShellScript"></a>Step2. 编写ShellScript</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ScreenSaver.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">if [ $# == 1 ]</span><br><span class="line">then cmatrix -s -b -C $1 #这里设置可以手动输入颜色</span><br><span class="line">else</span><br><span class="line">        randInt=$RANDOM</span><br><span class="line">        mode=$((randInt % 8))</span><br><span class="line">        if [ $mode == 0 ]</span><br><span class="line">                then cmatrix -s -b -C green</span><br><span class="line">        elif [ $mode == 1 ]</span><br><span class="line">                then cmatrix -s -b -C red</span><br><span class="line">        elif [ $mode == 2 ]</span><br><span class="line">                then cmatrix -s -b -C blue</span><br><span class="line">        elif [ $mode == 3 ]</span><br><span class="line">                then cmatrix -s -b -C white</span><br><span class="line">        elif [ $mode == 4 ]</span><br><span class="line">                then cmatrix -s -b -C yellow</span><br><span class="line">        elif [ $mode == 5 ]</span><br><span class="line">                then cmatrix -s -b -C cyan</span><br><span class="line">        elif [ $mode == 6 ]</span><br><span class="line">                then cmatrix -s -b -C magenta</span><br><span class="line">        else cmatrix -s -b -C black</span><br><span class="line">        fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x ScreenSaver.sh <span class="comment">#设置可执行权限</span></span><br><span class="line">./ScreenSaver.sh <span class="comment">#执行ShellScript</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>可以使用“man cmatrix”查看更多参数，这里只说明使用过的参数</strong></li>
+<li>[ -s ] ：启用 屏保(ScreenSaver) 模式，可以按任意键退出</li>
+<li>[ -b ] ：启用 随机粗体 主要提升视觉效果</li>
+<li>[ -C ]：设置字幕颜色，默认为green</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux命令笔记</title>
+    <url>/2021/10/29/Linux/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li><strong>该笔记仅记录个人使用过的命令，以及用该命令做过什么，不是完整说明文档</strong><span id="more"></span></li>
+</ul>
+<hr>
+<h1 id="目录-INDEX"><a href="#目录-INDEX" class="headerlink" title="目录 INDEX"></a>目录 INDEX</h1><table>
+<thead>
+<tr>
+<th align="center">首字母</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center"><a href="#chown">chown</a>   <a href="#chgrp">chgrp</a></td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">F</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center"><a href="#groups">groups</a></td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center"><a href="#id">id</a></td>
+</tr>
+<tr>
+<td align="center">J</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">K</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center"><a href="#ls">ls</a></td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td align="center"><a href="#newgrp">newgrp</a></td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Q</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">R</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td align="center"><a href="#stat">stat</a></td>
+</tr>
+<tr>
+<td align="center">T</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">U</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">V</td>
+<td align="center"><a href="#vmstat">vmstat</a></td>
+</tr>
+<tr>
+<td align="center">W</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Z</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+ <div id="chgrp"><font size=20,font-weight:bold>chgrp</font></div>
+- 使用“chgrp”可以**更改文件的所属用户组**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 20:36 a</span><br><span class="line">root@Aioy:~<span class="comment"># chgrp root a</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root root 0 Nov 26 20:36 a</span><br></pre></td></tr></table></figure>
+
+ <div id="chown"><font size=20,font-weight:bold>chown</font></div>
+- 使用“chown”可以**更改文件的所属用户，或者所属用户组**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># touch a （创建一个名为a的文件）</span></span><br><span class="line">root@Aioy:~<span class="comment"># chown root:jerry a （修改所属用户为root所属用户组为jerry）</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 20:36 a</span><br><span class="line"><span class="comment">#可以使用 :group 单独修改所属用户组，效果同 chgrp 命令</span></span><br></pre></td></tr></table></figure>
+
+ <div id="newgrp"><font size=20,font-weight:bold>newgrp</font></div>
+- 使用“newgrp”**切换用户的有效用户组（Effective Group），但前提是确保用户已经在将要切换的用户组内**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups （该命令输出的第一个组是有效用户组）</span></span><br><span class="line">root jerry</span><br><span class="line">root@Aioy:~<span class="comment"># newgrp jerry</span></span><br><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">jerry root</span><br></pre></td></tr></table></figure>
+
+ <div id="groups"><font size=20,font-weight:bold>groups</font></div>
+- 使用“groups”查看**查看某用户当前全部所属用户组，第一个为有效用户组（Effective Group）**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">root</span><br><span class="line">root@Aioy:~<span class="comment"># groups jerry</span></span><br><span class="line">jerry : jerry</span><br></pre></td></tr></table></figure>
+
+ <div id="id"><font size=20,font-weight:bold>id</font></div>
+
+<ul>
+<li>使用“id”命令用于<strong>显示一个真实有效的用户以及其归属用户组</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#使用 id 指令查看某用户信息</span></span><br><span class="line">root@Aioy:~/<span class="built_in">test</span><span class="comment"># id jerry</span></span><br><span class="line">uid=1001(jerry) gid=1001(jerry) groups=1001(jerry)</span><br><span class="line"><span class="comment">#groups属性暗示了一个用户可以归属多个组</span></span><br></pre></td></tr></table></figure>
+
+ <div id="stat"><font size=20,font-weight:bold>stat</font></div>
+
+<ul>
+<li>使用“stat”命令用于显示文件 inode 内容，格式 stat [目录]</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># stat dir</span></span><br><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+
+ <div id="ls"><font size=20,font-weight:bold>ls</font></div>
+
+<ul>
+<li>使用”ls”命令用于显示<strong>指定工作目录</strong>下的内容，格式 ls [参数] [指定目录]</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">常用参数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-a</td>
+<td align="center">显示指定目录下所有文件，包括隐藏文件</td>
+</tr>
+<tr>
+<td align="center">-i</td>
+<td align="center">显示指定目录下的</td>
+</tr>
+<tr>
+<td align="center">-l</td>
+<td align="center">显示文件类型、权限、所有者、文件大小等详细信息</td>
+</tr>
+<tr>
+<td align="center">-R</td>
+<td align="center">若指定目录下有其他子目录，则将子目录中内容也显示</td>
+</tr>
+<tr>
+<td align="center">-t</td>
+<td align="center">将指定目录下的文件以“创建时间”先后顺序显示</td>
+</tr>
+</tbody></table>
+ <div id="vmstat"><font size=20,font-weight:bold>vmstat</font></div>
+
+<ul>
+<li>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</li>
+<li>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Procs</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>r</strong>: The number of runnable processes (running or waiting for run time).</td>
+<td align="center">可运行的进程数（正在运行或等待CPU时间）</td>
+</tr>
+<tr>
+<td align="left"><strong>b</strong> The number of processes in uninterruptible sleep.</td>
+<td align="center">Uninterruptible Sleep进程数 <a href="https://cloud.tencent.com/developer/article/1581022">《Linux进程状态》</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Memory</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>swpd</strong>: the amount of virtual memory used.</td>
+<td align="center">虚拟内存使用大小</td>
+</tr>
+<tr>
+<td align="left"><strong>free</strong>: the amount of idle memory.</td>
+<td align="center">空闲内存大小</td>
+</tr>
+<tr>
+<td align="left"><strong>buff</strong>: the amount of memory used as buffers.</td>
+<td align="center">作为缓存区的内存</td>
+</tr>
+<tr>
+<td align="left"><strong>cache</strong>: the amount of memory used as cache.</td>
+<td align="center">作为Cache的内存</td>
+</tr>
+<tr>
+<td align="left"><strong>inact</strong>: the amount of inactive memory.  (-a option)</td>
+<td align="center">非活动内存大小  <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
+</tr>
+<tr>
+<td align="left"><strong>active</strong>: the amount of active memory.  (-a option)</td>
+<td align="center">活动内存大小 <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Swap</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>si</strong>: Amount of memory swapped in from disk (/s).</td>
+<td align="center">每秒 交换分区=&gt;内存 的数据量</td>
+</tr>
+<tr>
+<td align="left"><strong>so</strong>: Amount of memory swapped to disk (/s)..</td>
+<td align="center">每秒 内存=&gt;交换分区 的数据量</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">IO</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>bi</strong>: Blocks received from a block device (blocks/s).</td>
+<td align="center">每秒从块设备中读入的数据的总量，单位是块</td>
+</tr>
+<tr>
+<td align="left"><strong>bo</strong>: Blocks sent to a block device (blocks/s).</td>
+<td align="center">每秒写到块设备的数据的总量，单位是块</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">System</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>in</strong>: The number of interrupts per second, including the clock.</td>
+<td align="center">每秒中断次数，包括<a href="https://www.cnblogs.com/yungyu16/p/12992374.html">时钟中断 </a></td>
+</tr>
+<tr>
+<td align="left"><strong>cs</strong>: The number of context switches per second.</td>
+<td align="center">每秒上下文切换的次数</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">CPU</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>us</strong>: Time spent running non-kernel code.  (user time, including nice time)</td>
+<td align="center">用户态代码运行的 CPU时间（%），包括nice time（低优先级程序时间）</br> <a href="https://blog.csdn.net/u010317005/article/details/80531985">《Linux进程优先级》 </a></td>
+</tr>
+<tr>
+<td align="left"><strong>sy</strong>: Time spent running kernel code.  (system time)</td>
+<td align="center">内核代码运行的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>id</strong>: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.</td>
+<td align="center">空闲状态的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>wa</strong>: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.</td>
+<td align="center">等待IO的 CPU 时间（%）</td>
+</tr>
+<tr>
+<td align="left"><strong>st</strong>: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.</td>
+<td align="center">被虚拟机所盗用的 CPU 时间（%）</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Linux-Ubuntu从入门到精通》笔记</title>
+    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+<span id="more"></span>
+
+<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
+<li>用以存储数据的物理介质</li>
+</ul>
+<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
+<li>对于较大存储容量的介质，需要合理规划分区</li>
+</ul>
+<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
+<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
+</ul>
+<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
+<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
+<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
+<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
+<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
+<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
+</ul>
+<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
+<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
+</ul>
+<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
+<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
+</ul>
+<ol>
+<li>所有目录都是由根目录衍生出来的；</li>
+<li>根目录与系统的开机、修复、还原密切相关；</li>
+</ol>
+<ul>
+<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">主要一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/bin/</td>
+<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
+</tr>
+<tr>
+<td align="center">/boot/</td>
+<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
+</tr>
+<tr>
+<td align="center">/dev/</td>
+<td align="center">设备文件保存位置</td>
+</tr>
+<tr>
+<td align="center">/etc/</td>
+<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
+</tr>
+<tr>
+<td align="center">/home/</td>
+<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
+</tr>
+<tr>
+<td align="center">/lib/</td>
+<td align="center"><strong>系统调用的函数库保存位置</strong></td>
+</tr>
+<tr>
+<td align="center">/media/</td>
+<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
+</tr>
+<tr>
+<td align="center">/mnt/</td>
+<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
+</tr>
+<tr>
+<td align="center">/misc/</td>
+<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
+</tr>
+<tr>
+<td align="center">/opt/</td>
+<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
+</tr>
+<tr>
+<td align="center">/root/</td>
+<td align="center">root 的主目录</td>
+</tr>
+<tr>
+<td align="center">/sbin/</td>
+<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
+</tr>
+<tr>
+<td align="center">/srv/</td>
+<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
+</tr>
+<tr>
+<td align="center">/tmp/</td>
+<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">其他一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/lost+found/</td>
+<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
+</tr>
+<tr>
+<td align="center">/proc/</td>
+<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
+</tr>
+<tr>
+<td align="center">/sys/</td>
+<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
+</tr>
+</tbody></table>
+<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
+<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
+<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
+</ul>
+<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
+<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
+<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
+<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
+</ul>
+<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
+<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
+<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
+</ul>
+<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
+<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
+</li>
+<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
+</li>
+<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+</li>
+<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux用户身份切换</title>
+    <url>/2021/11/23/Linux/Linux%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E5%88%87%E6%8D%A2/</url>
+    <content><![CDATA[<ul>
+<li>《鸟哥的Linux私房菜》第13章有关用户身份切换的相关知识的学习</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="用户身份切换"><a href="#用户身份切换" class="headerlink" title="用户身份切换"></a>用户身份切换</h1><h2 id="为什么需要身份切换"><a href="#为什么需要身份切换" class="headerlink" title="为什么需要身份切换"></a>为什么需要身份切换</h2><ul>
+<li><strong>安全</strong>：日常操作使用普通账号避免不必要的误操，启动系统服务时希望用较低的权限，比如使用apache这样一个用户来启动Apache服务，这样即使服务被攻击也不会造成系统损坏</li>
+<li><strong>软件限制</strong>：远古时代，一些telnel程序默认不允许使用root身份登录<blockquote>
+<blockquote>
+<p>一般情况下使用普通账户登录系统，等有需要进行系统维护或者软件更新时才转变为root身份</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="如何切换至root身份"><a href="#如何切换至root身份" class="headerlink" title="如何切换至root身份"></a>如何切换至root身份</h2><h3 id="①-su"><a href="#①-su" class="headerlink" title="① su"></a>① su</h3><ul>
+<li>是<strong>最简单的身份切换命令，可以进行任何身份的切换</strong></li>
+<li><strong>使用方法：su [-lm] [-c command] [username]  （如果没有指定username则默认root）</strong><br>可选参数|说明</li>
+<li>–|—</li>
+<li>|单纯使用 “su -” 代表使用 login shell 的变量文件读取方式来登录（即环境变量是切换后的用户的，与 -m 区分）</li>
+<li>l|与 - 类似，但是后面必须显式写明username，也是 login-shell 的方式</li>
+<li>m|与 -p 一样，表示使用目前的环境，不读取切换后使用者的配置文件（会导致切换后身份所特有的命令需要使用绝对路径执行）</li>
+<li>c|仅进行一次命令，执行命令写在后面即可</li>
+</ul>
+<p>-<strong>有没有减号 - 直接决定了是使用 login shell 还是 non-login shell 的变量读取方法</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一个简单的&quot;su&quot;和&quot;su -&quot;对比演示</span></span><br><span class="line">git@Aioy:~$ su</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">PWD=/home/git</span><br><span class="line">LOGNAME=git</span><br><span class="line">USER=git</span><br><span class="line">-----------------------------------------</span><br><span class="line">git@Aioy:~$ su -</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">（没有任何输出）</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>使用non-login shell方式（即不加减号参数）可能会导致身份切换后依旧接收到旧身份的信息，或者需要使用绝对路径来使用切换后用户的特殊命令等情况，总之就是可能造成很多麻烦</strong></li>
+</ul>
+<h3 id="②-sudo"><a href="#②-sudo" class="headerlink" title="② sudo"></a>② sudo</h3><ul>
+<li><strong>系统初始默认只有root可以执行sudo</strong></li>
+<li><strong>sudo可以让你以其他用户的身份执行命令，通常是root身份</strong></li>
+<li><strong>一般用户如果想要拥有使用sudo的权限，需要和管理员事先联系审核，成为信任用户</strong></li>
+<li><strong>与su不同的是，使用sudo不需要切换对象的密码，而是自己的密码，甚至不需要密码</strong></li>
+</ul>
+<h3 id="sudo的执行流程"><a href="#sudo的执行流程" class="headerlink" title="sudo的执行流程"></a>sudo的执行流程</h3><ol>
+<li>当用户执行sudo时，操作系统在 /etc/sudoers 文件中查找用户是否具有执行sudo的权限</li>
+<li>如果可以执行sudo，则需要用户输入自己的密码（root执行sudo不需要密码）</li>
+<li>密码正确则开始执行sudo后的command</li>
+</ol>
+<ul>
+<li><strong>执行sudo的重点：/etc/sudoers 文件中是否有权限，如果没有则需要root使用visudo修改该文件，或者直接修改该文件（修改方法可以在其他文章中学习）</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux系统运行级别</title>
+    <url>/2021/12/01/Linux/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/</url>
+    <content><![CDATA[<ul>
+<li>Linux系统一般有7个运行级别（runlevel）从level 0 ~ 6，可能有更多等级，操作系统根据当前正在运行的功能级别，具有不同的功能</li>
+<li><a href="https://blog.csdn.net/qq_21453783/article/details/100251461">参考文章</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="Linux一般的7个运行等级"><a href="#Linux一般的7个运行等级" class="headerlink" title="Linux一般的7个运行等级"></a>Linux一般的7个运行等级</h2><table>
+<thead>
+<tr>
+<th>运行等级</th>
+<th>模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>系统关机模式</td>
+<td>系统默认运行级别不能设置为0，否则无法正常启动系统</td>
+</tr>
+<tr>
+<td>1</td>
+<td>单用户模式</td>
+<td>也称为救援模式，root权限，用于系统维护，禁止远程登陆，类似Windows下的安全模式登录</td>
+</tr>
+<tr>
+<td>2</td>
+<td>多用户模式</td>
+<td>多用户，但是没有网络文件（NFS）支持</td>
+</tr>
+<tr>
+<td>3</td>
+<td>完整的多用户文本模式</td>
+<td>多用户，有网络文件系统，用户登录后进入控制台命令行模式，在没有网络的环境下等同于运行级别2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>预留功能</td>
+<td>一般不用，在一些特殊情况下可以用来做一些事情。例如在笔记本电脑的电池用尽时，可以切换到这个模式来做一些设置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>图形化模式</td>
+<td>登陆后进入图形GUI模式或GNOME、KDE图形化界面，如X Window系统</td>
+</tr>
+<tr>
+<td>6</td>
+<td>重启模式</td>
+<td>默认运行级别不能设为6，否则无法正常启动系统</td>
+</tr>
+</tbody></table>
+<h2 id="如何查看当前运行等级"><a href="#如何查看当前运行等级" class="headerlink" title="如何查看当前运行等级"></a>如何查看当前运行等级</h2><h3 id="使用-runlevel-查看当前运行等级"><a href="#使用-runlevel-查看当前运行等级" class="headerlink" title="使用 runlevel 查看当前运行等级"></a>使用 runlevel 查看当前运行等级</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ runlevel</span><br><span class="line">N 5 <span class="comment">#图形化模式</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-systemctl-get-default-查看默认启动方式"><a href="#使用-systemctl-get-default-查看默认启动方式" class="headerlink" title="使用 systemctl get-default 查看默认启动方式"></a>使用 systemctl get-default 查看默认启动方式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ systemctl get-default </span><br><span class="line">graphical.target <span class="comment">#图形化启动</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="切换运行等级"><a href="#切换运行等级" class="headerlink" title="切换运行等级"></a>切换运行等级</h2><ul>
+<li>使用 init 3 切换到“完整的多用户文本模式”<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ init 3</span><br><span class="line"><span class="comment"># 接下来需要输入管理员密码</span></span><br></pre></td></tr></table></figure></li>
+<li>之后可以使用 init 5 再次切换回“图形化模式”，需要重新登录认证</li>
+</ul>
+<h2 id="运行级别配置文件"><a href="#运行级别配置文件" class="headerlink" title="运行级别配置文件"></a>运行级别配置文件</h2><ul>
+<li>在**/etc/rc.d/**目录下有以下文件，分别对应运行等级<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost ~]$ <span class="built_in">cd</span> /etc/rc.d</span><br><span class="line">[raven-1@localhost rc.d]$ ll</span><br><span class="line">total 4</span><br><span class="line">drwxr-xr-x. 2 root root  70 Oct 22 01:42 init.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc0.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc1.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc2.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc3.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc4.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:49 rc5.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc6.d</span><br><span class="line">-rw-r--r--. 1 root root 473 Mar 31  2020 rc.local</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux硬链接软连接和复制的区别</title>
+    <url>/2021/11/06/Linux/Linux%E7%A1%AC%E9%93%BE%E6%8E%A5%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%A4%8D%E5%88%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p><strong>通过Ubuntu Linux实机演示 硬链接Hard Link, 软连接Symbolic Link, 复制Copy之间的区别</strong></p>
+<span id="more"></span>
+
+<hr>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="①-硬连接-Hard-Link"><a href="#①-硬连接-Hard-Link" class="headerlink" title="① 硬连接 Hard Link"></a>① 硬连接 Hard Link</h2><h3 id="如何建立硬连接？"><a href="#如何建立硬连接？" class="headerlink" title="如何建立硬连接？"></a>如何建立硬连接？</h3><ul>
+<li>使用“ln file file_link”即可为file创建一个名为file_link的硬连接</li>
+</ul>
+<h3 id="硬连接的特点"><a href="#硬连接的特点" class="headerlink" title="硬连接的特点"></a>硬连接的特点</h3><ul>
+<li>硬连接通过<strong>索引节点（inode）</strong>进行连接，链接同一文件的硬连接有相同的inode</li>
+<li>通过硬连接，可以有多个不同连接访问到同一个文件</li>
+<li><strong>硬连接本身也是普通文件（regular file）</strong>，因此<strong>目录文件无法创建硬连接</strong></li>
+<li>只删除部分硬连接不影响文件本身，只有当<strong>所有硬连接都删除后，文件才会真正被释放</strong></li>
+<li>每个硬连接<strong>会让文件的Links数增加（+1）</strong>（使用stat查看）</li>
+</ul>
+<h2 id="②-软连接-Symbolic-Link"><a href="#②-软连接-Symbolic-Link" class="headerlink" title="② 软连接 Symbolic Link"></a>② 软连接 Symbolic Link</h2><h3 id="如何创建软连接？"><a href="#如何创建软连接？" class="headerlink" title="如何创建软连接？"></a>如何创建软连接？</h3><ul>
+<li>使用“ln -s”建立软连接，也叫符号链接（Symbolic Link）</li>
+</ul>
+<h3 id="软连接的特点"><a href="#软连接的特点" class="headerlink" title="软连接的特点"></a>软连接的特点</h3><ul>
+<li>类似于Windows的快捷方式，<strong>软连接与被链接文件有不同inode</strong>，因此删除软连接不会影响文件</li>
+<li>实际上，<strong>符号链接的文件是一个特殊的文本文件</strong>，包含着链接另一端的位置信息</li>
+<li>软连接<strong>不会增加文件的Links</strong>（使用stat查看）</li>
+</ul>
+<h2 id="③-复制-Copy"><a href="#③-复制-Copy" class="headerlink" title="③ 复制 Copy"></a>③ 复制 Copy</h2><h3 id="如何复制文件？"><a href="#如何复制文件？" class="headerlink" title="如何复制文件？"></a>如何复制文件？</h3><ul>
+<li>使用“cp file file_copy”即可复制file文件为file_copy</li>
+</ul>
+<h3 id="复制的特点"><a href="#复制的特点" class="headerlink" title="复制的特点"></a>复制的特点</h3><ul>
+<li>复制文件，操作系统会为复制品创建新的inode，也就是相当于一个新的文件</li>
+</ul>
+<hr>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="①-创建一个net文件为其添加硬连接并复制"><a href="#①-创建一个net文件为其添加硬连接并复制" class="headerlink" title="① 创建一个net文件为其添加硬连接并复制"></a>① 创建一个net文件为其添加硬连接并复制</h2><h3 id="使用stat-net查看net文件"><a href="#使用stat-net查看net文件" class="headerlink" title="使用stat net查看net文件"></a>使用stat net查看net文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-link-net查看net的硬连接"><a href="#使用stat-link-net查看net的硬连接" class="headerlink" title="使用stat link_net查看net的硬连接"></a>使用stat link_net查看net的硬连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-copy-net查看net的复制"><a href="#使用stat-copy-net查看net的复制" class="headerlink" title="使用stat copy_net查看net的复制"></a>使用stat copy_net查看net的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058123     Links: 1</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Change: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+
+<h2 id="②-创建一个dir文件为其添加软连接并复制"><a href="#②-创建一个dir文件为其添加软连接并复制" class="headerlink" title="② 创建一个dir文件为其添加软连接并复制"></a>② 创建一个dir文件为其添加软连接并复制</h2><h3 id="使用stat-dir查看dir文件"><a href="#使用stat-dir查看dir文件" class="headerlink" title="使用stat dir查看dir文件"></a>使用stat dir查看dir文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-link-dir查看dir的软连接"><a href="#使用stat-link-dir查看dir的软连接" class="headerlink" title="使用stat link_dir查看dir的软连接"></a>使用stat link_dir查看dir的软连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_dir -&gt; dir</span><br><span class="line">  Size: 3               Blocks: 0          IO Block: 4096   symbolic link</span><br><span class="line">Device: fc01h/64513d    Inode: 1058121     Links: 1</span><br><span class="line">Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:29:26.737743781 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line">Change: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-copy-dir查看dir的复制"><a href="#使用stat-copy-dir查看dir的复制" class="headerlink" title="使用stat copy_dir查看dir的复制"></a>使用stat copy_dir查看dir的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058122     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:04.068572412 +0800</span><br><span class="line">Modify: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line">Change: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h2 id="③-分别对连接文件和复制文件进行权限操作观察原文件变化"><a href="#③-分别对连接文件和复制文件进行权限操作观察原文件变化" class="headerlink" title="③ 分别对连接文件和复制文件进行权限操作观察原文件变化"></a>③ 分别对连接文件和复制文件进行权限操作观察原文件变化</h2><h3 id="赋予执行权限前（使用“ls-li”命令查看）"><a href="#赋予执行权限前（使用“ls-li”命令查看）" class="headerlink" title="赋予执行权限前（使用“ls -li”命令查看）"></a>赋予执行权限前（使用“ls -li”命令查看）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 net</span><br></pre></td></tr></table></figure>
+<h3 id="对硬连接文件link-net-使用“chmod-x-link-net”"><a href="#对硬连接文件link-net-使用“chmod-x-link-net”" class="headerlink" title="对硬连接文件link_net 使用“chmod +x link_net”"></a>对硬连接文件link_net 使用“chmod +x link_net”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 net</span><br><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发现硬连接文件和文件本身权限都发生了变化</li>
+</ul>
+<h3 id="对软连接文件link-dir-使用“chmod-x-link-dir”"><a href="#对软连接文件link-dir-使用“chmod-x-link-dir”" class="headerlink" title="对软连接文件link_dir 使用“chmod +x link_dir”"></a>对软连接文件link_dir 使用“chmod +x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rwxr-xr-x 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
+<h3 id="进一步对软连接测试-使用“chmod-x-link-dir”"><a href="#进一步对软连接测试-使用“chmod-x-link-dir”" class="headerlink" title="进一步对软连接测试 使用“chmod -x link_dir”"></a>进一步对软连接测试 使用“chmod -x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发现link_dir没变，说明通过修改软连接文件，不会对软连接产生影响，而是间接修改原文件</li>
+</ul>
+<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ul>
+<li>除了软连接的文件类型是Symbolic file，其他无论文件本身、硬链接还是复制都是regular file</li>
+<li>硬链接与文件本身 inode 完全相同，软连接和复制会赋予新的 inode</li>
+<li>对链接操作会影响原文件，对复制文件的操作不会影响原文件</li>
+<li>对软连接操作不会影响软链接，而是间接作用于原文件</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux账号管理</title>
+    <url>/2021/11/19/Linux/Linux%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<ul>
+<li>《鸟哥的Linux私房菜》第13章有关用户管理的相关知识的学习</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="Linux的账号"><a href="#Linux的账号" class="headerlink" title="Linux的账号"></a>Linux的账号</h1><h2 id="用户标识符：UID-amp-GID"><a href="#用户标识符：UID-amp-GID" class="headerlink" title="用户标识符：UID &amp; GID"></a>用户标识符：UID &amp; GID</h2><ul>
+<li>每一个登录系统的用户都会至少获得2个ID，即UID（User ID）与GID（Group ID）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#使用 id 指令查看某用户信息</span></span><br><span class="line">root@Aioy:~/<span class="built_in">test</span><span class="comment"># id jerry</span></span><br><span class="line">uid=1001(jerry) gid=1001(jerry) groups=1001(jerry)</span><br><span class="line"><span class="comment">#groups属性暗示了一个用户可以归属多个组</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="UID的范围和用户特性"><a href="#UID的范围和用户特性" class="headerlink" title="UID的范围和用户特性"></a>UID的范围和用户特性</h2><table>
+<thead>
+<tr>
+<th>ID范围</th>
+<th>用户特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>系统管理员：0</td>
+<td>一般只有root一个用户，也可以通过修改其他用户权限为0增加系统管理员，不过可能会造成混淆</td>
+</tr>
+<tr>
+<td>系统账号：1~999（通常不可登录）</td>
+<td><strong>保留给操作系统使用的ID，1<del>200由Linux发行版自行建立的系统账号，201</del>999若用户有系统账号需求时可以使用，比如启动网络服务时候如果不希望用root权限，则可以使用系统账号</strong></td>
+</tr>
+<tr>
+<td>普通账号：1000~2^32-1（&gt;= Kernel3.10.X）</td>
+<td>给一般用户使用，实际范围上限可能更小也可能更大</td>
+</tr>
+</tbody></table>
+<h2 id="passwd文件-amp-shadow文件"><a href="#passwd文件-amp-shadow文件" class="headerlink" title="passwd文件 &amp; shadow文件"></a>passwd文件 &amp; shadow文件</h2><h3 id="passwd文件"><a href="#passwd文件" class="headerlink" title="passwd文件"></a>passwd文件</h3><ul>
+<li>在Linux Ubuntu下用户账号信息存放在**/etc/password**</li>
+<li>每一行都代表一个账号，<strong>系统账号是操作系统正常运行所必须的，比如daemon、bin等</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#passwd文件的部分展示，其中 : 作为分隔符，一共有7个</span></span><br><span class="line"><span class="comment">#用户名:密码:UID:GID:用户信息说明栏:家目录:默认shell</span></span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="为什么-密码-字段为-x"><a href="#为什么-密码-字段为-x" class="headerlink" title="为什么 密码 字段为 x"></a>为什么 密码 字段为 x</h4><ul>
+<li> <strong>早期linux将密码也放在 /etc/passwd 中，不过由于所有程序都能读取该文件所以容易造成密码泄露问题，因此密码字段被移动到 /etc/shadow 中</strong></li>
+</ul>
+<h3 id="shadow文件"><a href="#shadow文件" class="headerlink" title="shadow文件"></a>shadow文件</h3><ul>
+<li>在Linux Ubuntu下用户账号的密码存放在**/etc/shadow**</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#shadow文件的部分展示，其中 : 作为分隔符，一共有9个</span></span><br><span class="line">man:*:18375:0:99999:7:::</span><br><span class="line">lp:*:18375:0:99999:7:::</span><br><span class="line">mail:*:18375:0:99999:7:::</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.用户名</td>
+<td>用户名，需要与/etc/passwd对应</td>
+</tr>
+<tr>
+<td>2.密码</td>
+<td>经过摘要运算（比如MD5，SHA）后的密码，很难（单向性）但可能被破译，<strong>系统账号密码为星号</strong>*</td>
+</tr>
+<tr>
+<td>3.最近修改密码的日期</td>
+<td>自Linux日期（1970年1月1日）开始后的天数</td>
+</tr>
+<tr>
+<td>4.密码不可被修改的天数</td>
+<td>自[最近修改密码的日期]开始，需要过几天才可以修改密码，如果是0则可以立即修改</td>
+</tr>
+<tr>
+<td>5.密码需要重新修改的天数</td>
+<td>自[最近修改密码的日期]开始，强制用户在此字段规定天数内修改密码，否则该账号密码过期（失效前可用）</td>
+</tr>
+<tr>
+<td>6.密码需要修改期限前的警告天数</td>
+<td>相对[密码需要重新修改的天数]还剩此字段规定天数时，系统会提醒该用户重新设置密码</td>
+</tr>
+<tr>
+<td>7.密码失效日（不同于密码过期日）</td>
+<td>在[密码需要重新修改的天数]过后，如果用户还是没有修改密码，则该账号无法使用此密码登录</td>
+</tr>
+<tr>
+<td>8.账号失效日</td>
+<td>账号自Linux日期（1970年1月1日）开始后的天数内有效，超过则失效，常用于付费服务</td>
+</tr>
+<tr>
+<td>9.保留字段</td>
+<td>为之后的新功能预留</td>
+</tr>
+</tbody></table>
+<h3 id="权限比较"><a href="#权限比较" class="headerlink" title="权限比较"></a>权限比较</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/passwd</span></span><br><span class="line">-rw-r--r-- 1 root root 1737 Oct 23 10:29 /etc/passwd</span><br><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/shadow</span></span><br><span class="line">-rw-r----- 1 root shadow 1235 Oct 23 10:34 /etc/shadow</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以看出来passwd文件由于对其他用户开放了 r 读权限，因此早期存放密码的设计确实不安全</li>
+</ul>
+<h2 id="用户登陆过程"><a href="#用户登陆过程" class="headerlink" title="用户登陆过程"></a>用户登陆过程</h2><ol>
+<li>用户本地终端或使用ssh远程发起登陆请求，输入账号和密码</li>
+<li>账号核对：在 /etc/passwd 中查找是否有用户输入的账号</li>
+<li>密码核对：在 /etc/shadow 找出对应的账号与UID然后核对密码</li>
+<li>登陆成功，进入Shell管理阶段</li>
+</ol>
+<h1 id="Linux的用户组"><a href="#Linux的用户组" class="headerlink" title="Linux的用户组"></a>Linux的用户组</h1><h2 id="group文件-amp-gshadow文件"><a href="#group文件-amp-gshadow文件" class="headerlink" title="group文件 &amp; gshadow文件"></a>group文件 &amp; gshadow文件</h2><h3 id="group文件"><a href="#group文件" class="headerlink" title="group文件"></a>group文件</h3><ul>
+<li>在Linux Ubuntu下用户账号信息存放在**/etc/group**</li>
+<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#group文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:GID:此用户组支持的账号名称</span></span><br><span class="line">root:x:0:</span><br><span class="line">daemon:x:1:</span><br><span class="line">bin:x:2:</span><br><span class="line">sys:x:3:</span><br><span class="line">adm:x:4:syslog</span><br><span class="line">tty:x:5:syslog</span><br></pre></td></tr></table></figure></li>
+<li><strong>注意</strong>：新版Linux中，<strong>初始用户组的用户群</strong>已经不会加入第四个字段，比如root的主要用户组为root，那么不会在group文件第四个字段看到root出现（相当于隐式声明）</li>
+</ul>
+<h3 id="gshadow文件"><a href="#gshadow文件" class="headerlink" title="gshadow文件"></a>gshadow文件</h3><ul>
+<li>在Linux Ubuntu下用户账号信息存放在**/etc/gshadow**</li>
+<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#gshadow文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:组管理员（在etc/gpasswd中）:此用户组支持的账号名称（多个用户间用逗号,分隔）</span></span><br><span class="line">root:*::</span><br><span class="line">daemon:*::</span><br><span class="line">bin:*::</span><br><span class="line">sys:*::</span><br><span class="line">adm:*::syslog</span><br><span class="line">tty:*::syslog</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="有效用户组-amp-初始用户组"><a href="#有效用户组-amp-初始用户组" class="headerlink" title="有效用户组 &amp; 初始用户组"></a>有效用户组 &amp; 初始用户组</h2><blockquote>
+<blockquote>
+<blockquote>
+<p>假如一个用户同时加入多个用户组，那么在执行任务过程中，究极以哪个用户组为准呢？——有效用户组（Effective Group）</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="有效用户组（Effective-Group）"><a href="#有效用户组（Effective-Group）" class="headerlink" title="有效用户组（Effective Group）"></a>有效用户组（Effective Group）</h3><ul>
+<li><p>在 /etc/passwd 中的第四字段 GID 即所谓的有效用户组，<strong>用户登录后会立即拥有初始用户组的相关权限</strong></p>
+</li>
+<li><p><strong>groups 命令</strong>：查看某用户当前全部所属用户组，<strong>第一个为有效用户组</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">root</span><br><span class="line">root@Aioy:~<span class="comment"># groups jerry</span></span><br><span class="line">jerry : jerry</span><br><span class="line"><span class="comment">#注意只有第一个输出是有效用户组</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>newgrp 命令</strong>：切换有效用户组</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># newgrp jerry</span></span><br><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">jerry root</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="有效用户组的作用"><a href="#有效用户组的作用" class="headerlink" title="有效用户组的作用"></a>有效用户组的作用</h3><ul>
+<li><strong>通常，有效用户组的作用是新建文件</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#由于root当前有效用户组是root，因此文件所属用户组就是root</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch hello</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l hello</span></span><br><span class="line">-rw-r--r-- 1 root root    0 Nov 26 18:17 hello</span><br><span class="line">root@Aioy:~<span class="comment"># newgrp jerry （切换有效用户组至jerry）</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch world</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l world</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 18:20 world</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始用户组（Initial-Group）"><a href="#初始用户组（Initial-Group）" class="headerlink" title="初始用户组（Initial Group）"></a>初始用户组（Initial Group）</h3><ul>
+<li><strong>在 /etc/passwd 文件中，每行用户的GID就是初始用户组（Initial Group）</strong>，用户登录后就会获取</li>
+<li>**对于非初始用户组，则需要在 /etc/group 中找到需要加入的组名，将用户名写入第四栏中</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#示例：将jerry加入root用户组</span></span><br><span class="line">root@Aioy:~<span class="comment"># vim /etc/group</span></span><br><span class="line">root:x:0:jerry</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1564,37 +2405,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Cmatrix与Shell实现随机屏保</title>
-    <url>/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/</url>
-    <content><![CDATA[<ul>
-<li>使用简单的ShellScript与Cmatrix在Ubuntu系统中实现“<strong>黑客帝国风屏保</strong>”</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://image.codebooklet.com/img_blog/Linux/cmatrix.gif"></p>
-<h2 id="Step1-安装cmatrix"><a href="#Step1-安装cmatrix" class="headerlink" title="Step1. 安装cmatrix"></a>Step1. 安装cmatrix</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get-install cmatrix</span><br></pre></td></tr></table></figure>
-<ul>
-<li>然后可以输入命令“cmatrix”测试是否安装成功</li>
-</ul>
-<h2 id="Step2-编写ShellScript"><a href="#Step2-编写ShellScript" class="headerlink" title="Step2. 编写ShellScript"></a>Step2. 编写ShellScript</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ScreenSaver.sh</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">if [ $# == 1 ]</span><br><span class="line">then cmatrix -s -b -C $1 #这里设置可以手动输入颜色</span><br><span class="line">else</span><br><span class="line">        randInt=$RANDOM</span><br><span class="line">        mode=$((randInt % 8))</span><br><span class="line">        if [ $mode == 0 ]</span><br><span class="line">                then cmatrix -s -b -C green</span><br><span class="line">        elif [ $mode == 1 ]</span><br><span class="line">                then cmatrix -s -b -C red</span><br><span class="line">        elif [ $mode == 2 ]</span><br><span class="line">                then cmatrix -s -b -C blue</span><br><span class="line">        elif [ $mode == 3 ]</span><br><span class="line">                then cmatrix -s -b -C white</span><br><span class="line">        elif [ $mode == 4 ]</span><br><span class="line">                then cmatrix -s -b -C yellow</span><br><span class="line">        elif [ $mode == 5 ]</span><br><span class="line">                then cmatrix -s -b -C cyan</span><br><span class="line">        elif [ $mode == 6 ]</span><br><span class="line">                then cmatrix -s -b -C magenta</span><br><span class="line">        else cmatrix -s -b -C black</span><br><span class="line">        fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x ScreenSaver.sh <span class="comment">#设置可执行权限</span></span><br><span class="line">./ScreenSaver.sh <span class="comment">#执行ShellScript</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>可以使用“man cmatrix”查看更多参数，这里只说明使用过的参数</strong></li>
-<li>[ -s ] ：启用 屏保(ScreenSaver) 模式，可以按任意键退出</li>
-<li>[ -b ] ：启用 随机粗体 主要提升视觉效果</li>
-<li>[ -C ]：设置字幕颜色，默认为green</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JLPT-N2-2017年7月真题笔记</title>
     <url>/2021/11/06/LearnJapanese/JLPT-N2-2017%E5%B9%B47%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
     <content><![CDATA[<ul>
@@ -2315,813 +3125,174 @@
       </tags>
   </entry>
   <entry>
-    <title>《Linux-Ubuntu从入门到精通》笔记</title>
-    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
-<span id="more"></span>
-
-<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
-<li>用以存储数据的物理介质</li>
-</ul>
-<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
-<li>对于较大存储容量的介质，需要合理规划分区</li>
-</ul>
-<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
-<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
-</ul>
-<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
-<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
-<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
-<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
-<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
-<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
-</ul>
-<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
-<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
-</ul>
-<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
-<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
-</ul>
-<ol>
-<li>所有目录都是由根目录衍生出来的；</li>
-<li>根目录与系统的开机、修复、还原密切相关；</li>
-</ol>
-<ul>
-<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">主要一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/bin/</td>
-<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
-</tr>
-<tr>
-<td align="center">/boot/</td>
-<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
-</tr>
-<tr>
-<td align="center">/dev/</td>
-<td align="center">设备文件保存位置</td>
-</tr>
-<tr>
-<td align="center">/etc/</td>
-<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
-</tr>
-<tr>
-<td align="center">/home/</td>
-<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
-</tr>
-<tr>
-<td align="center">/lib/</td>
-<td align="center"><strong>系统调用的函数库保存位置</strong></td>
-</tr>
-<tr>
-<td align="center">/media/</td>
-<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
-</tr>
-<tr>
-<td align="center">/mnt/</td>
-<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
-</tr>
-<tr>
-<td align="center">/misc/</td>
-<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
-</tr>
-<tr>
-<td align="center">/opt/</td>
-<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
-</tr>
-<tr>
-<td align="center">/root/</td>
-<td align="center">root 的主目录</td>
-</tr>
-<tr>
-<td align="center">/sbin/</td>
-<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
-</tr>
-<tr>
-<td align="center">/srv/</td>
-<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
-</tr>
-<tr>
-<td align="center">/tmp/</td>
-<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">其他一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/lost+found/</td>
-<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
-</tr>
-<tr>
-<td align="center">/proc/</td>
-<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
-</tr>
-<tr>
-<td align="center">/sys/</td>
-<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
-</tr>
-</tbody></table>
-<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
-<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
-<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
-</ul>
-<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
-<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
-<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
-<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
-</ul>
-<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
-<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
-<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
-</ul>
-<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
-<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
-</li>
-<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
-</li>
-<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
-</li>
-<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux命令笔记</title>
-    <url>/2021/10/29/Linux/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
+    <title>《Vulkan学习指南》笔记</title>
+    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
-<li><strong>该笔记仅记录个人使用过的命令，以及用该命令做过什么，不是完整说明文档</strong><span id="more"></span></li>
-</ul>
-<hr>
-<h1 id="目录-INDEX"><a href="#目录-INDEX" class="headerlink" title="目录 INDEX"></a>目录 INDEX</h1><table>
-<thead>
-<tr>
-<th align="center">首字母</th>
-<th align="center">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">A</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">B</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">C</td>
-<td align="center"><a href="#chown">chown</a>   <a href="#chgrp">chgrp</a></td>
-</tr>
-<tr>
-<td align="center">D</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">E</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">F</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">G</td>
-<td align="center"><a href="#groups">groups</a></td>
-</tr>
-<tr>
-<td align="center">H</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">I</td>
-<td align="center"><a href="#id">id</a></td>
-</tr>
-<tr>
-<td align="center">J</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">K</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">L</td>
-<td align="center"><a href="#ls">ls</a></td>
-</tr>
-<tr>
-<td align="center">M</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">N</td>
-<td align="center"><a href="#newgrp">newgrp</a></td>
-</tr>
-<tr>
-<td align="center">O</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">P</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Q</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">R</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">S</td>
-<td align="center"><a href="#stat">stat</a></td>
-</tr>
-<tr>
-<td align="center">T</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">U</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">V</td>
-<td align="center"><a href="#vmstat">vmstat</a></td>
-</tr>
-<tr>
-<td align="center">W</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">X</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Y</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Z</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
- <div id="chgrp"><font size=20,font-weight:bold>chgrp</font></div>
-- 使用“chgrp”可以**更改文件的所属用户组**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 20:36 a</span><br><span class="line">root@Aioy:~<span class="comment"># chgrp root a</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root root 0 Nov 26 20:36 a</span><br></pre></td></tr></table></figure>
-
- <div id="chown"><font size=20,font-weight:bold>chown</font></div>
-- 使用“chown”可以**更改文件的所属用户，或者所属用户组**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># touch a （创建一个名为a的文件）</span></span><br><span class="line">root@Aioy:~<span class="comment"># chown root:jerry a （修改所属用户为root所属用户组为jerry）</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l a</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 20:36 a</span><br><span class="line"><span class="comment">#可以使用 :group 单独修改所属用户组，效果同 chgrp 命令</span></span><br></pre></td></tr></table></figure>
-
- <div id="newgrp"><font size=20,font-weight:bold>newgrp</font></div>
-- 使用“newgrp”**切换用户的有效用户组（Effective Group），但前提是确保用户已经在将要切换的用户组内**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups （该命令输出的第一个组是有效用户组）</span></span><br><span class="line">root jerry</span><br><span class="line">root@Aioy:~<span class="comment"># newgrp jerry</span></span><br><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">jerry root</span><br></pre></td></tr></table></figure>
-
- <div id="groups"><font size=20,font-weight:bold>groups</font></div>
-- 使用“groups”查看**查看某用户当前全部所属用户组，第一个为有效用户组（Effective Group）**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">root</span><br><span class="line">root@Aioy:~<span class="comment"># groups jerry</span></span><br><span class="line">jerry : jerry</span><br></pre></td></tr></table></figure>
-
- <div id="id"><font size=20,font-weight:bold>id</font></div>
-
-<ul>
-<li>使用“id”命令用于<strong>显示一个真实有效的用户以及其归属用户组</strong></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#使用 id 指令查看某用户信息</span></span><br><span class="line">root@Aioy:~/<span class="built_in">test</span><span class="comment"># id jerry</span></span><br><span class="line">uid=1001(jerry) gid=1001(jerry) groups=1001(jerry)</span><br><span class="line"><span class="comment">#groups属性暗示了一个用户可以归属多个组</span></span><br></pre></td></tr></table></figure>
-
- <div id="stat"><font size=20,font-weight:bold>stat</font></div>
-
-<ul>
-<li>使用“stat”命令用于显示文件 inode 内容，格式 stat [目录]</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># stat dir</span></span><br><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-
- <div id="ls"><font size=20,font-weight:bold>ls</font></div>
-
-<ul>
-<li>使用”ls”命令用于显示<strong>指定工作目录</strong>下的内容，格式 ls [参数] [指定目录]</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">常用参数</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-a</td>
-<td align="center">显示指定目录下所有文件，包括隐藏文件</td>
-</tr>
-<tr>
-<td align="center">-i</td>
-<td align="center">显示指定目录下的</td>
-</tr>
-<tr>
-<td align="center">-l</td>
-<td align="center">显示文件类型、权限、所有者、文件大小等详细信息</td>
-</tr>
-<tr>
-<td align="center">-R</td>
-<td align="center">若指定目录下有其他子目录，则将子目录中内容也显示</td>
-</tr>
-<tr>
-<td align="center">-t</td>
-<td align="center">将指定目录下的文件以“创建时间”先后顺序显示</td>
-</tr>
-</tbody></table>
- <div id="vmstat"><font size=20,font-weight:bold>vmstat</font></div>
-
-<ul>
-<li>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</li>
-<li>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">Procs</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>r</strong>: The number of runnable processes (running or waiting for run time).</td>
-<td align="center">可运行的进程数（正在运行或等待CPU时间）</td>
-</tr>
-<tr>
-<td align="left"><strong>b</strong> The number of processes in uninterruptible sleep.</td>
-<td align="center">Uninterruptible Sleep进程数 <a href="https://cloud.tencent.com/developer/article/1581022">《Linux进程状态》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Memory</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>swpd</strong>: the amount of virtual memory used.</td>
-<td align="center">虚拟内存使用大小</td>
-</tr>
-<tr>
-<td align="left"><strong>free</strong>: the amount of idle memory.</td>
-<td align="center">空闲内存大小</td>
-</tr>
-<tr>
-<td align="left"><strong>buff</strong>: the amount of memory used as buffers.</td>
-<td align="center">作为缓存区的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>cache</strong>: the amount of memory used as cache.</td>
-<td align="center">作为Cache的内存</td>
-</tr>
-<tr>
-<td align="left"><strong>inact</strong>: the amount of inactive memory.  (-a option)</td>
-<td align="center">非活动内存大小  <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-<tr>
-<td align="left"><strong>active</strong>: the amount of active memory.  (-a option)</td>
-<td align="center">活动内存大小 <a href="https://blog.csdn.net/weixin_39962285/article/details/116759825">《Linux kernel内存回收机制》</a></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Swap</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>si</strong>: Amount of memory swapped in from disk (/s).</td>
-<td align="center">每秒 交换分区=&gt;内存 的数据量</td>
-</tr>
-<tr>
-<td align="left"><strong>so</strong>: Amount of memory swapped to disk (/s)..</td>
-<td align="center">每秒 内存=&gt;交换分区 的数据量</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">IO</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>bi</strong>: Blocks received from a block device (blocks/s).</td>
-<td align="center">每秒从块设备中读入的数据的总量，单位是块</td>
-</tr>
-<tr>
-<td align="left"><strong>bo</strong>: Blocks sent to a block device (blocks/s).</td>
-<td align="center">每秒写到块设备的数据的总量，单位是块</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">System</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>in</strong>: The number of interrupts per second, including the clock.</td>
-<td align="center">每秒中断次数，包括<a href="https://www.cnblogs.com/yungyu16/p/12992374.html">时钟中断 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>cs</strong>: The number of context switches per second.</td>
-<td align="center">每秒上下文切换的次数</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">CPU</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>us</strong>: Time spent running non-kernel code.  (user time, including nice time)</td>
-<td align="center">用户态代码运行的 CPU时间（%），包括nice time（低优先级程序时间）</br> <a href="https://blog.csdn.net/u010317005/article/details/80531985">《Linux进程优先级》 </a></td>
-</tr>
-<tr>
-<td align="left"><strong>sy</strong>: Time spent running kernel code.  (system time)</td>
-<td align="center">内核代码运行的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>id</strong>: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.</td>
-<td align="center">空闲状态的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>wa</strong>: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.</td>
-<td align="center">等待IO的 CPU 时间（%）</td>
-</tr>
-<tr>
-<td align="left"><strong>st</strong>: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.</td>
-<td align="center">被虚拟机所盗用的 CPU 时间（%）</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux用户身份切换</title>
-    <url>/2021/11/23/Linux/Linux%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E5%88%87%E6%8D%A2/</url>
-    <content><![CDATA[<ul>
-<li>《鸟哥的Linux私房菜》第13章有关用户身份切换的相关知识的学习</li>
+<li>笔记内容来自《Vulkan学习之南》——Parminder Singh</li>
+<li>只摘录了个人认为比较基础且核心的知识点，是原书的简化版</li>
 </ul>
 <span id="more"></span>
 
-<h1 id="用户身份切换"><a href="#用户身份切换" class="headerlink" title="用户身份切换"></a>用户身份切换</h1><h2 id="为什么需要身份切换"><a href="#为什么需要身份切换" class="headerlink" title="为什么需要身份切换"></a>为什么需要身份切换</h2><ul>
-<li><strong>安全</strong>：日常操作使用普通账号避免不必要的误操，启动系统服务时希望用较低的权限，比如使用apache这样一个用户来启动Apache服务，这样即使服务被攻击也不会造成系统损坏</li>
-<li><strong>软件限制</strong>：远古时代，一些telnel程序默认不允许使用root身份登录<blockquote>
+<h1 id="序章（Preface）"><a href="#序章（Preface）" class="headerlink" title="序章（Preface）"></a>序章（Preface）</h1><h2 id="内容摘要"><a href="#内容摘要" class="headerlink" title="内容摘要"></a>内容摘要</h2><ul>
+<li><strong>Chapter1.</strong> ：Vulkan的基础概念以及编程模型</li>
+<li><strong>Chapter2.</strong> ：Vulkan所必要的基础软件以及SDK</li>
+<li><strong>Chapter3.</strong> ：设置开发环境，构建第一个Vulkan案例，详细讲解队列与队列族的概念，及其与逻辑设备的关系</li>
+<li><strong>Chapter4.</strong> ：Vulkan的调试方法，使用验证层编写一个简单的例子，并且使用一些非标准的拓展属性</li>
+<li><strong>Chapter5.</strong> ：深入Vulkan的指令缓存，了解指令池的作用，学习如何使用指令缓存进行录制，后半部分会讲内存管理，学习GPU内存的分配与销毁操作，理解CPU与GPU内存之间的映射关系</li>
+<li><strong>Chapter6.</strong> ：图像资源与相关内存管理，包括图像创建、分配、绑定、映射，并使用这种方法创建一个深度图像进行深度测试。介绍WSI交换链，使用其实现渲染可绘制对象并展示到屏幕的功能，并尝试获取WSI交换链的颜色图像，并创建颜色视图以便绘制图元</li>
+<li><strong>Chapter7.</strong> ：讨论缓存资源以及相关用途（即可绘制对象的几何体顶点缓存的构建），详细介绍使用渲染通道定义绘制操作的相关工作的方法，使用多个附件和子通道。使用渲染通道在Vulkan中实现帧缓存，用一个简单的示例演示如何清除背景颜色。在最后，将使用SPIR-V实现第一个Vulkan Shader Program并学习一些SDK工具的使用，将GLSL代码转换为SPIR-V的中间语言格式</li>
+<li><strong>Chapter8.</strong> ：介绍Vulkan中的计算流水线和图形流水线，实现一个完整的图形流水线</li>
+<li><strong>Chatpter9.</strong> ：全面介绍Vulkan中对象的绘制过程，讨论Vulkan中的同步机制，理解有关栅栏、信号量以及内存屏障的知识，此外将介绍如何绘制相关的API并通过一些简单的案例演示其用法</li>
+<li><strong>Chapter10.</strong> ：介绍Vulkan对Shader资源的更新过程，用到了描述符和推送常数的概念，讨论描述符池和描述符集布局的创建过程。将学到有关流水线布局的用法，并使用描述符来更新设备内存端的缓存资源，将更新后的几何体渲染到屏幕上。与描述符不同的是，推送常数并不会使用指令缓存，而是使用一种更加优化的方式来更新资源，可以尝试实现一个简单的程序来深入理解推送常数的相关知识</li>
+<li><strong>Chapter11.</strong> ：使用更加真实的方法（即贴纹理来渲染3D可绘制对象），将学习如何创建图像资源并为其设置采样器对象，还将学习使用线性和优化平铺的方式来更新纹理，在优化平铺模式下，用户还需要考虑使用传输缓存和图像内存的指令方法</li>
+</ul>
+<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><blockquote>
+<p>Vulkan是一款革命性的高性能3D图形和计算API，可用于现代GPU管线架构，能满足社区的最新需求。该API提供了一套全新的方法来克服传统API的复杂性和缺陷。<strong>Vulkan是一个显式API，保证用户在渲染时保持稳定平滑的帧速率，不会造成延迟或者故障</strong>。我们将简单了解Vulkan的生态系统，以及它的图形体系</p>
+</blockquote>
+<ul>
+<li>（我将与OpenGL对比的部分内容略去，主要区别在于OpenGL通过状态机隐式管理资源，而Vulkan显式管理）</li>
+</ul>
+<h2 id="Vulkan及其演化史"><a href="#Vulkan及其演化史" class="headerlink" title="Vulkan及其演化史"></a>Vulkan及其演化史</h2><ul>
+<li><a href="https://www.khronos.org/">Khronos</a>于2016发布了革命性的新架构Vulkan API，它充分利用了现代图形处理器单元的优势，来实现高性能图形和计算应用程序的开发</li>
+<li>Vulkan的原始概念是由AMD基于它们的私有Mantle API设计和实现.AMD开源了自己的Mantle API并且贡献给Khronos组织。在多家硬件和软件供应商的协同帮助下，Khronos发布了Vulkan标准</li>
+<li>Vulkan并不是目前唯一的新一代3D图形API，它还有多家不同的竞争者，例如Microsoft的Direct-X 12和Apple的Metal。不过，DirectX只能用于不同的Windows系统，而Metal只能用在Mac系统（OS X和iOS）。因此，Vulkan得以脱颖而出。它的跨平台特性可以支持所有现存的OS平台，其中已经包括了Windows（XP、Vista、7、8、10）、Linux、Tizen、SteamOS和Android、macOS 、iOS（最后两个是个人补充，2020年开始支持，可以说Vulkan基本上被所有主流PC系统支持）</li>
+</ul>
+<h2 id="重要术语"><a href="#重要术语" class="headerlink" title="重要术语"></a>重要术语</h2><table>
+<thead>
+<tr>
+<th>Terms</th>
+<th>中文</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.Physical Device</td>
+<td>物理设备</td>
+<td>一台计算机系统包含多个支持Vulkan的物理硬件设备</td>
+</tr>
+<tr>
+<td>2.Device</td>
+<td>设备</td>
+<td>设备是物理设备在应用程序中的逻辑表示</td>
+</tr>
+<tr>
+<td>3.Queue</td>
+<td>队列</td>
+<td>队列表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行</td>
+</tr>
+<tr>
+<td>4.Memory Type</td>
+<td>内存类型</td>
+<td>Vulkan暴露了多种内存类型，广义上可以分为两类：宿主内存（Host Memory）和设备内存（Device Memory）</td>
+</tr>
+<tr>
+<td>5.Command</td>
+<td>指令</td>
+<td>每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步</td>
+</tr>
+<tr>
+<td>6.Action Command</td>
+<td>动作指令</td>
+<td>包括绘制图元、清除表面、复制缓存、查询/时间戳操作，以及子通道的开始/结束操作，这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像），以及写入查询池</td>
+</tr>
+<tr>
+<td>7.Set State Command</td>
+<td>状态设置指令</td>
+<td>可以用来绑定流水线、描述字集合以及缓存，或者设置一个动作状态，以及渲染通道/子通道的状态</td>
+</tr>
+<tr>
+<td>8.Synchronization Command</td>
+<td>同步指令</td>
+<td>用于处理多个动作指令（AC）同时发生的情况，用来设置同步或等待事件、插入流水线屏障对象，以及渲染通道/子通道的依赖</td>
+</tr>
+<tr>
+<td>9.Command Buffer</td>
+<td>指令缓存</td>
+<td>一组指令的集合，可以记录多个指令并统一发送到队列中</td>
+</tr>
+</tbody></table>
+<h2 id="Vulkan的原理"><a href="#Vulkan的原理" class="headerlink" title="Vulkan的原理"></a>Vulkan的原理</h2><h3 id="执行模型"><a href="#执行模型" class="headerlink" title="执行模型"></a>执行模型</h3><ul>
+<li>支持Vulkan的系统都可以查询系统信息，返回可用的物理设备数量</li>
+<li>每个物理设备支持一个或多个队列（Queue），队列被划分到不同的族群中</li>
+<li>每个族群有特定功能（图形、计算、数据传输、内存管理等）</li>
+<li>队列族群中的每个成员可以包含多个相似队列，互相兼容（可能在同一队列同时支持数据传输与图形操作）</li>
+<li>Vulkan允许用户显式在应用程序中管理和控制内存，暴露设备支持的所有不同类型的内存堆（heap）</li>
+<li>每个堆（heap）属于不同的内存区域</li>
+<li>Vulkan应用程序需要负责控制一组Vulkan设备，将一系列指令记录到指令缓存（Command Buffer），并发送到队列（Queue），设备驱动会读取Queue并“in-order execute”</li>
+<li>构建指令队列（结合后文个人认为这里指的是录制指令过程）代价较大，但是一旦完成就可以缓存和发送到队列中，根据需要多次执行</li>
+<li>有些指令缓存（有限制）可以在应用程序中以多线程的方式并行构建</li>
+</ul>
+<p>[Vulkan执行模型（简化版）]</p>
+<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20220119193307600.png" alt="image-20220119193307600"></p>
 <blockquote>
-<p>一般情况下使用普通账户登录系统，等有需要进行系统维护或者软件更新时才转变为root身份</p>
+<p>应用程序记录指令缓存，指令缓存包含多个指令，且按照作业性质不同，被传递给一个或多个队列，这些队列将缓存作业提交给设备加以执行。最后，设备处理得到结果，将结果显示到输出设备或者返回用户程序做进一步处理</p>
 </blockquote>
-</blockquote>
+<h3 id="用户应用程序主要职责"><a href="#用户应用程序主要职责" class="headerlink" title="用户应用程序主要职责"></a>用户应用程序主要职责</h3><ol>
+<li>生产指令执行所必需的所有先决内容（资源准备、着色器编译、资源关联到着色器、设置着色器状态、构建流水线、绘制调用）</li>
+<li>内存管理</li>
+<li>同步（宿主和设备，设备上不同队列之间）</li>
+<li>风险管理</li>
+</ol>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><ul>
+<li><p>Queue是Vulkan的一种中间层机制，负责接收指令缓存并传递给设备，指令缓存记录N条指令并发送到相关的队列。设备提供了多个可选队列，应用程序负责将Command Buffer传递给正确的Queue</p>
+</li>
+<li><p><strong>[ 单一队列 ]</strong> ：串行执行，按照指令缓存发送的顺序维护、执行、回放</p>
+</li>
+<li><p><strong>[ 多重队列 ]</strong> ：允许指令缓存并行地在多个队列中执行，如果不进行同步设置则无法保证实际执行顺序与发送指令顺序相同</p>
 </li>
 </ul>
-<h2 id="如何切换至root身份"><a href="#如何切换至root身份" class="headerlink" title="如何切换至root身份"></a>如何切换至root身份</h2><h3 id="①-su"><a href="#①-su" class="headerlink" title="① su"></a>① su</h3><ul>
-<li>是<strong>最简单的身份切换命令，可以进行任何身份的切换</strong></li>
-<li><strong>使用方法：su [-lm] [-c command] [username]  （如果没有指定username则默认root）</strong><br>可选参数|说明</li>
-<li>–|—</li>
-<li>|单纯使用 “su -” 代表使用 login shell 的变量文件读取方式来登录（即环境变量是切换后的用户的，与 -m 区分）</li>
-<li>l|与 - 类似，但是后面必须显式写明username，也是 login-shell 的方式</li>
-<li>m|与 -p 一样，表示使用目前的环境，不读取切换后使用者的配置文件（会导致切换后身份所特有的命令需要使用绝对路径执行）</li>
-<li>c|仅进行一次命令，执行命令写在后面即可</li>
+<h3 id="同步机制"><a href="#同步机制" class="headerlink" title="同步机制"></a>同步机制</h3><ul>
+<li><strong>Semaphore（信号量）</strong> ： 粗粒度，可以在单一队列，也可以跨队列</li>
+<li><strong>Event（事件）</strong> ： 细粒度，应用于单一队列，宿主系统可以参与到事件触发的同步机制</li>
+<li><strong>Fence（栅栏）</strong> ： 允许在宿主和设备之间完成同步</li>
+<li><strong>Pipeline Barrier（流水线屏障）</strong> ： 是一种插入到指令缓存中的指令，可以确保在他之前的指令始终优先执行，其余指令随后执行（分割先后，多个同时存在情况暂不确定）</li>
 </ul>
-<p>-<strong>有没有减号 - 直接决定了是使用 login shell 还是 non-login shell 的变量读取方法</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一个简单的&quot;su&quot;和&quot;su -&quot;对比演示</span></span><br><span class="line">git@Aioy:~$ su</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">PWD=/home/git</span><br><span class="line">LOGNAME=git</span><br><span class="line">USER=git</span><br><span class="line">-----------------------------------------</span><br><span class="line">git@Aioy:~$ su -</span><br><span class="line">Password:</span><br><span class="line">root@Aioy:/home/git<span class="comment"># env | grep &#x27;git&#x27;</span></span><br><span class="line">（没有任何输出）</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>使用non-login shell方式（即不加减号参数）可能会导致身份切换后依旧接收到旧身份的信息，或者需要使用绝对路径来使用切换后用户的特殊命令等情况，总之就是可能造成很多麻烦</strong></li>
+<h3 id="对象模型"><a href="#对象模型" class="headerlink" title="对象模型"></a>对象模型</h3><ul>
+<li>在应用端程序，设备、队列、指令缓存、帧缓存、流水线等内在的所有对象，统称为Vulkan对象</li>
+<li>在内部API层面，Vulkan对象会被识别为不同的Handle（句柄）</li>
 </ul>
-<h3 id="②-sudo"><a href="#②-sudo" class="headerlink" title="② sudo"></a>② sudo</h3><ul>
-<li><strong>系统初始默认只有root可以执行sudo</strong></li>
-<li><strong>sudo可以让你以其他用户的身份执行命令，通常是root身份</strong></li>
-<li><strong>一般用户如果想要拥有使用sudo的权限，需要和管理员事先联系审核，成为信任用户</strong></li>
-<li><strong>与su不同的是，使用sudo不需要切换对象的密码，而是自己的密码，甚至不需要密码</strong></li>
+<h4 id="1-可分发的句柄（Delegation）"><a href="#1-可分发的句柄（Delegation）" class="headerlink" title="1.可分发的句柄（Delegation）"></a>1.可分发的句柄（Delegation）</h4><ul>
+<li>这类指针<strong>指向一个不透明的内部图形实体</strong>，不透明意味着不能直接访问内部结构体成员，只能通过API间接访问（PS：我感觉应该属于Delegation模式）</li>
+<li>所有可分发句柄都会关联一个可分发类型，这样就可以将它本身作为参数传递给其他API指令</li>
+<li><strong>典型示例：Vkinstance, VkCommandBuffer, VkPhtsicalDevice, VkDevice, VkQueue</strong></li>
 </ul>
-<h3 id="sudo的执行流程"><a href="#sudo的执行流程" class="headerlink" title="sudo的执行流程"></a>sudo的执行流程</h3><ol>
-<li>当用户执行sudo时，操作系统在 /etc/sudoers 文件中查找用户是否具有执行sudo的权限</li>
-<li>如果可以执行sudo，则需要用户输入自己的密码（root执行sudo不需要密码）</li>
-<li>密码正确则开始执行sudo后的command</li>
-</ol>
-<ul>
-<li><strong>执行sudo的重点：/etc/sudoers 文件中是否有权限，如果没有则需要root使用visudo修改该文件，或者直接修改该文件（修改方法可以在其他文章中学习）</strong></li>
+<h4 id="2-不可分发的句柄"><a href="#2-不可分发的句柄" class="headerlink" title="2.不可分发的句柄"></a>2.不可分发的句柄</h4><ul>
+<li>这些64bits整型Handle<strong>不会指向结构体，而是直接包含对象本身信息</strong></li>
+<li><strong>典型示例：VkSemaphore，VkFence，VkQueryPool，VkBufferView，VkDeviceMemory，VkBuffer，Vkimage，VkPipeline，VkShaderModule，VkSampler，VkRenderPass，VkDescriptorPool，VkDescriptorSetLayout，VkFramebuffer，VkPipelineCache，VkCommandPool，VkDescriptorSet，VkEvent，VkPipelineLayout，VkimageView</strong></li>
 </ul>
+<h3 id="对象生命周期与指令语法"><a href="#对象生命周期与指令语法" class="headerlink" title="对象生命周期与指令语法"></a>对象生命周期与指令语法</h3><ul>
+<li><strong>Vulkan的对象是根据应用程序逻辑需求，显式地创建和销毁，应用程序需要自己管理这些对象</strong></li>
+<li><strong>所有实现方法都可以通过vkGet*指令轻松获取</strong></li>
+<li><strong>使用vkCmd*形式的API接口主要用于把指令记录到指令缓存中</strong></li>
+</ul>
+<h4 id="Create（vkCreate）"><a href="#Create（vkCreate）" class="headerlink" title="Create（vkCreate）"></a>Create（vkCreate）</h4><ul>
+<li>需要一个Vk*Createinfo结构体作为参数</li>
+</ul>
+<h4 id="Destroy（vkDestroy）"><a href="#Destroy（vkDestroy）" class="headerlink" title="Destroy（vkDestroy）"></a>Destroy（vkDestroy）</h4><ul>
+<li>每一个vkCreate都要对应一个Destroy</li>
+</ul>
+<p>如果对象是作为已有的对象池（Pool）或堆（Heap）的一部分创建的，那么需要使用Allocate指令创建，并使用Free指令从Pool或Heap中删除</p>
+<h4 id="Allocate（vkAllocate-）"><a href="#Allocate（vkAllocate-）" class="headerlink" title="Allocate（vkAllocate*）"></a>Allocate（vkAllocate*）</h4><ul>
+<li>一个对象如果是作为对象池的一部分创建，需要一Vk*AllocateInfo作为输入参数</li>
+</ul>
+<h4 id="Free（vkFree-）"><a href="#Free（vkFree-）" class="headerlink" title="Free（vkFree*）"></a>Free（vkFree*）</h4><ul>
+<li>从对象池或者内存中释放</li>
+</ul>
+<h3 id="错误检查与验证"><a href="#错误检查与验证" class="headerlink" title="错误检查与验证"></a>错误检查与验证</h3><ul>
+<li>Vulkan设计在性能最大化的前提下，提供了<strong>可选的错误检查和验证功能</strong></li>
+<li>检错与验证可以在Vulkan的层次化结构中使用，在运行系统中实现多层间动态调试验证</li>
+</ul>
+<h2 id="理解Vulkan应用程序"><a href="#理解Vulkan应用程序" class="headerlink" title="理解Vulkan应用程序"></a>理解Vulkan应用程序</h2><ul>
+<li>Vulkan的各种功能组件与彼此关系，以及如何用来构建一个Vulkan应用程序</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220125012254521.png" alt="image-20220125012254521"></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Vulkan</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux硬链接软连接和复制的区别</title>
-    <url>/2021/11/06/Linux/Linux%E7%A1%AC%E9%93%BE%E6%8E%A5%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%A4%8D%E5%88%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<p><strong>通过Ubuntu Linux实机演示 硬链接Hard Link, 软连接Symbolic Link, 复制Copy之间的区别</strong></p>
-<span id="more"></span>
-
-<hr>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="①-硬连接-Hard-Link"><a href="#①-硬连接-Hard-Link" class="headerlink" title="① 硬连接 Hard Link"></a>① 硬连接 Hard Link</h2><h3 id="如何建立硬连接？"><a href="#如何建立硬连接？" class="headerlink" title="如何建立硬连接？"></a>如何建立硬连接？</h3><ul>
-<li>使用“ln file file_link”即可为file创建一个名为file_link的硬连接</li>
-</ul>
-<h3 id="硬连接的特点"><a href="#硬连接的特点" class="headerlink" title="硬连接的特点"></a>硬连接的特点</h3><ul>
-<li>硬连接通过<strong>索引节点（inode）</strong>进行连接，链接同一文件的硬连接有相同的inode</li>
-<li>通过硬连接，可以有多个不同连接访问到同一个文件</li>
-<li><strong>硬连接本身也是普通文件（regular file）</strong>，因此<strong>目录文件无法创建硬连接</strong></li>
-<li>只删除部分硬连接不影响文件本身，只有当<strong>所有硬连接都删除后，文件才会真正被释放</strong></li>
-<li>每个硬连接<strong>会让文件的Links数增加（+1）</strong>（使用stat查看）</li>
-</ul>
-<h2 id="②-软连接-Symbolic-Link"><a href="#②-软连接-Symbolic-Link" class="headerlink" title="② 软连接 Symbolic Link"></a>② 软连接 Symbolic Link</h2><h3 id="如何创建软连接？"><a href="#如何创建软连接？" class="headerlink" title="如何创建软连接？"></a>如何创建软连接？</h3><ul>
-<li>使用“ln -s”建立软连接，也叫符号链接（Symbolic Link）</li>
-</ul>
-<h3 id="软连接的特点"><a href="#软连接的特点" class="headerlink" title="软连接的特点"></a>软连接的特点</h3><ul>
-<li>类似于Windows的快捷方式，<strong>软连接与被链接文件有不同inode</strong>，因此删除软连接不会影响文件</li>
-<li>实际上，<strong>符号链接的文件是一个特殊的文本文件</strong>，包含着链接另一端的位置信息</li>
-<li>软连接<strong>不会增加文件的Links</strong>（使用stat查看）</li>
-</ul>
-<h2 id="③-复制-Copy"><a href="#③-复制-Copy" class="headerlink" title="③ 复制 Copy"></a>③ 复制 Copy</h2><h3 id="如何复制文件？"><a href="#如何复制文件？" class="headerlink" title="如何复制文件？"></a>如何复制文件？</h3><ul>
-<li>使用“cp file file_copy”即可复制file文件为file_copy</li>
-</ul>
-<h3 id="复制的特点"><a href="#复制的特点" class="headerlink" title="复制的特点"></a>复制的特点</h3><ul>
-<li>复制文件，操作系统会为复制品创建新的inode，也就是相当于一个新的文件</li>
-</ul>
-<hr>
-<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="①-创建一个net文件为其添加硬连接并复制"><a href="#①-创建一个net文件为其添加硬连接并复制" class="headerlink" title="① 创建一个net文件为其添加硬连接并复制"></a>① 创建一个net文件为其添加硬连接并复制</h2><h3 id="使用stat-net查看net文件"><a href="#使用stat-net查看net文件" class="headerlink" title="使用stat net查看net文件"></a>使用stat net查看net文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-link-net查看net的硬连接"><a href="#使用stat-link-net查看net的硬连接" class="headerlink" title="使用stat link_net查看net的硬连接"></a>使用stat link_net查看net的硬连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-copy-net查看net的复制"><a href="#使用stat-copy-net查看net的复制" class="headerlink" title="使用stat copy_net查看net的复制"></a>使用stat copy_net查看net的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058123     Links: 1</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Change: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-
-<h2 id="②-创建一个dir文件为其添加软连接并复制"><a href="#②-创建一个dir文件为其添加软连接并复制" class="headerlink" title="② 创建一个dir文件为其添加软连接并复制"></a>② 创建一个dir文件为其添加软连接并复制</h2><h3 id="使用stat-dir查看dir文件"><a href="#使用stat-dir查看dir文件" class="headerlink" title="使用stat dir查看dir文件"></a>使用stat dir查看dir文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-link-dir查看dir的软连接"><a href="#使用stat-link-dir查看dir的软连接" class="headerlink" title="使用stat link_dir查看dir的软连接"></a>使用stat link_dir查看dir的软连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_dir -&gt; dir</span><br><span class="line">  Size: 3               Blocks: 0          IO Block: 4096   symbolic link</span><br><span class="line">Device: fc01h/64513d    Inode: 1058121     Links: 1</span><br><span class="line">Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:29:26.737743781 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line">Change: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-copy-dir查看dir的复制"><a href="#使用stat-copy-dir查看dir的复制" class="headerlink" title="使用stat copy_dir查看dir的复制"></a>使用stat copy_dir查看dir的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058122     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:04.068572412 +0800</span><br><span class="line">Modify: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line">Change: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h2 id="③-分别对连接文件和复制文件进行权限操作观察原文件变化"><a href="#③-分别对连接文件和复制文件进行权限操作观察原文件变化" class="headerlink" title="③ 分别对连接文件和复制文件进行权限操作观察原文件变化"></a>③ 分别对连接文件和复制文件进行权限操作观察原文件变化</h2><h3 id="赋予执行权限前（使用“ls-li”命令查看）"><a href="#赋予执行权限前（使用“ls-li”命令查看）" class="headerlink" title="赋予执行权限前（使用“ls -li”命令查看）"></a>赋予执行权限前（使用“ls -li”命令查看）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 net</span><br></pre></td></tr></table></figure>
-<h3 id="对硬连接文件link-net-使用“chmod-x-link-net”"><a href="#对硬连接文件link-net-使用“chmod-x-link-net”" class="headerlink" title="对硬连接文件link_net 使用“chmod +x link_net”"></a>对硬连接文件link_net 使用“chmod +x link_net”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 net</span><br><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发现硬连接文件和文件本身权限都发生了变化</li>
-</ul>
-<h3 id="对软连接文件link-dir-使用“chmod-x-link-dir”"><a href="#对软连接文件link-dir-使用“chmod-x-link-dir”" class="headerlink" title="对软连接文件link_dir 使用“chmod +x link_dir”"></a>对软连接文件link_dir 使用“chmod +x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rwxr-xr-x 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
-<h3 id="进一步对软连接测试-使用“chmod-x-link-dir”"><a href="#进一步对软连接测试-使用“chmod-x-link-dir”" class="headerlink" title="进一步对软连接测试 使用“chmod -x link_dir”"></a>进一步对软连接测试 使用“chmod -x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发现link_dir没变，说明通过修改软连接文件，不会对软连接产生影响，而是间接修改原文件</li>
-</ul>
-<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ul>
-<li>除了软连接的文件类型是Symbolic file，其他无论文件本身、硬链接还是复制都是regular file</li>
-<li>硬链接与文件本身 inode 完全相同，软连接和复制会赋予新的 inode</li>
-<li>对链接操作会影响原文件，对复制文件的操作不会影响原文件</li>
-<li>对软连接操作不会影响软链接，而是间接作用于原文件</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux系统运行级别</title>
-    <url>/2021/12/01/Linux/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/</url>
-    <content><![CDATA[<ul>
-<li>Linux系统一般有7个运行级别（runlevel）从level 0 ~ 6，可能有更多等级，操作系统根据当前正在运行的功能级别，具有不同的功能</li>
-<li><a href="https://blog.csdn.net/qq_21453783/article/details/100251461">参考文章</a></li>
-</ul>
-<span id="more"></span>
-
-<h2 id="Linux一般的7个运行等级"><a href="#Linux一般的7个运行等级" class="headerlink" title="Linux一般的7个运行等级"></a>Linux一般的7个运行等级</h2><table>
-<thead>
-<tr>
-<th>运行等级</th>
-<th>模式</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>系统关机模式</td>
-<td>系统默认运行级别不能设置为0，否则无法正常启动系统</td>
-</tr>
-<tr>
-<td>1</td>
-<td>单用户模式</td>
-<td>也称为救援模式，root权限，用于系统维护，禁止远程登陆，类似Windows下的安全模式登录</td>
-</tr>
-<tr>
-<td>2</td>
-<td>多用户模式</td>
-<td>多用户，但是没有网络文件（NFS）支持</td>
-</tr>
-<tr>
-<td>3</td>
-<td>完整的多用户文本模式</td>
-<td>多用户，有网络文件系统，用户登录后进入控制台命令行模式，在没有网络的环境下等同于运行级别2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>预留功能</td>
-<td>一般不用，在一些特殊情况下可以用来做一些事情。例如在笔记本电脑的电池用尽时，可以切换到这个模式来做一些设置</td>
-</tr>
-<tr>
-<td>5</td>
-<td>图形化模式</td>
-<td>登陆后进入图形GUI模式或GNOME、KDE图形化界面，如X Window系统</td>
-</tr>
-<tr>
-<td>6</td>
-<td>重启模式</td>
-<td>默认运行级别不能设为6，否则无法正常启动系统</td>
-</tr>
-</tbody></table>
-<h2 id="如何查看当前运行等级"><a href="#如何查看当前运行等级" class="headerlink" title="如何查看当前运行等级"></a>如何查看当前运行等级</h2><h3 id="使用-runlevel-查看当前运行等级"><a href="#使用-runlevel-查看当前运行等级" class="headerlink" title="使用 runlevel 查看当前运行等级"></a>使用 runlevel 查看当前运行等级</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ runlevel</span><br><span class="line">N 5 <span class="comment">#图形化模式</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-systemctl-get-default-查看默认启动方式"><a href="#使用-systemctl-get-default-查看默认启动方式" class="headerlink" title="使用 systemctl get-default 查看默认启动方式"></a>使用 systemctl get-default 查看默认启动方式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ systemctl get-default </span><br><span class="line">graphical.target <span class="comment">#图形化启动</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="切换运行等级"><a href="#切换运行等级" class="headerlink" title="切换运行等级"></a>切换运行等级</h2><ul>
-<li>使用 init 3 切换到“完整的多用户文本模式”<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost rc.d]$ init 3</span><br><span class="line"><span class="comment"># 接下来需要输入管理员密码</span></span><br></pre></td></tr></table></figure></li>
-<li>之后可以使用 init 5 再次切换回“图形化模式”，需要重新登录认证</li>
-</ul>
-<h2 id="运行级别配置文件"><a href="#运行级别配置文件" class="headerlink" title="运行级别配置文件"></a>运行级别配置文件</h2><ul>
-<li>在**/etc/rc.d/**目录下有以下文件，分别对应运行等级<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost ~]$ <span class="built_in">cd</span> /etc/rc.d</span><br><span class="line">[raven-1@localhost rc.d]$ ll</span><br><span class="line">total 4</span><br><span class="line">drwxr-xr-x. 2 root root  70 Oct 22 01:42 init.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc0.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc1.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc2.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc3.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc4.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:49 rc5.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc6.d</span><br><span class="line">-rw-r--r--. 1 root root 473 Mar 31  2020 rc.local</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux账号管理</title>
-    <url>/2021/11/19/Linux/Linux%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<ul>
-<li>《鸟哥的Linux私房菜》第13章有关用户管理的相关知识的学习</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="Linux的账号"><a href="#Linux的账号" class="headerlink" title="Linux的账号"></a>Linux的账号</h1><h2 id="用户标识符：UID-amp-GID"><a href="#用户标识符：UID-amp-GID" class="headerlink" title="用户标识符：UID &amp; GID"></a>用户标识符：UID &amp; GID</h2><ul>
-<li>每一个登录系统的用户都会至少获得2个ID，即UID（User ID）与GID（Group ID）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#使用 id 指令查看某用户信息</span></span><br><span class="line">root@Aioy:~/<span class="built_in">test</span><span class="comment"># id jerry</span></span><br><span class="line">uid=1001(jerry) gid=1001(jerry) groups=1001(jerry)</span><br><span class="line"><span class="comment">#groups属性暗示了一个用户可以归属多个组</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="UID的范围和用户特性"><a href="#UID的范围和用户特性" class="headerlink" title="UID的范围和用户特性"></a>UID的范围和用户特性</h2><table>
-<thead>
-<tr>
-<th>ID范围</th>
-<th>用户特性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>系统管理员：0</td>
-<td>一般只有root一个用户，也可以通过修改其他用户权限为0增加系统管理员，不过可能会造成混淆</td>
-</tr>
-<tr>
-<td>系统账号：1~999（通常不可登录）</td>
-<td><strong>保留给操作系统使用的ID，1<del>200由Linux发行版自行建立的系统账号，201</del>999若用户有系统账号需求时可以使用，比如启动网络服务时候如果不希望用root权限，则可以使用系统账号</strong></td>
-</tr>
-<tr>
-<td>普通账号：1000~2^32-1（&gt;= Kernel3.10.X）</td>
-<td>给一般用户使用，实际范围上限可能更小也可能更大</td>
-</tr>
-</tbody></table>
-<h2 id="passwd文件-amp-shadow文件"><a href="#passwd文件-amp-shadow文件" class="headerlink" title="passwd文件 &amp; shadow文件"></a>passwd文件 &amp; shadow文件</h2><h3 id="passwd文件"><a href="#passwd文件" class="headerlink" title="passwd文件"></a>passwd文件</h3><ul>
-<li>在Linux Ubuntu下用户账号信息存放在**/etc/password**</li>
-<li>每一行都代表一个账号，<strong>系统账号是操作系统正常运行所必须的，比如daemon、bin等</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#passwd文件的部分展示，其中 : 作为分隔符，一共有7个</span></span><br><span class="line"><span class="comment">#用户名:密码:UID:GID:用户信息说明栏:家目录:默认shell</span></span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="为什么-密码-字段为-x"><a href="#为什么-密码-字段为-x" class="headerlink" title="为什么 密码 字段为 x"></a>为什么 密码 字段为 x</h4><ul>
-<li> <strong>早期linux将密码也放在 /etc/passwd 中，不过由于所有程序都能读取该文件所以容易造成密码泄露问题，因此密码字段被移动到 /etc/shadow 中</strong></li>
-</ul>
-<h3 id="shadow文件"><a href="#shadow文件" class="headerlink" title="shadow文件"></a>shadow文件</h3><ul>
-<li>在Linux Ubuntu下用户账号的密码存放在**/etc/shadow**</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#shadow文件的部分展示，其中 : 作为分隔符，一共有9个</span></span><br><span class="line">man:*:18375:0:99999:7:::</span><br><span class="line">lp:*:18375:0:99999:7:::</span><br><span class="line">mail:*:18375:0:99999:7:::</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1.用户名</td>
-<td>用户名，需要与/etc/passwd对应</td>
-</tr>
-<tr>
-<td>2.密码</td>
-<td>经过摘要运算（比如MD5，SHA）后的密码，很难（单向性）但可能被破译，<strong>系统账号密码为星号</strong>*</td>
-</tr>
-<tr>
-<td>3.最近修改密码的日期</td>
-<td>自Linux日期（1970年1月1日）开始后的天数</td>
-</tr>
-<tr>
-<td>4.密码不可被修改的天数</td>
-<td>自[最近修改密码的日期]开始，需要过几天才可以修改密码，如果是0则可以立即修改</td>
-</tr>
-<tr>
-<td>5.密码需要重新修改的天数</td>
-<td>自[最近修改密码的日期]开始，强制用户在此字段规定天数内修改密码，否则该账号密码过期（失效前可用）</td>
-</tr>
-<tr>
-<td>6.密码需要修改期限前的警告天数</td>
-<td>相对[密码需要重新修改的天数]还剩此字段规定天数时，系统会提醒该用户重新设置密码</td>
-</tr>
-<tr>
-<td>7.密码失效日（不同于密码过期日）</td>
-<td>在[密码需要重新修改的天数]过后，如果用户还是没有修改密码，则该账号无法使用此密码登录</td>
-</tr>
-<tr>
-<td>8.账号失效日</td>
-<td>账号自Linux日期（1970年1月1日）开始后的天数内有效，超过则失效，常用于付费服务</td>
-</tr>
-<tr>
-<td>9.保留字段</td>
-<td>为之后的新功能预留</td>
-</tr>
-</tbody></table>
-<h3 id="权限比较"><a href="#权限比较" class="headerlink" title="权限比较"></a>权限比较</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/passwd</span></span><br><span class="line">-rw-r--r-- 1 root root 1737 Oct 23 10:29 /etc/passwd</span><br><span class="line">root@Aioy:/etc<span class="comment"># ls -l /etc/shadow</span></span><br><span class="line">-rw-r----- 1 root shadow 1235 Oct 23 10:34 /etc/shadow</span><br></pre></td></tr></table></figure>
-<ul>
-<li>可以看出来passwd文件由于对其他用户开放了 r 读权限，因此早期存放密码的设计确实不安全</li>
-</ul>
-<h2 id="用户登陆过程"><a href="#用户登陆过程" class="headerlink" title="用户登陆过程"></a>用户登陆过程</h2><ol>
-<li>用户本地终端或使用ssh远程发起登陆请求，输入账号和密码</li>
-<li>账号核对：在 /etc/passwd 中查找是否有用户输入的账号</li>
-<li>密码核对：在 /etc/shadow 找出对应的账号与UID然后核对密码</li>
-<li>登陆成功，进入Shell管理阶段</li>
-</ol>
-<h1 id="Linux的用户组"><a href="#Linux的用户组" class="headerlink" title="Linux的用户组"></a>Linux的用户组</h1><h2 id="group文件-amp-gshadow文件"><a href="#group文件-amp-gshadow文件" class="headerlink" title="group文件 &amp; gshadow文件"></a>group文件 &amp; gshadow文件</h2><h3 id="group文件"><a href="#group文件" class="headerlink" title="group文件"></a>group文件</h3><ul>
-<li>在Linux Ubuntu下用户账号信息存放在**/etc/group**</li>
-<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#group文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:GID:此用户组支持的账号名称</span></span><br><span class="line">root:x:0:</span><br><span class="line">daemon:x:1:</span><br><span class="line">bin:x:2:</span><br><span class="line">sys:x:3:</span><br><span class="line">adm:x:4:syslog</span><br><span class="line">tty:x:5:syslog</span><br></pre></td></tr></table></figure></li>
-<li><strong>注意</strong>：新版Linux中，<strong>初始用户组的用户群</strong>已经不会加入第四个字段，比如root的主要用户组为root，那么不会在group文件第四个字段看到root出现（相当于隐式声明）</li>
-</ul>
-<h3 id="gshadow文件"><a href="#gshadow文件" class="headerlink" title="gshadow文件"></a>gshadow文件</h3><ul>
-<li>在Linux Ubuntu下用户账号信息存放在**/etc/gshadow**</li>
-<li>每一行都代表一个用户组<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#gshadow文件文件的部分展示，其中 : 作为分隔符，一共有4个</span></span><br><span class="line"><span class="comment">#组名:用户组密码:组管理员（在etc/gpasswd中）:此用户组支持的账号名称（多个用户间用逗号,分隔）</span></span><br><span class="line">root:*::</span><br><span class="line">daemon:*::</span><br><span class="line">bin:*::</span><br><span class="line">sys:*::</span><br><span class="line">adm:*::syslog</span><br><span class="line">tty:*::syslog</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="有效用户组-amp-初始用户组"><a href="#有效用户组-amp-初始用户组" class="headerlink" title="有效用户组 &amp; 初始用户组"></a>有效用户组 &amp; 初始用户组</h2><blockquote>
-<blockquote>
-<blockquote>
-<p>假如一个用户同时加入多个用户组，那么在执行任务过程中，究极以哪个用户组为准呢？——有效用户组（Effective Group）</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="有效用户组（Effective-Group）"><a href="#有效用户组（Effective-Group）" class="headerlink" title="有效用户组（Effective Group）"></a>有效用户组（Effective Group）</h3><ul>
-<li><p>在 /etc/passwd 中的第四字段 GID 即所谓的有效用户组，<strong>用户登录后会立即拥有初始用户组的相关权限</strong></p>
-</li>
-<li><p><strong>groups 命令</strong>：查看某用户当前全部所属用户组，<strong>第一个为有效用户组</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">root</span><br><span class="line">root@Aioy:~<span class="comment"># groups jerry</span></span><br><span class="line">jerry : jerry</span><br><span class="line"><span class="comment">#注意只有第一个输出是有效用户组</span></span><br></pre></td></tr></table></figure></li>
-<li><p><strong>newgrp 命令</strong>：切换有效用户组</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~<span class="comment"># newgrp jerry</span></span><br><span class="line">root@Aioy:~<span class="comment"># groups</span></span><br><span class="line">jerry root</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="有效用户组的作用"><a href="#有效用户组的作用" class="headerlink" title="有效用户组的作用"></a>有效用户组的作用</h3><ul>
-<li><strong>通常，有效用户组的作用是新建文件</strong></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#由于root当前有效用户组是root，因此文件所属用户组就是root</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch hello</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l hello</span></span><br><span class="line">-rw-r--r-- 1 root root    0 Nov 26 18:17 hello</span><br><span class="line">root@Aioy:~<span class="comment"># newgrp jerry （切换有效用户组至jerry）</span></span><br><span class="line">root@Aioy:~<span class="comment"># touch world</span></span><br><span class="line">root@Aioy:~<span class="comment"># ls -l world</span></span><br><span class="line">-rw-r--r-- 1 root jerry 0 Nov 26 18:20 world</span><br></pre></td></tr></table></figure>
-
-<h3 id="初始用户组（Initial-Group）"><a href="#初始用户组（Initial-Group）" class="headerlink" title="初始用户组（Initial Group）"></a>初始用户组（Initial Group）</h3><ul>
-<li><strong>在 /etc/passwd 文件中，每行用户的GID就是初始用户组（Initial Group）</strong>，用户登录后就会获取</li>
-<li>**对于非初始用户组，则需要在 /etc/group 中找到需要加入的组名，将用户名写入第四栏中</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#示例：将jerry加入root用户组</span></span><br><span class="line">root@Aioy:~<span class="comment"># vim /etc/group</span></span><br><span class="line">root:x:0:jerry</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
+        <tag>CG</tag>
+        <tag>Vulkan</tag>
       </tags>
   </entry>
   <entry>
@@ -3464,177 +3635,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《Vulkan学习指南》笔记</title>
-    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<ul>
-<li>笔记内容来自《Vulkan学习之南》——Parminder Singh</li>
-<li>只摘录了个人认为比较基础且核心的知识点，是原书的简化版</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="序章（Preface）"><a href="#序章（Preface）" class="headerlink" title="序章（Preface）"></a>序章（Preface）</h1><h2 id="内容摘要"><a href="#内容摘要" class="headerlink" title="内容摘要"></a>内容摘要</h2><ul>
-<li><strong>Chapter1.</strong> ：Vulkan的基础概念以及编程模型</li>
-<li><strong>Chapter2.</strong> ：Vulkan所必要的基础软件以及SDK</li>
-<li><strong>Chapter3.</strong> ：设置开发环境，构建第一个Vulkan案例，详细讲解队列与队列族的概念，及其与逻辑设备的关系</li>
-<li><strong>Chapter4.</strong> ：Vulkan的调试方法，使用验证层编写一个简单的例子，并且使用一些非标准的拓展属性</li>
-<li><strong>Chapter5.</strong> ：深入Vulkan的指令缓存，了解指令池的作用，学习如何使用指令缓存进行录制，后半部分会讲内存管理，学习GPU内存的分配与销毁操作，理解CPU与GPU内存之间的映射关系</li>
-<li><strong>Chapter6.</strong> ：图像资源与相关内存管理，包括图像创建、分配、绑定、映射，并使用这种方法创建一个深度图像进行深度测试。介绍WSI交换链，使用其实现渲染可绘制对象并展示到屏幕的功能，并尝试获取WSI交换链的颜色图像，并创建颜色视图以便绘制图元</li>
-<li><strong>Chapter7.</strong> ：讨论缓存资源以及相关用途（即可绘制对象的几何体顶点缓存的构建），详细介绍使用渲染通道定义绘制操作的相关工作的方法，使用多个附件和子通道。使用渲染通道在Vulkan中实现帧缓存，用一个简单的示例演示如何清除背景颜色。在最后，将使用SPIR-V实现第一个Vulkan Shader Program并学习一些SDK工具的使用，将GLSL代码转换为SPIR-V的中间语言格式</li>
-<li><strong>Chapter8.</strong> ：介绍Vulkan中的计算流水线和图形流水线，实现一个完整的图形流水线</li>
-<li><strong>Chatpter9.</strong> ：全面介绍Vulkan中对象的绘制过程，讨论Vulkan中的同步机制，理解有关栅栏、信号量以及内存屏障的知识，此外将介绍如何绘制相关的API并通过一些简单的案例演示其用法</li>
-<li><strong>Chapter10.</strong> ：介绍Vulkan对Shader资源的更新过程，用到了描述符和推送常数的概念，讨论描述符池和描述符集布局的创建过程。将学到有关流水线布局的用法，并使用描述符来更新设备内存端的缓存资源，将更新后的几何体渲染到屏幕上。与描述符不同的是，推送常数并不会使用指令缓存，而是使用一种更加优化的方式来更新资源，可以尝试实现一个简单的程序来深入理解推送常数的相关知识</li>
-<li><strong>Chapter11.</strong> ：使用更加真实的方法（即贴纹理来渲染3D可绘制对象），将学习如何创建图像资源并为其设置采样器对象，还将学习使用线性和优化平铺的方式来更新纹理，在优化平铺模式下，用户还需要考虑使用传输缓存和图像内存的指令方法</li>
-</ul>
-<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><blockquote>
-<p>Vulkan是一款革命性的高性能3D图形和计算API，可用于现代GPU管线架构，能满足社区的最新需求。该API提供了一套全新的方法来克服传统API的复杂性和缺陷。<strong>Vulkan是一个显式API，保证用户在渲染时保持稳定平滑的帧速率，不会造成延迟或者故障</strong>。我们将简单了解Vulkan的生态系统，以及它的图形体系</p>
-</blockquote>
-<ul>
-<li>（我将与OpenGL对比的部分内容略去，主要区别在于OpenGL通过状态机隐式管理资源，而Vulkan显式管理）</li>
-</ul>
-<h2 id="Vulkan及其演化史"><a href="#Vulkan及其演化史" class="headerlink" title="Vulkan及其演化史"></a>Vulkan及其演化史</h2><ul>
-<li><a href="https://www.khronos.org/">Khronos</a>于2016发布了革命性的新架构Vulkan API，它充分利用了现代图形处理器单元的优势，来实现高性能图形和计算应用程序的开发</li>
-<li>Vulkan的原始概念是由AMD基于它们的私有Mantle API设计和实现.AMD开源了自己的Mantle API并且贡献给Khronos组织。在多家硬件和软件供应商的协同帮助下，Khronos发布了Vulkan标准</li>
-<li>Vulkan并不是目前唯一的新一代3D图形API，它还有多家不同的竞争者，例如Microsoft的Direct-X 12和Apple的Metal。不过，DirectX只能用于不同的Windows系统，而Metal只能用在Mac系统（OS X和iOS）。因此，Vulkan得以脱颖而出。它的跨平台特性可以支持所有现存的OS平台，其中已经包括了Windows（XP、Vista、7、8、10）、Linux、Tizen、SteamOS和Android、macOS 、iOS（最后两个是个人补充，2020年开始支持，可以说Vulkan基本上被所有主流PC系统支持）</li>
-</ul>
-<h2 id="重要术语"><a href="#重要术语" class="headerlink" title="重要术语"></a>重要术语</h2><table>
-<thead>
-<tr>
-<th>Terms</th>
-<th>中文</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1.Physical Device</td>
-<td>物理设备</td>
-<td>一台计算机系统包含多个支持Vulkan的物理硬件设备</td>
-</tr>
-<tr>
-<td>2.Device</td>
-<td>设备</td>
-<td>设备是物理设备在应用程序中的逻辑表示</td>
-</tr>
-<tr>
-<td>3.Queue</td>
-<td>队列</td>
-<td>队列表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行</td>
-</tr>
-<tr>
-<td>4.Memory Type</td>
-<td>内存类型</td>
-<td>Vulkan暴露了多种内存类型，广义上可以分为两类：宿主内存（Host Memory）和设备内存（Device Memory）</td>
-</tr>
-<tr>
-<td>5.Command</td>
-<td>指令</td>
-<td>每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步</td>
-</tr>
-<tr>
-<td>6.Action Command</td>
-<td>动作指令</td>
-<td>包括绘制图元、清除表面、复制缓存、查询/时间戳操作，以及子通道的开始/结束操作，这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像），以及写入查询池</td>
-</tr>
-<tr>
-<td>7.Set State Command</td>
-<td>状态设置指令</td>
-<td>可以用来绑定流水线、描述字集合以及缓存，或者设置一个动作状态，以及渲染通道/子通道的状态</td>
-</tr>
-<tr>
-<td>8.Synchronization Command</td>
-<td>同步指令</td>
-<td>用于处理多个动作指令（AC）同时发生的情况，用来设置同步或等待事件、插入流水线屏障对象，以及渲染通道/子通道的依赖</td>
-</tr>
-<tr>
-<td>9.Command Buffer</td>
-<td>指令缓存</td>
-<td>一组指令的集合，可以记录多个指令并统一发送到队列中</td>
-</tr>
-</tbody></table>
-<h2 id="Vulkan的原理"><a href="#Vulkan的原理" class="headerlink" title="Vulkan的原理"></a>Vulkan的原理</h2><h3 id="执行模型"><a href="#执行模型" class="headerlink" title="执行模型"></a>执行模型</h3><ul>
-<li>支持Vulkan的系统都可以查询系统信息，返回可用的物理设备数量</li>
-<li>每个物理设备支持一个或多个队列（Queue），队列被划分到不同的族群中</li>
-<li>每个族群有特定功能（图形、计算、数据传输、内存管理等）</li>
-<li>队列族群中的每个成员可以包含多个相似队列，互相兼容（可能在同一队列同时支持数据传输与图形操作）</li>
-<li>Vulkan允许用户显式在应用程序中管理和控制内存，暴露设备支持的所有不同类型的内存堆（heap）</li>
-<li>每个堆（heap）属于不同的内存区域</li>
-<li>Vulkan应用程序需要负责控制一组Vulkan设备，将一系列指令记录到指令缓存（Command Buffer），并发送到队列（Queue），设备驱动会读取Queue并“in-order execute”</li>
-<li>构建指令队列（结合后文个人认为这里指的是录制指令过程）代价较大，但是一旦完成就可以缓存和发送到队列中，根据需要多次执行</li>
-<li>有些指令缓存（有限制）可以在应用程序中以多线程的方式并行构建</li>
-</ul>
-<p>[Vulkan执行模型（简化版）]</p>
-<p><img src="http://image.codebooklet.com/img_blog/CG/default/image-20220119193307600.png" alt="image-20220119193307600"></p>
-<blockquote>
-<p>应用程序记录指令缓存，指令缓存包含多个指令，且按照作业性质不同，被传递给一个或多个队列，这些队列将缓存作业提交给设备加以执行。最后，设备处理得到结果，将结果显示到输出设备或者返回用户程序做进一步处理</p>
-</blockquote>
-<h3 id="用户应用程序主要职责"><a href="#用户应用程序主要职责" class="headerlink" title="用户应用程序主要职责"></a>用户应用程序主要职责</h3><ol>
-<li>生产指令执行所必需的所有先决内容（资源准备、着色器编译、资源关联到着色器、设置着色器状态、构建流水线、绘制调用）</li>
-<li>内存管理</li>
-<li>同步（宿主和设备，设备上不同队列之间）</li>
-<li>风险管理</li>
-</ol>
-<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><ul>
-<li><p>Queue是Vulkan的一种中间层机制，负责接收指令缓存并传递给设备，指令缓存记录N条指令并发送到相关的队列。设备提供了多个可选队列，应用程序负责将Command Buffer传递给正确的Queue</p>
-</li>
-<li><p><strong>[ 单一队列 ]</strong> ：串行执行，按照指令缓存发送的顺序维护、执行、回放</p>
-</li>
-<li><p><strong>[ 多重队列 ]</strong> ：允许指令缓存并行地在多个队列中执行，如果不进行同步设置则无法保证实际执行顺序与发送指令顺序相同</p>
-</li>
-</ul>
-<h3 id="同步机制"><a href="#同步机制" class="headerlink" title="同步机制"></a>同步机制</h3><ul>
-<li><strong>Semaphore（信号量）</strong> ： 粗粒度，可以在单一队列，也可以跨队列</li>
-<li><strong>Event（事件）</strong> ： 细粒度，应用于单一队列，宿主系统可以参与到事件触发的同步机制</li>
-<li><strong>Fence（栅栏）</strong> ： 允许在宿主和设备之间完成同步</li>
-<li><strong>Pipeline Barrier（流水线屏障）</strong> ： 是一种插入到指令缓存中的指令，可以确保在他之前的指令始终优先执行，其余指令随后执行（分割先后，多个同时存在情况暂不确定）</li>
-</ul>
-<h3 id="对象模型"><a href="#对象模型" class="headerlink" title="对象模型"></a>对象模型</h3><ul>
-<li>在应用端程序，设备、队列、指令缓存、帧缓存、流水线等内在的所有对象，统称为Vulkan对象</li>
-<li>在内部API层面，Vulkan对象会被识别为不同的Handle（句柄）</li>
-</ul>
-<h4 id="1-可分发的句柄（Delegation）"><a href="#1-可分发的句柄（Delegation）" class="headerlink" title="1.可分发的句柄（Delegation）"></a>1.可分发的句柄（Delegation）</h4><ul>
-<li>这类指针<strong>指向一个不透明的内部图形实体</strong>，不透明意味着不能直接访问内部结构体成员，只能通过API间接访问（PS：我感觉应该属于Delegation模式）</li>
-<li>所有可分发句柄都会关联一个可分发类型，这样就可以将它本身作为参数传递给其他API指令</li>
-<li><strong>典型示例：Vkinstance, VkCommandBuffer, VkPhtsicalDevice, VkDevice, VkQueue</strong></li>
-</ul>
-<h4 id="2-不可分发的句柄"><a href="#2-不可分发的句柄" class="headerlink" title="2.不可分发的句柄"></a>2.不可分发的句柄</h4><ul>
-<li>这些64bits整型Handle<strong>不会指向结构体，而是直接包含对象本身信息</strong></li>
-<li><strong>典型示例：VkSemaphore，VkFence，VkQueryPool，VkBufferView，VkDeviceMemory，VkBuffer，Vkimage，VkPipeline，VkShaderModule，VkSampler，VkRenderPass，VkDescriptorPool，VkDescriptorSetLayout，VkFramebuffer，VkPipelineCache，VkCommandPool，VkDescriptorSet，VkEvent，VkPipelineLayout，VkimageView</strong></li>
-</ul>
-<h3 id="对象生命周期与指令语法"><a href="#对象生命周期与指令语法" class="headerlink" title="对象生命周期与指令语法"></a>对象生命周期与指令语法</h3><ul>
-<li><strong>Vulkan的对象是根据应用程序逻辑需求，显式地创建和销毁，应用程序需要自己管理这些对象</strong></li>
-<li><strong>所有实现方法都可以通过vkGet*指令轻松获取</strong></li>
-<li><strong>使用vkCmd*形式的API接口主要用于把指令记录到指令缓存中</strong></li>
-</ul>
-<h4 id="Create（vkCreate）"><a href="#Create（vkCreate）" class="headerlink" title="Create（vkCreate）"></a>Create（vkCreate）</h4><ul>
-<li>需要一个Vk*Createinfo结构体作为参数</li>
-</ul>
-<h4 id="Destroy（vkDestroy）"><a href="#Destroy（vkDestroy）" class="headerlink" title="Destroy（vkDestroy）"></a>Destroy（vkDestroy）</h4><ul>
-<li>每一个vkCreate都要对应一个Destroy</li>
-</ul>
-<p>如果对象是作为已有的对象池（Pool）或堆（Heap）的一部分创建的，那么需要使用Allocate指令创建，并使用Free指令从Pool或Heap中删除</p>
-<h4 id="Allocate（vkAllocate-）"><a href="#Allocate（vkAllocate-）" class="headerlink" title="Allocate（vkAllocate*）"></a>Allocate（vkAllocate*）</h4><ul>
-<li>一个对象如果是作为对象池的一部分创建，需要一Vk*AllocateInfo作为输入参数</li>
-</ul>
-<h4 id="Free（vkFree-）"><a href="#Free（vkFree-）" class="headerlink" title="Free（vkFree*）"></a>Free（vkFree*）</h4><ul>
-<li>从对象池或者内存中释放</li>
-</ul>
-<h3 id="错误检查与验证"><a href="#错误检查与验证" class="headerlink" title="错误检查与验证"></a>错误检查与验证</h3><ul>
-<li>Vulkan设计在性能最大化的前提下，提供了<strong>可选的错误检查和验证功能</strong></li>
-<li>检错与验证可以在Vulkan的层次化结构中使用，在运行系统中实现多层间动态调试验证</li>
-</ul>
-<h2 id="理解Vulkan应用程序"><a href="#理解Vulkan应用程序" class="headerlink" title="理解Vulkan应用程序"></a>理解Vulkan应用程序</h2><ul>
-<li>Vulkan的各种功能组件与彼此关系，以及如何用来构建一个Vulkan应用程序</li>
-</ul>
-<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220125012254521.png" alt="image-20220125012254521"></p>
-]]></content>
-      <categories>
-        <category>Vulkan</category>
-      </categories>
-      <tags>
-        <tag>CG</tag>
-        <tag>Vulkan</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《Vulkan学习指南》练习题</title>
     <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
     <content><![CDATA[<ul>
@@ -3914,78 +3914,6 @@
       </tags>
   </entry>
   <entry>
-    <title>斯金纳箱（Skinner Box）</title>
-    <url>/2021/12/26/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/%E6%96%AF%E9%87%91%E7%BA%B3%E7%AE%B1/</url>
-    <content><![CDATA[<h1 id="斯金纳箱（Skinner-Box）"><a href="#斯金纳箱（Skinner-Box）" class="headerlink" title="斯金纳箱（Skinner Box）"></a>斯金纳箱（Skinner Box）</h1><ul>
-<li>斯金纳箱（Skinner box）是心理学实验装置。<a href="https://baike.baidu.com/item/%E8%A1%8C%E4%B8%BA%E4%B8%BB%E4%B9%89/1750752">行为主义</a>者<a href="https://baike.baidu.com/item/%E6%96%AF%E9%87%91%E7%BA%B3/342663">斯金纳</a>1938年发明，并于动物操作条件作用实验。该装置实际是对<a href="https://baike.baidu.com/item/%E6%A1%91%E4%BB%A3%E5%85%8B%E8%BF%B7%E7%AE%B1/22373711">桑代克迷箱</a>的改进，后被用于研究动物学习能力和自我刺激与合作行为等心理学研究</li>
-<li>意义：操作性条件反射理论</li>
-<li><a href="https://baike.baidu.com/item/%E6%96%AF%E9%87%91%E7%BA%B3%E7%AE%B1/5378961">参考文章-百度百科</a></li>
-</ul>
-<span id="more"></span>
-
-
-
-<h2 id="奖励-amp-惩罚"><a href="#奖励-amp-惩罚" class="headerlink" title="奖励&amp;惩罚"></a>奖励&amp;惩罚</h2><h3 id="实验①：不断奖励可以培养行为习惯"><a href="#实验①：不断奖励可以培养行为习惯" class="headerlink" title="实验①：不断奖励可以培养行为习惯"></a>实验①：不断奖励可以培养行为习惯</h3><ul>
-<li><p><strong>将一只很饿的小白鼠放入一个有按钮的箱中，每次按下按钮，则掉落食物</strong></p>
-</li>
-<li><p><strong>结果：小白鼠自发学会了按按钮</strong></p>
-</li>
-<li><p><strong>结论：何为学习——将行为与操作者的需求建立相倚性联系。换句话说，使行为者感觉到“行为”与“奖励”是有联系的，只要通过将行为与奖励不断重复、建立联系，就可以培养起操作者的行为模式</strong></p>
-</li>
-</ul>
-<h3 id="实验②：不断惩罚可以培养行为习惯"><a href="#实验②：不断惩罚可以培养行为习惯" class="headerlink" title="实验②：不断惩罚可以培养行为习惯"></a>实验②：不断惩罚可以培养行为习惯</h3><ul>
-<li><p><strong>将一只小白鼠放入一个有按钮的箱中。每次小白鼠不按下按钮，则箱子通电</strong></p>
-</li>
-<li><p><strong>结果：小白鼠自发学会了按按钮，但遗憾的是，一旦箱子不再通电，小白鼠按按钮的行为迅速消失</strong></p>
-</li>
-<li><p><strong>结论：“惩罚”作为奖励的邪恶双生子，可以迅速建立行为模式。然而，惩罚具有一定的副作用：它建立起来的行为模式，来得快，去得也快。一旦惩罚消失，则行为模式也会迅速消失。从长远来看，惩罚对于行为的制止并不会起到显著作用。现实生活中，因为惩罚带来的凡勃伦效应，有时甚至会使惩罚起反作用</strong></p>
-</li>
-</ul>
-<h3 id="凡勃伦效应（Veblen-Effect）"><a href="#凡勃伦效应（Veblen-Effect）" class="headerlink" title="凡勃伦效应（Veblen Effect）"></a>凡勃伦效应（Veblen Effect）</h3><ul>
-<li>美国学者凡勃伦认为，与产品越降价、需求越增多的一般规律不同，<strong>特定的产品越涨价，需求越增多</strong>。部分上流阶层的消费目的在于，炫耀自己的社会地位和成功，满足虚荣心，所以价格越高，需求则增加。相反，如果降价，体现上流阶层的界限变得模糊，所以需求减少</li>
-<li><a href="https://baike.baidu.com/item/%E5%87%A1%E5%8B%83%E4%BC%A6%E6%95%88%E5%BA%94/10857931">百度百科——凡勃伦效应</a></li>
-</ul>
-<h3 id="对于这两个实验的思考"><a href="#对于这两个实验的思考" class="headerlink" title="对于这两个实验的思考"></a>对于这两个实验的思考</h3><ul>
-<li><strong>“惩罚性学习”具有短时性，而“奖励性学习”的收益慢但也更持久</strong>，比如在背单词的时候，比起立一个“今天不背100个单词不睡觉”的惩罚性Flag，“今天背完100个单词奖励自己玩会游戏”的奖励性Flag可能对长期学习有效，<strong>不过在实际中，我认为需要结合地使用：人通常是具有惰性的，而惩罚性学习可以迅速建立行为模式，因此应该利用适当惩罚来建立学习习惯，并通过奖励机制持久化学习</strong>，回想起之前考CET6时每天背单词打卡的经历，确实一开始是通过朋友圈监督才建立起习惯，而后面慢慢变成由背单词带来的收获感激励每天学习</li>
-<li><strong>惩罚可能会由于凡勃伦效应而起到反作用</strong>，这句话我理解了很久，但最后发现其实结合“考试后摆烂”的现实问题就很好理解了，对于处于“惩罚性学习”中的人来说，因此一旦惩罚结束，就丧失了学习的意义。此外在百度百科中提到了“艺术品消费行为与凡勃伦效应”，确实非常具有现实意义。而且拓展地思考一下，其实当下考研热潮也是凡勃伦效应的体现，随着考研人数的不断增加，考研也变得“昂贵起来”，但是每年的考研人数却仍然飞速上涨…</li>
-</ul>
-<h2 id="必然-amp-偶然"><a href="#必然-amp-偶然" class="headerlink" title="必然&amp;偶然"></a>必然&amp;偶然</h2><h3 id="实验③：固定时间奖励"><a href="#实验③：固定时间奖励" class="headerlink" title="实验③：固定时间奖励"></a>实验③：固定时间奖励</h3><ul>
-<li><strong>将一只很饿的小白鼠放入斯金纳箱中，由一开始的一直掉落食物，逐渐降低到每1分钟后，按下按钮可概率掉落食物</strong></li>
-<li><strong>结果：小白鼠一开始不停按钮。过一段时间之后，小白鼠学会了间隔1分钟按一次按钮，但是当掉落食物停止时，小白鼠的行为消失</strong></li>
-<li><strong>结论：当行为者明确知道当前的行为是否会产生期望的结果时，通常会做出理智的判断</strong></li>
-</ul>
-<h3 id="实验④：概率型奖励"><a href="#实验④：概率型奖励" class="headerlink" title="实验④：概率型奖励"></a>实验④：概率型奖励</h3><ul>
-<li><p><strong>将一只很饿的小白鼠放入斯金纳箱中，多次按下按钮，概率掉落食物</strong></p>
-</li>
-<li><p><strong>结果：小白鼠学会了不停按钮，当不再掉落食物时，小白鼠的学习行为消失速度非常慢</strong></p>
-</li>
-<li><p><strong>结论：由于概率性给予结果，行为者很难直观地判断机制是否失效，所以单次的失败不会给予明显的“惩罚”效果，终止行为者的习惯，从而行为者的学习行为会一直持续下去</strong></p>
-</li>
-</ul>
-<h3 id="概率下产生的奇特行为"><a href="#概率下产生的奇特行为" class="headerlink" title="概率下产生的奇特行为"></a>概率下产生的奇特行为</h3><ul>
-<li><strong>在“概率型奖励”实验中，小白鼠有很多培养出了奇特的行为习惯，比如撞箱子、比如作揖、比如转圈跳舞，这是因为掉落食物前，小白鼠正好在进行这些行为，于是产生了“迷信”</strong></li>
-</ul>
-<h3 id="实验意义"><a href="#实验意义" class="headerlink" title="实验意义"></a>实验意义</h3><blockquote>
-<p>斯金纳通过实验发现，动物的学习行为是随着一个起强化作用的刺激而发生的。斯金纳把动物的学习行为推而广之到人类的学习行为上，他认为虽然人类学习行为的性质比动物复杂得多，但也要通过<a href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E6%80%A7%E6%9D%A1%E4%BB%B6%E5%8F%8D%E5%B0%84/2041911">操作性条件反射</a>。操作性条件反射的特点是：强化刺激既不与反应同时发生，也不先于反应，而是随着反应发生。有机体必须先作出所希望的反应，然后得到“报酬”，即强化刺激，使这种反应得到强化。学习的本质不是刺激的替代，而是反应的改变。斯金纳认为，人的一切行为几乎都是操作性强化的结果，人们有可能通过强化作用的影响去改变别人的反应。在教学方面教师充当学生行为的设计师和建筑师，把学习目标分解成很多小任务并且一个一个地予以强化，学生通过操作性条件反射逐步完成学习任务</p>
-</blockquote>
-<h3 id="个人思考"><a href="#个人思考" class="headerlink" title="个人思考"></a>个人思考</h3><ul>
-<li><p><strong>任务的阶段划分非常重要</strong>，在学习等任务中，如果一开始好高骛远，那么在任务还没有开始执行者一般就会知道是否可以完成，也就是说符合实验③的结论，而阶段的划分一般需要熟悉该邻域的专家——比如学习中如果有一个好老师将会事半功倍，如果没有这种专家指导，那么最好的选择是<strong>一开始不要对自己期望过高</strong></p>
-</li>
-<li><p><strong>把握确定的事情，对不确定的事情保持理性，特别当为了不确定的结果而放弃确定的结果时</strong>，让我想起了《乱世佳人，Gone with the Wind》中瑞德那句“很抱歉斯嘉丽，你亲手扔掉了已经得到的幸福，转而追逐永远得不到的幸福”</p>
-</li>
-</ul>
-<blockquote>
-<p>You know, i’m sorry for you ,Scarlett. Sorry for you because you throw away happiness with both hands and reach out for something that will never make you happy.</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>学习方法</category>
-      </categories>
-      <tags>
-        <tag>学习方法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ARP欺骗实验</title>
     <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
     <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
@@ -4082,6 +4010,78 @@
       </categories>
       <tags>
         <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斯金纳箱（Skinner Box）</title>
+    <url>/2021/12/26/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/%E6%96%AF%E9%87%91%E7%BA%B3%E7%AE%B1/</url>
+    <content><![CDATA[<h1 id="斯金纳箱（Skinner-Box）"><a href="#斯金纳箱（Skinner-Box）" class="headerlink" title="斯金纳箱（Skinner Box）"></a>斯金纳箱（Skinner Box）</h1><ul>
+<li>斯金纳箱（Skinner box）是心理学实验装置。<a href="https://baike.baidu.com/item/%E8%A1%8C%E4%B8%BA%E4%B8%BB%E4%B9%89/1750752">行为主义</a>者<a href="https://baike.baidu.com/item/%E6%96%AF%E9%87%91%E7%BA%B3/342663">斯金纳</a>1938年发明，并于动物操作条件作用实验。该装置实际是对<a href="https://baike.baidu.com/item/%E6%A1%91%E4%BB%A3%E5%85%8B%E8%BF%B7%E7%AE%B1/22373711">桑代克迷箱</a>的改进，后被用于研究动物学习能力和自我刺激与合作行为等心理学研究</li>
+<li>意义：操作性条件反射理论</li>
+<li><a href="https://baike.baidu.com/item/%E6%96%AF%E9%87%91%E7%BA%B3%E7%AE%B1/5378961">参考文章-百度百科</a></li>
+</ul>
+<span id="more"></span>
+
+
+
+<h2 id="奖励-amp-惩罚"><a href="#奖励-amp-惩罚" class="headerlink" title="奖励&amp;惩罚"></a>奖励&amp;惩罚</h2><h3 id="实验①：不断奖励可以培养行为习惯"><a href="#实验①：不断奖励可以培养行为习惯" class="headerlink" title="实验①：不断奖励可以培养行为习惯"></a>实验①：不断奖励可以培养行为习惯</h3><ul>
+<li><p><strong>将一只很饿的小白鼠放入一个有按钮的箱中，每次按下按钮，则掉落食物</strong></p>
+</li>
+<li><p><strong>结果：小白鼠自发学会了按按钮</strong></p>
+</li>
+<li><p><strong>结论：何为学习——将行为与操作者的需求建立相倚性联系。换句话说，使行为者感觉到“行为”与“奖励”是有联系的，只要通过将行为与奖励不断重复、建立联系，就可以培养起操作者的行为模式</strong></p>
+</li>
+</ul>
+<h3 id="实验②：不断惩罚可以培养行为习惯"><a href="#实验②：不断惩罚可以培养行为习惯" class="headerlink" title="实验②：不断惩罚可以培养行为习惯"></a>实验②：不断惩罚可以培养行为习惯</h3><ul>
+<li><p><strong>将一只小白鼠放入一个有按钮的箱中。每次小白鼠不按下按钮，则箱子通电</strong></p>
+</li>
+<li><p><strong>结果：小白鼠自发学会了按按钮，但遗憾的是，一旦箱子不再通电，小白鼠按按钮的行为迅速消失</strong></p>
+</li>
+<li><p><strong>结论：“惩罚”作为奖励的邪恶双生子，可以迅速建立行为模式。然而，惩罚具有一定的副作用：它建立起来的行为模式，来得快，去得也快。一旦惩罚消失，则行为模式也会迅速消失。从长远来看，惩罚对于行为的制止并不会起到显著作用。现实生活中，因为惩罚带来的凡勃伦效应，有时甚至会使惩罚起反作用</strong></p>
+</li>
+</ul>
+<h3 id="凡勃伦效应（Veblen-Effect）"><a href="#凡勃伦效应（Veblen-Effect）" class="headerlink" title="凡勃伦效应（Veblen Effect）"></a>凡勃伦效应（Veblen Effect）</h3><ul>
+<li>美国学者凡勃伦认为，与产品越降价、需求越增多的一般规律不同，<strong>特定的产品越涨价，需求越增多</strong>。部分上流阶层的消费目的在于，炫耀自己的社会地位和成功，满足虚荣心，所以价格越高，需求则增加。相反，如果降价，体现上流阶层的界限变得模糊，所以需求减少</li>
+<li><a href="https://baike.baidu.com/item/%E5%87%A1%E5%8B%83%E4%BC%A6%E6%95%88%E5%BA%94/10857931">百度百科——凡勃伦效应</a></li>
+</ul>
+<h3 id="对于这两个实验的思考"><a href="#对于这两个实验的思考" class="headerlink" title="对于这两个实验的思考"></a>对于这两个实验的思考</h3><ul>
+<li><strong>“惩罚性学习”具有短时性，而“奖励性学习”的收益慢但也更持久</strong>，比如在背单词的时候，比起立一个“今天不背100个单词不睡觉”的惩罚性Flag，“今天背完100个单词奖励自己玩会游戏”的奖励性Flag可能对长期学习有效，<strong>不过在实际中，我认为需要结合地使用：人通常是具有惰性的，而惩罚性学习可以迅速建立行为模式，因此应该利用适当惩罚来建立学习习惯，并通过奖励机制持久化学习</strong>，回想起之前考CET6时每天背单词打卡的经历，确实一开始是通过朋友圈监督才建立起习惯，而后面慢慢变成由背单词带来的收获感激励每天学习</li>
+<li><strong>惩罚可能会由于凡勃伦效应而起到反作用</strong>，这句话我理解了很久，但最后发现其实结合“考试后摆烂”的现实问题就很好理解了，对于处于“惩罚性学习”中的人来说，因此一旦惩罚结束，就丧失了学习的意义。此外在百度百科中提到了“艺术品消费行为与凡勃伦效应”，确实非常具有现实意义。而且拓展地思考一下，其实当下考研热潮也是凡勃伦效应的体现，随着考研人数的不断增加，考研也变得“昂贵起来”，但是每年的考研人数却仍然飞速上涨…</li>
+</ul>
+<h2 id="必然-amp-偶然"><a href="#必然-amp-偶然" class="headerlink" title="必然&amp;偶然"></a>必然&amp;偶然</h2><h3 id="实验③：固定时间奖励"><a href="#实验③：固定时间奖励" class="headerlink" title="实验③：固定时间奖励"></a>实验③：固定时间奖励</h3><ul>
+<li><strong>将一只很饿的小白鼠放入斯金纳箱中，由一开始的一直掉落食物，逐渐降低到每1分钟后，按下按钮可概率掉落食物</strong></li>
+<li><strong>结果：小白鼠一开始不停按钮。过一段时间之后，小白鼠学会了间隔1分钟按一次按钮，但是当掉落食物停止时，小白鼠的行为消失</strong></li>
+<li><strong>结论：当行为者明确知道当前的行为是否会产生期望的结果时，通常会做出理智的判断</strong></li>
+</ul>
+<h3 id="实验④：概率型奖励"><a href="#实验④：概率型奖励" class="headerlink" title="实验④：概率型奖励"></a>实验④：概率型奖励</h3><ul>
+<li><p><strong>将一只很饿的小白鼠放入斯金纳箱中，多次按下按钮，概率掉落食物</strong></p>
+</li>
+<li><p><strong>结果：小白鼠学会了不停按钮，当不再掉落食物时，小白鼠的学习行为消失速度非常慢</strong></p>
+</li>
+<li><p><strong>结论：由于概率性给予结果，行为者很难直观地判断机制是否失效，所以单次的失败不会给予明显的“惩罚”效果，终止行为者的习惯，从而行为者的学习行为会一直持续下去</strong></p>
+</li>
+</ul>
+<h3 id="概率下产生的奇特行为"><a href="#概率下产生的奇特行为" class="headerlink" title="概率下产生的奇特行为"></a>概率下产生的奇特行为</h3><ul>
+<li><strong>在“概率型奖励”实验中，小白鼠有很多培养出了奇特的行为习惯，比如撞箱子、比如作揖、比如转圈跳舞，这是因为掉落食物前，小白鼠正好在进行这些行为，于是产生了“迷信”</strong></li>
+</ul>
+<h3 id="实验意义"><a href="#实验意义" class="headerlink" title="实验意义"></a>实验意义</h3><blockquote>
+<p>斯金纳通过实验发现，动物的学习行为是随着一个起强化作用的刺激而发生的。斯金纳把动物的学习行为推而广之到人类的学习行为上，他认为虽然人类学习行为的性质比动物复杂得多，但也要通过<a href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E6%80%A7%E6%9D%A1%E4%BB%B6%E5%8F%8D%E5%B0%84/2041911">操作性条件反射</a>。操作性条件反射的特点是：强化刺激既不与反应同时发生，也不先于反应，而是随着反应发生。有机体必须先作出所希望的反应，然后得到“报酬”，即强化刺激，使这种反应得到强化。学习的本质不是刺激的替代，而是反应的改变。斯金纳认为，人的一切行为几乎都是操作性强化的结果，人们有可能通过强化作用的影响去改变别人的反应。在教学方面教师充当学生行为的设计师和建筑师，把学习目标分解成很多小任务并且一个一个地予以强化，学生通过操作性条件反射逐步完成学习任务</p>
+</blockquote>
+<h3 id="个人思考"><a href="#个人思考" class="headerlink" title="个人思考"></a>个人思考</h3><ul>
+<li><p><strong>任务的阶段划分非常重要</strong>，在学习等任务中，如果一开始好高骛远，那么在任务还没有开始执行者一般就会知道是否可以完成，也就是说符合实验③的结论，而阶段的划分一般需要熟悉该邻域的专家——比如学习中如果有一个好老师将会事半功倍，如果没有这种专家指导，那么最好的选择是<strong>一开始不要对自己期望过高</strong></p>
+</li>
+<li><p><strong>把握确定的事情，对不确定的事情保持理性，特别当为了不确定的结果而放弃确定的结果时</strong>，让我想起了《乱世佳人，Gone with the Wind》中瑞德那句“很抱歉斯嘉丽，你亲手扔掉了已经得到的幸福，转而追逐永远得不到的幸福”</p>
+</li>
+</ul>
+<blockquote>
+<p>You know, i’m sorry for you ,Scarlett. Sorry for you because you throw away happiness with both hands and reach out for something that will never make you happy.</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习方法</category>
+      </categories>
+      <tags>
+        <tag>学习方法</tag>
       </tags>
   </entry>
   <entry>
