@@ -284,13 +284,6 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/Daily/</loc>
-    <lastmod>2022-01-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://codebooklet.com/tags/CG/</loc>
     <lastmod>2022-01-24</lastmod>
     <changefreq>daily</changefreq>
@@ -299,6 +292,13 @@
   
   <url>
     <loc>http://codebooklet.com/tags/QT/</loc>
+    <lastmod>2022-01-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/Daily/</loc>
     <lastmod>2022-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -391,13 +391,6 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/Daily/</loc>
-    <lastmod>2022-01-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://codebooklet.com/categories/CG/</loc>
     <lastmod>2022-01-24</lastmod>
     <changefreq>daily</changefreq>
@@ -406,6 +399,13 @@
   
   <url>
     <loc>http://codebooklet.com/categories/DeBug/</loc>
+    <lastmod>2022-01-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/categories/Daily/</loc>
     <lastmod>2022-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
