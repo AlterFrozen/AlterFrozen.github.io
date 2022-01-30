@@ -312,74 +312,24 @@
       </tags>
   </entry>
   <entry>
-    <title>『Eigen』 GettingStart（入门篇）</title>
-    <url>/2021/11/07/C++/Eigen-GettingStart/</url>
+    <title>辨别常量指针与指针常量</title>
+    <url>/2021/12/18/C++/%E8%BE%A8%E5%88%AB%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88%E4%B8%8E%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F/</url>
     <content><![CDATA[<ul>
-<li>本篇文章主要介绍了Eigen库最基本的知识和使用方法</li>
-<li>参考资料：<a href="https://eigen.tuxfamily.org/dox/GettingStarted.html">Eigen官方文档</a></li>
+<li>自己总结的一种“区别指针常量与常量指针”的方法，从底层原理出发一次解决</li>
 </ul>
 <span id="more"></span>
 
-<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;<span class="comment">//设置尺寸2X2，注意Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
-    1 2<br/>
-    3 1<br/>
-    class Eigen::Matrix<double,-1,-1,0,-1,-1>
-</details>
-
-<h2 id="对第一个程序的解释（Explanation-of-the-first-program）"><a href="#对第一个程序的解释（Explanation-of-the-first-program）" class="headerlink" title="对第一个程序的解释（Explanation of the first program）"></a>对第一个程序的解释（Explanation of the first program）</h2><ul>
-<li>Eigen定义了非常多的类型，但<strong>通常使用 MatrixXd 就足够了</strong>，X代表矩阵尺寸是任意的，d代表数据是double类型的</li>
-<li>Eigen/Dense在namespace Eigen中定义了MatrixXd的所有成员函数以及相关的数据类型</li>
-<li><strong>Eigen不会对Matrix或Vector初始化，如果需要零矩阵或零向量需要使用 setZero</strong></li>
+<h2 id="从实例出发"><a href="#从实例出发" class="headerlink" title="从实例出发"></a>从实例出发</h2><ul>
+<li>下面的例子例举了一个类型的指针所能出现的所有情况</li>
 </ul>
-<p><strong>▽  以下为来自官方文档的相关信息</strong></p>
-<ul>
-<li> <a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Types">Eigen提供的数据类型</a></li>
-<li><a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Headers">Eigen的头文件表</a></li>
-<li><a href="https://eigen.tuxfamily.org/dox/group__TutorialAdvancedInitialization.html">Eigen Comma Initializer</a></li>
-</ul>
-<h2 id="矩阵与向量（Matrices-and-Vectors）"><a href="#矩阵与向量（Matrices-and-Vectors）" class="headerlink" title="矩阵与向量（Matrices and Vectors）"></a>矩阵与向量（Matrices and Vectors）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at run time) 使用MatrixXd时，矩阵尺寸在运行时确定</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    MatrixXd matX = MatrixXd::<span class="built_in">Random</span>(<span class="number">3</span>, <span class="number">3</span>);<span class="comment">//默认随机范围[-1,1]</span></span><br><span class="line">    matX = (matX + MatrixXd::<span class="built_in">Constant</span>(<span class="number">3</span>, <span class="number">3</span>, <span class="number">1.2</span>)) * <span class="number">50</span>;<span class="comment">//线性映射将范围映射到[10,110]</span></span><br><span class="line">    <span class="comment">//MatrixXd::Constant(row, col, value)会创建一个所有元素是value的矩阵</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX =&quot;</span> &lt;&lt; endl &lt;&lt; matX &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at compile time) 使用固定尺寸的矩阵，会在编译时就确定大小</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    Matrix3d matFix = Matrix3d::<span class="built_in">Random</span>();</span><br><span class="line">    matFix = (matFix + Matrix3d::<span class="built_in">Constant</span>(<span class="number">1.2</span>)) * <span class="number">50</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatFix =&quot;</span> &lt;&lt; endl &lt;&lt; matFix &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Vectors 可以使用VectorXd创建一个任意维度的向量</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    VectorXd vec&#123; <span class="number">3</span> &#125;;<span class="comment">//设置维度为3，再次提醒Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    vec &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>;</span><br><span class="line">    cout &lt;&lt; vec &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX * vec = &quot;</span> &lt;&lt; endl &lt;&lt; matX * vec &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>, ii = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>* <span class="keyword">const</span> typePointConst = &amp;i;</span><br><span class="line">typePointConst = &amp;ii;   <span class="comment">//Error:expression must be a modifiable value</span></span><br><span class="line">std::cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(typePointConst).<span class="built_in">name</span>() &lt;&lt; std::endl;</span><br><span class="line"><span class="comment">//output:int*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span>* typeConstPoint = &amp;i;</span><br><span class="line">typeConstPoint = &amp;ii;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(typeConstPoint).<span class="built_in">name</span>() &lt;&lt; std::endl;</span><br><span class="line"><span class="comment">//output:int const*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* constTypePoint = &amp;i;</span><br><span class="line">constTypePoint = &amp;ii;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(constTypePoint).<span class="built_in">name</span>() &lt;&lt; std::endl;</span><br><span class="line"><span class="comment">//output:int const*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span>* <span class="keyword">int</span> constPointType = &amp;i;   <span class="comment">//Error:不存在该类型</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><strong>Eigen的Matrix默认使用列主序，Vector默认使用右手系</strong></li>
-</ul>
-<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
-    10.1251 90.8741 45.0291<br/>
-    66.3585 68.5009 99.5962<br/>
-    29.3304 57.9873  92.284<br/>
-    1<br/>
-    2<br/>
-    3<br/>
-    MatX * vec =<br/>
-    326.961<br/>
-    502.149<br/>
-    422.157<br/>
-    MatFix =<br/>
-    84.6605 81.0501 11.4985<br/>
-    27.4108 61.3535 19.1403<br/>
-    95.8943 40.3995 46.4452<br/>
-</details>
-
-<h2 id="使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）"><a href="#使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）" class="headerlink" title="使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）"></a>使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）</h2><ul>
-<li><strong>编译器可以更快映射</strong>，因为已知尺寸<blockquote>
-<blockquote>
-<p> The compiler emits better (faster) code because it knows the size of the matrices and vectors. </p>
-</blockquote>
-</blockquote>
-</li>
-<li>在编译时，具体的尺寸可以<strong>更容易检测出一些小错误</strong><blockquote>
-<blockquote>
-<p> Specifying the size in the type also allows for more rigorous checking at compile-time.</p>
-</blockquote>
-</blockquote>
-</li>
-<li><strong>一个好的习惯：在使用小于4*4尺寸的矩阵或向量时，使用固定大小的矩阵和向量</strong><blockquote>
-<blockquote>
-<p> A rule of thumb is to use fixed-size matrices for size 4-by-4 and smaller.</p>
-</blockquote>
-</blockquote>
-</li>
+<li>由《C专家编程》（也可能是另一本，两年前看的有点记不清了）中介绍，C语言使用“大口法”来解释语句，换句话说一行代码（以分号分割）的解释是从左到右，并且在有意义的前提下尽可能让一个意群更大（借用英语中的意群概念），因此 const 常量声明只能用作离自己最近的基本数据类型，否则无意义</li>
+<li>对于第一个例子：int* const 意群的变化：无符号整型（可以扩大） -&gt; 无符号整型指针（还可以扩大） -&gt; 无符号整型指针+常量（无法扩大，且声明结束），因此在第三步需要将const作用于最近的基本数据类型 int* 所以最终是一个“常量的整型指针”，也就是指针常量</li>
+<li>对于第二个例子：int const*意群的变化：无符号整型（可以扩大）-&gt;常量无符号整型（无法扩大）-&gt;常量无符号整型的指针（意群可以扩大，但声明结束），因此const仅仅修饰了int而最后的指针类型修饰了const int，所以最后是“指向整型常量的指针”，也就是常量指针</li>
+<li>对于第三个例子const int*，与第二个例子类似，只要知道const只修饰最近的类型</li>
+<li>按照第三个例子的解释，第四个例子const* int为什么无效也很容易解释：一个没有明确指出类型的指针被const修饰怎么可能有意义？</li>
 </ul>
 ]]></content>
       <categories>
@@ -452,24 +402,74 @@
       </tags>
   </entry>
   <entry>
-    <title>辨别常量指针与指针常量</title>
-    <url>/2021/12/18/C++/%E8%BE%A8%E5%88%AB%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88%E4%B8%8E%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F/</url>
+    <title>『Eigen』 GettingStart（入门篇）</title>
+    <url>/2021/11/07/C++/Eigen-GettingStart/</url>
     <content><![CDATA[<ul>
-<li>自己总结的一种“区别指针常量与常量指针”的方法，从底层原理出发一次解决</li>
+<li>本篇文章主要介绍了Eigen库最基本的知识和使用方法</li>
+<li>参考资料：<a href="https://eigen.tuxfamily.org/dox/GettingStarted.html">Eigen官方文档</a></li>
 </ul>
 <span id="more"></span>
 
-<h2 id="从实例出发"><a href="#从实例出发" class="headerlink" title="从实例出发"></a>从实例出发</h2><ul>
-<li>下面的例子例举了一个类型的指针所能出现的所有情况</li>
+<h2 id="一个简单的例子（-A-simple-first-program）"><a href="#一个简单的例子（-A-simple-first-program）" class="headerlink" title="一个简单的例子（ A simple first program）"></a>一个简单的例子（ A simple first program）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> Eigen::MatrixXd;</span><br><span class="line">    <span class="function">MatrixXd <span class="title">mat</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;<span class="comment">//设置尺寸2X2，注意Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    mat &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>;<span class="comment">//这里使用了所谓的“comma initializer”</span></span><br><span class="line">    <span class="built_in">mat</span>(<span class="number">1</span>, <span class="number">1</span>) = <span class="built_in">mat</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//★：使用“圆括弧”而不是“方括弧”</span></span><br><span class="line">    cout &lt;&lt; mat &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(mat).<span class="built_in">name</span>() &lt;&lt; endl;<span class="comment">//测试矩阵数据是double类型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
+    1 2<br/>
+    3 1<br/>
+    class Eigen::Matrix<double,-1,-1,0,-1,-1>
+</details>
+
+<h2 id="对第一个程序的解释（Explanation-of-the-first-program）"><a href="#对第一个程序的解释（Explanation-of-the-first-program）" class="headerlink" title="对第一个程序的解释（Explanation of the first program）"></a>对第一个程序的解释（Explanation of the first program）</h2><ul>
+<li>Eigen定义了非常多的类型，但<strong>通常使用 MatrixXd 就足够了</strong>，X代表矩阵尺寸是任意的，d代表数据是double类型的</li>
+<li>Eigen/Dense在namespace Eigen中定义了MatrixXd的所有成员函数以及相关的数据类型</li>
+<li><strong>Eigen不会对Matrix或Vector初始化，如果需要零矩阵或零向量需要使用 setZero</strong></li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>, ii = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>* <span class="keyword">const</span> typePointConst = &amp;i;</span><br><span class="line">typePointConst = &amp;ii;   <span class="comment">//Error:expression must be a modifiable value</span></span><br><span class="line">std::cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(typePointConst).<span class="built_in">name</span>() &lt;&lt; std::endl;</span><br><span class="line"><span class="comment">//output:int*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span>* typeConstPoint = &amp;i;</span><br><span class="line">typeConstPoint = &amp;ii;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(typeConstPoint).<span class="built_in">name</span>() &lt;&lt; std::endl;</span><br><span class="line"><span class="comment">//output:int const*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* constTypePoint = &amp;i;</span><br><span class="line">constTypePoint = &amp;ii;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(constTypePoint).<span class="built_in">name</span>() &lt;&lt; std::endl;</span><br><span class="line"><span class="comment">//output:int const*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span>* <span class="keyword">int</span> constPointType = &amp;i;   <span class="comment">//Error:不存在该类型</span></span><br></pre></td></tr></table></figure>
+<p><strong>▽  以下为来自官方文档的相关信息</strong></p>
+<ul>
+<li> <a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Types">Eigen提供的数据类型</a></li>
+<li><a href="https://eigen.tuxfamily.org/dox/group__QuickRefPage.html#QuickRef_Headers">Eigen的头文件表</a></li>
+<li><a href="https://eigen.tuxfamily.org/dox/group__TutorialAdvancedInitialization.html">Eigen Comma Initializer</a></li>
+</ul>
+<h2 id="矩阵与向量（Matrices-and-Vectors）"><a href="#矩阵与向量（Matrices-and-Vectors）" class="headerlink" title="矩阵与向量（Matrices and Vectors）"></a>矩阵与向量（Matrices and Vectors）</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Eigen/Dense&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at run time) 使用MatrixXd时，矩阵尺寸在运行时确定</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    MatrixXd matX = MatrixXd::<span class="built_in">Random</span>(<span class="number">3</span>, <span class="number">3</span>);<span class="comment">//默认随机范围[-1,1]</span></span><br><span class="line">    matX = (matX + MatrixXd::<span class="built_in">Constant</span>(<span class="number">3</span>, <span class="number">3</span>, <span class="number">1.2</span>)) * <span class="number">50</span>;<span class="comment">//线性映射将范围映射到[10,110]</span></span><br><span class="line">    <span class="comment">//MatrixXd::Constant(row, col, value)会创建一个所有元素是value的矩阵</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX =&quot;</span> &lt;&lt; endl &lt;&lt; matX &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Matrices (Size set at compile time) 使用固定尺寸的矩阵，会在编译时就确定大小</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    Matrix3d matFix = Matrix3d::<span class="built_in">Random</span>();</span><br><span class="line">    matFix = (matFix + Matrix3d::<span class="built_in">Constant</span>(<span class="number">1.2</span>)) * <span class="number">50</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatFix =&quot;</span> &lt;&lt; endl &lt;&lt; matFix &lt;&lt; endl;</span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">//Vectors 可以使用VectorXd创建一个任意维度的向量</span></span><br><span class="line"><span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">    VectorXd vec&#123; <span class="number">3</span> &#125;;<span class="comment">//设置维度为3，再次提醒Eigen不会对Matrix或Vector初始化</span></span><br><span class="line">    vec &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>;</span><br><span class="line">    cout &lt;&lt; vec &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;MatX * vec = &quot;</span> &lt;&lt; endl &lt;&lt; matX * vec &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>由《C专家编程》（也可能是另一本，两年前看的有点记不清了）中介绍，C语言使用“大口法”来解释语句，换句话说一行代码（以分号分割）的解释是从左到右，并且在有意义的前提下尽可能让一个意群更大（借用英语中的意群概念），因此 const 常量声明只能用作离自己最近的基本数据类型，否则无意义</li>
-<li>对于第一个例子：int* const 意群的变化：无符号整型（可以扩大） -&gt; 无符号整型指针（还可以扩大） -&gt; 无符号整型指针+常量（无法扩大，且声明结束），因此在第三步需要将const作用于最近的基本数据类型 int* 所以最终是一个“常量的整型指针”，也就是指针常量</li>
-<li>对于第二个例子：int const*意群的变化：无符号整型（可以扩大）-&gt;常量无符号整型（无法扩大）-&gt;常量无符号整型的指针（意群可以扩大，但声明结束），因此const仅仅修饰了int而最后的指针类型修饰了const int，所以最后是“指向整型常量的指针”，也就是常量指针</li>
-<li>对于第三个例子const int*，与第二个例子类似，只要知道const只修饰最近的类型</li>
-<li>按照第三个例子的解释，第四个例子const* int为什么无效也很容易解释：一个没有明确指出类型的指针被const修饰怎么可能有意义？</li>
+<li><strong>Eigen的Matrix默认使用列主序，Vector默认使用右手系</strong></li>
+</ul>
+<details><summary><b>▷ 点这里看看结果是否和你想的一样</b></summary>
+    10.1251 90.8741 45.0291<br/>
+    66.3585 68.5009 99.5962<br/>
+    29.3304 57.9873  92.284<br/>
+    1<br/>
+    2<br/>
+    3<br/>
+    MatX * vec =<br/>
+    326.961<br/>
+    502.149<br/>
+    422.157<br/>
+    MatFix =<br/>
+    84.6605 81.0501 11.4985<br/>
+    27.4108 61.3535 19.1403<br/>
+    95.8943 40.3995 46.4452<br/>
+</details>
+
+<h2 id="使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）"><a href="#使用固定尺寸的矩阵和向量的两个好处（Two-advantages-of-Fixed-size-matrices-and-vectors）" class="headerlink" title="使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）"></a>使用固定尺寸的矩阵和向量的两个好处（Two advantages of Fixed-size matrices and vectors）</h2><ul>
+<li><strong>编译器可以更快映射</strong>，因为已知尺寸<blockquote>
+<blockquote>
+<p> The compiler emits better (faster) code because it knows the size of the matrices and vectors. </p>
+</blockquote>
+</blockquote>
+</li>
+<li>在编译时，具体的尺寸可以<strong>更容易检测出一些小错误</strong><blockquote>
+<blockquote>
+<p> Specifying the size in the type also allows for more rigorous checking at compile-time.</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>一个好的习惯：在使用小于4*4尺寸的矩阵或向量时，使用固定大小的矩阵和向量</strong><blockquote>
+<blockquote>
+<p> A rule of thumb is to use fixed-size matrices for size 4-by-4 and smaller.</p>
+</blockquote>
+</blockquote>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -1634,37 +1634,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Cmatrix与Shell实现随机屏保</title>
-    <url>/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/</url>
-    <content><![CDATA[<ul>
-<li>使用简单的ShellScript与Cmatrix在Ubuntu系统中实现“<strong>黑客帝国风屏保</strong>”</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://image.codebooklet.com/img_blog/Linux/cmatrix.gif"></p>
-<h2 id="Step1-安装cmatrix"><a href="#Step1-安装cmatrix" class="headerlink" title="Step1. 安装cmatrix"></a>Step1. 安装cmatrix</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get-install cmatrix</span><br></pre></td></tr></table></figure>
-<ul>
-<li>然后可以输入命令“cmatrix”测试是否安装成功</li>
-</ul>
-<h2 id="Step2-编写ShellScript"><a href="#Step2-编写ShellScript" class="headerlink" title="Step2. 编写ShellScript"></a>Step2. 编写ShellScript</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ScreenSaver.sh</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">if [ $# == 1 ]</span><br><span class="line">then cmatrix -s -b -C $1 #这里设置可以手动输入颜色</span><br><span class="line">else</span><br><span class="line">        randInt=$RANDOM</span><br><span class="line">        mode=$((randInt % 8))</span><br><span class="line">        if [ $mode == 0 ]</span><br><span class="line">                then cmatrix -s -b -C green</span><br><span class="line">        elif [ $mode == 1 ]</span><br><span class="line">                then cmatrix -s -b -C red</span><br><span class="line">        elif [ $mode == 2 ]</span><br><span class="line">                then cmatrix -s -b -C blue</span><br><span class="line">        elif [ $mode == 3 ]</span><br><span class="line">                then cmatrix -s -b -C white</span><br><span class="line">        elif [ $mode == 4 ]</span><br><span class="line">                then cmatrix -s -b -C yellow</span><br><span class="line">        elif [ $mode == 5 ]</span><br><span class="line">                then cmatrix -s -b -C cyan</span><br><span class="line">        elif [ $mode == 6 ]</span><br><span class="line">                then cmatrix -s -b -C magenta</span><br><span class="line">        else cmatrix -s -b -C black</span><br><span class="line">        fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x ScreenSaver.sh <span class="comment">#设置可执行权限</span></span><br><span class="line">./ScreenSaver.sh <span class="comment">#执行ShellScript</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>可以使用“man cmatrix”查看更多参数，这里只说明使用过的参数</strong></li>
-<li>[ -s ] ：启用 屏保(ScreenSaver) 模式，可以按任意键退出</li>
-<li>[ -b ] ：启用 随机粗体 主要提升视觉效果</li>
-<li>[ -C ]：设置字幕颜色，默认为green</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JLPT-N2-2017年7月真题笔记</title>
     <url>/2021/11/06/LearnJapanese/JLPT-N2-2017%E5%B9%B47%E6%9C%88%E7%9C%9F%E9%A2%98/</url>
     <content><![CDATA[<ul>
@@ -2385,151 +2354,28 @@
       </tags>
   </entry>
   <entry>
-    <title>《Linux-Ubuntu从入门到精通》笔记</title>
-    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+    <title>Cmatrix与Shell实现随机屏保</title>
+    <url>/2021/11/08/Linux/Cmatrix%E4%B8%8EShell%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E5%B1%8F%E4%BF%9D/</url>
+    <content><![CDATA[<ul>
+<li>使用简单的ShellScript与Cmatrix在Ubuntu系统中实现“<strong>黑客帝国风屏保</strong>”</li>
+</ul>
 <span id="more"></span>
 
-<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
-<li>用以存储数据的物理介质</li>
-</ul>
-<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
-<li>对于较大存储容量的介质，需要合理规划分区</li>
-</ul>
-<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
-<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
-</ul>
-<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
-<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
-<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
-<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
-<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
-<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
-</ul>
-<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
-<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
-</ul>
-<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
-<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
-</ul>
-<ol>
-<li>所有目录都是由根目录衍生出来的；</li>
-<li>根目录与系统的开机、修复、还原密切相关；</li>
-</ol>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://image.codebooklet.com/img_blog/Linux/cmatrix.gif"></p>
+<h2 id="Step1-安装cmatrix"><a href="#Step1-安装cmatrix" class="headerlink" title="Step1. 安装cmatrix"></a>Step1. 安装cmatrix</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get-install cmatrix</span><br></pre></td></tr></table></figure>
 <ul>
-<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
+<li>然后可以输入命令“cmatrix”测试是否安装成功</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="center">主要一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/bin/</td>
-<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
-</tr>
-<tr>
-<td align="center">/boot/</td>
-<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
-</tr>
-<tr>
-<td align="center">/dev/</td>
-<td align="center">设备文件保存位置</td>
-</tr>
-<tr>
-<td align="center">/etc/</td>
-<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
-</tr>
-<tr>
-<td align="center">/home/</td>
-<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
-</tr>
-<tr>
-<td align="center">/lib/</td>
-<td align="center"><strong>系统调用的函数库保存位置</strong></td>
-</tr>
-<tr>
-<td align="center">/media/</td>
-<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
-</tr>
-<tr>
-<td align="center">/mnt/</td>
-<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
-</tr>
-<tr>
-<td align="center">/misc/</td>
-<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
-</tr>
-<tr>
-<td align="center">/opt/</td>
-<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
-</tr>
-<tr>
-<td align="center">/root/</td>
-<td align="center">root 的主目录</td>
-</tr>
-<tr>
-<td align="center">/sbin/</td>
-<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
-</tr>
-<tr>
-<td align="center">/srv/</td>
-<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
-</tr>
-<tr>
-<td align="center">/tmp/</td>
-<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
-</tr>
-</tbody></table>
+<h2 id="Step2-编写ShellScript"><a href="#Step2-编写ShellScript" class="headerlink" title="Step2. 编写ShellScript"></a>Step2. 编写ShellScript</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ScreenSaver.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">if [ $# == 1 ]</span><br><span class="line">then cmatrix -s -b -C $1 #这里设置可以手动输入颜色</span><br><span class="line">else</span><br><span class="line">        randInt=$RANDOM</span><br><span class="line">        mode=$((randInt % 8))</span><br><span class="line">        if [ $mode == 0 ]</span><br><span class="line">                then cmatrix -s -b -C green</span><br><span class="line">        elif [ $mode == 1 ]</span><br><span class="line">                then cmatrix -s -b -C red</span><br><span class="line">        elif [ $mode == 2 ]</span><br><span class="line">                then cmatrix -s -b -C blue</span><br><span class="line">        elif [ $mode == 3 ]</span><br><span class="line">                then cmatrix -s -b -C white</span><br><span class="line">        elif [ $mode == 4 ]</span><br><span class="line">                then cmatrix -s -b -C yellow</span><br><span class="line">        elif [ $mode == 5 ]</span><br><span class="line">                then cmatrix -s -b -C cyan</span><br><span class="line">        elif [ $mode == 6 ]</span><br><span class="line">                then cmatrix -s -b -C magenta</span><br><span class="line">        else cmatrix -s -b -C black</span><br><span class="line">        fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x ScreenSaver.sh <span class="comment">#设置可执行权限</span></span><br><span class="line">./ScreenSaver.sh <span class="comment">#执行ShellScript</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
+<li><strong>可以使用“man cmatrix”查看更多参数，这里只说明使用过的参数</strong></li>
+<li>[ -s ] ：启用 屏保(ScreenSaver) 模式，可以按任意键退出</li>
+<li>[ -b ] ：启用 随机粗体 主要提升视觉效果</li>
+<li>[ -C ]：设置字幕颜色，默认为green</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="center">其他一级目录</th>
-<th align="center">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">/lost+found/</td>
-<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
-</tr>
-<tr>
-<td align="center">/proc/</td>
-<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
-</tr>
-<tr>
-<td align="center">/sys/</td>
-<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
-</tr>
-</tbody></table>
-<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
-<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
-<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
-</ul>
-<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
-<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
-<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
-<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
-</ul>
-<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
-<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
-<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
-</ul>
-<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
-<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
-</li>
-<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
-</li>
-<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
-</li>
-<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -2865,6 +2711,160 @@
       </tags>
   </entry>
   <entry>
+    <title>《Linux-Ubuntu从入门到精通》笔记</title>
+    <url>/2021/10/27/Linux/Linux-Ubuntu%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>该笔记仅包含书中个人认为比较重要的内容，参考书中的学习路线，但内容是结合其他资料和个人思考整合并精简化所得到</p>
+<span id="more"></span>
+
+<h1 id="Chapter4-文件系统管理"><a href="#Chapter4-文件系统管理" class="headerlink" title="Chapter4. 文件系统管理"></a>Chapter4. 文件系统管理</h1><h2 id="文件系统的基本概念"><a href="#文件系统的基本概念" class="headerlink" title="文件系统的基本概念"></a>文件系统的基本概念</h2><h3 id="1-存储介质"><a href="#1-存储介质" class="headerlink" title="1. 存储介质"></a>1. 存储介质</h3><ul>
+<li>用以存储数据的物理介质</li>
+</ul>
+<h3 id="2-磁盘分割"><a href="#2-磁盘分割" class="headerlink" title="2. 磁盘分割"></a>2. 磁盘分割</h3><ul>
+<li>对于较大存储容量的介质，需要合理规划分区</li>
+</ul>
+<h3 id="3-创建文件系统"><a href="#3-创建文件系统" class="headerlink" title="3. 创建文件系统"></a>3. 创建文件系统</h3><ul>
+<li>即初始化，需要先进行磁盘分割才能创建文件系统</li>
+</ul>
+<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><ul>
+<li>Linux / Unix 系统没有磁盘分区的逻辑概念</li>
+<li>任何一个文件系统被创建后都需要挂载到特定目录挂载过程相当于激活文件系统，</li>
+<li>Windows系统由内部机制实现，Linux则需要使用挂载工具</li>
+<li>Windows文件系统挂载：将磁盘分成若干分区，在各个分区中挂载文件系统</li>
+<li>Linux文件系统挂载：将磁盘空间挂载在一个挂载点（空置的目录）</li>
+</ul>
+<h2 id="Ubuntu文件系统的结构"><a href="#Ubuntu文件系统的结构" class="headerlink" title="Ubuntu文件系统的结构"></a>Ubuntu文件系统的结构</h2><h3 id="1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）"><a href="#1-文件系统层次化标准FHS（Filesystem-Hierarchy-Standard）" class="headerlink" title="1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）"></a>1.文件系统层次化标准FHS（Filesystem Hierarchy Standard）</h3><ul>
+<li>为了避免诸多使用者对 Linux 系统目录结构天马行空，Linux 基金会发布了 FHS 标准。多数 Linux 发行版系统都遵循这一标准，该标准规定了 Linux 系统中所有一级目录以及部分二级目录（/usr 和 /var）的用途。发布此标准的主要目的就是为了让用户清楚地了解每个目录应该存放什么类型的文件<a href="http://c.biancheng.net/view/2833.html">&gt;&gt; 参考资料</a> </li>
+</ul>
+<h3 id="2-根目录"><a href="#2-根目录" class="headerlink" title="2.根目录"></a>2.根目录</h3><ul>
+<li>FHS 认为，Linux 系统的根目录（/）最为重要，其原因有以下 2 点：</li>
+</ul>
+<ol>
+<li>所有目录都是由根目录衍生出来的；</li>
+<li>根目录与系统的开机、修复、还原密切相关；</li>
+</ol>
+<ul>
+<li>因此，根目录必须包含开机软件、核心文件、开机所需程序、函数库、修复系统程序等文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">主要一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/bin/</td>
+<td align="center"><strong>存放系统命令</strong>，普通用户和 root 都可以执行。放在 /bin 下的命令在单用户模式下也可以执行</td>
+</tr>
+<tr>
+<td align="center">/boot/</td>
+<td align="center"><strong>系统启动目录</strong>，保存与系统启动相关的文件，如内核文件和启动引导程序（grub）文件等</td>
+</tr>
+<tr>
+<td align="center">/dev/</td>
+<td align="center">设备文件保存位置</td>
+</tr>
+<tr>
+<td align="center">/etc/</td>
+<td align="center"><strong>配置文件保存位置</strong>。系统内所有采用默认安装方式（rpm 安装）的服务配置文件全部保存在此目录中，如用户信息、服务的启动脚本、常用服务的配置文件等</td>
+</tr>
+<tr>
+<td align="center">/home/</td>
+<td align="center"><strong>普通用户的主目录</strong>（也称为家目录）。在创建用户时，每个用户要有一个默认登录和保存自己数据的位置，就是用户的主目录，所有普通用户的主目录是在 /home/ 下建立一个和用户名相同的目录</td>
+</tr>
+<tr>
+<td align="center">/lib/</td>
+<td align="center"><strong>系统调用的函数库保存位置</strong></td>
+</tr>
+<tr>
+<td align="center">/media/</td>
+<td align="center"><strong>挂载目录</strong>。系统建议用来挂载媒体设备，如软盘和光盘</td>
+</tr>
+<tr>
+<td align="center">/mnt/</td>
+<td align="center"><strong>挂载目录</strong>。早期 Linux 中只有这一个挂载目录，并没有细分。系统建议这个目录用来挂载额外的设备，如 U 盘、移动硬盘和其他操作系统的分区</td>
+</tr>
+<tr>
+<td align="center">/misc/</td>
+<td align="center"><strong>挂载目录 <strong>。系统建议用来挂载 NFS 服务的共享目录。</strong>虽然系统准备了三个默认挂载目录 /media/、/mnt/、/misc/，但是到底在哪个目录中挂载什么设备可以由管理员自己决定</strong></td>
+</tr>
+<tr>
+<td align="center">/opt/</td>
+<td align="center">第三方安装的软件<strong>可选保存位置，比如/usr/local/ 目录也可以用来安装软件</strong>。这个目录是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录中</td>
+</tr>
+<tr>
+<td align="center">/root/</td>
+<td align="center">root 的主目录</td>
+</tr>
+<tr>
+<td align="center">/sbin/</td>
+<td align="center"><strong>保存与系统环境设置相关的命令</strong>，只有 root 可以使用这些命令进行系统环境设置，但也有些命令可以允许普通用户查看</td>
+</tr>
+<tr>
+<td align="center">/srv/</td>
+<td align="center"><strong>服务数据目录</strong>。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
+</tr>
+<tr>
+<td align="center">/tmp/</td>
+<td align="center"><strong>临时目录</strong>。系统存放临时文件的目录，在该目录下，所有用户都可以访问和写入。<strong>建议此目录中不能保存重要数据</strong>，最好每次开机都把该目录清空</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>FHS 针对根目录中包含的子目录仅限于上表，但Linux 根目录下通常还包含以下中的几个一级目录</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">其他一级目录</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/lost+found/</td>
+<td align="center">当系统意外崩溃或意外关机时，产生的一些 <strong>文件碎片会存放在这里</strong>。在系统启动的过程中，fsck 工具会检查这里，并修复已经损坏的文件系统。 <strong>这个目录只在每个分区中出现</strong>，例如，/lost+found 就是根分区的备份恢复目录，/boot/lost+found 就是 /boot 分区的备份恢复目录</td>
+</tr>
+<tr>
+<td align="center">/proc/</td>
+<td align="center"><strong>虚拟文件系统</strong>。 <strong>该目录中的数据并不保存在硬盘上，而是保存到内存中</strong>。主要保存系统的内核、进程、外部设备状态和网络状态等。如 /proc/cpuinfo 是保存 CPU 信息的，/proc/devices 是保存设备驱动的列表的，/proc/filesystems 是保存文件系统列表的，/proc/net 是保存网络协议信息的……</td>
+</tr>
+<tr>
+<td align="center">/sys/</td>
+<td align="center"><strong>虚拟文件系统</strong>。和 /proc/ 目录相似， <strong>该目录中的数据都保存在内存中，主要保存与内核相关的信息</strong></td>
+</tr>
+</tbody></table>
+<p><font color="red">★</font> 注意/proc/和/sys/两个虚拟文件系统，数据都保存在内存中</p>
+<h2 id="交换分区"><a href="#交换分区" class="headerlink" title="交换分区"></a>交换分区</h2><h3 id="1-交换分区的概念"><a href="#1-交换分区的概念" class="headerlink" title="1.交换分区的概念"></a>1.交换分区的概念</h3><ul>
+<li>在Linux中交换分区就是“虚拟内存”技术的体现，概念上类似于Windows中的交换文件</li>
+</ul>
+<h3 id="2-交换分区的作用"><a href="#2-交换分区的作用" class="headerlink" title="2.交换分区的作用"></a>2.交换分区的作用</h3><ul>
+<li>当数据被存放在物理内存中时，这些数据并不经常使用，或者物理内存不够用时，那么一部分数据就会转移到交换分区中，将真正需要使用内存的数据转入内存</li>
+<li>并<strong>不是任何数据转移都会用到交换分区</strong>，比如写文件（内存=&gt;磁盘），读文件（内存=&gt;释放）</li>
+<li>交换分区是<strong>匿名数据的交换空间</strong>，在文件系统中没有相应映射只在内存中存在的数据称为匿名数据，比如malloc、new等函数生成的对象数据、堆栈的一些状态和变量数据等，由于是在内存上进行空间操作，因此需要交换分区</li>
+</ul>
+<h3 id="3-交换分区对系统的影响因素"><a href="#3-交换分区对系统的影响因素" class="headerlink" title="3.交换分区对系统的影响因素"></a>3.交换分区对系统的影响因素</h3><ul>
+<li>Size(交换分区) &gt;= Size(物理内存)，一般取物理内存大小的2倍及以上 </li>
+<li>交换分区的数量，如果交换分区过少，会由于I/O频繁降低性能</li>
+</ul>
+<h3 id="4-交换分区的管理"><a href="#4-交换分区的管理" class="headerlink" title="4.交换分区的管理"></a>4.交换分区的管理</h3><ul>
+<li><p>交换分区是分页管理的，页大小与内存页一致（使用”getconf PAGE_SIZE”查看内存页大小）</p>
+</li>
+<li><p>使用”vmstat”命令查看主要系统性能指标 （参数①：采样频率（秒），参数②：采样次数，默认1次，如果设置了①而没有设置②则无限循环）</p>
+</li>
+<li><p>默认输出单位为KB，可以使用”-S”更改单位，比如使用”vmstat -S m”切换为MB</p>
+</li>
+<li><p><a href="http://www.codebooklet.com/2021/10/29/Linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/#vmstat">更多关于vmstat的介绍</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@Aioy:~/FrozenZone/ProgramTest/temp<span class="comment"># vmstat 2 10</span></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 3  0      0 1371868 146284 399248    0    0     2     4   18    8  1  0 99  0  0</span><br><span class="line"> 2  0      0 1371860 146284 399248    0    0     0     0  483 1202  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     2  458 1161  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0    12  460 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  454 1160  1  0 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1151  0  0 100  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  446 1149  0  1 98  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  451 1160  1  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  449 1152  0  1 99  0  0</span><br><span class="line"> 0  0      0 1371860 146284 399248    0    0     0     0  459 1163  1  0 99  0  0</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux用户身份切换</title>
     <url>/2021/11/23/Linux/Linux%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E5%88%87%E6%8D%A2/</url>
     <content><![CDATA[<ul>
@@ -2980,69 +2980,6 @@
 </ul>
 <h2 id="运行级别配置文件"><a href="#运行级别配置文件" class="headerlink" title="运行级别配置文件"></a>运行级别配置文件</h2><ul>
 <li>在**/etc/rc.d/**目录下有以下文件，分别对应运行等级<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[raven-1@localhost ~]$ <span class="built_in">cd</span> /etc/rc.d</span><br><span class="line">[raven-1@localhost rc.d]$ ll</span><br><span class="line">total 4</span><br><span class="line">drwxr-xr-x. 2 root root  70 Oct 22 01:42 init.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc0.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc1.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc2.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc3.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc4.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:49 rc5.d</span><br><span class="line">drwxr-xr-x. 2 root root  45 Oct 22 01:42 rc6.d</span><br><span class="line">-rw-r--r--. 1 root root 473 Mar 31  2020 rc.local</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux硬链接软连接和复制的区别</title>
-    <url>/2021/11/06/Linux/Linux%E7%A1%AC%E9%93%BE%E6%8E%A5%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%A4%8D%E5%88%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<p><strong>通过Ubuntu Linux实机演示 硬链接Hard Link, 软连接Symbolic Link, 复制Copy之间的区别</strong></p>
-<span id="more"></span>
-
-<hr>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="①-硬连接-Hard-Link"><a href="#①-硬连接-Hard-Link" class="headerlink" title="① 硬连接 Hard Link"></a>① 硬连接 Hard Link</h2><h3 id="如何建立硬连接？"><a href="#如何建立硬连接？" class="headerlink" title="如何建立硬连接？"></a>如何建立硬连接？</h3><ul>
-<li>使用“ln file file_link”即可为file创建一个名为file_link的硬连接</li>
-</ul>
-<h3 id="硬连接的特点"><a href="#硬连接的特点" class="headerlink" title="硬连接的特点"></a>硬连接的特点</h3><ul>
-<li>硬连接通过<strong>索引节点（inode）</strong>进行连接，链接同一文件的硬连接有相同的inode</li>
-<li>通过硬连接，可以有多个不同连接访问到同一个文件</li>
-<li><strong>硬连接本身也是普通文件（regular file）</strong>，因此<strong>目录文件无法创建硬连接</strong></li>
-<li>只删除部分硬连接不影响文件本身，只有当<strong>所有硬连接都删除后，文件才会真正被释放</strong></li>
-<li>每个硬连接<strong>会让文件的Links数增加（+1）</strong>（使用stat查看）</li>
-</ul>
-<h2 id="②-软连接-Symbolic-Link"><a href="#②-软连接-Symbolic-Link" class="headerlink" title="② 软连接 Symbolic Link"></a>② 软连接 Symbolic Link</h2><h3 id="如何创建软连接？"><a href="#如何创建软连接？" class="headerlink" title="如何创建软连接？"></a>如何创建软连接？</h3><ul>
-<li>使用“ln -s”建立软连接，也叫符号链接（Symbolic Link）</li>
-</ul>
-<h3 id="软连接的特点"><a href="#软连接的特点" class="headerlink" title="软连接的特点"></a>软连接的特点</h3><ul>
-<li>类似于Windows的快捷方式，<strong>软连接与被链接文件有不同inode</strong>，因此删除软连接不会影响文件</li>
-<li>实际上，<strong>符号链接的文件是一个特殊的文本文件</strong>，包含着链接另一端的位置信息</li>
-<li>软连接<strong>不会增加文件的Links</strong>（使用stat查看）</li>
-</ul>
-<h2 id="③-复制-Copy"><a href="#③-复制-Copy" class="headerlink" title="③ 复制 Copy"></a>③ 复制 Copy</h2><h3 id="如何复制文件？"><a href="#如何复制文件？" class="headerlink" title="如何复制文件？"></a>如何复制文件？</h3><ul>
-<li>使用“cp file file_copy”即可复制file文件为file_copy</li>
-</ul>
-<h3 id="复制的特点"><a href="#复制的特点" class="headerlink" title="复制的特点"></a>复制的特点</h3><ul>
-<li>复制文件，操作系统会为复制品创建新的inode，也就是相当于一个新的文件</li>
-</ul>
-<hr>
-<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="①-创建一个net文件为其添加硬连接并复制"><a href="#①-创建一个net文件为其添加硬连接并复制" class="headerlink" title="① 创建一个net文件为其添加硬连接并复制"></a>① 创建一个net文件为其添加硬连接并复制</h2><h3 id="使用stat-net查看net文件"><a href="#使用stat-net查看net文件" class="headerlink" title="使用stat net查看net文件"></a>使用stat net查看net文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-link-net查看net的硬连接"><a href="#使用stat-link-net查看net的硬连接" class="headerlink" title="使用stat link_net查看net的硬连接"></a>使用stat link_net查看net的硬连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-copy-net查看net的复制"><a href="#使用stat-copy-net查看net的复制" class="headerlink" title="使用stat copy_net查看net的复制"></a>使用stat copy_net查看net的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058123     Links: 1</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Change: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-
-<h2 id="②-创建一个dir文件为其添加软连接并复制"><a href="#②-创建一个dir文件为其添加软连接并复制" class="headerlink" title="② 创建一个dir文件为其添加软连接并复制"></a>② 创建一个dir文件为其添加软连接并复制</h2><h3 id="使用stat-dir查看dir文件"><a href="#使用stat-dir查看dir文件" class="headerlink" title="使用stat dir查看dir文件"></a>使用stat dir查看dir文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-link-dir查看dir的软连接"><a href="#使用stat-link-dir查看dir的软连接" class="headerlink" title="使用stat link_dir查看dir的软连接"></a>使用stat link_dir查看dir的软连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_dir -&gt; dir</span><br><span class="line">  Size: 3               Blocks: 0          IO Block: 4096   symbolic link</span><br><span class="line">Device: fc01h/64513d    Inode: 1058121     Links: 1</span><br><span class="line">Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:29:26.737743781 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line">Change: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h3 id="使用stat-copy-dir查看dir的复制"><a href="#使用stat-copy-dir查看dir的复制" class="headerlink" title="使用stat copy_dir查看dir的复制"></a>使用stat copy_dir查看dir的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058122     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:04.068572412 +0800</span><br><span class="line">Modify: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line">Change: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
-<h2 id="③-分别对连接文件和复制文件进行权限操作观察原文件变化"><a href="#③-分别对连接文件和复制文件进行权限操作观察原文件变化" class="headerlink" title="③ 分别对连接文件和复制文件进行权限操作观察原文件变化"></a>③ 分别对连接文件和复制文件进行权限操作观察原文件变化</h2><h3 id="赋予执行权限前（使用“ls-li”命令查看）"><a href="#赋予执行权限前（使用“ls-li”命令查看）" class="headerlink" title="赋予执行权限前（使用“ls -li”命令查看）"></a>赋予执行权限前（使用“ls -li”命令查看）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 net</span><br></pre></td></tr></table></figure>
-<h3 id="对硬连接文件link-net-使用“chmod-x-link-net”"><a href="#对硬连接文件link-net-使用“chmod-x-link-net”" class="headerlink" title="对硬连接文件link_net 使用“chmod +x link_net”"></a>对硬连接文件link_net 使用“chmod +x link_net”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 net</span><br><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发现硬连接文件和文件本身权限都发生了变化</li>
-</ul>
-<h3 id="对软连接文件link-dir-使用“chmod-x-link-dir”"><a href="#对软连接文件link-dir-使用“chmod-x-link-dir”" class="headerlink" title="对软连接文件link_dir 使用“chmod +x link_dir”"></a>对软连接文件link_dir 使用“chmod +x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rwxr-xr-x 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
-<h3 id="进一步对软连接测试-使用“chmod-x-link-dir”"><a href="#进一步对软连接测试-使用“chmod-x-link-dir”" class="headerlink" title="进一步对软连接测试 使用“chmod -x link_dir”"></a>进一步对软连接测试 使用“chmod -x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发现link_dir没变，说明通过修改软连接文件，不会对软连接产生影响，而是间接修改原文件</li>
-</ul>
-<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ul>
-<li>除了软连接的文件类型是Symbolic file，其他无论文件本身、硬链接还是复制都是regular file</li>
-<li>硬链接与文件本身 inode 完全相同，软连接和复制会赋予新的 inode</li>
-<li>对链接操作会影响原文件，对复制文件的操作不会影响原文件</li>
-<li>对软连接操作不会影响软链接，而是间接作用于原文件</li>
 </ul>
 ]]></content>
       <categories>
@@ -3186,6 +3123,69 @@
 <li>**对于非初始用户组，则需要在 /etc/group 中找到需要加入的组名，将用户名写入第四栏中</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#示例：将jerry加入root用户组</span></span><br><span class="line">root@Aioy:~<span class="comment"># vim /etc/group</span></span><br><span class="line">root:x:0:jerry</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux硬链接软连接和复制的区别</title>
+    <url>/2021/11/06/Linux/Linux%E7%A1%AC%E9%93%BE%E6%8E%A5%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%A4%8D%E5%88%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p><strong>通过Ubuntu Linux实机演示 硬链接Hard Link, 软连接Symbolic Link, 复制Copy之间的区别</strong></p>
+<span id="more"></span>
+
+<hr>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="①-硬连接-Hard-Link"><a href="#①-硬连接-Hard-Link" class="headerlink" title="① 硬连接 Hard Link"></a>① 硬连接 Hard Link</h2><h3 id="如何建立硬连接？"><a href="#如何建立硬连接？" class="headerlink" title="如何建立硬连接？"></a>如何建立硬连接？</h3><ul>
+<li>使用“ln file file_link”即可为file创建一个名为file_link的硬连接</li>
+</ul>
+<h3 id="硬连接的特点"><a href="#硬连接的特点" class="headerlink" title="硬连接的特点"></a>硬连接的特点</h3><ul>
+<li>硬连接通过<strong>索引节点（inode）</strong>进行连接，链接同一文件的硬连接有相同的inode</li>
+<li>通过硬连接，可以有多个不同连接访问到同一个文件</li>
+<li><strong>硬连接本身也是普通文件（regular file）</strong>，因此<strong>目录文件无法创建硬连接</strong></li>
+<li>只删除部分硬连接不影响文件本身，只有当<strong>所有硬连接都删除后，文件才会真正被释放</strong></li>
+<li>每个硬连接<strong>会让文件的Links数增加（+1）</strong>（使用stat查看）</li>
+</ul>
+<h2 id="②-软连接-Symbolic-Link"><a href="#②-软连接-Symbolic-Link" class="headerlink" title="② 软连接 Symbolic Link"></a>② 软连接 Symbolic Link</h2><h3 id="如何创建软连接？"><a href="#如何创建软连接？" class="headerlink" title="如何创建软连接？"></a>如何创建软连接？</h3><ul>
+<li>使用“ln -s”建立软连接，也叫符号链接（Symbolic Link）</li>
+</ul>
+<h3 id="软连接的特点"><a href="#软连接的特点" class="headerlink" title="软连接的特点"></a>软连接的特点</h3><ul>
+<li>类似于Windows的快捷方式，<strong>软连接与被链接文件有不同inode</strong>，因此删除软连接不会影响文件</li>
+<li>实际上，<strong>符号链接的文件是一个特殊的文本文件</strong>，包含着链接另一端的位置信息</li>
+<li>软连接<strong>不会增加文件的Links</strong>（使用stat查看）</li>
+</ul>
+<h2 id="③-复制-Copy"><a href="#③-复制-Copy" class="headerlink" title="③ 复制 Copy"></a>③ 复制 Copy</h2><h3 id="如何复制文件？"><a href="#如何复制文件？" class="headerlink" title="如何复制文件？"></a>如何复制文件？</h3><ul>
+<li>使用“cp file file_copy”即可复制file文件为file_copy</li>
+</ul>
+<h3 id="复制的特点"><a href="#复制的特点" class="headerlink" title="复制的特点"></a>复制的特点</h3><ul>
+<li>复制文件，操作系统会为复制品创建新的inode，也就是相当于一个新的文件</li>
+</ul>
+<hr>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="①-创建一个net文件为其添加硬连接并复制"><a href="#①-创建一个net文件为其添加硬连接并复制" class="headerlink" title="① 创建一个net文件为其添加硬连接并复制"></a>① 创建一个net文件为其添加硬连接并复制</h2><h3 id="使用stat-net查看net文件"><a href="#使用stat-net查看net文件" class="headerlink" title="使用stat net查看net文件"></a>使用stat net查看net文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-link-net查看net的硬连接"><a href="#使用stat-link-net查看net的硬连接" class="headerlink" title="使用stat link_net查看net的硬连接"></a>使用stat link_net查看net的硬连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058116     Links: 2</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 15:48:59.433492576 +0800</span><br><span class="line">Change: 2021-11-06 16:18:36.537452640 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-copy-net查看net的复制"><a href="#使用stat-copy-net查看net的复制" class="headerlink" title="使用stat copy_net查看net的复制"></a>使用stat copy_net查看net的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_net</span><br><span class="line">  Size: 8               Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058123     Links: 1</span><br><span class="line">Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Modify: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line">Change: 2021-11-06 16:31:22.620947582 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+
+<h2 id="②-创建一个dir文件为其添加软连接并复制"><a href="#②-创建一个dir文件为其添加软连接并复制" class="headerlink" title="② 创建一个dir文件为其添加软连接并复制"></a>② 创建一个dir文件为其添加软连接并复制</h2><h3 id="使用stat-dir查看dir文件"><a href="#使用stat-dir查看dir文件" class="headerlink" title="使用stat dir查看dir文件"></a>使用stat dir查看dir文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058114     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:52:49.926157173 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line">Change: 2021-11-06 15:29:16.505536795 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-link-dir查看dir的软连接"><a href="#使用stat-link-dir查看dir的软连接" class="headerlink" title="使用stat link_dir查看dir的软连接"></a>使用stat link_dir查看dir的软连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: link_dir -&gt; dir</span><br><span class="line">  Size: 3               Blocks: 0          IO Block: 4096   symbolic link</span><br><span class="line">Device: fc01h/64513d    Inode: 1058121     Links: 1</span><br><span class="line">Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 15:29:26.737743781 +0800</span><br><span class="line">Modify: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line">Change: 2021-11-06 15:29:25.713723071 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="使用stat-copy-dir查看dir的复制"><a href="#使用stat-copy-dir查看dir的复制" class="headerlink" title="使用stat copy_dir查看dir的复制"></a>使用stat copy_dir查看dir的复制</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">  File: copy_dir</span><br><span class="line">  Size: 0               Blocks: 0          IO Block: 4096   regular empty file</span><br><span class="line">Device: fc01h/64513d    Inode: 1058122     Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2021-11-06 16:31:04.068572412 +0800</span><br><span class="line">Modify: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line">Change: 2021-11-06 16:45:11.621713073 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h2 id="③-分别对连接文件和复制文件进行权限操作观察原文件变化"><a href="#③-分别对连接文件和复制文件进行权限操作观察原文件变化" class="headerlink" title="③ 分别对连接文件和复制文件进行权限操作观察原文件变化"></a>③ 分别对连接文件和复制文件进行权限操作观察原文件变化</h2><h3 id="赋予执行权限前（使用“ls-li”命令查看）"><a href="#赋予执行权限前（使用“ls-li”命令查看）" class="headerlink" title="赋予执行权限前（使用“ls -li”命令查看）"></a>赋予执行权限前（使用“ls -li”命令查看）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058116 -rw-r--r-- 2 root root 8 Nov  6 15:48 net</span><br></pre></td></tr></table></figure>
+<h3 id="对硬连接文件link-net-使用“chmod-x-link-net”"><a href="#对硬连接文件link-net-使用“chmod-x-link-net”" class="headerlink" title="对硬连接文件link_net 使用“chmod +x link_net”"></a>对硬连接文件link_net 使用“chmod +x link_net”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 net</span><br><span class="line">1058116 -rwxr-xr-x 2 root root 8 Nov  6 15:48 link_net</span><br><span class="line">1058123 -rw-r--r-- 1 root root 8 Nov  6 16:31 copy_net</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发现硬连接文件和文件本身权限都发生了变化</li>
+</ul>
+<h3 id="对软连接文件link-dir-使用“chmod-x-link-dir”"><a href="#对软连接文件link-dir-使用“chmod-x-link-dir”" class="headerlink" title="对软连接文件link_dir 使用“chmod +x link_dir”"></a>对软连接文件link_dir 使用“chmod +x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rwxr-xr-x 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
+<h3 id="进一步对软连接测试-使用“chmod-x-link-dir”"><a href="#进一步对软连接测试-使用“chmod-x-link-dir”" class="headerlink" title="进一步对软连接测试 使用“chmod -x link_dir”"></a>进一步对软连接测试 使用“chmod -x link_dir”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1058114 -rw-r--r-- 1 root root 0 Nov  6 15:29 dir</span><br><span class="line">1058121 lrwxrwxrwx 1 root root 3 Nov  6 15:29 link_dir -&gt; dir</span><br><span class="line">1058122 -rw-r--r-- 1 root root 0 Nov  6 16:45 copy_dir</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发现link_dir没变，说明通过修改软连接文件，不会对软连接产生影响，而是间接修改原文件</li>
+</ul>
+<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ul>
+<li>除了软连接的文件类型是Symbolic file，其他无论文件本身、硬链接还是复制都是regular file</li>
+<li>硬链接与文件本身 inode 完全相同，软连接和复制会赋予新的 inode</li>
+<li>对链接操作会影响原文件，对复制文件的操作不会影响原文件</li>
+<li>对软连接操作不会影响软链接，而是间接作用于原文件</li>
+</ul>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -3534,6 +3534,54 @@
       </tags>
   </entry>
   <entry>
+    <title>《Vulkan学习指南》练习题</title>
+    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<ul>
+<li>题目内容来自《Vulkan学习之南》——Parminder Singh</li>
+<li>每章节的练习题纯个人设计，仅供参考，原书并没有课后练习题</li>
+</ul>
+<span id="more"></span>
+
+
+
+<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><h2 id="1-Vulkan-API的制定团队"><a href="#1-Vulkan-API的制定团队" class="headerlink" title="1.Vulkan API的制定团队"></a>1.Vulkan API的制定团队</h2><details><summary><b>▷ 参考答案</b></summary>
+    Khronos
+</details>
+
+<h2 id="2-Physical-Device和Device的关系"><a href="#2-Physical-Device和Device的关系" class="headerlink" title="2.Physical Device和Device的关系"></a>2.Physical Device和Device的关系</h2><details><summary><b>▷ 参考答案</b></summary>
+    一台计算机系统包含多个支持Vulkan的物理硬件设备，设备是物理设备在应用程序中的逻辑表示
+</details>
+
+<h2 id="3-Queue的定义和职责"><a href="#3-Queue的定义和职责" class="headerlink" title="3.Queue的定义和职责"></a>3.Queue的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    队列（Queue）表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行
+</details>
+
+<h2 id="4-Vulkan广义上有哪几类内存类型（Memory-Type）"><a href="#4-Vulkan广义上有哪几类内存类型（Memory-Type）" class="headerlink" title="4.Vulkan广义上有哪几类内存类型（Memory Type）"></a>4.Vulkan广义上有哪几类内存类型（Memory Type）</h2><details><summary><b>▷ 参考答案</b></summary>
+    Vulkan暴露了多种内存类型，广义上可以分为两类：<br/>
+    1.宿主内存（Host Memory）<br/>
+    2.设备内存（Device Memory）
+</details>
+
+<h2 id="5-Command广义上可以划分为哪几类，简述各类指令的作用"><a href="#5-Command广义上可以划分为哪几类，简述各类指令的作用" class="headerlink" title="5.Command广义上可以划分为哪几类，简述各类指令的作用"></a>5.Command广义上可以划分为哪几类，简述各类指令的作用</h2><details><summary><b>▷ 参考答案</b></summary>
+    每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步<br/>
+    1.Action Command：绘制图元、清除表面、复制缓存、查询/时间戳、子通道开始/结束操作（这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像）、写入查询池）<br/>
+    2.Set State Command：绑定流水线、描述字集合、缓存，或设置一个动作状态、渲染通道/子通道的状态<br/>
+    3.Syschronization Command：处理多个Action Command同时发生的情况，用于设置同步或等待事件、插入流水线屏障对象、渲染通道/子通道的依赖
+</details>
+
+<h2 id="6-Command-Buffer的定义和职责"><a href="#6-Command-Buffer的定义和职责" class="headerlink" title="6.Command Buffer的定义和职责"></a>6.Command Buffer的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    一组指令的集合，可以记录多个指令并统一发送到队列中（第3题）
+</details>
+]]></content>
+      <categories>
+        <category>Vulkan</category>
+      </categories>
+      <tags>
+        <tag>CG</tag>
+        <tag>Vulkan</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《Vulkan学习指南》笔记</title>
     <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
@@ -3705,67 +3753,57 @@
       </tags>
   </entry>
   <entry>
-    <title>《Vulkan学习指南》练习题</title>
-    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
-    <content><![CDATA[<ul>
-<li>题目内容来自《Vulkan学习之南》——Parminder Singh</li>
-<li>每章节的练习题纯个人设计，仅供参考，原书并没有课后练习题</li>
+    <title>Codebooklet 搭建记录</title>
+    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/bloglog/</url>
+    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
+<li>修复了博客翻页按钮错误 <a href="https://blog.csdn.net/weixin_45748734/article/details/106042522">参考文章</a></li>
+</ul>
+<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
+<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
+<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
+<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
+<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
 </ul>
 <span id="more"></span>
 
-
-
-<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><h2 id="1-Vulkan-API的制定团队"><a href="#1-Vulkan-API的制定团队" class="headerlink" title="1.Vulkan API的制定团队"></a>1.Vulkan API的制定团队</h2><details><summary><b>▷ 参考答案</b></summary>
-    Khronos
-</details>
-
-<h2 id="2-Physical-Device和Device的关系"><a href="#2-Physical-Device和Device的关系" class="headerlink" title="2.Physical Device和Device的关系"></a>2.Physical Device和Device的关系</h2><details><summary><b>▷ 参考答案</b></summary>
-    一台计算机系统包含多个支持Vulkan的物理硬件设备，设备是物理设备在应用程序中的逻辑表示
-</details>
-
-<h2 id="3-Queue的定义和职责"><a href="#3-Queue的定义和职责" class="headerlink" title="3.Queue的定义和职责"></a>3.Queue的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
-    队列（Queue）表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行
-</details>
-
-<h2 id="4-Vulkan广义上有哪几类内存类型（Memory-Type）"><a href="#4-Vulkan广义上有哪几类内存类型（Memory-Type）" class="headerlink" title="4.Vulkan广义上有哪几类内存类型（Memory Type）"></a>4.Vulkan广义上有哪几类内存类型（Memory Type）</h2><details><summary><b>▷ 参考答案</b></summary>
-    Vulkan暴露了多种内存类型，广义上可以分为两类：<br/>
-    1.宿主内存（Host Memory）<br/>
-    2.设备内存（Device Memory）
-</details>
-
-<h2 id="5-Command广义上可以划分为哪几类，简述各类指令的作用"><a href="#5-Command广义上可以划分为哪几类，简述各类指令的作用" class="headerlink" title="5.Command广义上可以划分为哪几类，简述各类指令的作用"></a>5.Command广义上可以划分为哪几类，简述各类指令的作用</h2><details><summary><b>▷ 参考答案</b></summary>
-    每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步<br/>
-    1.Action Command：绘制图元、清除表面、复制缓存、查询/时间戳、子通道开始/结束操作（这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像）、写入查询池）<br/>
-    2.Set State Command：绑定流水线、描述字集合、缓存，或设置一个动作状态、渲染通道/子通道的状态<br/>
-    3.Syschronization Command：处理多个Action Command同时发生的情况，用于设置同步或等待事件、插入流水线屏障对象、渲染通道/子通道的依赖
-</details>
-
-<h2 id="6-Command-Buffer的定义和职责"><a href="#6-Command-Buffer的定义和职责" class="headerlink" title="6.Command Buffer的定义和职责"></a>6.Command Buffer的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
-    一组指令的集合，可以记录多个指令并统一发送到队列中（第3题）
-</details>
-]]></content>
-      <categories>
-        <category>Vulkan</category>
-      </categories>
-      <tags>
-        <tag>CG</tag>
-        <tag>Vulkan</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT标签页与分类页无法显示修复</title>
-    <url>/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
-    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
-<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
-<li>使用hexo new page创建了对应的页面</li>
-<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
+<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
+<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
+</li>
+<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
+</li>
+<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
+</li>
+<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
+</li>
+<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
+</li>
+<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
+</li>
+<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
+</li>
+<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
+</li>
+<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
+</li>
+<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
+</li>
+<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
+</li>
 </ul>
-<span id="more"></span>
-
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
-<li>需要在hexo new page之后，进入相应页面的index.md</li>
-<li>在categories的index.md添加：type: “categories”</li>
-<li>在tags的index.md添加：type: “tags”</li>
+<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
+<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
 </ul>
 ]]></content>
       <categories>
@@ -3832,57 +3870,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Codebooklet 搭建记录</title>
-    <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/bloglog/</url>
-    <content><![CDATA[<h2 id="2021-10-31"><a href="#2021-10-31" class="headerlink" title="2021/10/31"></a>2021/10/31</h2><ul>
-<li>修复了博客翻页按钮错误 <a href="https://blog.csdn.net/weixin_45748734/article/details/106042522">参考文章</a></li>
-</ul>
-<h2 id="2021-10-28"><a href="#2021-10-28" class="headerlink" title="2021/10/28"></a>2021/10/28</h2><ul>
-<li>开启了文章版权声明 <a href="https://cloud.tencent.com/developer/article/1482137">参考文章</a></li>
-<li>修复了本站”分类”和”标签”功能（本站搜索：NexT标签页与分类页无法显示修复）</li>
-<li>添加了置顶功能 <a href="https://convivae.top/posts/hexo-bo-ke-cai-keng/#%E6%96%B9%E6%B3%95-2">参考文章</a></li>
-<li>修复了文章目录无法跳转的BUG（修改post-details.js） <a href="https://www.cnblogs.com/Createsequence/p/14150758.html">参考文章</a></li>
+    <title>NexT标签页与分类页无法显示修复</title>
+    <url>/2021/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/NexT%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
+    <content><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ul>
+<li>使用NexT-6.0.0在_config中开启了categories与tags功能</li>
+<li>使用hexo new page创建了对应的页面</li>
+<li>给文章添加了categories与tags，但是没有在对应页面生成分类和标签</li>
 </ul>
 <span id="more"></span>
 
-<h2 id="2021-10-24"><a href="#2021-10-24" class="headerlink" title="2021/10/24"></a>2021/10/24</h2><ul>
-<li><p>隐藏网页底部 powered By Hexo / 强力驱动 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>浏览页面显示当前浏览进度 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Local Search本地搜索 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a> </p>
-</li>
-<li><p>设置网站图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>Live2D <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>背景图片添加 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>修改页面加载特效 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>各版块透明度修改 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a> </p>
-</li>
-<li><p>代码块样式修改 <a href="http://pygo2.top/articles/3412/">参考文章</a></p>
-</li>
-<li><p>文章阅读量统计功能 <a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">参考文章</a></p>
-</li>
-<li><p>侧边导航栏背景图替换 <a href="https://blog.csdn.net/qq_34003239/article/details/100883213">参考文章</a></p>
-</li>
-<li><p>修改侧边栏头像为圆形 <a href="https://www.codenong.com/js644264a8af2c/">参考文章</a></p>
-</li>
-<li><p>添加Valine评论 <a href="https://valine.js.org/quickstart.html">参考文章</a></p>
-</li>
-<li><p>启动了MathJax数学公式 <a href="https://theme-next.iissnan.com/third-party-services.html">参考文章</a></p>
-</li>
-<li><p>文章底部#变为图标 <a href="https://blog.csdn.net/as480133937/article/details/100138838">参考文章</a></p>
-</li>
-<li><p>开启了打赏功能 <a href="https://blog.csdn.net/lcyaiym/article/details/76796545">参考文章</a></p>
-</li>
-<li><p>打赏按钮更改为图标（本站搜索：NexT打赏按钮修改）</p>
-</li>
-</ul>
-<h2 id="2021-10-23"><a href="#2021-10-23" class="headerlink" title="2021/10/23"></a>2021/10/23</h2><ul>
-<li>参考<a href="https://theme-next.iissnan.com/getting-started.html">官方文档</a>完成了基本的设置</li>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li>需要在hexo new page之后，进入相应页面的index.md</li>
+<li>在categories的index.md添加：type: “categories”</li>
+<li>在tags的index.md添加：type: “tags”</li>
 </ul>
 ]]></content>
       <categories>
@@ -3933,105 +3933,6 @@
       </categories>
       <tags>
         <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ARP欺骗实验</title>
-    <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
-    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
-<li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
-</ul>
-<span id="more"></span>
-
-<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h3 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h3><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E6%8B%93%E6%89%91.png" alt="p1"></p>
-<h4 id="攻击目标（虚拟机）"><a href="#攻击目标（虚拟机）" class="headerlink" title="攻击目标（虚拟机）"></a>攻击目标（虚拟机）</h4><ul>
-<li>操作系统：Windows10</li>
-</ul>
-<h4 id="通信目标（虚拟机）"><a href="#通信目标（虚拟机）" class="headerlink" title="通信目标（虚拟机）"></a>通信目标（虚拟机）</h4><ul>
-<li>操作系统：CentOS</li>
-</ul>
-<h4 id="攻击者（宿主机）"><a href="#攻击者（宿主机）" class="headerlink" title="攻击者（宿主机）"></a>攻击者（宿主机）</h4><ul>
-<li>操作系统 Kali</li>
-</ul>
-<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="局域网（LAN）中的信息传输过程"><a href="#局域网（LAN）中的信息传输过程" class="headerlink" title="局域网（LAN）中的信息传输过程"></a>局域网（LAN）中的信息传输过程</h3><ul>
-<li>连接在以太网中的两台Terminal之间传输IP分组时，Sender必须先获取Receiver的MAC地址</li>
-<li>每一个Terminal都有ARP缓冲区，用于保存（IP，MAC）的映射关系，如果Receiver在缓存区，则可以直接完成链路帧封装</li>
-<li>如果Sender只有Receiver的IP地址，则需要通过“地址解析过程”获取Receiver的MAC，该过程通过ARP（Address Resolution Protocol）来实现</li>
-</ul>
-<h3 id="ARP地址解析过程"><a href="#ARP地址解析过程" class="headerlink" title="ARP地址解析过程"></a>ARP地址解析过程</h3><ul>
-<li><p>Sender广播（broadcast）ARP请求报文，该报文格式如下</p>
-<table>
-<thead>
-<tr>
-<th align="center">帧校验序列</th>
-<th align="center">数据（请求报文）</th>
-<th align="center">类型</th>
-<th align="center">源MAC地址</th>
-<th align="center">目的MAC地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">FCS</td>
-<td align="center">（IP_A,MAC_A) , (IP_B, ? )</td>
-<td align="center">ARP</td>
-<td align="center">MAC A</td>
-<td align="center">FF-FF-FF-FF-FF-FF</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>在该LAN中的所有Terminals都记录下Sender的IP与MAC，但只有Receiver将自己（IP，MAC）回复给Sender</p>
-</li>
-<li><p>Sender收到回复消息，将其记录在自己的ARP缓存区</p>
-</li>
-</ul>
-<h3 id="ARP欺骗原理"><a href="#ARP欺骗原理" class="headerlink" title="ARP欺骗原理"></a>ARP欺骗原理</h3><ul>
-<li>利用“ARP没有真伪校验”的特点，在ARP请求过程中，Hacker将IP对应的MAC修改为自己的MAC</li>
-</ul>
-<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-按照实验拓扑准备好虚拟机"><a href="#Step-1-按照实验拓扑准备好虚拟机" class="headerlink" title="Step.1 按照实验拓扑准备好虚拟机"></a>Step.1 按照实验拓扑准备好虚拟机</h3><ul>
-<li>使用VMware完成虚拟机配置<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/0.%E5%87%86%E5%A4%87%E8%99%9A%E6%8B%9F%E6%9C%BA.png" alt="p2"></li>
-</ul>
-<h3 id="Step-2-修改虚拟机网络模式为“桥接模式”"><a href="#Step-2-修改虚拟机网络模式为“桥接模式”" class="headerlink" title="Step.2 修改虚拟机网络模式为“桥接模式”"></a>Step.2 修改虚拟机网络模式为“桥接模式”</h3><ul>
-<li><a href="http://www.codebooklet.com/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/#more/">VMware的3种网络模式</a><br>![p3(<a href="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/1.%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.png">http://image.codebooklet.com/img_blog/ARP欺骗实验/1.修改虚拟机为桥接模式.png</a>)</li>
-</ul>
-<h3 id="Step-3-查看3方的网络配置"><a href="#Step-3-查看3方的网络配置" class="headerlink" title="Step.3 查看3方的网络配置"></a>Step.3 查看3方的网络配置</h3><h4 id="攻击目标"><a href="#攻击目标" class="headerlink" title="攻击目标"></a>攻击目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/2.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85.png" alt="p4"></p>
-<h4 id="通信目标"><a href="#通信目标" class="headerlink" title="通信目标"></a>通信目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/3.%E6%B6%88%E6%81%AF%E7%9B%AE%E6%A0%87.png" alt="p5"></p>
-<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/4.%E6%94%BB%E5%87%BB%E6%96%B9.png" alt="p6"></p>
-<h3 id="Step-4-查看当前攻击目标的ARP缓存"><a href="#Step-4-查看当前攻击目标的ARP缓存" class="headerlink" title="Step.4 查看当前攻击目标的ARP缓存"></a>Step.4 查看当前攻击目标的ARP缓存</h3><ul>
-<li>Windows下使用“arp -a”即可，找到通信目标对应的映射<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/5.%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E5%BD%93%E5%89%8DARP.png" alt="p7"></li>
-</ul>
-<h3 id="Step-5-发起攻击"><a href="#Step-5-发起攻击" class="headerlink" title="Step.5 发起攻击"></a>Step.5 发起攻击</h3><ul>
-<li>使用“arpspoof”命令发起攻击</li>
-</ul>
-<p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/6.%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB.png" alt="p8"><br/></p>
-<table>
-<thead>
-<tr>
-<th align="center">使用参数</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-i eth0</td>
-<td align="center">使用 eth0 网卡发起攻击</td>
-</tr>
-<tr>
-<td align="center">-t 10.66.217.60</td>
-<td align="center">攻击目标IP为10.66.217.60</td>
-</tr>
-<tr>
-<td align="center">-r 10.66.198.146</td>
-<td align="center">伪造（IP：10.66.217.60，MAC：Hacker的MAC）的ARP请求</td>
-</tr>
-</tbody></table>
-<h3 id="Step-6-查看攻击目标被攻击后的ARP表"><a href="#Step-6-查看攻击目标被攻击后的ARP表" class="headerlink" title="Step.6 查看攻击目标被攻击后的ARP表"></a>Step.6 查看攻击目标被攻击后的ARP表</h3><ul>
-<li>可以发现IP：10.66.217.60 所对应的MAC已经变成了Hacker的MAC<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/7.%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84ARP%E8%A1%A8.png" alt="p9"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-      </categories>
-      <tags>
-        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
@@ -4155,72 +4056,102 @@
       </tags>
   </entry>
   <entry>
-    <title>VMware虚拟机3种网络模式</title>
-    <url>/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
-<ol>
-<li>桥接模式（Bridged）</li>
-<li>网络地址转换模式（NAT）</li>
-<li>主机模式（Host-only）<span id="more"></span></li>
-</ol>
+    <title>ARP欺骗实验</title>
+    <url>/2021/10/30/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+<li>使用arpspoof对攻击目标发起ARP欺骗攻击，使攻击目标ARP表发生如下改变<br> （通信对象IP，通信对象MAC） ——&gt; （通信对象IP，<strong>攻击者MAC</strong>） </li>
+</ul>
+<span id="more"></span>
+
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><h3 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h3><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E6%8B%93%E6%89%91.png" alt="p1"></p>
+<h4 id="攻击目标（虚拟机）"><a href="#攻击目标（虚拟机）" class="headerlink" title="攻击目标（虚拟机）"></a>攻击目标（虚拟机）</h4><ul>
+<li>操作系统：Windows10</li>
+</ul>
+<h4 id="通信目标（虚拟机）"><a href="#通信目标（虚拟机）" class="headerlink" title="通信目标（虚拟机）"></a>通信目标（虚拟机）</h4><ul>
+<li>操作系统：CentOS</li>
+</ul>
+<h4 id="攻击者（宿主机）"><a href="#攻击者（宿主机）" class="headerlink" title="攻击者（宿主机）"></a>攻击者（宿主机）</h4><ul>
+<li>操作系统 Kali</li>
+</ul>
+<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><h3 id="局域网（LAN）中的信息传输过程"><a href="#局域网（LAN）中的信息传输过程" class="headerlink" title="局域网（LAN）中的信息传输过程"></a>局域网（LAN）中的信息传输过程</h3><ul>
+<li>连接在以太网中的两台Terminal之间传输IP分组时，Sender必须先获取Receiver的MAC地址</li>
+<li>每一个Terminal都有ARP缓冲区，用于保存（IP，MAC）的映射关系，如果Receiver在缓存区，则可以直接完成链路帧封装</li>
+<li>如果Sender只有Receiver的IP地址，则需要通过“地址解析过程”获取Receiver的MAC，该过程通过ARP（Address Resolution Protocol）来实现</li>
+</ul>
+<h3 id="ARP地址解析过程"><a href="#ARP地址解析过程" class="headerlink" title="ARP地址解析过程"></a>ARP地址解析过程</h3><ul>
+<li><p>Sender广播（broadcast）ARP请求报文，该报文格式如下</p>
 <table>
 <thead>
 <tr>
-<th>模式</th>
-<th>依赖的网络服务</th>
-<th>虚拟网络组成</th>
-<th>访问外部网络的方式</th>
-<th>与宿主机互访方式</th>
+<th align="center">帧校验序列</th>
+<th align="center">数据（请求报文）</th>
+<th align="center">类型</th>
+<th align="center">源MAC地址</th>
+<th align="center">目的MAC地址</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>桥接模式</td>
-<td>VMnet0（虚拟网桥）</td>
-<td>相当于宿主机局域网内一台独立主机</td>
-<td>虚拟网桥联网</td>
-<td>同一局域网</td>
-</tr>
-<tr>
-<td>NAT模式</td>
-<td>VMnet8（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
-<td>虚拟NAT联网</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
-</tr>
-<tr>
-<td>主机模式</td>
-<td>VMnet1（虚拟网卡）</td>
-<td>虚拟DHCP + 虚拟交换机</td>
-<td>通过宿主机转发到虚拟网卡</td>
-<td>与宿主机不在同一网段，通过虚拟网卡</td>
+<td align="center">FCS</td>
+<td align="center">（IP_A,MAC_A) , (IP_B, ? )</td>
+<td align="center">ARP</td>
+<td align="center">MAC A</td>
+<td align="center">FF-FF-FF-FF-FF-FF</td>
 </tr>
 </tbody></table>
-<ul>
-<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
-<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
+</li>
+<li><p>在该LAN中的所有Terminals都记录下Sender的IP与MAC，但只有Receiver将自己（IP，MAC）回复给Sender</p>
+</li>
+<li><p>Sender收到回复消息，将其记录在自己的ARP缓存区</p>
+</li>
 </ul>
-<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
-<li>虚拟机相当于局域网中的一台独立主机</li>
-<li>可以独立访问网络中其他主机</li>
-<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
-<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
+<h3 id="ARP欺骗原理"><a href="#ARP欺骗原理" class="headerlink" title="ARP欺骗原理"></a>ARP欺骗原理</h3><ul>
+<li>利用“ARP没有真伪校验”的特点，在ARP请求过程中，Hacker将IP对应的MAC修改为自己的MAC</li>
 </ul>
-<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
-<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
-<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
-<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="Step-1-按照实验拓扑准备好虚拟机"><a href="#Step-1-按照实验拓扑准备好虚拟机" class="headerlink" title="Step.1 按照实验拓扑准备好虚拟机"></a>Step.1 按照实验拓扑准备好虚拟机</h3><ul>
+<li>使用VMware完成虚拟机配置<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/0.%E5%87%86%E5%A4%87%E8%99%9A%E6%8B%9F%E6%9C%BA.png" alt="p2"></li>
 </ul>
-<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
-<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
-<li>TCP/IP配置由VMnet1提供</li>
-<li>可以与宿主机互相通信</li>
+<h3 id="Step-2-修改虚拟机网络模式为“桥接模式”"><a href="#Step-2-修改虚拟机网络模式为“桥接模式”" class="headerlink" title="Step.2 修改虚拟机网络模式为“桥接模式”"></a>Step.2 修改虚拟机网络模式为“桥接模式”</h3><ul>
+<li><a href="http://www.codebooklet.com/2021/10/30/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/#more/">VMware的3种网络模式</a><br>![p3(<a href="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/1.%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.png">http://image.codebooklet.com/img_blog/ARP欺骗实验/1.修改虚拟机为桥接模式.png</a>)</li>
+</ul>
+<h3 id="Step-3-查看3方的网络配置"><a href="#Step-3-查看3方的网络配置" class="headerlink" title="Step.3 查看3方的网络配置"></a>Step.3 查看3方的网络配置</h3><h4 id="攻击目标"><a href="#攻击目标" class="headerlink" title="攻击目标"></a>攻击目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/2.%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85.png" alt="p4"></p>
+<h4 id="通信目标"><a href="#通信目标" class="headerlink" title="通信目标"></a>通信目标</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/3.%E6%B6%88%E6%81%AF%E7%9B%AE%E6%A0%87.png" alt="p5"></p>
+<h4 id="攻击者"><a href="#攻击者" class="headerlink" title="攻击者"></a>攻击者</h4><p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/4.%E6%94%BB%E5%87%BB%E6%96%B9.png" alt="p6"></p>
+<h3 id="Step-4-查看当前攻击目标的ARP缓存"><a href="#Step-4-查看当前攻击目标的ARP缓存" class="headerlink" title="Step.4 查看当前攻击目标的ARP缓存"></a>Step.4 查看当前攻击目标的ARP缓存</h3><ul>
+<li>Windows下使用“arp -a”即可，找到通信目标对应的映射<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/5.%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%94%BB%E5%87%BB%E8%80%85%E5%BD%93%E5%89%8DARP.png" alt="p7"></li>
+</ul>
+<h3 id="Step-5-发起攻击"><a href="#Step-5-发起攻击" class="headerlink" title="Step.5 发起攻击"></a>Step.5 发起攻击</h3><ul>
+<li>使用“arpspoof”命令发起攻击</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/6.%E5%8F%91%E8%B5%B7%E6%94%BB%E5%87%BB.png" alt="p8"><br/></p>
+<table>
+<thead>
+<tr>
+<th align="center">使用参数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-i eth0</td>
+<td align="center">使用 eth0 网卡发起攻击</td>
+</tr>
+<tr>
+<td align="center">-t 10.66.217.60</td>
+<td align="center">攻击目标IP为10.66.217.60</td>
+</tr>
+<tr>
+<td align="center">-r 10.66.198.146</td>
+<td align="center">伪造（IP：10.66.217.60，MAC：Hacker的MAC）的ARP请求</td>
+</tr>
+</tbody></table>
+<h3 id="Step-6-查看攻击目标被攻击后的ARP表"><a href="#Step-6-查看攻击目标被攻击后的ARP表" class="headerlink" title="Step.6 查看攻击目标被攻击后的ARP表"></a>Step.6 查看攻击目标被攻击后的ARP表</h3><ul>
+<li>可以发现IP：10.66.217.60 所对应的MAC已经变成了Hacker的MAC<br><img src="http://image.codebooklet.com/img_blog/ARP%E6%AC%BA%E9%AA%97%E5%AE%9E%E9%AA%8C/7.%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84ARP%E8%A1%A8.png" alt="p9"></li>
 </ul>
 ]]></content>
       <categories>
-        <category>虚拟机</category>
+        <category>网络安全</category>
       </categories>
       <tags>
-        <tag>虚拟机</tag>
+        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
@@ -4300,6 +4231,75 @@
       </categories>
       <tags>
         <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VMware虚拟机3种网络模式</title>
+    <url>/2021/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA3%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p><strong>VMware虚拟机提供3种网络模式</strong></p>
+<ol>
+<li>桥接模式（Bridged）</li>
+<li>网络地址转换模式（NAT）</li>
+<li>主机模式（Host-only）<span id="more"></span></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>依赖的网络服务</th>
+<th>虚拟网络组成</th>
+<th>访问外部网络的方式</th>
+<th>与宿主机互访方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>桥接模式</td>
+<td>VMnet0（虚拟网桥）</td>
+<td>相当于宿主机局域网内一台独立主机</td>
+<td>虚拟网桥联网</td>
+<td>同一局域网</td>
+</tr>
+<tr>
+<td>NAT模式</td>
+<td>VMnet8（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机 + 虚拟NAT</td>
+<td>虚拟NAT联网</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+<tr>
+<td>主机模式</td>
+<td>VMnet1（虚拟网卡）</td>
+<td>虚拟DHCP + 虚拟交换机</td>
+<td>通过宿主机转发到虚拟网卡</td>
+<td>与宿主机不在同一网段，通过虚拟网卡</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>★ 需要开启什么模式就要将对应的虚拟网卡启动！</strong></li>
+<li><a href="https://www.cnblogs.com/linjiaxin/p/6476480.html">参考文章（详细解释推荐看此篇文章）</a></li>
+</ul>
+<h1 id="桥接模式（Bridged）"><a href="#桥接模式（Bridged）" class="headerlink" title="桥接模式（Bridged）"></a>桥接模式（Bridged）</h1><h3 id="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"><a href="#适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务" class="headerlink" title="适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务"></a>适用情况：让虚拟机中的操作系统为它所在的局域网（LAN）提供网络服务</h3><ul>
+<li>虚拟机相当于局域网中的一台独立主机</li>
+<li>可以独立访问网络中其他主机</li>
+<li>TCP/IP配置信息由VMnet0提供，不支持DHCP服务</li>
+<li>IP地址必须和宿主机在同一网段，否则无法与宿主机通信</li>
+</ul>
+<h1 id="网络地址转换模式（NAT）"><a href="#网络地址转换模式（NAT）" class="headerlink" title="网络地址转换模式（NAT）"></a>网络地址转换模式（NAT）</h1><h3 id="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"><a href="#适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）" class="headerlink" title="适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）"></a>适用情况：希望让虚拟机简单地接入互联网（只要宿主机能接入互联网即可）</h3><ul>
+<li>虚拟机通过NAT通过宿主机所在的局域网来访问互联网</li>
+<li>TCP/IP配置由VMnet8自动配置，无法进行手工修改</li>
+<li><strong>无法与他所在的局域网中的其他主机进行通信</strong></li>
+</ul>
+<h1 id="主机模式（Host-only）"><a href="#主机模式（Host-only）" class="headerlink" title="主机模式（Host-only）"></a>主机模式（Host-only）</h1><h3 id="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"><a href="#适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试" class="headerlink" title="适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试"></a>适用情况：需要将真实网络与虚拟网络隔离进行特殊网络调试</h3><ul>
+<li>所有虚拟机之间可以互相通信，但<strong>虚拟系统和真实网络互相隔离</strong></li>
+<li>TCP/IP配置由VMnet1提供</li>
+<li>可以与宿主机互相通信</li>
+</ul>
+]]></content>
+      <categories>
+        <category>虚拟机</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
       </tags>
   </entry>
   <entry>
