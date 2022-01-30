@@ -210,54 +210,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《Vulkan学习指南》练习题</title>
-    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
-    <content><![CDATA[<ul>
-<li>题目内容来自《Vulkan学习之南》——Parminder Singh</li>
-<li>每章节的练习题纯个人设计，仅供参考，原书并没有课后练习题</li>
-</ul>
-<span id="more"></span>
-
-
-
-<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><h2 id="1-Vulkan-API的制定团队"><a href="#1-Vulkan-API的制定团队" class="headerlink" title="1.Vulkan API的制定团队"></a>1.Vulkan API的制定团队</h2><details><summary><b>▷ 参考答案</b></summary>
-    Khronos
-</details>
-
-<h2 id="2-Physical-Device和Device的关系"><a href="#2-Physical-Device和Device的关系" class="headerlink" title="2.Physical Device和Device的关系"></a>2.Physical Device和Device的关系</h2><details><summary><b>▷ 参考答案</b></summary>
-    一台计算机系统包含多个支持Vulkan的物理硬件设备，设备是物理设备在应用程序中的逻辑表示
-</details>
-
-<h2 id="3-Queue的定义和职责"><a href="#3-Queue的定义和职责" class="headerlink" title="3.Queue的定义和职责"></a>3.Queue的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
-    队列（Queue）表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行
-</details>
-
-<h2 id="4-Vulkan广义上有哪几类内存类型（Memory-Type）"><a href="#4-Vulkan广义上有哪几类内存类型（Memory-Type）" class="headerlink" title="4.Vulkan广义上有哪几类内存类型（Memory Type）"></a>4.Vulkan广义上有哪几类内存类型（Memory Type）</h2><details><summary><b>▷ 参考答案</b></summary>
-    Vulkan暴露了多种内存类型，广义上可以分为两类：<br/>
-    1.宿主内存（Host Memory）<br/>
-    2.设备内存（Device Memory）
-</details>
-
-<h2 id="5-Command广义上可以划分为哪几类，简述各类指令的作用"><a href="#5-Command广义上可以划分为哪几类，简述各类指令的作用" class="headerlink" title="5.Command广义上可以划分为哪几类，简述各类指令的作用"></a>5.Command广义上可以划分为哪几类，简述各类指令的作用</h2><details><summary><b>▷ 参考答案</b></summary>
-    每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步<br/>
-    1.Action Command：绘制图元、清除表面、复制缓存、查询/时间戳、子通道开始/结束操作（这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像）、写入查询池）<br/>
-    2.Set State Command：绑定流水线、描述字集合、缓存，或设置一个动作状态、渲染通道/子通道的状态<br/>
-    3.Syschronization Command：处理多个Action Command同时发生的情况，用于设置同步或等待事件、插入流水线屏障对象、渲染通道/子通道的依赖
-</details>
-
-<h2 id="6-Command-Buffer的定义和职责"><a href="#6-Command-Buffer的定义和职责" class="headerlink" title="6.Command Buffer的定义和职责"></a>6.Command Buffer的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
-    一组指令的集合，可以记录多个指令并统一发送到队列中（第3题）
-</details>
-]]></content>
-      <categories>
-        <category>Vulkan</category>
-      </categories>
-      <tags>
-        <tag>CG</tag>
-        <tag>Vulkan</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《Vulkan学习指南》笔记</title>
     <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
@@ -419,6 +371,54 @@
 <li>Vulkan的各种功能组件与彼此关系，以及如何用来构建一个Vulkan应用程序</li>
 </ul>
 <p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220125012254521.png" alt="image-20220125012254521"></p>
+]]></content>
+      <categories>
+        <category>Vulkan</category>
+      </categories>
+      <tags>
+        <tag>CG</tag>
+        <tag>Vulkan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Vulkan学习指南》练习题</title>
+    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<ul>
+<li>题目内容来自《Vulkan学习之南》——Parminder Singh</li>
+<li>每章节的练习题纯个人设计，仅供参考，原书并没有课后练习题</li>
+</ul>
+<span id="more"></span>
+
+
+
+<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><h2 id="1-Vulkan-API的制定团队"><a href="#1-Vulkan-API的制定团队" class="headerlink" title="1.Vulkan API的制定团队"></a>1.Vulkan API的制定团队</h2><details><summary><b>▷ 参考答案</b></summary>
+    Khronos
+</details>
+
+<h2 id="2-Physical-Device和Device的关系"><a href="#2-Physical-Device和Device的关系" class="headerlink" title="2.Physical Device和Device的关系"></a>2.Physical Device和Device的关系</h2><details><summary><b>▷ 参考答案</b></summary>
+    一台计算机系统包含多个支持Vulkan的物理硬件设备，设备是物理设备在应用程序中的逻辑表示
+</details>
+
+<h2 id="3-Queue的定义和职责"><a href="#3-Queue的定义和职责" class="headerlink" title="3.Queue的定义和职责"></a>3.Queue的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    队列（Queue）表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行
+</details>
+
+<h2 id="4-Vulkan广义上有哪几类内存类型（Memory-Type）"><a href="#4-Vulkan广义上有哪几类内存类型（Memory-Type）" class="headerlink" title="4.Vulkan广义上有哪几类内存类型（Memory Type）"></a>4.Vulkan广义上有哪几类内存类型（Memory Type）</h2><details><summary><b>▷ 参考答案</b></summary>
+    Vulkan暴露了多种内存类型，广义上可以分为两类：<br/>
+    1.宿主内存（Host Memory）<br/>
+    2.设备内存（Device Memory）
+</details>
+
+<h2 id="5-Command广义上可以划分为哪几类，简述各类指令的作用"><a href="#5-Command广义上可以划分为哪几类，简述各类指令的作用" class="headerlink" title="5.Command广义上可以划分为哪几类，简述各类指令的作用"></a>5.Command广义上可以划分为哪几类，简述各类指令的作用</h2><details><summary><b>▷ 参考答案</b></summary>
+    每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步<br/>
+    1.Action Command：绘制图元、清除表面、复制缓存、查询/时间戳、子通道开始/结束操作（这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像）、写入查询池）<br/>
+    2.Set State Command：绑定流水线、描述字集合、缓存，或设置一个动作状态、渲染通道/子通道的状态<br/>
+    3.Syschronization Command：处理多个Action Command同时发生的情况，用于设置同步或等待事件、插入流水线屏障对象、渲染通道/子通道的依赖
+</details>
+
+<h2 id="6-Command-Buffer的定义和职责"><a href="#6-Command-Buffer的定义和职责" class="headerlink" title="6.Command Buffer的定义和职责"></a>6.Command Buffer的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    一组指令的集合，可以记录多个指令并统一发送到队列中（第3题）
+</details>
 ]]></content>
       <categories>
         <category>Vulkan</category>
