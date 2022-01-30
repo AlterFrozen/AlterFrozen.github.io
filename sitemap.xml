@@ -298,14 +298,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/Daily/</loc>
+    <loc>http://codebooklet.com/tags/QT/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/QT/</loc>
+    <loc>http://codebooklet.com/tags/Daily/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -333,6 +333,13 @@
   </url>
   
   <url>
+    <loc>http://codebooklet.com/tags/Vulkan/</loc>
+    <lastmod>2022-01-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://codebooklet.com/tags/Python/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
@@ -341,13 +348,6 @@
   
   <url>
     <loc>http://codebooklet.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2022-01-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/Vulkan/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -405,14 +405,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/Daily/</loc>
+    <loc>http://codebooklet.com/categories/DeBug/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/DeBug/</loc>
+    <loc>http://codebooklet.com/categories/Daily/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -440,14 +440,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/Python/</loc>
+    <loc>http://codebooklet.com/categories/Vulkan/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/Vulkan/</loc>
+    <loc>http://codebooklet.com/categories/Python/</loc>
     <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
