@@ -343,7 +343,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-01-25T01:46:33+08:00">2022-01-25</time>
+              <time title="更新于" itemprop="dateModified" datetime="2022-02-03T18:36:01+08:00">2022-02-03</time>
             
           </span>
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">8.4k</span>
+                <span title="字数统计">16k</span>
               
 
               
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 mins.</span>
+                <span title="阅读时长">16 mins.</span>
               
             </div>
           
@@ -605,7 +605,158 @@
 <li>Vulkan的各种功能组件与彼此关系，以及如何用来构建一个Vulkan应用程序</li>
 </ul>
 <p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220125012254521.png" alt="image-20220125012254521"></p>
-
+<h3 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h3><ul>
+<li>支持Vulkan的系统需要至少有1个CPU和1个GPU</li>
+<li>独立的硬件供应商会根据自己的GPU架构为某个Vulkan标准提供完整驱动实现</li>
+</ul>
+<h3 id="应用程序"><a href="#应用程序" class="headerlink" title="应用程序"></a>应用程序</h3><ul>
+<li>用户调用Vulkan API来执行图形或计算工作的程序，即应用程序</li>
+<li><strong>应用程序启动时需要先初始化硬件和软件，检测驱动并调取所有Vulkan API</strong></li>
+<li><strong>展示层初始化需要通过WSI（Window System Integration）来完成</strong></li>
+<li><strong>应用程序负责创建资源并绑定资源到着色器阶段，这个过程需要使用“描述符（descriptor），描述符辅助将创建后的资源绑定到底层流水线对象</strong></li>
+<li><strong>应用程序还需要记录指令缓存并发送到队列中继续执行</strong></li>
+</ul>
+<h3 id="WSI（Window-System-Integration）-展示层统一"><a href="#WSI（Window-System-Integration）-展示层统一" class="headerlink" title="WSI（Window System Integration）[展示层统一]"></a>WSI（Window System Integration）[展示层统一]</h3><ul>
+<li>窗口系统集成库是Khronos提供的一套功能扩展</li>
+<li><strong>WSI可以将不同OS（Linux、Windows、Android .etc）的展示层统一</strong></li>
+</ul>
+<h3 id="SPIR-V-着色器语言统一"><a href="#SPIR-V-着色器语言统一" class="headerlink" title="SPIR-V [着色器语言统一]"></a>SPIR-V [着色器语言统一]</h3><ul>
+<li>SPIR-V提供“预编译的二进制数据格式”用于设置给Vulkan的Shader</li>
+<li><strong>不同的Shader Language（GLSL、HLSL及其变种）都可以通过Compiler产生SPIR-V格式的数据</strong></li>
+</ul>
+<h3 id="LunarG-SDK"><a href="#LunarG-SDK" class="headerlink" title="LunarG SDK"></a>LunarG SDK</h3><ul>
+<li>提供了一套Vulkan SDK，有多种不同的工具和资源，可以辅助Vulkan应用程序开发</li>
+<li><strong>主要提供：Vulkan加载层、验证层、跟踪和回访工具、SPIR-V工具、Vulkan运行时安装程序、文档、示例和演示程序</strong></li>
+<li><a target="_blank" rel="noopener" href="http://lunarg.com/vulkan-sdk">LunarG 官方网站</a></li>
+</ul>
+<h2 id="开始学习Vulkan编程模型"><a href="#开始学习Vulkan编程模型" class="headerlink" title="开始学习Vulkan编程模型"></a>开始学习Vulkan编程模型</h2><h3 id="三个重要概念"><a href="#三个重要概念" class="headerlink" title="三个重要概念"></a>三个重要概念</h3><ol>
+<li>Vulkan的编程模型</li>
+<li>渲染的执行模型</li>
+<li>Vulkan的工作流程</li>
+</ol>
+<ul>
+<li>Vulkan应用程序编程模型自顶向下的实现流程图</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220203121925266.png" alt="image-20220203121925266"></p>
+<h3 id="Step1-硬件初始化"><a href="#Step1-硬件初始化" class="headerlink" title="Step1.硬件初始化"></a>Step1.硬件初始化</h3><ul>
+<li><strong>Vulkan应用程序启动时，第一项工作就是初始化硬件设备</strong></li>
+<li><strong>应用程序 与 加载器（Loader）通信从而激活Vulkan驱动</strong></li>
+</ul>
+<h4 id="加载器（Loader）"><a href="#加载器（Loader）" class="headerlink" title="加载器（Loader）"></a>加载器（Loader）</h4><ul>
+<li><strong>是Vulkan程序启动时执行的代码，使用“平台无关”的方式定位系统中的驱动，类似于GLEW在OpenGL中的作用</strong></li>
+</ul>
+<p>【加载器（Loader）的各个子模块框图】</p>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220203122146750.png" alt="image-20220203122146750"></p>
+<ul>
+<li><strong>定位驱动</strong>：Loader的主要职责，负责从当前系统中定位&amp;加载驱动</li>
+<li><strong>平台无关性</strong>：初始化Vulkan的过程在所有系统平台上都是相同的，这与OpenGL不同</li>
+<li><strong>相对的平台差异性</strong>：Vulkan的平台差异性来源于功能拓展</li>
+<li><strong>注入层</strong>：加载器支持层次化结构，并且可以在运行过程中随时注入不同类型的层</li>
+</ul>
+<h4 id="加载器注入层的功能"><a href="#加载器注入层的功能" class="headerlink" title="加载器注入层的功能"></a>加载器注入层的功能</h4><ol>
+<li>跟踪Vulkan API的指令执行</li>
+<li>捕获渲染的场景，稍后再继续执行</li>
+<li>为了满足调试需要，进行错误处理和验证</li>
+</ol>
+<ul>
+<li><strong>运行过程中随时注入不同类型的层的好处是</strong>：驱动不需要做任何验证，也不需要在继续执行之前保存当前的任何状态，来判断应用层使用的API是否合法</li>
+<li><strong>可以在Debug阶段打开所有需要注入的层，在Release阶段关闭</strong></li>
+</ul>
+<p><strong>&gt;   当加载器定位驱动&amp;链接API后，应用程序可以执行下列操作</strong></p>
+<ol>
+<li>创建一个Vulkan实例</li>
+<li>查询物理设备上所有可用队列</li>
+<li>查询扩展功能并保存新的函数指针（例如WSI或特定功能的API）</li>
+<li>支持注入层来实现错误检查、调试或者验证功能</li>
+</ol>
+<h3 id="Step2-窗口展示表面（Surface）"><a href="#Step2-窗口展示表面（Surface）" class="headerlink" title="Step2.窗口展示表面（Surface）"></a>Step2.窗口展示表面（Surface）</h3><ul>
+<li>当加载器（Loader）任务完成后，我们就可以使用Vulkan API绘制一些内容，<strong>为此我们需要“一副图像”来承载我们绘制的任务，并将其放到展示窗口上显示，这个就是表面（Surface）</strong></li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220203125033272.png" alt="image-20220203125033272"></p>
+<ul>
+<li>构建展示图像和创建窗口的工作与平台密切相关</li>
+<li>OpenGL的窗口是通过底层平台进行链接的，再通过窗口系统创建设备/环境，以及帧缓存（Frame Buffer）</li>
+<li><strong>与OpenGL不同，Vulkan创建设备/环境的过程完全不需要窗口系统，而是通过“窗口系统集成（Window System Integration，WSI）API来实现”</strong></li>
+</ul>
+<h4 id="WSI包含一系列跨平台的窗口系统管理功能"><a href="#WSI包含一系列跨平台的窗口系统管理功能" class="headerlink" title="WSI包含一系列跨平台的窗口系统管理功能"></a>WSI包含一系列跨平台的窗口系统管理功能</h4><ul>
+<li><p>一套独立的跨平台实现，可以支持大多数系统平台（Windows、LinuxAndroid等）</p>
+</li>
+<li><p>一套一致的API标准，可以简便地创建窗口表面（Surface）并显示，不需关注过多细节</p>
+</li>
+<li><p>WSI支持多个窗口系统（Wayland、X、Windows）同时通过“交换链”的方式实现图像所有权的管理，当窗口系统只显示一幅图像时，应用程序同步开始准备下一幅图像</p>
+</li>
+</ul>
+<p>【双缓存图像交换过程，通过WSI可以在应用程序&amp;显示设备之间反复交换两幅图像】</p>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220203163326971.png" alt="image-20220203163326971"></p>
+<ul>
+<li>上图所示的过程中，应用程序需要完成以下任务</li>
+</ul>
+<ol>
+<li>创建一个本地窗口</li>
+<li>创建WSI Surface并 关联 到Window上</li>
+<li>创建交换链来显示表面</li>
+<li>从创建后的交换链中获取绘制后的图像</li>
+</ol>
+<h3 id="Step3-资源设置"><a href="#Step3-资源设置" class="headerlink" title="Step3.资源设置"></a>Step3.资源设置</h3><blockquote>
+<p>OpenGL通过隐式方式管理场景背后的内存数据，而Vulkan提供了一套底层接口来控制和管理内存</p>
+</blockquote>
+<ul>
+<li>设置资源  &lt;=&gt; 数据存储到内存区</li>
+<li><strong>数据总是保存在内存中，可以是任何类型（等点属性、位置、颜色等）</strong></li>
+</ul>
+<blockquote>
+<p>Vulkan在物理设备纸上提供了多种多样的内存类型，以便应用程序有更好的机制来显式地管理各种不同类型的内存数据</p>
+</blockquote>
+<h4 id="内存堆的两种类型"><a href="#内存堆的两种类型" class="headerlink" title="内存堆的两种类型"></a>内存堆的两种类型</h4><ul>
+<li><strong>【设备本地，device local】</strong></li>
+</ul>
+<ol>
+<li> 关联到物理设备的内存，带宽高速度快</li>
+<li> 可见类型有：（设备可见，宿主可见）（设备可见，宿主不可见）</li>
+</ol>
+<ul>
+<li><strong>【宿主本地，host local】</strong></li>
+</ul>
+<ol>
+<li>宿主机的本地内存，速度相对设备本地内存（device local memory）较慢</li>
+<li>可见类型有：（设备可见，宿主可见）</li>
+</ol>
+<h4 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h4><ul>
+<li><strong>当创建资源对象后，资源对象只是关联了一个逻辑地址，并没有真正的物理地址可用</strong></li>
+</ul>
+<h5 id="分配-amp-子分配"><a href="#分配-amp-子分配" class="headerlink" title="分配&amp;子分配"></a>分配&amp;子分配</h5><ul>
+<li><strong>物理内存的分配需要付出很大代价，先分配一块较大内存，然后使用子分配来创建对象是一种好习惯</strong></li>
+<li>子分配可以将物理内存的很大一部分立即分配完成并存入不同的资源对象</li>
+<li>子分配由应用程序负责完成</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220203174936298.png" alt="image-20220203174936298"> </p>
+<h5 id="稀疏内存（SparseMemory"><a href="#稀疏内存（SparseMemory" class="headerlink" title="稀疏内存（SparseMemory)"></a>稀疏内存（SparseMemory)</h5><ul>
+<li>对于非常庞大的图像对象，Vulkan支持全部稀疏内存</li>
+<li>稀疏内存技术将图像分为多个小块，根据应用程序的实际逻辑加载当前必要的小块</li>
+<li>稀疏内存可以存储超出实际内存容量大小的资源</li>
+</ul>
+<h5 id="阶段缓存（Staging-Buffer）"><a href="#阶段缓存（Staging-Buffer）" class="headerlink" title="阶段缓存（Staging Buffer）"></a>阶段缓存（Staging Buffer）</h5><ul>
+<li><strong>缓存数据是通过不同阶段完成的，物理分配过程需要两类不同内存区域（From 阶段缓存 To 理想的存储区域</strong></li>
+<li><strong>理想存储区域对宿主机是不可见的，因此应用程序首先要将资源设置到阶段缓存</strong></li>
+</ul>
+<h5 id="异步传输（Asynchronout-Transfer）"><a href="#异步传输（Asynchronout-Transfer）" class="headerlink" title="异步传输（Asynchronout Transfer）"></a>异步传输（Asynchronout Transfer）</h5><ul>
+<li>通过各种异步指令，实现数据在“任意图形、DMA/传输队列”中的异步传递</li>
+</ul>
+<h4 id="资源管理的主要过程"><a href="#资源管理的主要过程" class="headerlink" title="资源管理的主要过程"></a>资源管理的主要过程</h4><ul>
+<li><strong>Vulkan中的资源是交由应用程序显示地进行管理的，所有内存控制接口都直接暴露</strong></li>
+</ul>
+<ol>
+<li>创建一个资源对象</li>
+<li>查询应用程序内存实例，创建一个内存对象（例如缓存、图像）</li>
+<li>获取对象分配相应的内存需求</li>
+<li>分配空间并且保存数据到其中</li>
+<li>将内存绑定到创建的资源对象上</li>
+</ol>
+<h3 id="Step4-流水线设置"><a href="#Step4-流水线设置" class="headerlink" title="Step4.流水线设置"></a>Step4.流水线设置</h3><ul>
+<li>流水线（pipeline）指根据应用程序的逻辑定义一系列事件，事件按照固定顺序执行，主要事件有①设置Shader ②绑定到资源 ③流水线状态管理</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220203181856145.png" alt="image-20220203181856145"></p>
+<h4 id="描述符集-amp-描述符缓冲池"><a href="#描述符集-amp-描述符缓冲池" class="headerlink" title="描述符集&amp;描述符缓冲池"></a>描述符集&amp;描述符缓冲池</h4>
       
     </div>
     
@@ -850,7 +1001,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E7%AB%A0%EF%BC%88Preface%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">序章（Preface）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81"><span class="nav-number">1.1.</span> <span class="nav-text">内容摘要</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0%E6%96%B0%E4%B8%80%E4%BB%A33D%E5%9B%BE%E5%BD%A2API"><span class="nav-number">2.</span> <span class="nav-text">Chapter1.开始学习新一代3D图形API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vulkan%E5%8F%8A%E5%85%B6%E6%BC%94%E5%8C%96%E5%8F%B2"><span class="nav-number">2.1.</span> <span class="nav-text">Vulkan及其演化史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.2.</span> <span class="nav-text">重要术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vulkan%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">Vulkan的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.1.</span> <span class="nav-text">执行模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E8%A6%81%E8%81%8C%E8%B4%A3"><span class="nav-number">2.3.2.</span> <span class="nav-text">用户应用程序主要职责</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue"><span class="nav-number">2.3.3.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="nav-number">2.3.4.</span> <span class="nav-text">同步机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.5.</span> <span class="nav-text">对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%8F%AF%E5%88%86%E5%8F%91%E7%9A%84%E5%8F%A5%E6%9F%84%EF%BC%88Delegation%EF%BC%89"><span class="nav-number">2.3.5.1.</span> <span class="nav-text">1.可分发的句柄（Delegation）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%8F%91%E7%9A%84%E5%8F%A5%E6%9F%84"><span class="nav-number">2.3.5.2.</span> <span class="nav-text">2.不可分发的句柄</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%B8%8E%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95"><span class="nav-number">2.3.6.</span> <span class="nav-text">对象生命周期与指令语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create%EF%BC%88vkCreate%EF%BC%89"><span class="nav-number">2.3.6.1.</span> <span class="nav-text">Create（vkCreate）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Destroy%EF%BC%88vkDestroy%EF%BC%89"><span class="nav-number">2.3.6.2.</span> <span class="nav-text">Destroy（vkDestroy）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Allocate%EF%BC%88vkAllocate-%EF%BC%89"><span class="nav-number">2.3.6.3.</span> <span class="nav-text">Allocate（vkAllocate*）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Free%EF%BC%88vkFree-%EF%BC%89"><span class="nav-number">2.3.6.4.</span> <span class="nav-text">Free（vkFree*）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%AA%8C%E8%AF%81"><span class="nav-number">2.3.7.</span> <span class="nav-text">错误检查与验证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3Vulkan%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.4.</span> <span class="nav-text">理解Vulkan应用程序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E7%AB%A0%EF%BC%88Preface%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">序章（Preface）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81"><span class="nav-number">1.1.</span> <span class="nav-text">内容摘要</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0%E6%96%B0%E4%B8%80%E4%BB%A33D%E5%9B%BE%E5%BD%A2API"><span class="nav-number">2.</span> <span class="nav-text">Chapter1.开始学习新一代3D图形API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vulkan%E5%8F%8A%E5%85%B6%E6%BC%94%E5%8C%96%E5%8F%B2"><span class="nav-number">2.1.</span> <span class="nav-text">Vulkan及其演化史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.2.</span> <span class="nav-text">重要术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vulkan%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">Vulkan的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.1.</span> <span class="nav-text">执行模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E8%A6%81%E8%81%8C%E8%B4%A3"><span class="nav-number">2.3.2.</span> <span class="nav-text">用户应用程序主要职责</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue"><span class="nav-number">2.3.3.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="nav-number">2.3.4.</span> <span class="nav-text">同步机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.5.</span> <span class="nav-text">对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%8F%AF%E5%88%86%E5%8F%91%E7%9A%84%E5%8F%A5%E6%9F%84%EF%BC%88Delegation%EF%BC%89"><span class="nav-number">2.3.5.1.</span> <span class="nav-text">1.可分发的句柄（Delegation）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%8F%91%E7%9A%84%E5%8F%A5%E6%9F%84"><span class="nav-number">2.3.5.2.</span> <span class="nav-text">2.不可分发的句柄</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%B8%8E%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95"><span class="nav-number">2.3.6.</span> <span class="nav-text">对象生命周期与指令语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create%EF%BC%88vkCreate%EF%BC%89"><span class="nav-number">2.3.6.1.</span> <span class="nav-text">Create（vkCreate）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Destroy%EF%BC%88vkDestroy%EF%BC%89"><span class="nav-number">2.3.6.2.</span> <span class="nav-text">Destroy（vkDestroy）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Allocate%EF%BC%88vkAllocate-%EF%BC%89"><span class="nav-number">2.3.6.3.</span> <span class="nav-text">Allocate（vkAllocate*）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Free%EF%BC%88vkFree-%EF%BC%89"><span class="nav-number">2.3.6.4.</span> <span class="nav-text">Free（vkFree*）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%AA%8C%E8%AF%81"><span class="nav-number">2.3.7.</span> <span class="nav-text">错误检查与验证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3Vulkan%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.4.</span> <span class="nav-text">理解Vulkan应用程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%B1%E5%8A%A8"><span class="nav-number">2.4.1.</span> <span class="nav-text">驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.4.2.</span> <span class="nav-text">应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WSI%EF%BC%88Window-System-Integration%EF%BC%89-%E5%B1%95%E7%A4%BA%E5%B1%82%E7%BB%9F%E4%B8%80"><span class="nav-number">2.4.3.</span> <span class="nav-text">WSI（Window System Integration）[展示层统一]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SPIR-V-%E7%9D%80%E8%89%B2%E5%99%A8%E8%AF%AD%E8%A8%80%E7%BB%9F%E4%B8%80"><span class="nav-number">2.4.4.</span> <span class="nav-text">SPIR-V [着色器语言统一]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LunarG-SDK"><span class="nav-number">2.4.5.</span> <span class="nav-text">LunarG SDK</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Vulkan%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.5.</span> <span class="nav-text">开始学习Vulkan编程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5"><span class="nav-number">2.5.1.</span> <span class="nav-text">三个重要概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-%E7%A1%AC%E4%BB%B6%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.5.2.</span> <span class="nav-text">Step1.硬件初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E5%99%A8%EF%BC%88Loader%EF%BC%89"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">加载器（Loader）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E5%99%A8%E6%B3%A8%E5%85%A5%E5%B1%82%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">加载器注入层的功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-%E7%AA%97%E5%8F%A3%E5%B1%95%E7%A4%BA%E8%A1%A8%E9%9D%A2%EF%BC%88Surface%EF%BC%89"><span class="nav-number">2.5.3.</span> <span class="nav-text">Step2.窗口展示表面（Surface）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#WSI%E5%8C%85%E5%90%AB%E4%B8%80%E7%B3%BB%E5%88%97%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD"><span class="nav-number">2.5.3.1.</span> <span class="nav-text">WSI包含一系列跨平台的窗口系统管理功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.5.4.</span> <span class="nav-text">Step3.资源设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%A0%86%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.5.4.1.</span> <span class="nav-text">内存堆的两种类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">2.5.4.2.</span> <span class="nav-text">内存分配</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%86%E9%85%8D-amp-%E5%AD%90%E5%88%86%E9%85%8D"><span class="nav-number">2.5.4.2.1.</span> <span class="nav-text">分配&amp;子分配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A8%80%E7%96%8F%E5%86%85%E5%AD%98%EF%BC%88SparseMemory"><span class="nav-number">2.5.4.2.2.</span> <span class="nav-text">稀疏内存（SparseMemory)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%98%B6%E6%AE%B5%E7%BC%93%E5%AD%98%EF%BC%88Staging-Buffer%EF%BC%89"><span class="nav-number">2.5.4.2.3.</span> <span class="nav-text">阶段缓存（Staging Buffer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E4%BC%A0%E8%BE%93%EF%BC%88Asynchronout-Transfer%EF%BC%89"><span class="nav-number">2.5.4.2.4.</span> <span class="nav-text">异步传输（Asynchronout Transfer）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%9A%84%E4%B8%BB%E8%A6%81%E8%BF%87%E7%A8%8B"><span class="nav-number">2.5.4.3.</span> <span class="nav-text">资源管理的主要过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step4-%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.5.5.</span> <span class="nav-text">Step4.流水线设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0%E7%AC%A6%E9%9B%86-amp-%E6%8F%8F%E8%BF%B0%E7%AC%A6%E7%BC%93%E5%86%B2%E6%B1%A0"><span class="nav-number">2.5.5.1.</span> <span class="nav-text">描述符集&amp;描述符缓冲池</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -882,7 +1033,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">70k</span>
+    <span title="站点总字数">73k</span>
   
 
   
@@ -891,7 +1042,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读次数">1:10</span>
+    <span title="站点总阅读次数">1:13</span>
   
 </div>
 
