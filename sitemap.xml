@@ -312,6 +312,13 @@
   </url>
   
   <url>
+    <loc>http://codebooklet.com/tags/Linux/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://codebooklet.com/tags/Daily/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
@@ -320,6 +327,13 @@
   
   <url>
     <loc>http://codebooklet.com/tags/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://codebooklet.com/tags/Vulkan/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -340,14 +354,7 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/Linux/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/Vulkan/</loc>
+    <loc>http://codebooklet.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -369,13 +376,6 @@
   
   <url>
     <loc>http://codebooklet.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -405,6 +405,13 @@
   </url>
   
   <url>
+    <loc>http://codebooklet.com/categories/DeBug/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://codebooklet.com/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
@@ -412,7 +419,7 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/DeBug/</loc>
+    <loc>http://codebooklet.com/categories/Linux/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,6 +440,13 @@
   </url>
   
   <url>
+    <loc>http://codebooklet.com/categories/Vulkan/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://codebooklet.com/categories/Python/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
@@ -440,14 +454,7 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/Linux/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/categories/Vulkan/</loc>
+    <loc>http://codebooklet.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -469,13 +476,6 @@
   
   <url>
     <loc>http://codebooklet.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://codebooklet.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
