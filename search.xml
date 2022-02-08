@@ -3,11 +3,14 @@
   <entry>
     <title>Codebooklet公告板</title>
     <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
-    <content><![CDATA[<h2 id="2022-1-23"><a href="#2022-1-23" class="headerlink" title="2022/1/23"></a>2022/1/23</h2><ul>
-<li>近期学习内容有点多，总感觉时间不够用，可能还是效率低吧</li>
+    <content><![CDATA[<h2 id="2022-2-8"><a href="#2022-2-8" class="headerlink" title="2022/2/8"></a>2022/2/8</h2><ul>
+<li>过完年后专业课学习有些懈怠了，抓紧时间调整！另外一个月内月英语模块挖的坑暂时不更新了（JTest有点时间紧张！）</li>
 </ul>
 <span id="more"></span>
 
+<h2 id="2022-1-23"><a href="#2022-1-23" class="headerlink" title="2022/1/23"></a>2022/1/23</h2><ul>
+<li>近期学习内容有点多，总感觉时间不够用，可能还是效率低吧</li>
+</ul>
 <h2 id="2022-1-19"><a href="#2022-1-19" class="headerlink" title="2022/1/19"></a>2022/1/19</h2><ul>
 <li>期末考试+休息已经过去20天了，从今天起开始每日学习打卡</li>
 </ul>
@@ -189,7 +192,11 @@
 </ul>
 <span id="more"></span>
 
-<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="February"><a href="#February" class="headerlink" title="February"></a>February</h2><h3 id="4：一瓶葡萄酒回到解放前"><a href="#4：一瓶葡萄酒回到解放前" class="headerlink" title="4：一瓶葡萄酒回到解放前"></a>4：一瓶葡萄酒回到解放前</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-4.png" alt="2-4"></p>
+<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="February"><a href="#February" class="headerlink" title="February"></a>February</h2><h3 id="8：差不多距离J-Test就剩一个月时间了，明天开始更多精力投入日语了"><a href="#8：差不多距离J-Test就剩一个月时间了，明天开始更多精力投入日语了" class="headerlink" title="8：差不多距离J Test就剩一个月时间了，明天开始更多精力投入日语了"></a>8：差不多距离J Test就剩一个月时间了，明天开始更多精力投入日语了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-8.png" alt="2-8"></p>
+<h3 id="7：LeetCode再次上头，时间没把控好"><a href="#7：LeetCode再次上头，时间没把控好" class="headerlink" title="7：LeetCode再次上头，时间没把控好"></a>7：LeetCode再次上头，时间没把控好</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-7.png" alt="2-7"></p>
+<h3 id="6：英语每日单词量加大了，其他练习暂缓一波"><a href="#6：英语每日单词量加大了，其他练习暂缓一波" class="headerlink" title="6：英语每日单词量加大了，其他练习暂缓一波"></a>6：英语每日单词量加大了，其他练习暂缓一波</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-6.png" alt="2-6"></p>
+<h3 id="5：indulge！"><a href="#5：indulge！" class="headerlink" title="5：indulge！"></a>5：indulge！</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-5.png" alt="2-5"></p>
+<h3 id="4：一瓶葡萄酒回到解放前"><a href="#4：一瓶葡萄酒回到解放前" class="headerlink" title="4：一瓶葡萄酒回到解放前"></a>4：一瓶葡萄酒回到解放前</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-4.png" alt="2-4"></p>
 <h3 id="3-新的一轮过年开始了"><a href="#3-新的一轮过年开始了" class="headerlink" title="3:新的一轮过年开始了"></a>3:新的一轮过年开始了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-3.png" alt="2-3"></p>
 <h3 id="2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了"><a href="#2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了" class="headerlink" title="2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了"></a>2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-2.png" alt="2-2"></p>
 <h3 id="1：继续快乐过年"><a href="#1：继续快乐过年" class="headerlink" title="1：继续快乐过年"></a>1：继续快乐过年</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-1.png" alt="2-1"></p>
@@ -550,13 +557,16 @@
 <p><strong>【离线编译】</strong>：Shader / 内核 的编译时离线完成的，不过预先就进行了注入</p>
 <p><strong>【glslang验证器】</strong>：LunarG SDK提供了一个glslangValidator编译器，可以将GLSL Shader源码转化为等价的SPIR-V Shader</p>
 <p><strong>【多重程序入口】</strong>：Shader对象 提供了多种不同的程序入口，可以让我们方便地缩小SPIR-V Shader的装运尺寸&amp;加载尺寸，Shader中不同功能可以以单独的模块形式打包使用</p>
-<h4 id="流水线的管理"><a href="#流水线的管理" class="headerlink" title="流水线的管理"></a>流水线的管理</h4>]]></content>
+<h4 id="流水线的管理"><a href="#流水线的管理" class="headerlink" title="流水线的管理"></a>流水线的管理</h4><ul>
+<li></li>
+</ul>
+]]></content>
       <categories>
         <category>Vulkan</category>
       </categories>
       <tags>
-        <tag>Vulkan</tag>
         <tag>CG</tag>
+        <tag>Vulkan</tag>
       </tags>
   </entry>
   <entry>
@@ -603,8 +613,8 @@
         <category>Vulkan</category>
       </categories>
       <tags>
-        <tag>Vulkan</tag>
         <tag>CG</tag>
+        <tag>Vulkan</tag>
       </tags>
   </entry>
   <entry>
