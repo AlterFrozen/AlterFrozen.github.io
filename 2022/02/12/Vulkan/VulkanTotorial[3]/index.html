@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="关于我自己 计算机类在读本科菜鸡一枚，目前的兴趣方向是计算机图形学。  这个博客未来的内容 只要是我感兴趣的东西，如果有时间整理的话都会发出来，所以后续我也会整理好分类。   计算机专业知识点 编程中遇到的各种问题与解决 英语学习 日语学习 读书笔记 学校课程中做过的一些实验  为什么要建立这个博客 当今世界知识的更新非常快，许多知识并不能从书本中获取，因此必须以笔记的形式记录保存，用于后续回顾，">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一个简单的自我介绍">
+<meta property="og:url" content="http://codebooklet.com/about/index.html">
+<meta property="og:site_name" content="Codebooklet">
+<meta property="og:description" content="关于我自己 计算机类在读本科菜鸡一枚，目前的兴趣方向是计算机图形学。  这个博客未来的内容 只要是我感兴趣的东西，如果有时间整理的话都会发出来，所以后续我也会整理好分类。   计算机专业知识点 编程中遇到的各种问题与解决 英语学习 日语学习 读书笔记 学校课程中做过的一些实验  为什么要建立这个博客 当今世界知识的更新非常快，许多知识并不能从书本中获取，因此必须以笔记的形式记录保存，用于后续回顾，">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-10-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-28T12:01:44.208Z">
+<meta property="article:author" content="Frozen">
+<meta property="article:tag" content="Frozen,Blog,博客">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://codebooklet.com/about/"/>
+
+
+
+
+
+  <title>Vulkan Totorial[3]——Development Environment | Codebooklet</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Codebooklet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Frozen Notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://codebooklet.com/2022/02/12/Vulkan/VulkanTotorial%5B3%5D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar/Frozen.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebooklet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vulkan Totorial[3]——Development Environment</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-12T14:32:00+08:00">2022-02-12</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-02-12T17:41:41+08:00">2022-02-12</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vulkan/" itemprop="url" rel="index">
+                    <span itemprop="name">Vulkan</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/02/12/Vulkan/VulkanTotorial%5B3%5D/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2022/02/12/Vulkan/VulkanTotorial%5B3%5D/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2022/02/12/Vulkan/VulkanTotorial%5B3%5D/" class="leancloud_visitors" data-flag-title="Vulkan Totorial[3]——Development Environment">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>【内容简介】</p>
+<ul>
+<li>参考文献：Vulkan Tutorial -en ——官方指南 英文版</li>
+<li>学习官方指南之前建议先学习《Vulkan学习指南》第一章的基础概念</li>
+<li>由于中文版的专业名词感觉翻译得不够清晰，因此尽可能用英文</li>
+<li>本篇出现的所有图片如未特殊标注，均为笔者实机演示</li>
+</ul>
+<p>【实验环境】</p>
+<ul>
+<li><p>Visual Studio 2019</p>
+</li>
+<li><p>Vulkan Version：1.2.198.1（安装时已经有1.3版本了，但是简单看了下区别不大）</p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="Development-Environment"><a href="#Development-Environment" class="headerlink" title="Development Environment"></a>Development Environment</h1><h2 id="Windows-Platform"><a href="#Windows-Platform" class="headerlink" title="Windows Platform"></a>Windows Platform</h2><ul>
+<li>Visual Studio 2017 or 2019</li>
+<li>Complete C++17 support</li>
+</ul>
+<h2 id="Vulkan-SDK"><a href="#Vulkan-SDK" class="headerlink" title="Vulkan SDK"></a>Vulkan SDK</h2><h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><blockquote>
+<p>You’ll need for developing Vulkan app via SDK which includes <strong>headers + standard validation layers + debugging tools + a loader for Vulkan functions</strong></p>
+</blockquote>
+<ul>
+<li><strong>Loader</strong>：looks up the functions in the runtime similarly to GLEW for OpenGL</li>
+</ul>
+<h3 id="Downdown"><a href="#Downdown" class="headerlink" title="Downdown"></a>Downdown</h3><ul>
+<li><strong>Downdowing the SDK in LunarG website</strong></li>
+</ul>
+<h3 id="Verify"><a href="#Verify" class="headerlink" title="Verify"></a>Verify</h3><ul>
+<li>Go to the directory where you installed the SDK open <strong>Bin</strong> directory and run the <strong>vkcube.exe</strong> demo you will see the following</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212150734138.png" alt="image-20220212150734138"></p>
+<blockquote>
+<p>If you receive an <strong>error</strong> message then ensure that your drivers are up-to-date,</p>
+<p>include the Vulkan runtime and that your graphics card is supported. See the</p>
+<p>introduction chapter for links to drivers from the major vendors.</p>
+</blockquote>
+<h3 id="Vital-Directories"><a href="#Vital-Directories" class="headerlink" title="Vital Directories"></a>Vital Directories</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212151320184.png" alt="image-20220212151320184"></p>
+<ul>
+<li>Bin：contains Vulkan loader and validation layers</li>
+<li>Include：contains Vulkan headers</li>
+<li>Lib：contains the libraries</li>
+</ul>
+<blockquote>
+<p>Feel free to explore the other files , but we won’t need them for this tutorial</p>
+</blockquote>
+<h2 id="GLFW"><a href="#GLFW" class="headerlink" title="GLFW"></a>GLFW</h2><ul>
+<li>为了cross-platform需要使用GLFW创建窗口（GLFW也提供其他跨平台功能）</li>
+</ul>
+<blockquote>
+<p>To benefitfrom the cross-platform advantages of Vulkan and to avoid the horrors of Win32,we’ll use the GLFW library to create a window, which supports Windows, Linux and MacOS. There are other libraries available for this purpose, like SDL, but the advantage of GLFW is that it also abstracts away some of the other platform specific things in Vulkan besides just window creation.</p>
+</blockquote>
+<h3 id="Download-and-Install"><a href="#Download-and-Install" class="headerlink" title="Download and Install"></a>Download and Install</h3><ul>
+<li><p>You can find the latest release of GLFW on the offfficial website. </p>
+</li>
+<li><p><strong>如果选择32位，就要链接Lib32目录，Lib目录是64位的！</strong></p>
+</li>
+<li><p>（由于之前使用OpenGL已经配置好环境了，因此不演示具体细节，可以参考下图官方文档中给出的目录结构）</p>
+</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212152615932.png"></p>
+<h2 id="GLM"><a href="#GLM" class="headerlink" title="GLM"></a>GLM</h2><h3 id="Intro-1"><a href="#Intro-1" class="headerlink" title="Intro"></a>Intro</h3><ul>
+<li><strong>Vulkan does not include a library for linear algebra (unlike DirectX 12)</strong></li>
+<li>GLM is a nice library that is designed for use with graphics APIs and is also commonly used with OpenGL.</li>
+<li>GLM is a header-only library, so just download the latest version and store it in a convenient location.</li>
+</ul>
+<h2 id="Setting-up-Visual-Studio"><a href="#Setting-up-Visual-Studio" class="headerlink" title="Setting up Visual Studio"></a>Setting up Visual Studio</h2><h3 id="Built-Project"><a href="#Built-Project" class="headerlink" title="Built Project"></a>Built Project</h3><ul>
+<li>Create “Windows Desktop Wizard”</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212152859628.png" alt="image-20220212152859628"></p>
+<ul>
+<li>“Console Application(.exe)”（确保可以用console输出信息）</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212153348462.png" alt="image-20220212153348462"></p>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212153525891.png" alt="image-20220212153525891"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在main.cpp中写入下列代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GLFW_INCLUDE_VULKAN</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;GLFW/glfw3.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GLM_FORCE_RADIANS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GLM_FORCE_DEPTH_ZERO_TO_ONE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;glm/vec4.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;glm/mat4x4.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">glfwInit</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_CLIENT_API, GLFW_NO_API);</span><br><span class="line">	GLFWwindow* window = <span class="built_in">glfwCreateWindow</span>(<span class="number">800</span>, <span class="number">600</span>, <span class="string">&quot;Learn Vulkan&quot;</span>, <span class="literal">nullptr</span>, <span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">uint32_t</span> extensionCount = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">vkEnumerateInstanceExtensionProperties</span>(<span class="literal">nullptr</span>, &amp;extensionCount, <span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">	std::cout &lt;&lt; extensionCount &lt;&lt; <span class="string">&quot; extensions supported\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">	glm::mat4 matrix;</span><br><span class="line">	glm::vec4 vec;</span><br><span class="line">	<span class="keyword">auto</span> test = matrix * vec;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (!<span class="built_in">glfwWindowShouldClose</span>(window))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">glfwPollEvents</span>();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">glfwDestroyWindow</span>(window);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">glfwTerminate</span>();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Project-Properties"><a href="#Project-Properties" class="headerlink" title="Project Properties"></a>Project Properties</h3><ul>
+<li>Open the project properties dialog and ensure that <strong>All Configurations</strong> is selected，, because <strong>most of the settings apply to both Debug and Release mode.</strong></li>
+</ul>
+<h4 id="【Include】"><a href="#【Include】" class="headerlink" title="【Include】"></a>【Include】</h4><p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212161027699.png" alt="image-20220212161027699"></p>
+<ul>
+<li><strong>Add the header directories for ①Vulkan ②GLFW ③GLM</strong></li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212161312512.png" alt="image-20220212161312512"></p>
+<ul>
+<li>我将GLM和GLFW都存放在同一目录“Vulkan_Package”下</li>
+</ul>
+<h4 id="【Linker】"><a href="#【Linker】" class="headerlink" title="【Linker】"></a>【Linker】</h4><ul>
+<li>General</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212161427379.png" alt="image-20220212161427379"></p>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212161553078.png" alt="image-20220212161553078"></p>
+<ul>
+<li>Input</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212161641457.png" alt="image-20220212161641457"></p>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212161756266.png" alt="image-20220212161756266"></p>
+<h4 id="【C-】"><a href="#【C-】" class="headerlink" title="【C++】"></a>【C++】</h4><p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212161936346.png" alt="image-20220212161936346"></p>
+<h4 id="【Confirm-Platform】"><a href="#【Confirm-Platform】" class="headerlink" title="【Confirm Platform】"></a>【Confirm Platform】</h4><p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220212162038169.png" alt="image-20220212162038169"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>投币支持~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/QRcodes/WechatPayQRcode.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/QRcodes/alipayQRcode.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Frozen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://codebooklet.com/2022/02/12/Vulkan/VulkanTotorial[3]/" title="Vulkan Totorial[3]——Development Environment">http://codebooklet.com/2022/02/12/Vulkan/VulkanTotorial[3]/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CG/" rel="tag"><i class="fa fa-tag"></i> CG</a>
+          
+            <a href="/tags/Vulkan/" rel="tag"><i class="fa fa-tag"></i> Vulkan</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/01/25/C++/C++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" rel="next" title="C++构造函数和析构函数">
+                <i class="fa fa-chevron-left"></i> C++构造函数和析构函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/02/12/Vulkan/VulkanTotorial%5B4%5D/" rel="prev" title="Vulkan Totorial[4]——Base Code">
+                Vulkan Totorial[4]——Base Code <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar/Frozen.png"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Development-Environment"><span class="nav-number">1.</span> <span class="nav-text">Development Environment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-Platform"><span class="nav-number">1.1.</span> <span class="nav-text">Windows Platform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vulkan-SDK"><span class="nav-number">1.2.</span> <span class="nav-text">Vulkan SDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intro"><span class="nav-number">1.2.1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Downdown"><span class="nav-number">1.2.2.</span> <span class="nav-text">Downdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Verify"><span class="nav-number">1.2.3.</span> <span class="nav-text">Verify</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vital-Directories"><span class="nav-number">1.2.4.</span> <span class="nav-text">Vital Directories</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GLFW"><span class="nav-number">1.3.</span> <span class="nav-text">GLFW</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Download-and-Install"><span class="nav-number">1.3.1.</span> <span class="nav-text">Download and Install</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GLM"><span class="nav-number">1.4.</span> <span class="nav-text">GLM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intro-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">Intro</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting-up-Visual-Studio"><span class="nav-number">1.5.</span> <span class="nav-text">Setting up Visual Studio</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Built-Project"><span class="nav-number">1.5.1.</span> <span class="nav-text">Built Project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Project-Properties"><span class="nav-number">1.5.2.</span> <span class="nav-text">Project Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%90Include%E3%80%91"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">【Include】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%90Linker%E3%80%91"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">【Linker】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%90C-%E3%80%91"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">【C++】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%90Confirm-Platform%E3%80%91"><span class="nav-number">1.5.2.4.</span> <span class="nav-text">【Confirm Platform】</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Frozen</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">93k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点总阅读次数">1:33</span>
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'cjLrpW1wMLsoJRfwTXS1M4Jr-gzGzoHsz',
+        appKey: 'pqb6k5s7TFmzCNcg2fOOprjX',
+        placeholder: '随便说点什么吧~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cjLrpW1wMLsoJRfwTXS1M4Jr-gzGzoHsz", "pqb6k5s7TFmzCNcg2fOOprjX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
