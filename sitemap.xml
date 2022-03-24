@@ -354,14 +354,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://codebooklet.com/tags/Vulkan/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/Vulkan/</loc>
+    <loc>http://codebooklet.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -375,14 +375,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <loc>http://codebooklet.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <loc>http://codebooklet.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -405,14 +405,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/CG/</loc>
+    <loc>http://codebooklet.com/categories/DeBug/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/DeBug/</loc>
+    <loc>http://codebooklet.com/categories/CG/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -447,14 +447,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://codebooklet.com/categories/Vulkan/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/Vulkan/</loc>
+    <loc>http://codebooklet.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -468,14 +468,14 @@
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <loc>http://codebooklet.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://codebooklet.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <loc>http://codebooklet.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2022-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
