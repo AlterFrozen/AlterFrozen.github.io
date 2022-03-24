@@ -3,13 +3,16 @@
   <entry>
     <title>Codebooklet公告板</title>
     <url>/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</url>
-    <content><![CDATA[<h2 id="2022-2-28"><a href="#2022-2-28" class="headerlink" title="2022/2/28"></a>2022/2/28</h2><ul>
-<li> 二月结束了！希望下个月能进猪厂线上训练营吧！</li>
+    <content><![CDATA[<h2 id="2022-3-24"><a href="#2022-3-24" class="headerlink" title="2022/3/24"></a>2022/3/24</h2><ul>
+<li>这个月被找实习消耗了一部分精力，好像很久没更新了（虽然由于没准备充分而没有找到233）</li>
 </ul>
 <span id="more"></span>
 
 
 
+<h2 id="2022-2-28"><a href="#2022-2-28" class="headerlink" title="2022/2/28"></a>2022/2/28</h2><ul>
+<li> 二月结束了！希望下个月能进猪厂线上训练营吧！</li>
+</ul>
 <h2 id="2022-2-23"><a href="#2022-2-23" class="headerlink" title="2022/2/23"></a>2022/2/23</h2><ul>
 <li>开始每天机械地备考学习，由于不怎么需要用电脑了博客更新可能会更慢…</li>
 </ul>
@@ -126,6 +129,39 @@
       </categories>
       <tags>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>return 0 or EXIT_SUCCESS?</title>
+    <url>/2022/03/24/C++/ReturnZeroOrEXIT_SUCCESS/</url>
+    <content><![CDATA[<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="number">0</span>;  || <span class="keyword">return</span> EXIT_SUCCESS;</span><br></pre></td></tr></table></figure>
+
+
+
+<span id="more"></span>
+
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><ul>
+<li><strong>Whatever 0 or SUCCESS_EXIT, they are right</strong></li>
+<li>SUCCESS_EXIT is more legible</li>
+<li>In the most of situations, SUCCESS_EXIT == 0</li>
+</ul>
+<p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220324173411113.png" alt="image-20220324173411113"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>EXIT_SUCCESS and EXIT_FAILURE are defined in head &lt;stdlib.h&gt; in C and &lt;cstdlib&gt; in C++ , therefor we have to include an extra head if we want to use them </li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>However, most standard libraries of C++ have already included &lt;cstdlib&gt;, so in most situations, we should not consider the extra cost of including head file</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -540,111 +576,6 @@
       </tags>
   </entry>
   <entry>
-    <title>每日学习打卡</title>
-    <url>/2022/01/19/Daily/DailyAttendance/</url>
-    <content><![CDATA[<ul>
-<li><strong>坚持每日学习打卡，内容主要以外语学习为主</strong></li>
-</ul>
-<span id="more"></span>
-
-<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="February"><a href="#February" class="headerlink" title="February"></a>February</h2><h3 id="28：二月结束！"><a href="#28：二月结束！" class="headerlink" title="28：二月结束！"></a>28：二月结束！</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-28.png" alt="2-28"></p>
-<h3 id="27"><a href="#27" class="headerlink" title="27"></a>27</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-27.png" alt="2-27"></p>
-<h3 id="26"><a href="#26" class="headerlink" title="26"></a>26</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-26.png" alt="2-26"></p>
-<h3 id="25"><a href="#25" class="headerlink" title="25"></a>25</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-25.png" alt="2-25"></p>
-<h3 id="24"><a href="#24" class="headerlink" title="24"></a>24</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-24.png" alt="2-24"></p>
-<h3 id="23"><a href="#23" class="headerlink" title="23"></a>23</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-23.png" alt="2-23"></p>
-<h3 id="22"><a href="#22" class="headerlink" title="22"></a>22</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-22.png" alt="2-22"></p>
-<h3 id="21"><a href="#21" class="headerlink" title="21"></a>21</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-21.png" alt="2-21"></p>
-<h3 id="20"><a href="#20" class="headerlink" title="20"></a>20</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-20.png" alt="2-20"></p>
-<h3 id="19"><a href="#19" class="headerlink" title="19"></a>19</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-19.png" alt="2-19"></p>
-<h3 id="18"><a href="#18" class="headerlink" title="18"></a>18</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-18.png" alt="2-18"></p>
-<h3 id="17：返校之后的无聊日常开始"><a href="#17：返校之后的无聊日常开始" class="headerlink" title="17：返校之后的无聊日常开始"></a>17：返校之后的无聊日常开始</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-17.png" alt="2-17"></p>
-<h3 id="16：明天要回学校了"><a href="#16：明天要回学校了" class="headerlink" title="16：明天要回学校了"></a>16：明天要回学校了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-16.png" alt="2-16"></p>
-<h3 id="15：在外面娱乐了半天"><a href="#15：在外面娱乐了半天" class="headerlink" title="15：在外面娱乐了半天"></a>15：在外面娱乐了半天</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-15.png" alt="2-15"></p>
-<h3 id="14：去修理了一下电脑，还好问题不大"><a href="#14：去修理了一下电脑，还好问题不大" class="headerlink" title="14：去修理了一下电脑，还好问题不大"></a>14：去修理了一下电脑，还好问题不大</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-14.png" alt="2-14"></p>
-<h3 id="13：感觉日语快忘光了"><a href="#13：感觉日语快忘光了" class="headerlink" title="13：感觉日语快忘光了"></a>13：感觉日语快忘光了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-13%E3%80%81.png" alt="2-13、"></p>
-<h3 id="12"><a href="#12" class="headerlink" title="12"></a>12</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-12.png" alt="2-12"></p>
-<h3 id="11"><a href="#11" class="headerlink" title="11"></a>11</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-11.png" alt="2-11"></p>
-<h3 id="10"><a href="#10" class="headerlink" title="10"></a>10</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-10.png" alt="2-10"></p>
-<h3 id="9：假期余额有些不足了"><a href="#9：假期余额有些不足了" class="headerlink" title="9：假期余额有些不足了~"></a>9：假期余额有些不足了~</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/image-20220209233435516.png" alt="image-20220209233435516"></p>
-<h3 id="8：差不多距离J-Test就剩一个月时间了，明天开始更多精力投入日语了"><a href="#8：差不多距离J-Test就剩一个月时间了，明天开始更多精力投入日语了" class="headerlink" title="8：差不多距离J Test就剩一个月时间了，明天开始更多精力投入日语了"></a>8：差不多距离J Test就剩一个月时间了，明天开始更多精力投入日语了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-8.png" alt="2-8"></p>
-<h3 id="7：LeetCode再次上头，时间没把控好"><a href="#7：LeetCode再次上头，时间没把控好" class="headerlink" title="7：LeetCode再次上头，时间没把控好"></a>7：LeetCode再次上头，时间没把控好</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-7.png" alt="2-7"></p>
-<h3 id="6：英语每日单词量加大了，其他练习暂缓一波"><a href="#6：英语每日单词量加大了，其他练习暂缓一波" class="headerlink" title="6：英语每日单词量加大了，其他练习暂缓一波"></a>6：英语每日单词量加大了，其他练习暂缓一波</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-6.png" alt="2-6"></p>
-<h3 id="5：indulge！"><a href="#5：indulge！" class="headerlink" title="5：indulge！"></a>5：indulge！</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-5.png" alt="2-5"></p>
-<h3 id="4：一瓶葡萄酒回到解放前"><a href="#4：一瓶葡萄酒回到解放前" class="headerlink" title="4：一瓶葡萄酒回到解放前"></a>4：一瓶葡萄酒回到解放前</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-4.png" alt="2-4"></p>
-<h3 id="3-新的一轮过年开始了"><a href="#3-新的一轮过年开始了" class="headerlink" title="3:新的一轮过年开始了"></a>3:新的一轮过年开始了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-3.png" alt="2-3"></p>
-<h3 id="2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了"><a href="#2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了" class="headerlink" title="2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了"></a>2：渐渐恢复日常，CheckList功能过期了续费有点贵懒得搞了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-2.png" alt="2-2"></p>
-<h3 id="1：继续快乐过年"><a href="#1：继续快乐过年" class="headerlink" title="1：继续快乐过年"></a>1：继续快乐过年</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/2-1.png" alt="2-1"></p>
-<h2 id="January"><a href="#January" class="headerlink" title="January"></a>January</h2><h3 id="31：新年快乐！（摆烂）"><a href="#31：新年快乐！（摆烂）" class="headerlink" title="31：新年快乐！（摆烂）"></a>31：新年快乐！（摆烂）</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-31.png" alt="1-31"></p>
-<h3 id="30：第一次尝试LeetCode周赛，没想到又败在数论上了，明天整理一下笔记"><a href="#30：第一次尝试LeetCode周赛，没想到又败在数论上了，明天整理一下笔记" class="headerlink" title="30：第一次尝试LeetCode周赛，没想到又败在数论上了，明天整理一下笔记"></a>30：第一次尝试LeetCode周赛，没想到又败在数论上了，明天整理一下笔记</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-30.png" alt="1-30"></p>
-<h3 id="29：复习半天基本算法，余下的时间有些不够用"><a href="#29：复习半天基本算法，余下的时间有些不够用" class="headerlink" title="29：复习半天基本算法，余下的时间有些不够用"></a>29：复习半天基本算法，余下的时间有些不够用</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-29.png" alt="1-29"></p>
-<h3 id="28：明天准备集中复习一下基础算法，任务变动一下"><a href="#28：明天准备集中复习一下基础算法，任务变动一下" class="headerlink" title="28：明天准备集中复习一下基础算法，任务变动一下"></a>28：明天准备集中复习一下基础算法，任务变动一下</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-28.png" alt="1-28"></p>
-<h3 id="27：其实把握好每个任务的优先度，效率就能提高"><a href="#27：其实把握好每个任务的优先度，效率就能提高" class="headerlink" title="27：其实把握好每个任务的优先度，效率就能提高"></a>27：其实把握好每个任务的优先度，效率就能提高</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-27.png" alt="1-27"></p>
-<h3 id="26：今天小摸鱼，内容质量不高"><a href="#26：今天小摸鱼，内容质量不高" class="headerlink" title="26：今天小摸鱼，内容质量不高"></a>26：今天小摸鱼，内容质量不高</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-26.png" alt="1-26"></p>
-<h3 id="25：今天稍微放松了一下，昨天的Flag又G了，任务虽然完成了但是质量不是很高"><a href="#25：今天稍微放松了一下，昨天的Flag又G了，任务虽然完成了但是质量不是很高" class="headerlink" title="25：今天稍微放松了一下，昨天的Flag又G了，任务虽然完成了但是质量不是很高"></a>25：今天稍微放松了一下，昨天的Flag又G了，任务虽然完成了但是质量不是很高</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-25.png" alt="1-25"></p>
-<h3 id="24-感觉要给Vulkan多留点时间了"><a href="#24-感觉要给Vulkan多留点时间了" class="headerlink" title="24:感觉要给Vulkan多留点时间了"></a>24:感觉要给Vulkan多留点时间了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-24.png" alt="1-24"></p>
-<h3 id="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"><a href="#23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少" class="headerlink" title="23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少"></a>23：有些极限，感觉还是需要对计划调整，现在给专业课留的学习时间有点少</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-23.png" alt="1-23"></p>
-<h3 id="22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"><a href="#22-准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间" class="headerlink" title="22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间"></a>22:准备学Anki先（磨刀不误砍柴工）提高语言学习效率，给其他内容留时间</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-22.png" alt="1-22"></p>
-<h3 id="21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"><a href="#21-LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了" class="headerlink" title="21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了"></a>21:LeetCode每日一题上头了导致好多项任务没做完QAQ，用DP解半天，最后看题解才发现这题普通DP做不了，还是我太菜了</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-21.png" alt="1-21"></p>
-<h3 id="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app"><a href="#20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝-app" class="headerlink" title="20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app"></a>20：下午打了一会游戏Vulkan暂缓一天，明天开始调整计划，英语模块将结合扇贝.app</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-20.png" alt="1-20"></p>
-<h3 id="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"><a href="#19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调" class="headerlink" title="19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调"></a>19：状态还没找好，效率有点低，听力内容并没有完成，可能需要对计划进行微调</h3><p><img src="http://image.codebooklet.com/img_blog/Daily/default/1-19.png" alt="1-19"></p>
-]]></content>
-      <categories>
-        <category>Daily</category>
-      </categories>
-      <tags>
-        <tag>Daily</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《Vulkan学习指南》练习题</title>
-    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
-    <content><![CDATA[<ul>
-<li>题目内容来自《Vulkan学习之南》——Parminder Singh</li>
-<li>每章节的练习题纯个人设计，仅供参考，原书并没有课后练习题</li>
-</ul>
-<span id="more"></span>
-
-
-
-<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><h2 id="1-Vulkan-API的制定团队"><a href="#1-Vulkan-API的制定团队" class="headerlink" title="1.Vulkan API的制定团队"></a>1.Vulkan API的制定团队</h2><details><summary><b>▷ 参考答案</b></summary>
-    Khronos
-</details>
-
-<h2 id="2-Physical-Device和Device的关系"><a href="#2-Physical-Device和Device的关系" class="headerlink" title="2.Physical Device和Device的关系"></a>2.Physical Device和Device的关系</h2><details><summary><b>▷ 参考答案</b></summary>
-    一台计算机系统包含多个支持Vulkan的物理硬件设备，设备是物理设备在应用程序中的逻辑表示
-</details>
-
-<h2 id="3-Queue的定义和职责"><a href="#3-Queue的定义和职责" class="headerlink" title="3.Queue的定义和职责"></a>3.Queue的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
-    队列（Queue）表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行
-</details>
-
-<h2 id="4-Vulkan广义上有哪几类内存类型（Memory-Type）"><a href="#4-Vulkan广义上有哪几类内存类型（Memory-Type）" class="headerlink" title="4.Vulkan广义上有哪几类内存类型（Memory Type）"></a>4.Vulkan广义上有哪几类内存类型（Memory Type）</h2><details><summary><b>▷ 参考答案</b></summary>
-    Vulkan暴露了多种内存类型，广义上可以分为两类：<br/>
-    1.宿主内存（Host Memory）<br/>
-    2.设备内存（Device Memory）
-</details>
-
-<h2 id="5-Command广义上可以划分为哪几类，简述各类指令的作用"><a href="#5-Command广义上可以划分为哪几类，简述各类指令的作用" class="headerlink" title="5.Command广义上可以划分为哪几类，简述各类指令的作用"></a>5.Command广义上可以划分为哪几类，简述各类指令的作用</h2><details><summary><b>▷ 参考答案</b></summary>
-    每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步<br/>
-    1.Action Command：绘制图元、清除表面、复制缓存、查询/时间戳、子通道开始/结束操作（这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像）、写入查询池）<br/>
-    2.Set State Command：绑定流水线、描述字集合、缓存，或设置一个动作状态、渲染通道/子通道的状态<br/>
-    3.Syschronization Command：处理多个Action Command同时发生的情况，用于设置同步或等待事件、插入流水线屏障对象、渲染通道/子通道的依赖
-</details>
-
-<h2 id="6-Command-Buffer的定义和职责"><a href="#6-Command-Buffer的定义和职责" class="headerlink" title="6.Command Buffer的定义和职责"></a>6.Command Buffer的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
-    一组指令的集合，可以记录多个指令并统一发送到队列中（第3题）
-</details>
-]]></content>
-      <categories>
-        <category>Vulkan</category>
-      </categories>
-      <tags>
-        <tag>CG</tag>
-        <tag>Vulkan</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《Vulkan学习指南》笔记</title>
     <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
@@ -1043,6 +974,54 @@
 <li>收集指令缓存，发布到对应的设备队列，准备处理</li>
 <li>将输出设备中已经渲染完毕的图像显示</li>
 </ol>
+]]></content>
+      <categories>
+        <category>Vulkan</category>
+      </categories>
+      <tags>
+        <tag>CG</tag>
+        <tag>Vulkan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《Vulkan学习指南》练习题</title>
+    <url>/2022/01/19/Vulkan/Vulkan%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<ul>
+<li>题目内容来自《Vulkan学习之南》——Parminder Singh</li>
+<li>每章节的练习题纯个人设计，仅供参考，原书并没有课后练习题</li>
+</ul>
+<span id="more"></span>
+
+
+
+<h1 id="Chapter1-开始学习新一代3D图形API"><a href="#Chapter1-开始学习新一代3D图形API" class="headerlink" title="Chapter1.开始学习新一代3D图形API"></a>Chapter1.开始学习新一代3D图形API</h1><h2 id="1-Vulkan-API的制定团队"><a href="#1-Vulkan-API的制定团队" class="headerlink" title="1.Vulkan API的制定团队"></a>1.Vulkan API的制定团队</h2><details><summary><b>▷ 参考答案</b></summary>
+    Khronos
+</details>
+
+<h2 id="2-Physical-Device和Device的关系"><a href="#2-Physical-Device和Device的关系" class="headerlink" title="2.Physical Device和Device的关系"></a>2.Physical Device和Device的关系</h2><details><summary><b>▷ 参考答案</b></summary>
+    一台计算机系统包含多个支持Vulkan的物理硬件设备，设备是物理设备在应用程序中的逻辑表示
+</details>
+
+<h2 id="3-Queue的定义和职责"><a href="#3-Queue的定义和职责" class="headerlink" title="3.Queue的定义和职责"></a>3.Queue的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    队列（Queue）表示执行引擎与应用程序之间的接口，一个物理设备总是包含1~N个队列（图形、计算、DMA/传输.etc）队列的职责是收集准备执行的工作（指令缓存）并分发到物理设备执行
+</details>
+
+<h2 id="4-Vulkan广义上有哪几类内存类型（Memory-Type）"><a href="#4-Vulkan广义上有哪几类内存类型（Memory-Type）" class="headerlink" title="4.Vulkan广义上有哪几类内存类型（Memory Type）"></a>4.Vulkan广义上有哪几类内存类型（Memory Type）</h2><details><summary><b>▷ 参考答案</b></summary>
+    Vulkan暴露了多种内存类型，广义上可以分为两类：<br/>
+    1.宿主内存（Host Memory）<br/>
+    2.设备内存（Device Memory）
+</details>
+
+<h2 id="5-Command广义上可以划分为哪几类，简述各类指令的作用"><a href="#5-Command广义上可以划分为哪几类，简述各类指令的作用" class="headerlink" title="5.Command广义上可以划分为哪几类，简述各类指令的作用"></a>5.Command广义上可以划分为哪几类，简述各类指令的作用</h2><details><summary><b>▷ 参考答案</b></summary>
+    每个指令都可以执行一些用户行为，广义上可以划分为：动作、状态设置、同步<br/>
+    1.Action Command：绘制图元、清除表面、复制缓存、查询/时间戳、子通道开始/结束操作（这些指令可以修改帧缓存附件、读取或写入内存（缓存或图像）、写入查询池）<br/>
+    2.Set State Command：绑定流水线、描述字集合、缓存，或设置一个动作状态、渲染通道/子通道的状态<br/>
+    3.Syschronization Command：处理多个Action Command同时发生的情况，用于设置同步或等待事件、插入流水线屏障对象、渲染通道/子通道的依赖
+</details>
+
+<h2 id="6-Command-Buffer的定义和职责"><a href="#6-Command-Buffer的定义和职责" class="headerlink" title="6.Command Buffer的定义和职责"></a>6.Command Buffer的定义和职责</h2><details><summary><b>▷ 参考答案</b></summary>
+    一组指令的集合，可以记录多个指令并统一发送到队列中（第3题）
+</details>
 ]]></content>
       <categories>
         <category>Vulkan</category>
@@ -3573,68 +3552,6 @@
       </categories>
       <tags>
         <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《C++17 STL Cookbook》笔记</title>
-    <url>/2021/10/30/C++/%E3%80%8AC++17%20STL%20Cookbook%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p><strong>“本书仅课余时间阅读并且当做英语翻译练习，因此更新速度较慢，非常感谢参考译文作者们”</strong><br><strong>参考书籍：《C++17 STL Cookbook》</strong><br><strong>译文参考：(<a href="https://github.com/xiaoweiChen/CPP-17-STL-cookbook">https://github.com/xiaoweiChen/CPP-17-STL-cookbook</a>)</strong></p>
-<span id="more"></span>
-
-<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><ul>
-<li><p><strong>C++的部分模板类是</strong><a href="https://baike.baidu.com/item/%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/4634934">图灵完备</a><strong>的!</strong></p>
-<blockquote>
-<p>The part of C++ for expressing template types is even Turing-complete!</p>
-</blockquote>
-</li>
-<li><p><strong>许多程序员仅仅把C++当做一门编程语言学习，并不重视STL的使用，这让C++看起来像是具有class的C语言。这样不仅看起来不像是21世纪的现代程序，并且失去了C++一半的力量。</strong></p>
-<blockquote>
-<p>However, many C++ programmers eagerly learn C++ as a language but put its standard<br> library, the STL, in the second place. Using the C++ language without the help that the<br> standard library provides often leads to programs that look like C with classes, but not<br> what modern programs in the 21st century should look like. This is very sad because using<br> C++ like that means dropping half its strength.</p>
-</blockquote>
-</li>
-<li><p><strong>C++之父Bjarne Stroustrup博士在他的《C++程序设计语言》(C++11版本)中写到</strong><br> “STL和语言特性都是为了支撑以软件质量为目标的编程技术，他们应该互相配合发挥作用——就如同搭建房子的砖块——而不是单独拿出来，相对孤立地解决一个具体问题。”</p>
-<blockquote>
-<p>In the C++11 edition of his book, The C++ Programming Language, Bjarne Stroustrup writes,<br> “Please remember that those libraries and language features exist to support programming<br> techniques for developing quality software. They are meant to be used in combination–as<br> bricks in a building set–rather than to be used individually in relative isolation to solve a<br> specific problem.”</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="Chapter1-C-17新特新（The-New-C-17-Features）"><a href="#Chapter1-C-17新特新（The-New-C-17-Features）" class="headerlink" title="Chapter1.C++17新特新（The New C++17 Features）"></a>Chapter1.C++17新特新（The New C++17 Features）</h1><h2 id="Abstract-摘要"><a href="#Abstract-摘要" class="headerlink" title="Abstract 摘要"></a>Abstract 摘要</h2><ol>
-<li><strong>使用 结构化绑定（structured bindings）去解包绑定的返回值</strong><blockquote>
-<p>Using structured bindings to unpack bundled return values</p>
-</blockquote>
-</li>
-<li><strong>限制 变量作用域（variable scopes）在 if 和 switch 区域内</strong><blockquote>
-<p>Limiting variable scopes to if and switch statements</p>
-</blockquote>
-</li>
-<li><strong>从新的 括号初始化规则（bracket initializer rules）中获益</strong><blockquote>
-<p>Profiting from the new bracket initializer rules</p>
-</blockquote>
-</li>
-<li><strong>让构造函数（constructor）自动推导模板的类型</strong><blockquote>
-<p>Letting the constructor automatically deduce the resulting template class type</p>
-</blockquote>
-</li>
-<li><strong>使用 constexpr-if 简化编译时决策</strong><blockquote>
-<p>Simplifying compile-time decisions with constexpr-if</p>
-</blockquote>
-</li>
-<li><strong>使用内联变量（inline variables）启动只有头文件的库（header-only library）</strong><blockquote>
-<p>Enabling header-only libraries with inline variables</p>
-</blockquote>
-</li>
-<li><strong>使用折叠表达式（fold expressions）方便地实现辅助函数</strong><blockquote>
-<p>Implementing handy helper functions with fold expressions</p>
-</blockquote>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>C++ STL</tag>
       </tags>
   </entry>
   <entry>
