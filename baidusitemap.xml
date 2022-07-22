@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://codebooklet.com/2022/07/22/VisualStudio/AutomaticallyRecompileSPIR-VwithBuildEvents/</loc>
+    <lastmod>2022-07-22</lastmod>
+  </url>
+  <url>
+    <loc>http://codebooklet.com/2022/07/08/Vulkan/VulkanTotorial%5B7%5D/</loc>
+    <lastmod>2022-07-08</lastmod>
+  </url>
+  <url>
+    <loc>http://codebooklet.com/2022/02/14/Vulkan/VulkanTotorial%5B6%5D/</loc>
+    <lastmod>2022-07-08</lastmod>
+  </url>
+  <url>
+    <loc>http://codebooklet.com/2021/11/06/LearnJapanese/EverydayJapanese/</loc>
+    <lastmod>2022-04-04</lastmod>
+  </url>
+  <url>
     <loc>http://codebooklet.com/2022/03/24/C++/ReturnZeroOrEXIT_SUCCESS/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
     <loc>http://codebooklet.com/2021/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Bulletin-Board/</loc>
     <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>http://codebooklet.com/2022/02/14/Vulkan/VulkanTotorial%5B6%5D/</loc>
-    <lastmod>2022-02-14</lastmod>
   </url>
   <url>
     <loc>http://codebooklet.com/2022/02/14/Vulkan/VulkanTotorial%5B5%5D/</loc>
